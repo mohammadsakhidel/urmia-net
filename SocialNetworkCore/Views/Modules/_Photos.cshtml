@@ -1,0 +1,33 @@
+﻿@using CoreHelpers;
+@model SocialNetApp.Views.Models.Modules.PhotosModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_PhotosHeadTags.min.js")"></script>
+<div id="albums_and_photos">
+    <div class="viewpart_title">
+        <h2>@Resources.Words.AlbumsList</h2>
+    </div>
+    <div class="viewpart_content">
+        <div id="summary" class="border">
+            <div class="summary_in">
+                @Model.AlbumsCount
+                @Resources.Words.Album_Plural
+                @Resources.Words.And
+                @Model.TotalPhotosCount
+                @Resources.Words.Photo_Plural
+                |
+                @Ajax.ActionLink(Resources.Words.CreateNewAlbum, "CreateAlbum", "Photos", null,
+                    new AjaxOptions { HttpMethod = "Get", LoadingElementId = "CreateAlbumLoading", OnBegin = "CreateAlbumBegin", UpdateTargetId = "panel", OnComplete = "CreateAlbumComplete" },
+                    new { @id = "link_CreateAlbum" })
+            </div>
+            <div id="CreateAlbumLoading" class="loading_small_circle hide">
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div id="list_of_albums">
+            @foreach (var albumPresenterModel in Model.AlbumPresenterModels)
+            {
+                Html.RenderPartial(Urls.ModuleViews + "_AlbumPresenter.cshtml", albumPresenterModel);
+            }
+        </div>
+    </div>
+</div>

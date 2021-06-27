@@ -1,0 +1,45 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Models
+@using SocialNetApp.Views.Models.Modules
+@model NotificationsModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_NotificationsHeadTags.min.js")"></script>
+<div id="notifications" class="viewpart">
+    <div class="viewpart_title">
+        <div class="not_actions">
+            @Ajax.ActionLink(Resources.Words.DeleteAllNotifications, "DeleteAllNotifications", "HomePage",
+                new AjaxOptions
+                {
+                    Confirm = @Resources.Messages.AreYouSure,
+                    HttpMethod = "Post",
+                    OnSuccess = "DeleteAllNotificationsSuccess",
+                    OnFailure = "DeleteAllNotificationsFailure",
+                    LoadingElementId = "prgNotificationActions"
+                })
+            @Ajax.ActionLink(@Resources.Words.MarkAllAsRead, "MarkAllNotificationsAsRead", "HomePage", 
+                new AjaxOptions 
+                { 
+                    HttpMethod = "Post", 
+                    OnSuccess = "MarkAllNotificationsAsReadSuccess",
+                    OnFailure = "MarkAllNotificationsAsReadFailure",
+                    LoadingElementId = "prgNotificationActions" 
+                })
+            <div id="prgNotificationActions" class="loading_small_circle hide"></div>
+        </div>
+        <h2>@Resources.Words.Notifications</h2>
+    </div>
+
+    <div class="viewpart_content">
+        <div id="notifications_in">
+            <div id="notifications_list">
+            @foreach (var notModel in Model.NotificationModels)
+            {
+                <div class="notification_item">
+                    @{Html.RenderPartial(Urls.ModuleViews + "_Notification.cshtml", notModel);}
+                </div>
+            }
+            </div>
+            @{Html.RenderPartial(Urls.ModuleViews + "_ViewMore.cshtml", Model.ViewMoreModel);}
+        </div>
+    </div>
+    <input id="hid_ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />
+</div>

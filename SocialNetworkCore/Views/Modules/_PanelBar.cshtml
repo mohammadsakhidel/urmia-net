@@ -1,0 +1,89 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@using CoreHelpers
+@model PanelBarModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_PanelBarHeadTags.min.js")"></script>
+<div id="panelbar">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a id="profile_image_link" href="@Url.Content(Model.Member.UrlOfProfilePage)">
+            <img id="profile_image" alt="@Model.Member.FullName" src="@(Url.Content(Model.PPUrl))" />
+        </a>
+        <div id="panelbar_loading" class="loading_small_circle hide"></div>
+        <div id="account_settings"></div>
+        @Ajax.ActionLink(@Resources.Words.BasicInfo, "BasicInfo", "HomePage", null,
+            new AjaxOptions { OnBegin = "BasicInfoBegin", OnSuccess = "BasicInfoSuccess", LoadingElementId = "panelbar_loading", LoadingElementDuration = 100, HttpMethod = "Get", UpdateTargetId = "panel" },
+            new { @class = "panel_link" + (@ViewBag.DefaultPage == "BasicInfo" ? "_selected" : ""), @id = "panel_link_basicinfo" })
+        @Ajax.ActionLink(@Resources.Words.Favorites, "Favorites", "HomePage", null,
+            new AjaxOptions { OnBegin = "FavoritesBegin", OnSuccess = "FavoritesSuccess", LoadingElementId = "panelbar_loading", LoadingElementDuration = 100, HttpMethod = "Get", UpdateTargetId = "panel" },
+            new { @class = "panel_link" + (@ViewBag.DefaultPage == "Favorites" ? "_selected" : ""), @id = "panel_link_favorites" })
+        @Ajax.ActionLink(@Resources.Words.EducationsAndSkills, "EducationsAndSkills", "HomePage", null,
+            new AjaxOptions { OnBegin = "EducationsAndSkillsBegin", OnSuccess = "EducationsAndSkillsSuccess", LoadingElementId = "panelbar_loading", LoadingElementDuration = 100, HttpMethod = "Get", UpdateTargetId = "panel" },
+            new { @class = "panel_link" + (@ViewBag.DefaultPage == "EducationsAndSkills" ? "_selected" : ""), @id = "panel_link_educations" })
+        @Ajax.ActionLink(@Resources.Words.AlbumsAndPhotos, "Photos", "HomePage", null,
+            new AjaxOptions { OnBegin = "PhotosBegin", OnSuccess = "PhotosSuccess", LoadingElementId = "panelbar_loading", LoadingElementDuration = 100, HttpMethod = "Get", UpdateTargetId = "panel" },
+            new { @class = "panel_link" + (@ViewBag.DefaultPage == "Photos" || @ViewBag.DefaultPage == "CreateAlbum" || @ViewBag.DefaultPage == "EditAlbum" || @ViewBag.DefaultPage == "AlbumPhotos" ? "_selected" : ""), @id = "panel_link_photos" })
+        @Ajax.ActionLink(@Resources.Words.ProfileCover, "ProfileCover", "HomePage", null,
+             new AjaxOptions { OnBegin = "ProfileCoverBegin", OnSuccess = "ProfileCoverSuccess", LoadingElementId = "panelbar_loading", LoadingElementDuration = 100, HttpMethod = "Get", UpdateTargetId = "panel" },
+             new { @class = "panel_link" + (@ViewBag.DefaultPage == "ProfileCover" ? "_selected" : ""), @id = "panel_link_profile_cover" })
+        <div id="communications"></div>
+        @Ajax.ActionLink(@Resources.Words.Friends, "Friends", "HomePage", null,
+            new AjaxOptions { OnBegin = "FriendsBegin", OnSuccess = "FriendsSuccess", LoadingElementId = "panelbar_loading", LoadingElementDuration = 100, HttpMethod = "Get", UpdateTargetId = "panel" },
+            new { @class = "panel_link" + (@ViewBag.DefaultPage == "Friends" ? "_selected" : ""), @id = "panel_link_friends" })
+        @Ajax.ActionLink(@Resources.Words.Messages, "Messages", "HomePage", null,
+            new AjaxOptions { OnBegin = "MessagesBegin", OnSuccess = "MessagesSuccess", LoadingElementId = "panelbar_loading", LoadingElementDuration = 100, HttpMethod = "Get", UpdateTargetId = "panel" },
+            new { @class = "panel_link" + (@ViewBag.DefaultPage == "Messages" ? "_selected" : ""), @id = "panel_link_messages" })
+        <div id="security"></div>
+        @Ajax.ActionLink(@Resources.Words.PrivacySettings, "Privacy", "HomePage", null,
+            new AjaxOptions { OnBegin = "PrivacyBegin", OnSuccess = "PrivacySuccess", LoadingElementId = "panelbar_loading", LoadingElementDuration = 100, HttpMethod = "Get", UpdateTargetId = "panel" },
+            new { @class = "panel_link" + (@ViewBag.DefaultPage == "Privacy" ? "_selected" : ""), @id = "panel_link_privacy" })
+
+        @Ajax.ActionLink(@Resources.Words.NewsFeedSettings, "NewsFeedSettings", "HomePage", null,
+            new AjaxOptions { OnBegin = "NewsFeedSettingsBegin", OnSuccess = "NewsFeedSettingsSuccess", LoadingElementId = "panelbar_loading", LoadingElementDuration = 100, HttpMethod = "Get", UpdateTargetId = "panel" },
+            new { @class = "panel_link" + (@ViewBag.DefaultPage == "NewsFeedSettings" ? "_selected" : ""), @id = "panel_link_newsfeed" })
+        
+        @Ajax.ActionLink(@Resources.Words.AccountSettings, "AccountSettings", "HomePage", null,
+            new AjaxOptions { OnBegin = "AccountSettingsBegin", OnSuccess = "AccountSettingsSuccess", LoadingElementId = "panelbar_loading", LoadingElementDuration = 100, HttpMethod = "Get", UpdateTargetId = "panel" },
+            new { @class = "panel_link" + (@ViewBag.DefaultPage == "AccountSettings" ? "_selected" : ""), @id = "panel_link_account_settings" })
+        @Ajax.ActionLink(@Resources.Words.EmailInformingSettings, "MailNotifications", "HomePage", null,
+            new AjaxOptions { OnBegin = "MailInformsBegin", OnSuccess = "MailInformsSuccess", LoadingElementId = "panelbar_loading", LoadingElementDuration = 100, HttpMethod = "Get", UpdateTargetId = "panel" },
+            new { @class = "panel_link" + (@ViewBag.DefaultPage == "MailInforms" ? "_selected" : ""), @id = "panel_link_mail_informs" })
+        @Ajax.ActionLink(@Resources.Words.DeleteAccount, "DeleteAccount", "HomePage", null,
+            new AjaxOptions { OnBegin = "DeleteAccountBegin", OnSuccess = "DeleteAccountSuccess", LoadingElementId = "panelbar_loading", LoadingElementDuration = 100, HttpMethod = "Get", UpdateTargetId = "panel" },
+                 new { @class = "panel_link" + (@ViewBag.DefaultPage == "DeleteAccount" ? "_selected" : ""), @id = "panel_link_delete_account" })
+        if (Model.IsUserAdmin)
+        {
+            <div id="administration"></div>
+            if (Model.UserHasAccessToSpecialPosts)
+            {
+                @Html.ActionLink(Resources.Words.SpecialPosts, "SpecialPosts", "Admin", null,
+                new { @class = "panel_link" + (ViewBag.DefaultPage == "SpecialPosts" ? "_selected" : ""), @id = "panel_link_special_posts" });
+            }
+            if(Model.UserHasAccessToObjectChecker)
+            {
+                @Html.ActionLink(Resources.Words.ObjectChecker, "ObjectChecker", "Admin", null,
+                new { @class = "panel_link" + (ViewBag.DefaultPage == "ObjectChecker" ? "_selected" : ""), @id = "panel_link_object_checker" });
+            }
+            if (Model.UserHasAccessToPages)
+            {
+                @Html.ActionLink(Resources.Words.Pages, "Pages", "Admin", null,
+                new { @class = "panel_link" + (ViewBag.DefaultPage == "Pages" ? "_selected" : ""), @id = "panel_link_pages" });
+            }
+            if (Model.UserHasAccessToAdvs)
+            {
+                @Html.ActionLink(Resources.Words.PixelAdv, "PixelAdv", "Admin", null,
+                new { @class = "panel_link" + (ViewBag.DefaultPage == "PixelAdv" ? "_selected" : ""), @id = "panel_link_pixel_adv" });
+            }
+        }
+    }
+    else
+    {
+        <div class="anonymous_menu">
+            @Html.ActionLink(Resources.Words.RegisterInSocialNet, "Register", "Account")
+            @Html.ActionLink(Resources.Words.LoginToSocialNet, "Login", "Account")
+            @Html.ActionLink(Resources.Words.SearchPeople, "Search", "Members")
+            @Html.ActionLink(Resources.Words.Rules, "Rules", "Pages")
+            @Html.ActionLink(Resources.Words.Help, "Help", "Pages")
+        </div>
+        <div class="clear"></div>
+    }
+</div>

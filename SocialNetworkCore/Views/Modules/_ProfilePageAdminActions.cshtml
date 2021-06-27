@@ -1,0 +1,40 @@
+﻿@using SocialNetApp.Views.Models.Modules;
+@model ProfilePageAdminActionsModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_ProfilePageAdminActionsHeadTags.min.js")"></script>
+<div id="pp_admin_actions">
+
+    @{
+        //block/unblock:
+        @Ajax.ActionLink((Model.ProfileOwner.IsBlocked  ? Resources.Words.UnBlockMember : Resources.Words.BlockMember), "ToggleMemberBlock", "Admin", new { id = Model.ProfileOwner.Alias }, new AjaxOptions { HttpMethod = "Post", OnBegin = "ToggleMemberBlockBegin", OnSuccess = "ToggleMemberBlockSuccess" }, new { @id = "ppbtn_tgl_mem_block" })
+        //delete cover:
+        if (Model.HasProfileCover)
+        {
+            @Ajax.ActionLink(Resources.Words.DeleteProfileCoverPhoto, "DeleteMemberProfileCover", "Admin", 
+            new { id = Model.ProfileOwner.Alias }, 
+            new AjaxOptions 
+            { 
+                HttpMethod = "Post", 
+                OnBegin = "DeleteMemberProfileCoverBegin", 
+                OnSuccess = "DeleteMemberProfileCoverSuccess",
+                Confirm = Resources.Messages.AreYouSure
+            }, 
+            new { @id = "ppbtn_del_prof_cover" })
+        }
+        //set as manage:
+        if (Model.CanUserSetManager)
+        {
+            @Ajax.ActionLink(Model.IsProfileOwnerManager ? Resources.Words.UnsetManagerButtonTitle : Resources.Words.SetManagerButtonTitle, 
+            "ShowManagerSettingDialog", "Admin", 
+            new { id = Model.ProfileOwner.Alias }, 
+            new AjaxOptions 
+            { 
+                HttpMethod = "Post", 
+                UpdateTargetId = "dialog_view", 
+                OnFailure = "ShowDialogFailure",
+                OnBegin = "ShowManagerSettingDialogBegin", 
+            }, 
+            new { @id = "ppbtn_del_prof_cover" })
+        }
+    }
+
+</div>

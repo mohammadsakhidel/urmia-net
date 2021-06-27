@@ -1,0 +1,17 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model MemberBriefModel
+<div class="@("member_brief" + (Model.RowStyle == "even" ? " member_brief_even" : " member_brief_odd"))" style="@("width: " + (int)(100 / Model.ContainerCols) + "%;")">
+    @if (Model.IsMemberOnline)
+    {
+        <div class="online_icon" title="@Resources.Words.Online"></div>
+    }
+    <div class="member_brief_thumb">
+        @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.ThumbUserIdentityModel);}
+    </div>
+    <div class="member_brief_in">
+        @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.NameUserIdentityModel);}
+        <span class="gender_age">@(Model.GenderText + " - " + Model.Member.Age + " " + Resources.Words.YearsOld)</span>
+    </div>
+    <div class="clear"></div>
+</div>

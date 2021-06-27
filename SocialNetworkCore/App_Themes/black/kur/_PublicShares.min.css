@@ -1,0 +1,41 @@
+﻿#public_shares #ps_content
+{
+    float: left;
+    width: 500px;
+}
+
+#public_shares #ps_bar
+{
+    float: right;
+    width: 224px;
+    min-height: 500px;
+}
+
+#public_shares .ps_title
+{
+    padding: 0 0 3px 0;
+    margin-top: 20px;
+    border-top: solid 1px #333132;
+}
+
+#public_shares .ps_title > div
+{
+    background-color: #333132;
+    margin: 0 0 0 10px;
+    padding: 2px 5px 3px 5px;
+    text-align: center;
+    width: 70px;
+    position: relative;
+    top: -10px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
+#public_shares .ps_title h2
+{
+    margin: 0;
+    padding: 0;
+    font-size: 7.5pt;
+    font-weight: normal;
+    color: #ffffff;
+}

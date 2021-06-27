@@ -1,0 +1,23 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@using SocialNetApp.Views.Models.Account
+@model RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Layouts/_Frame.cshtml";
+}
+@section head{
+    <title>
+        @Resources.Words.RegisterInSocialNet
+        @Strings.TitleSeparator
+        @Resources.Titles.StaticPageTitle
+    </title>
+}
+@section title{
+    @Resources.Words.RegisterInSocialNet
+}
+@section content{
+    @{ Html.RenderPartial(Urls.ModuleViews + "_Register.cshtml", Model.RegisterModel); }
+    <div class="clear">
+    </div>
+}

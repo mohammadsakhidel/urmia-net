@@ -1,0 +1,50 @@
+﻿@using CoreHelpers
+@model SocialNetApp.Views.Models.Modules.AlbumEditorModel
+@{
+    var action = Model.FormAction;
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/_AlbumEditorHeadTags.min.js")"></script>
+<div id="album_editor">
+    <div class="viewpart_title">
+        <h2>@(action == FormAction.Edit ? @Resources.Words.EditAlbumDetails : @Resources.Words.CreateNewAlbum)</h2>
+    </div>
+    <div class="viewpart_content">
+        <div class="border">
+            @Html.ActionLink(Resources.Words.ReturnTo + " " + Resources.Words.AlbumsList, "Photos", "HomePage", null, new { @class = "ic_link return" })
+        </div>
+        @using (Ajax.BeginForm((action == FormAction.Edit ? "EditAlbum" : "CreateAlbum"), "Photos", new AjaxOptions { HttpMethod = "Post", LoadingElementId = "SaveFormLoading", OnBegin = "SaveBegin", OnFailure = "SaveFailure", OnSuccess = "SaveSuccess", OnComplete = "SaveComplete" }))
+        {
+            <input type="hidden" name="Id" value="@(action == FormAction.Edit ? Model.Album.Id.ToString() : "0")" />
+            <input type="hidden" name="MemberId" value="@User.Identity.Name" />
+            <table border="0">
+                <tr>
+                    <td class="tdlbl">
+                        <label for="Name">@Resources.Words.AlbumName:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="Name" id="Name" value="@(Model.HasAlbum ? Model.Album.Name : "")" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label for="Description">@Resources.Words.Description:</label>
+                    </td>
+                    <td>
+                        <textarea name="Description" id="Description">@(Model.HasAlbum ? Model.Album.Description : "")</textarea>
+                    </td>
+                </tr>
+            </table>
+            <div class="form_submit_sec">
+                <input type="submit" value="@(action == CoreHelpers.FormAction.Edit ? Resources.Words.Save : Resources.Words.Create)" />
+                <div id="SaveFormLoading" class="loading_small hide">
+                </div>
+                <div class="hide" id="msg_save">
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        }
+        <input id="ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />
+        <input id="msg_errors_title" type="hidden" value="@Resources.Messages.ListOfErrorsTitle" />
+    </div>
+</div>

@@ -1,0 +1,82 @@
+﻿div.notification
+{
+    position: relative;
+    padding: 5px;
+}
+
+div.not_new {
+    background-color: #fdf8d5;
+}
+
+div.notification div.not_time
+{
+    position: absolute;
+    left:70px;
+    top: 0;
+    font-size: 6.5pt;
+    color: #c7c8ca;
+}
+
+div.notification div.not_actor
+{
+    float: right;
+}
+
+div.notification div.not_content
+{
+    float: right;
+    margin: 0px 5px 0 0;
+    max-width: 350px;
+    color: #808285;
+    line-height: 18px;
+}
+
+div.notification a.not_thumb {
+    display: block;
+    float: left;
+}
+
+    div.notification a.not_thumb img {
+        float: left;
+        width: 45px;
+        border: solid 1px #adadad;
+        padding: 1px;
+    }
+
+    div.notification a.not_thumb img:hover {
+        background-color: #353535;
+        border: solid 1px #353535;
+        padding: 1px;
+    }
+
+
+div.notification span.not_quote
+{
+    font-style: italic;
+    color: #414042;
+}
+/* like notification */
+div.notification div.likenot_in
+{
+    margin-top: 10px;
+}
+/* comment notification */
+div.notification div.commnot_in
+{
+    margin-top: 2px;
+}
+/* share notification */
+div.notification div.sharenot_in
+{
+    margin-top: 10px;
+}
+/* wallpost notification */
+div.notification div.wallpost_in
+{
+    margin-top: 10px;
+}
+/* accept request notification */
+div.notification div.accreq_in
+{
+    margin-top: 10px;
+}

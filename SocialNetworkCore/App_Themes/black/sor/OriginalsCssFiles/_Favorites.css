@@ -1,0 +1,50 @@
+﻿#favorites select
+{
+    min-width: 60px;
+}
+
+#favorites table td
+{
+    padding-bottom: 5px;
+}
+
+#favorites select[name="Height"], #favorites select[name="Weight"], #favorites select[name="MaritalStatus"]
+{
+    width: 160px;
+}
+
+#favorites select[name="AgeFrom"], #favorites select[name="AgeTo"]
+{
+    width: 100px;
+}
+
+#favorites textarea
+{
+    width: 280px;
+    height: 50px;
+}
+
+#other_favorite_things > div
+{
+    float: right;
+    margin: 0 0 20px 20px;
+}
+
+#favorites .form_submit_sec input[type="submit"]
+{
+    float: right;
+}
+
+#favorites .form_submit_sec .loading_small
+{
+    float: right;
+    margin: 5px 5px 0 0;
+}
+
+#favorites #msg_save
+{
+    float: right;
+    margin: 0 50px 0 0;
+    min-width: 300px;
+    max-width: 500px;
+}

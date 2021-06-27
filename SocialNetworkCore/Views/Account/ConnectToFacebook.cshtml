@@ -1,0 +1,22 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Account
+@model ConnectToFacebookViewModel
+@{
+    Layout = "~/Views/Layouts/_Frame.cshtml";
+}
+
+@section head{
+    <title>
+        @Resources.Words.ConnectToFacebook
+        @Strings.TitleSeparator
+        @Resources.Titles.StaticPageTitle
+    </title>
+}
+@section title{
+    @Resources.Words.ConnectToFacebook
+}
+@section content{
+    @{
+        Html.RenderPartial(Urls.ModuleViews + "_FacebookConnect.cshtml", Model.FacebookConnectModel);
+    }
+}

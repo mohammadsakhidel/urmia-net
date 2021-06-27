@@ -1,0 +1,22 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Models
+@model SocialNetApp.Views.Models.Pages.PageViewModel
+@{
+    ViewBag.Title = "Page";
+    Layout = "~/Views/Layouts/_Frame.cshtml";
+}
+@section head{
+    <title>
+        @Model.PageContent.Title
+        @Strings.TitleSeparator
+        @Resources.Titles.StaticPageTitle
+    </title>
+}
+@section title{
+    @Model.PageContent.Title
+}
+@section content{
+    <div class="page">
+        @Html.Raw(Model.PageContent.Content)
+    </div>
+}

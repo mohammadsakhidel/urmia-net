@@ -1,0 +1,47 @@
+﻿div#special_posts #spec_post_settings
+{
+    margin-top: 5px;
+}
+
+div#special_posts #spec_post_settings .show_meth_sel
+{
+    float: right;
+}
+
+div#special_posts #spec_post_settings .spec_post_submit
+{
+    float: left;
+}
+
+div#special_posts #spec_post_settings div.loading_small_circle
+{
+    margin: 5px 0 0 5px;
+    float: left;
+}
+
+div#special_posts #spec_post_settings input[type="submit"]
+{
+    width: 60px;
+    float: left;
+}
+
+div#special_posts div.error_message, div#special_posts div.success_message
+{
+    padding: 5px;
+    margin-top: 15px;
+}
+
+div#special_posts #spec_posts_list
+{
+    margin-top: 15px;
+}
+
+div#special_posts #spec_posts_list div.special_post
+{
+    margin-top: 10px;
+}
+
+div#special_posts #spec_posts_list div.special_post:nth-child(1)
+{
+    margin-top: 0;
+}

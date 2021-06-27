@@ -1,0 +1,34 @@
+﻿@using SocialNetApp.Models
+@using CoreHelpers
+@model SocialNetApp.Views.Models.Modules.MemberConsiderationsDialogModel
+@if (Model.IsUserAdmin)
+{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/_MemberConsiderationsDialogHeadTags.min.js")"></script>
+    <div id="mem_considerations_dialog">
+        <div class="dialog_title">
+            <a class="dialog_close" onclick="HideDialog();"></a>
+            <h2>@Resources.Words.Considerations</h2>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="dialog_view_in">
+            @using (Ajax.BeginForm("SaveMemberConsiderations", "Admin", null, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "dialog_prg", OnSuccess = "SaveMemberConsiderationsSuccess" }, new { @id = "frm_mem_cons" }))
+            {
+                <input type="hidden" name="MemberId" value="@Model.Member.Email" />
+                <textarea id="txt_mem_cons" name="Considerations" rows="" cols="">@Html.Raw(!String.IsNullOrEmpty(Model.Member.Considerations) ? Model.Member.Considerations : "")</textarea>
+                <div class="dialog_actions">
+                    <a class="cancel" onclick="HideDialog();">@Resources.Words.Cancle</a> <a class="okey"
+                        onclick="submit_mem_considerations();">@Resources.Words.Save</a>
+                    <div id="dialog_prg" class="loading_small_circle hide">
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+                <div id="dialog_msg" class="hide">
+                </div>
+            }
+        </div>
+    </div>
+}

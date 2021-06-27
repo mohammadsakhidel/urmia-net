@@ -1,0 +1,1347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutMe" xml:space="preserve">
+    <value>شرۆڤەیەکی کورت سەبارەت بە خۆت</value>
+  </data>
+  <data name="AboutMe_InProfilePage" xml:space="preserve">
+    <value>سەبارەت بە من</value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>سەبارەت بە ئێمە</value>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>ڕێککەوتن</value>
+  </data>
+  <data name="AccountActivation" xml:space="preserve">
+    <value>چالاککردنی هەژمار</value>
+  </data>
+  <data name="AccountSettings" xml:space="preserve">
+    <value>ڕێکخستنەکانی هەژمار</value>
+  </data>
+  <data name="AccountStatus" xml:space="preserve">
+    <value>دۆخی هەژمار</value>
+  </data>
+  <data name="Acount" xml:space="preserve">
+    <value>هەژمار</value>
+  </data>
+  <data name="ActivationCode" xml:space="preserve">
+    <value>کۆدی چالاککردن</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>چالاک</value>
+  </data>
+  <data name="ActiveAccount" xml:space="preserve">
+    <value>چالاککردنی هەژمار</value>
+  </data>
+  <data name="AddToList" xml:space="preserve">
+    <value>زێدە کردن بە لیست</value>
+  </data>
+  <data name="Ads" xml:space="preserve">
+    <value>ڕێکلام</value>
+  </data>
+  <data name="Advertising" xml:space="preserve">
+    <value>ڕێکلام کردن</value>
+  </data>
+  <data name="AgeFrom" xml:space="preserve">
+    <value>کەمترین تەمەن</value>
+  </data>
+  <data name="AgeTo" xml:space="preserve">
+    <value>زۆرترین تەمەن</value>
+  </data>
+  <data name="AlbumName" xml:space="preserve">
+    <value>سەردێڕی ئەلبوم</value>
+  </data>
+  <data name="AlbumsAndPhotos" xml:space="preserve">
+    <value>ئەلبومەکان و وێنەکان</value>
+  </data>
+  <data name="AlbumsList" xml:space="preserve">
+    <value>لیستی ئەلبومی وێنەکان</value>
+  </data>
+  <data name="Album_Plural" xml:space="preserve">
+    <value>ئەلبوم</value>
+  </data>
+  <data name="AliasName" xml:space="preserve">
+    <value>ناوی ئەندامیەتی</value>
+  </data>
+  <data name="AllowCommentTo" xml:space="preserve">
+    <value>ئیجازەی بۆچوون بۆ</value>
+  </data>
+  <data name="AllowSendFriendshipRequests" xml:space="preserve">
+    <value>ڕێگەی ناردنی داواکاری هاورێیەتی بدرێت؟</value>
+  </data>
+  <data name="And" xml:space="preserve">
+    <value>و</value>
+  </data>
+  <data name="BasicInfo" xml:space="preserve">
+    <value>زانیاریە کەسیەکان</value>
+  </data>
+  <data name="BasicSpecifications" xml:space="preserve">
+    <value>زانیاریە سەرەتاییەکان</value>
+  </data>
+  <data name="BeginChat" xml:space="preserve">
+    <value>دەستپێکردنی وتووێژ</value>
+  </data>
+  <data name="BeginDate" xml:space="preserve">
+    <value>بەرواری دەستپێکردن</value>
+  </data>
+  <data name="Behavior" xml:space="preserve">
+    <value>هەڵسووکەوت</value>
+  </data>
+  <data name="BirthDay" xml:space="preserve">
+    <value>ڕۆژی لەدایکبوون</value>
+  </data>
+  <data name="Blocked" xml:space="preserve">
+    <value>بەربەست کراو</value>
+  </data>
+  <data name="BlockMember" xml:space="preserve">
+    <value>بەربەست کردنی هەژمار</value>
+  </data>
+  <data name="BlockUsers" xml:space="preserve">
+    <value>بەربەست کردنی بەکارهێنەران</value>
+  </data>
+  <data name="CancelFriendshipRequest" xml:space="preserve">
+    <value>پاشگەزبوونەوە لە داواکاری هاوڕییەتی</value>
+  </data>
+  <data name="Cancle" xml:space="preserve">
+    <value>پاشگەزبوونەوە</value>
+  </data>
+  <data name="ChangeCoverActivityTitle_Part1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ChangeCoverActivityTitle_Part2" xml:space="preserve">
+    <value>گۆڕاوە.</value>
+  </data>
+  <data name="ChangeInfoActivityTitle_Part1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ChangeInfoActivityTitle_Part2" xml:space="preserve">
+    <value>گۆڕاوە.</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>گۆڕینی نهێنوشە</value>
+  </data>
+  <data name="ChangeProfilePhotoActivityTitle_Part1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ChangeProfilePhotoActivityTitle_Part2" xml:space="preserve">
+    <value>گۆڕاوە.</value>
+  </data>
+  <data name="Charge" xml:space="preserve">
+    <value>کڕینی باڵانسی مۆبایل</value>
+  </data>
+  <data name="ChatDialogTitle" xml:space="preserve">
+    <value>وتووێژی زیندوو</value>
+  </data>
+  <data name="ChatRooms" xml:space="preserve">
+    <value>ژووری وتووێژ</value>
+  </data>
+  <data name="ChatSessionsTitle" xml:space="preserve">
+    <value>وتووێژە چالاکەکان</value>
+  </data>
+  <data name="ChooseFileToPost" xml:space="preserve">
+    <value>بۆ هەڵبژاردنی پەرگە کرتە بکەن...</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>دای بخە</value>
+  </data>
+  <data name="CloseDialog" xml:space="preserve">
+    <value>داخستنی پەنجەرە</value>
+  </data>
+  <data name="Comfortable" xml:space="preserve">
+    <value>ئاسوودە</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>بۆچوون</value>
+  </data>
+  <data name="CommentActivityTitle_Part1" xml:space="preserve">
+    <value>بۆچوونی خۆی سەبارەت بە بابەتی ژێر لە</value>
+  </data>
+  <data name="CommentActivityTitle_Part2" xml:space="preserve">
+    <value>ڕاگەیاند:</value>
+  </data>
+  <data name="ConfirmAndRegister" xml:space="preserve">
+    <value>پەسەندکردنی یاساکان و خۆتۆمارکردن</value>
+  </data>
+  <data name="Considerations" xml:space="preserve">
+    <value>ڕەچاو کردنەکان</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>پەیوەندی لەگەڵ بەڕێوەبەر</value>
+  </data>
+  <data name="CoverImage" xml:space="preserve">
+    <value>وێنەی کەڤەری لاپەڕە</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>ساز کە</value>
+  </data>
+  <data name="CreateNewAlbum" xml:space="preserve">
+    <value>ساز کردنی ئەڵبومی وێنە نوێکان</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>ڕۆژ</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>سڕینەوە</value>
+  </data>
+  <data name="DeleteAccount" xml:space="preserve">
+    <value>سڕینەوەی هەژمار</value>
+  </data>
+  <data name="DeleteAlbum" xml:space="preserve">
+    <value>سڕینەوەی ئەلبوم</value>
+  </data>
+  <data name="DeleteComment" xml:space="preserve">
+    <value>سڕینەوەی بۆچوون</value>
+  </data>
+  <data name="DeleteConversation" xml:space="preserve">
+    <value>سڕینەوەی وتووێژ</value>
+  </data>
+  <data name="DeleteConversationDialogTitle" xml:space="preserve">
+    <value>سڕینەوەی وتووێژ</value>
+  </data>
+  <data name="DeletedAccount" xml:space="preserve">
+    <value>هەژماری سڕاوە</value>
+  </data>
+  <data name="DeletePhoto" xml:space="preserve">
+    <value>سڕینەوەی وێنە</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>شرۆڤە</value>
+  </data>
+  <data name="Direction" xml:space="preserve">
+    <value>rtl</value>
+  </data>
+  <data name="DisplayYouInSearches" xml:space="preserve">
+    <value>لە لیستی ئەنجامی گەڕانەکان بهێنرێت؟</value>
+  </data>
+  <data name="Divorced" xml:space="preserve">
+    <value>جیابوو</value>
+  </data>
+  <data name="DontShowActivity" xml:space="preserve">
+    <value>حەز ناکەم ئیتر ئەمە ببینم</value>
+  </data>
+  <data name="DontShowOwner1" xml:space="preserve">
+    <value>چالاکییەکانی</value>
+  </data>
+  <data name="DontShowOwner2" xml:space="preserve">
+    <value>بە من نیشان مەدە.</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>هەڵەگرتن</value>
+  </data>
+  <data name="EditAlbumDetails" xml:space="preserve">
+    <value>دەستکاریکردنی وردەکارییەکانی ئەلبوم</value>
+  </data>
+  <data name="EditAlbumPhotos" xml:space="preserve">
+    <value>دەستکاریکردنی وێنەکانی ئەلبوم</value>
+  </data>
+  <data name="EditComment" xml:space="preserve">
+    <value>دەستکاریکردنی بۆچوون</value>
+  </data>
+  <data name="EditCover" xml:space="preserve">
+    <value>دەستکاریکردنی وێنەی کەڤەر</value>
+  </data>
+  <data name="EditDetails" xml:space="preserve">
+    <value>دەستکاریکردنی وردەکارییەکان</value>
+  </data>
+  <data name="EditPhotos" xml:space="preserve">
+    <value>دەستکاریکردنی وێنەکان</value>
+  </data>
+  <data name="EditThumbnail" xml:space="preserve">
+    <value>وێنەی بچووک</value>
+  </data>
+  <data name="EducationActivityTitle" xml:space="preserve">
+    <value>سەردەمی خوێندنی خوارەوەی بە لیستی خوێندنەکەی زێدە کرد:</value>
+  </data>
+  <data name="EducationBranch" xml:space="preserve">
+    <value>بواری خوێندن</value>
+  </data>
+  <data name="EducationDuration" xml:space="preserve">
+    <value>ماوەی خوێندن</value>
+  </data>
+  <data name="EducationLevel" xml:space="preserve">
+    <value>پلەی خوێندن</value>
+  </data>
+  <data name="EducationLevelForSearch" xml:space="preserve">
+    <value>ئاستی خوێندن</value>
+  </data>
+  <data name="EducationLocation" xml:space="preserve">
+    <value>شوێنی خویندن</value>
+  </data>
+  <data name="Educations" xml:space="preserve">
+    <value>خوێندن</value>
+  </data>
+  <data name="EducationsAndSkills" xml:space="preserve">
+    <value>خوێندنەکان و توانایی</value>
+  </data>
+  <data name="EduLevel_Bachelor" xml:space="preserve">
+    <value>کارناسی (بەکالۆریۆس)</value>
+  </data>
+  <data name="EduLevel_Diploma" xml:space="preserve">
+    <value>دبلۆم</value>
+  </data>
+  <data name="EduLevel_DrAndHigher" xml:space="preserve">
+    <value>دوکتۆرا و سەرتر</value>
+  </data>
+  <data name="EduLevel_FogheBachelor" xml:space="preserve">
+    <value>کارناسی باڵا (ماستەر)</value>
+  </data>
+  <data name="EduLevel_FogheDiploma" xml:space="preserve">
+    <value>کارزانی</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>ئیمەیل</value>
+  </data>
+  <data name="EmailConfirm" xml:space="preserve">
+    <value>دووبارەکردنەوەی ئیمەیل</value>
+  </data>
+  <data name="EmailInformingSettings" xml:space="preserve">
+    <value>ئیمەیلە ئاگاکەرەوەکان</value>
+  </data>
+  <data name="Emoticons" xml:space="preserve">
+    <value>شێوازۆک</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>بەرواری کۆتایی</value>
+  </data>
+  <data name="ErrorAccoured" xml:space="preserve">
+    <value>هەڵەیەک ڕووی داوە</value>
+  </data>
+  <data name="ErrorDialogTitle" xml:space="preserve">
+    <value>هەڵەیەک ڕووی داوە</value>
+  </data>
+  <data name="Fashion" xml:space="preserve">
+    <value>شێوە و باو</value>
+  </data>
+  <data name="FavoriteBooks" xml:space="preserve">
+    <value>پەرتووکە دڵخوازەکان</value>
+  </data>
+  <data name="FavoriteMovies" xml:space="preserve">
+    <value>فیلمە دڵخوازەکان</value>
+  </data>
+  <data name="FavoriteMusic" xml:space="preserve">
+    <value>مۆسیقای دڵخواز</value>
+  </data>
+  <data name="FavoritePerson" xml:space="preserve">
+    <value>تایبەتمەندی ئەو کەسەی وا بۆ هاوڕێیەتی پەسەندی ئەکەن.</value>
+  </data>
+  <data name="FavoriteQuotes" xml:space="preserve">
+    <value>وتە وەرگیراوە دڵخوازەکان</value>
+  </data>
+  <data name="Favorites" xml:space="preserve">
+    <value>دڵخوازەکان</value>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>ژن</value>
+  </data>
+  <data name="FooterText" xml:space="preserve">
+    <value>Raman IT Group - گرووپی تەکنۆلۆژیای زانیاری رامان</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>نهێنوشەکەم لە بیر نەماوە</value>
+  </data>
+  <data name="Friends" xml:space="preserve">
+    <value>هاوڕێیان</value>
+  </data>
+  <data name="FriendsTitle" xml:space="preserve">
+    <value>لیستی هاوڕێیان</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>لە</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>ناو و شورەت</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>ڕەگەز</value>
+  </data>
+  <data name="Height" xml:space="preserve">
+    <value>بەرزی</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>ڕێنوێنی بەکارهێنان</value>
+  </data>
+  <data name="Her" xml:space="preserve">
+    <value>خۆی</value>
+  </data>
+  <data name="Hide" xml:space="preserve">
+    <value>بیشارەوە</value>
+  </data>
+  <data name="His" xml:space="preserve">
+    <value>خۆی</value>
+  </data>
+  <data name="HisProfileCover" xml:space="preserve">
+    <value>وێنەی کەڤەری لاپەڕەکەی</value>
+  </data>
+  <data name="HisProfileInfo" xml:space="preserve">
+    <value>زانیاری لاپەڕەکەی</value>
+  </data>
+  <data name="HisProfilePhoto" xml:space="preserve">
+    <value>وێنەی ڕوونوێنی پرۆفایلەکەی</value>
+  </data>
+  <data name="Hobbies" xml:space="preserve">
+    <value>سەرگەرمی و بابەتە دڵخوازەکان</value>
+  </data>
+  <data name="Homepage" xml:space="preserve">
+    <value>پەڕەی سەرەتایی</value>
+  </data>
+  <data name="HomePixelAdvText" xml:space="preserve">
+    <value>بۆ ڕیکلام کردن یا بەدەستهێنانی زانیاری زۆرتر، کرتە بکەن.</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>پێناسە</value>
+  </data>
+  <data name="In" xml:space="preserve">
+    <value>لە</value>
+  </data>
+  <data name="InFieldOf" xml:space="preserve">
+    <value>لە بواری</value>
+  </data>
+  <data name="InfoSummary" xml:space="preserve">
+    <value>کورتەی زانیاری</value>
+  </data>
+  <data name="InRelationship" xml:space="preserve">
+    <value>لە پەیوەندی</value>
+  </data>
+  <data name="IsAlbumCover" xml:space="preserve">
+    <value>وێنەی ڕوونوێنی ئەلبوم</value>
+  </data>
+  <data name="IsProfileCover" xml:space="preserve">
+    <value>وینەی کەڤەری لاپەڕە</value>
+  </data>
+  <data name="IsProfilePhoto" xml:space="preserve">
+    <value>وێنەی ڕوونوێنی لاپەڕە</value>
+  </data>
+  <data name="Jean" xml:space="preserve">
+    <value>جین</value>
+  </data>
+  <data name="JustSearchOnlines" xml:space="preserve">
+    <value>تەنیا ئەندامە لەسەر هێڵەکان</value>
+  </data>
+  <data name="JustWithPP" xml:space="preserve">
+    <value>تەنیا ئەندامانی خاوەن وێنەی لاپەڕە</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>زمانی ماڵپەڕ</value>
+  </data>
+  <data name="LastActivity" xml:space="preserve">
+    <value>دوایین چالاکی</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>شورەت</value>
+  </data>
+  <data name="LessThan" xml:space="preserve">
+    <value>کەمتر لە</value>
+  </data>
+  <data name="Like" xml:space="preserve">
+    <value>بەدڵمە</value>
+  </data>
+  <data name="LikeCommentActivityTitle_Part1" xml:space="preserve">
+    <value>بۆچوونی نێردراوی ژێری لە لایەن</value>
+  </data>
+  <data name="LikeCommentActivityTitle_Part2" xml:space="preserve">
+    <value>بەدڵە:</value>
+  </data>
+  <data name="LikesDialogTitle" xml:space="preserve">
+    <value>کەسانێک وا ئەمەیان بە دڵە</value>
+  </data>
+  <data name="LikeSharedObjectActivityTitle_Part1" xml:space="preserve">
+    <value>بابەتی خوارەوەی لە لایەن</value>
+  </data>
+  <data name="LikeSharedObjectActivityTitle_Part2" xml:space="preserve">
+    <value>بەدڵە:</value>
+  </data>
+  <data name="Links" xml:space="preserve">
+    <value>بەستەرەکان</value>
+  </data>
+  <data name="ListOfRecievers" xml:space="preserve">
+    <value>وەرگرەکانی پەیام</value>
+  </data>
+  <data name="LockedOut" xml:space="preserve">
+    <value>کلیلدراوە</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>چوونەژوورەوە</value>
+  </data>
+  <data name="LoginToSocialNet" xml:space="preserve">
+    <value>چوونەژوورەوە بۆ vKurdistan</value>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>چوونەدەرەوە</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>پیاو</value>
+  </data>
+  <data name="MaritalStatus" xml:space="preserve">
+    <value>باری هاوسەرێتی</value>
+  </data>
+  <data name="MarkAllAsRead" xml:space="preserve">
+    <value>نیشانکردنی هەموویان بەواتای خوێندراو</value>
+  </data>
+  <data name="Married" xml:space="preserve">
+    <value>خێزان دار</value>
+  </data>
+  <data name="Messages" xml:space="preserve">
+    <value>پەیامەکان</value>
+  </data>
+  <data name="MessagesCount" xml:space="preserve">
+    <value>ژمارەی پەیامەکان</value>
+  </data>
+  <data name="MobNumber" xml:space="preserve">
+    <value>ژمارەی مۆبایل</value>
+  </data>
+  <data name="Modern" xml:space="preserve">
+    <value>سەردەمیانە</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>مانگ</value>
+  </data>
+  <data name="Month1" xml:space="preserve">
+    <value>کانوونی دووەم</value>
+  </data>
+  <data name="Month10" xml:space="preserve">
+    <value>تشرینی یەکەم</value>
+  </data>
+  <data name="Month11" xml:space="preserve">
+    <value>تشرینی دووەم</value>
+  </data>
+  <data name="Month12" xml:space="preserve">
+    <value>کانوونی یەکەم</value>
+  </data>
+  <data name="Month2" xml:space="preserve">
+    <value>شوبات</value>
+  </data>
+  <data name="Month3" xml:space="preserve">
+    <value>ئازار</value>
+  </data>
+  <data name="Month4" xml:space="preserve">
+    <value>نیسان</value>
+  </data>
+  <data name="Month5" xml:space="preserve">
+    <value>ئایار</value>
+  </data>
+  <data name="Month6" xml:space="preserve">
+    <value>حوزەیران</value>
+  </data>
+  <data name="Month7" xml:space="preserve">
+    <value>تەمموز</value>
+  </data>
+  <data name="Month8" xml:space="preserve">
+    <value>ئاب</value>
+  </data>
+  <data name="Month9" xml:space="preserve">
+    <value>ئەیلوول</value>
+  </data>
+  <data name="MoreThan" xml:space="preserve">
+    <value>زۆرتر لە</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>ناو</value>
+  </data>
+  <data name="NewFeedUnwantedUsers" xml:space="preserve">
+    <value>لیستی ڕەشی هەواڵە نوێکان</value>
+  </data>
+  <data name="NewMessage" xml:space="preserve">
+    <value>ناردنی پەیامی نوێ</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>نهێنوشەی نوێ</value>
+  </data>
+  <data name="NewPasswordConfirm" xml:space="preserve">
+    <value>دووبارەکردنەوەی نهێنوشەی نوێ</value>
+  </data>
+  <data name="NewsFeed" xml:space="preserve">
+    <value>هەواڵە نوێکان</value>
+  </data>
+  <data name="NewsFeedDegreeOfInforming" xml:space="preserve">
+    <value>ڕێکخستنی شێوازی ڕاگەیاندن لە هەواڵە نوێکان</value>
+  </data>
+  <data name="NewsFeedSettings" xml:space="preserve">
+    <value>ڕێکخستنی هەواڵە نوێکان</value>
+  </data>
+  <data name="NewsFeedViewChangeCover" xml:space="preserve">
+    <value>گۆڕینی کەڤەری لاپەڕە</value>
+  </data>
+  <data name="NewsFeedViewChangeInfo" xml:space="preserve">
+    <value>گۆڕینی زانیاریەکانی لاپەڕە</value>
+  </data>
+  <data name="NewsFeedViewChangePP" xml:space="preserve">
+    <value>گۆڕینی وێنەی ڕووێنی لاپەڕە</value>
+  </data>
+  <data name="NewsFeedViewComments" xml:space="preserve">
+    <value>بۆچوونە نێردراوەکان</value>
+  </data>
+  <data name="NewsFeedViewEducations" xml:space="preserve">
+    <value>زێدەکردنی سەردەمی خوێندن</value>
+  </data>
+  <data name="NewsFeedViewLikes" xml:space="preserve">
+    <value>پەسەندەکان</value>
+  </data>
+  <data name="NewsFeedViewPhotos" xml:space="preserve">
+    <value>وێنەکان</value>
+  </data>
+  <data name="NewsFeedViewPosts" xml:space="preserve">
+    <value>نێردراوەکان</value>
+  </data>
+  <data name="NewsFeedViewShares" xml:space="preserve">
+    <value>پارڤە کراوەکان</value>
+  </data>
+  <data name="NewsFeedViewSkills" xml:space="preserve">
+    <value>زێدەکردنی توانایی</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>ئەوی تر</value>
+  </data>
+  <data name="NotApproved" xml:space="preserve">
+    <value>چالاک نەکراو</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>ئاگادارکەرەوەکان</value>
+  </data>
+  <data name="NotificationTxt_AcceptRequest" xml:space="preserve">
+    <value>داواکاری هاورێیەتی ئێوەی قەبووڵ کرد.</value>
+  </data>
+  <data name="NotificationTxt_AlsoComment_Part1" xml:space="preserve">
+    <value>یش بۆچوونی خۆی سەبارەت بە</value>
+  </data>
+  <data name="NotificationTxt_AlsoComment_Part2" xml:space="preserve">
+    <value>ڕاگەیاند</value>
+  </data>
+  <data name="NotificationTxt_Comment_Part1" xml:space="preserve">
+    <value>سەبارەت بە</value>
+  </data>
+  <data name="NotificationTxt_Comment_Part2" xml:space="preserve">
+    <value>ی ئێوە بۆچوونی خۆی ڕاگەیاند</value>
+  </data>
+  <data name="NotificationTxt_CommLike_Part1" xml:space="preserve">
+    <value>بۆچوونی خوارەوە لە ئێوە سەبارەت بە</value>
+  </data>
+  <data name="NotificationTxt_CommLike_Part2" xml:space="preserve">
+    <value>ی پێ خۆشە</value>
+  </data>
+  <data name="NotificationTxt_ObjLike_Part1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NotificationTxt_ObjLike_Part2" xml:space="preserve">
+    <value>ی ئێوەی پێ خۆشە.</value>
+  </data>
+  <data name="NotificationTxt_Share_Part1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NotificationTxt_Share_Part2" xml:space="preserve">
+    <value>ی ئێوەی پارڤە کرد.</value>
+  </data>
+  <data name="NotificationTxt_ThisObject" xml:space="preserve">
+    <value>ئەم بابەتە</value>
+  </data>
+  <data name="NotificationTxt_WallPost_Part1" xml:space="preserve">
+    <value>لەسەر دیواری ئێوە</value>
+  </data>
+  <data name="NotificationTxt_WallPost_Part2" xml:space="preserve">
+    <value>ی نووساوە.</value>
+  </data>
+  <data name="NotImportant" xml:space="preserve">
+    <value>گرنگ نیە</value>
+  </data>
+  <data name="NotPaid" xml:space="preserve">
+    <value>نەدراوە</value>
+  </data>
+  <data name="ObjectChecker" xml:space="preserve">
+    <value>ڕوانینێک لەسەر ناردنەکان</value>
+  </data>
+  <data name="Of" xml:space="preserve">
+    <value>لە</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>نهێنوشەی پێشین</value>
+  </data>
+  <data name="OnComment" xml:space="preserve">
+    <value>بۆچوونە نێردراوەکان</value>
+  </data>
+  <data name="OnFriendshipRequest" xml:space="preserve">
+    <value>داواکاری هاورێیەتی نوێ</value>
+  </data>
+  <data name="OnLike" xml:space="preserve">
+    <value>پەسەندەکان</value>
+  </data>
+  <data name="Online" xml:space="preserve">
+    <value>لەسەر هێڵ</value>
+  </data>
+  <data name="OnNewMessage" xml:space="preserve">
+    <value>پەیامی نوێ</value>
+  </data>
+  <data name="OnShare" xml:space="preserve">
+    <value>پارڤەکراوەکان</value>
+  </data>
+  <data name="OnWallPost" xml:space="preserve">
+    <value>بڵاوکراوەی سەر دیواری ئێوە</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>ڕیز</value>
+  </data>
+  <data name="OtherFavoriteThings" xml:space="preserve">
+    <value>دیکەی دڵخوازییەکان</value>
+  </data>
+  <data name="OtherSpecifications" xml:space="preserve">
+    <value>تایبەتمەندییەکانی تر</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>پەڕە</value>
+  </data>
+  <data name="Pages" xml:space="preserve">
+    <value>پەڕەکان</value>
+  </data>
+  <data name="PaidInCash" xml:space="preserve">
+    <value>بەپارە دراوە</value>
+  </data>
+  <data name="PaidInCheque" xml:space="preserve">
+    <value>بە شێوازی چەک دراوە</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>نهێنوشە</value>
+  </data>
+  <data name="PasswordRecovery" xml:space="preserve">
+    <value>هێنانەوەی نهێنوشە</value>
+  </data>
+  <data name="People" xml:space="preserve">
+    <value>ئەندامانی vKurdistan</value>
+  </data>
+  <data name="PeopleElseLikeThis" xml:space="preserve">
+    <value>کەسی تر ئەمیانە بە دڵە</value>
+  </data>
+  <data name="PeopleLikeThis" xml:space="preserve">
+    <value>کەس ئەمیانە بە دڵە</value>
+  </data>
+  <data name="Photo_Plural" xml:space="preserve">
+    <value>وێنە</value>
+  </data>
+  <data name="PinnedPost" xml:space="preserve">
+    <value>بڵاوکراوەی سەرەکی</value>
+  </data>
+  <data name="PixelAdv" xml:space="preserve">
+    <value>ڕێکلام بە وێنەخاڵ</value>
+  </data>
+  <data name="PixelAdvCost" xml:space="preserve">
+    <value>تێچوو (تمەن)</value>
+  </data>
+  <data name="PixelAdvFree" xml:space="preserve">
+    <value>خۆڕایی</value>
+  </data>
+  <data name="PixelAdvHeightBlocks" xml:space="preserve">
+    <value>ژمارەی خانووە بەرزبووەکان</value>
+  </data>
+  <data name="PixelAdvHome" xml:space="preserve">
+    <value>پەنێلی وێنەخاڵ ی پەڕەی سەرەکی</value>
+  </data>
+  <data name="PixelAdvHomePage" xml:space="preserve">
+    <value>پەنێلی وێنەخاڵ ی ماڵپەڕ</value>
+  </data>
+  <data name="PixelAdvLeftIndex" xml:space="preserve">
+    <value>مەودای چەپ</value>
+  </data>
+  <data name="PixelAdvPaid" xml:space="preserve">
+    <value>بە پارە</value>
+  </data>
+  <data name="PixelAdvPaymentStatus" xml:space="preserve">
+    <value>باری پێدانی پارە</value>
+  </data>
+  <data name="PixelAdvProfilePage" xml:space="preserve">
+    <value>پەنێلی وێنەخاڵ ی لاپەڕەی بەکارهێنەر</value>
+  </data>
+  <data name="PixelAdvTargetAddress" xml:space="preserve">
+    <value>ناونیشانی پەڕەی مەبەست</value>
+  </data>
+  <data name="PixelAdvTopIndex" xml:space="preserve">
+    <value>مەودای سەرەوە</value>
+  </data>
+  <data name="PixelAdvType" xml:space="preserve">
+    <value>جۆری ڕێکلام</value>
+  </data>
+  <data name="PixelAdvWidthBlocks" xml:space="preserve">
+    <value>ژمارەی خانووەکانی پانایی</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>پێشوو</value>
+  </data>
+  <data name="Priority" xml:space="preserve">
+    <value>یەکەمایەتی</value>
+  </data>
+  <data name="PrivacyOfAccess" xml:space="preserve">
+    <value>ڕێکخستنی دەستپێگەیشتن بە زانیارییەکانی ئێوە</value>
+  </data>
+  <data name="PrivacyOfActivities" xml:space="preserve">
+    <value>سنووری تایبەتی چالاکییەکانی ئێوە</value>
+  </data>
+  <data name="PrivacySettings" xml:space="preserve">
+    <value>ڕێکخستنی سنووری تایبەتی</value>
+  </data>
+  <data name="ProfileCover" xml:space="preserve">
+    <value>وێنەی کەڤەری لاپەڕە</value>
+  </data>
+  <data name="ProfileImage" xml:space="preserve">
+    <value>وێنەی ڕوونوێنی لاپەڕە</value>
+  </data>
+  <data name="ProfilePageLink_Activities" xml:space="preserve">
+    <value>چالاکییەکان</value>
+  </data>
+  <data name="ProfilePageLink_Friends" xml:space="preserve">
+    <value>هاوڕێیان</value>
+  </data>
+  <data name="ProfilePageLink_Information" xml:space="preserve">
+    <value>زانیارییەکان</value>
+  </data>
+  <data name="ProfilePageLink_Photos" xml:space="preserve">
+    <value>وێنەکان</value>
+  </data>
+  <data name="ProfilePageLink_TimeLine" xml:space="preserve">
+    <value>دیوار</value>
+  </data>
+  <data name="PublicShares" xml:space="preserve">
+    <value>دیواری گشتی</value>
+  </data>
+  <data name="RandomInActivitiesPost" xml:space="preserve">
+    <value>بڵاوکراوە بە هەڵکەوت</value>
+  </data>
+  <data name="RangeOfAge" xml:space="preserve">
+    <value>پانتایی تەمەن</value>
+  </data>
+  <data name="ReadLess" xml:space="preserve">
+    <value>بیشارەوە</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>زۆرتر بخوێنن</value>
+  </data>
+  <data name="RecommendedOnlines" xml:space="preserve">
+    <value>چ کەسانێک لەسەر هێڵن؟</value>
+  </data>
+  <data name="RecommendedPeople" xml:space="preserve">
+    <value>کەسانی پێشنیارکراو</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>خۆتۆمارکردن</value>
+  </data>
+  <data name="RegisterInSocialNet" xml:space="preserve">
+    <value>خۆتۆمارکردن</value>
+  </data>
+  <data name="Reject" xml:space="preserve">
+    <value>تێپەڕین</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>منت لە بیر بمێنێت</value>
+  </data>
+  <data name="RemoveFriendDialogTitle" xml:space="preserve">
+    <value>بڕینی پەیوەندی هاورێیەتی</value>
+  </data>
+  <data name="ReportProblem" xml:space="preserve">
+    <value>ناردنی ڕاپۆرتی کێشە</value>
+  </data>
+  <data name="Requests" xml:space="preserve">
+    <value>داواکاری هاوڕێیەتی</value>
+  </data>
+  <data name="ReturnTo" xml:space="preserve">
+    <value>گەڕانەوە بۆ</value>
+  </data>
+  <data name="Rules" xml:space="preserve">
+    <value>یاساکان</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>پاشەکەوتی کە</value>
+  </data>
+  <data name="ScheduledForDelete" xml:space="preserve">
+    <value>دیاریکراو بۆ سڕینەوە</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>گەڕان</value>
+  </data>
+  <data name="SearchPeople" xml:space="preserve">
+    <value>گەڕان بۆ ئەندامان</value>
+  </data>
+  <data name="SeeAllMessages" xml:space="preserve">
+    <value>بینینی گشت پەیامەکان</value>
+  </data>
+  <data name="SeeAllNotifications" xml:space="preserve">
+    <value>بینینی گشت ئەگادارییەکان</value>
+  </data>
+  <data name="SeeListOfFriends" xml:space="preserve">
+    <value>بینینی لیستی هاوڕێیان</value>
+  </data>
+  <data name="SeenAt" xml:space="preserve">
+    <value>بینراو لە</value>
+  </data>
+  <data name="SelectFile" xml:space="preserve">
+    <value>هەڵبژاردنی پەڕگە...</value>
+  </data>
+  <data name="SelectItem" xml:space="preserve">
+    <value>هەڵبژێرن...</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>ناردن</value>
+  </data>
+  <data name="SendFriendshipRequest" xml:space="preserve">
+    <value>ناردنی داواکاری هاوڕێیەتی</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>ناردنی پەیام</value>
+  </data>
+  <data name="SendOnPressEnter" xml:space="preserve">
+    <value>ناردن بە لێدانی Enter</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>خزمەتگوزارییە ئەلەکترۆنییەکان</value>
+  </data>
+  <data name="Share" xml:space="preserve">
+    <value>پارڤە کردن</value>
+  </data>
+  <data name="ShareDialogTitle" xml:space="preserve">
+    <value>پارڤە کردن</value>
+  </data>
+  <data name="SharedToFriends" xml:space="preserve">
+    <value>پارڤە کراو لەگەڵ هاوڕێیان</value>
+  </data>
+  <data name="SharedToMembers" xml:space="preserve">
+    <value>پارڤە کراو لەگەڵ ئەندامانی ماڵپەڕ</value>
+  </data>
+  <data name="SharedToOnlyMe" xml:space="preserve">
+    <value>پارڤە کراو لەگەڵ تەنیا خۆم</value>
+  </data>
+  <data name="SharedToPublic" xml:space="preserve">
+    <value>پارڤە کراو بە شێوازی گشتی</value>
+  </data>
+  <data name="ShareIt" xml:space="preserve">
+    <value>پارڤەی کە</value>
+  </data>
+  <data name="SharingActivityTitle_Part1" xml:space="preserve">
+    <value>بابەتی ژێری لە لایەن</value>
+  </data>
+  <data name="SharingActivityTitle_Part2" xml:space="preserve">
+    <value>پارڤە کردووە:</value>
+  </data>
+  <data name="Shop" xml:space="preserve">
+    <value>فرۆشگا</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>پیشانی بدە</value>
+  </data>
+  <data name="Single" xml:space="preserve">
+    <value>تەنیا</value>
+  </data>
+  <data name="SkillActivityTitle_Part1" xml:space="preserve">
+    <value>توانایی لە بواری</value>
+  </data>
+  <data name="SkillActivityTitle_Part2" xml:space="preserve">
+    <value>بە لیستی تواناییەکانی خۆی زێدە کرد.</value>
+  </data>
+  <data name="Skills" xml:space="preserve">
+    <value>تواناییەکان</value>
+  </data>
+  <data name="SpecialPosts" xml:space="preserve">
+    <value>بڵاوکراوە تایبەتەکان</value>
+  </data>
+  <data name="SpecialPostShowMethod" xml:space="preserve">
+    <value>شێوازی بڵاوکردنی بڵاوکراوە</value>
+  </data>
+  <data name="Suit" xml:space="preserve">
+    <value>کۆت و شاڵوار</value>
+  </data>
+  <data name="TagPeopleToPost" xml:space="preserve">
+    <value>کەسە دڵخوازەکەتان بۆ ئەم بڵاوکراوە نیشان بکەن.</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>سەردێڕ</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>تا</value>
+  </data>
+  <data name="Tutorials" xml:space="preserve">
+    <value>فێرکارییەکان</value>
+  </data>
+  <data name="UnBlockMember" xml:space="preserve">
+    <value>شکاندنی بەربەستی بەکارهێنەر</value>
+  </data>
+  <data name="Unlike" xml:space="preserve">
+    <value>بەدڵم نیە</value>
+  </data>
+  <data name="UnreadMessagesCount" xml:space="preserve">
+    <value>ژمارەی پەیامە نەخوێندراوەکان</value>
+  </data>
+  <data name="UpdatedAt" xml:space="preserve">
+    <value>نوێکراوەتەوە لە</value>
+  </data>
+  <data name="UploadCoverImage" xml:space="preserve">
+    <value>بارکردنی وێنەی کەڤەر</value>
+  </data>
+  <data name="UploadProfileImage" xml:space="preserve">
+    <value>بارکردنی وێنەی ڕوونوێنی لاپەڕە</value>
+  </data>
+  <data name="UpToDate" xml:space="preserve">
+    <value>باوی ڕۆژ</value>
+  </data>
+  <data name="Usual" xml:space="preserve">
+    <value>ئاسایی</value>
+  </data>
+  <data name="Variable" xml:space="preserve">
+    <value>گۆڕاو</value>
+  </data>
+  <data name="ViewMoreComments" xml:space="preserve">
+    <value>دیتنی بۆچوونە پێشووەکان...</value>
+  </data>
+  <data name="ViewMoreItems" xml:space="preserve">
+    <value>دیتنی بڕگەی زۆرتر...</value>
+  </data>
+  <data name="VisibleTo" xml:space="preserve">
+    <value>نیشان بدرێت بۆ</value>
+  </data>
+  <data name="VisibleToEveryOne" xml:space="preserve">
+    <value>هەمووان</value>
+  </data>
+  <data name="VisibleToFriends" xml:space="preserve">
+    <value>هاوڕێیان</value>
+  </data>
+  <data name="VisibleToMembers" xml:space="preserve">
+    <value>ئەندامانی ماڵپەڕ</value>
+  </data>
+  <data name="VisibleToOnlyMe" xml:space="preserve">
+    <value>تەنیا خۆم</value>
+  </data>
+  <data name="Weight" xml:space="preserve">
+    <value>کێش</value>
+  </data>
+  <data name="WelcomePost" xml:space="preserve">
+    <value>بڵاوکراوەی پێشوازیکردن</value>
+  </data>
+  <data name="WhatIsYourReason" xml:space="preserve">
+    <value>هۆکاری سڕینەوەی هەژمارەکەتان چیە؟</value>
+  </data>
+  <data name="WhatsOnYourMind" xml:space="preserve">
+    <value>چیت لە مێشک دایە؟ بینووسە</value>
+  </data>
+  <data name="WhoCanBeginChat" xml:space="preserve">
+    <value>بە چ کەسانیک ڕێبدرێت لەگەڵ ئێوە هەڤپەیڤین (چەت) بکەن:</value>
+  </data>
+  <data name="WhoCanSeeYourBasicInformation" xml:space="preserve">
+    <value>چ کەسانیک ئەتوانن زانیاریە کەسییەکانی ئێوە ببینن؟</value>
+  </data>
+  <data name="WhoCanSeeYourChangeCoverActivities" xml:space="preserve">
+    <value>چ کەسانێک لە گۆڕینی کەڤەر یا وێنەی ڕوونوێنی لاپەڕەی ئێوە ئاگادار بکرێنەوە؟</value>
+  </data>
+  <data name="WhoCanSeeYourChangeInfoActivities" xml:space="preserve">
+    <value>چ کەسانێک لە گۆڕینی زانیاری لاپەڕەکەتان ئاگادار بکرێنەوە؟</value>
+  </data>
+  <data name="WhoCanSeeYourCommentActivities" xml:space="preserve">
+    <value>چ کەسانێک لە بۆچوونە نێردراوەکانی ئێوە ئاگادار بکرێنەوە؟</value>
+  </data>
+  <data name="WhoCanSeeYourEducationActivities" xml:space="preserve">
+    <value>چ کەسانێک لە تۆماری زانیاری خوێندنەکانتان ئاگادار بکرێنەوە؟</value>
+  </data>
+  <data name="WhoCanSeeYourFavorites" xml:space="preserve">
+    <value>چ کەسانێک ئەتوانن دڵخوازییەکانی ئێوە ببینن؟</value>
+  </data>
+  <data name="WhoCanSeeYourFriends" xml:space="preserve">
+    <value>چ کەسانێک ئەتوانن لیستی هاوڕێیانی ئێوە ببینن؟</value>
+  </data>
+  <data name="WhoCanSeeYourFriendshipActivities" xml:space="preserve">
+    <value>چ کەسانێک لە پەیوەندییە نوێکانی هاوڕێیەتی ئێوە ئاگادار بکرێنەوە؟</value>
+  </data>
+  <data name="WhoCanSeeYourLikeActivities" xml:space="preserve">
+    <value>چ کەسانێک لە پەسەندەکانی ئێوە ئاگادار بکرێنەوە؟</value>
+  </data>
+  <data name="WhoCanSeeYourSkillActivities" xml:space="preserve">
+    <value>چ کەسانێک لە تۆماری زانیاری پەیوەندیدار بە تواناییەکانتان ئاگادار بکرێنەوە؟</value>
+  </data>
+  <data name="WhoCanSendMessageForYou" xml:space="preserve">
+    <value>چ کەسانێک ئەتوانن پەیامتان بۆ بنێرن؟</value>
+  </data>
+  <data name="WhoCanWriteOnYourWall" xml:space="preserve">
+    <value>چ کەسانێک مافی نووسین لەسەر دیواری ئێوەیان هەیە؟</value>
+  </data>
+  <data name="WriteNewMessage" xml:space="preserve">
+    <value>پەیامی خۆتان بنووسن...</value>
+  </data>
+  <data name="WriteOnHisWall" xml:space="preserve">
+    <value>بابەتێک لەسەر دیوار بنووسن...</value>
+  </data>
+  <data name="WriteYourComment" xml:space="preserve">
+    <value>بۆچوونی خۆتان دەربڕن...</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>ساڵ</value>
+  </data>
+  <data name="YearsOld" xml:space="preserve">
+    <value>ساڵ تەمەن</value>
+  </data>
+  <data name="You" xml:space="preserve">
+    <value>ئێوە</value>
+  </data>
+  <data name="YouAnd" xml:space="preserve">
+    <value>ئێوە و</value>
+  </data>
+  <data name="YouLikeThis" xml:space="preserve">
+    <value>ئێوە ئەمتانە بە دڵە</value>
+  </data>
+  <data name="YourProfileViewers" xml:space="preserve">
+    <value>دوایین سەردانەکان لە لاپەڕەی ئێوە</value>
+  </data>
+  <data name="VisitsCount" xml:space="preserve">
+    <value>ئەژماری نیشاندانەکان</value>
+  </data>
+  <data name="ProfileVisitsCount" xml:space="preserve">
+    <value>ئەژماری نیشاندانەکانی لاپەڕەی هەژمار</value>
+  </data>
+  <data name="LoadOlderMessages" xml:space="preserve">
+    <value>دیتنی پەیامە پێشووەکان</value>
+  </data>
+  <data name="Delivered" xml:space="preserve">
+    <value>گەیەندرا</value>
+  </data>
+  <data name="DeleteAllNotifications" xml:space="preserve">
+    <value>سڕینەوەی هەموو ئاگاکەرەوەکان</value>
+  </data>
+  <data name="DeleteProfileCoverPhoto" xml:space="preserve">
+    <value>سڕینەوەی کەڤەری لاپەڕە</value>
+  </data>
+  <data name="LangKurmanci" xml:space="preserve">
+    <value>Kurmancî</value>
+  </data>
+  <data name="LangSorani" xml:space="preserve">
+    <value>سورانی</value>
+  </data>
+  <data name="AlternativeEmail" xml:space="preserve">
+    <value>ئیمەیلی جێگر</value>
+  </data>
+  <data name="AlternativeEmailActivation" xml:space="preserve">
+    <value>چالاککردنی ئیمەیلی جێگر</value>
+  </data>
+  <data name="Follow" xml:space="preserve">
+    <value>شوێنکەوە</value>
+  </data>
+  <data name="Unfollow" xml:space="preserve">
+    <value>شوێن مەکەوە</value>
+  </data>
+  <data name="MembersCanFollowYou" xml:space="preserve">
+    <value>بەکارهێنەران توانای شوێنکەوتنی بابەتەکانی ئێوەیان هەبێت؟</value>
+  </data>
+  <data name="LivingCity" xml:space="preserve">
+    <value>شار</value>
+  </data>
+  <data name="LivingPlaceInfo" xml:space="preserve">
+    <value>شوێنی ژیان</value>
+  </data>
+  <data name="LivingRegion" xml:space="preserve">
+    <value>ناوچە</value>
+  </data>
+  <data name="LivingRegionAbroad" xml:space="preserve">
+    <value>دەرەوەی کوردستان</value>
+  </data>
+  <data name="LivingRegionEast" xml:space="preserve">
+    <value>ڕۆژهەڵاتی کوردستان</value>
+  </data>
+  <data name="LivingRegionNorth" xml:space="preserve">
+    <value>باکووری کوردستان</value>
+  </data>
+  <data name="LivingRegionSouth" xml:space="preserve">
+    <value>باشووری کوردستان</value>
+  </data>
+  <data name="LivingRegionWest" xml:space="preserve">
+    <value>رۆژئاوای کوردستان</value>
+  </data>
+  <data name="LivesInBeginingPart" xml:space="preserve">
+    <value>لە</value>
+  </data>
+  <data name="LivesInEndingPart" xml:space="preserve">
+    <value>ئەژی.</value>
+  </data>
+  <data name="ConnectToFacebook" xml:space="preserve">
+    <value>پەیوەندی لەگەڵ فەیسبووک</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>گەڕانەوە</value>
+  </data>
+  <data name="NextStep" xml:space="preserve">
+    <value>هەنگاوی تر</value>
+  </data>
+  <data name="SkipThisStep" xml:space="preserve">
+    <value>ئەم هەنگاوە تێپەڕێنە</value>
+  </data>
+  <data name="LoginWithFacebookAccount" xml:space="preserve">
+    <value>چوونەژووەرەوە لە ڕێگای فەیسبووک</value>
+  </data>
+  <data name="FacebookShareDialogTitle" xml:space="preserve">
+    <value>پارڤە کردن لە فەیسبووک</value>
+  </data>
+  <data name="FacebookSharedAlbumDefaultName" xml:space="preserve">
+    <value>پارڤە کراو لە تۆڕی کۆمەڵایەتی vKurdistan.com</value>
+  </data>
+  <data name="FollowersCount" xml:space="preserve">
+    <value>ئەژماری شوێنکەوتووان</value>
+  </data>
+  <data name="VisibleToFacebookFriendsOfFriends" xml:space="preserve">
+    <value>هاوڕێی هاوڕێیان</value>
+  </data>
+  <data name="AddPhoto" xml:space="preserve">
+    <value>زێدەکردنی وێنە</value>
+  </data>
+  <data name="AddVideo" xml:space="preserve">
+    <value>زێدەکردنی ویدئۆ</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>پشتڕاستکردنەوە</value>
+  </data>
+  <data name="Notice" xml:space="preserve">
+    <value>ئاگاداری</value>
+  </data>
+  <data name="SetManagerButtonTitle" xml:space="preserve">
+    <value>دیاریکردن وەک بەڕێوەبەر</value>
+  </data>
+  <data name="UnsetManagerButtonTitle" xml:space="preserve">
+    <value>ڕێکخستنی دەسەڵاتی بەڕێوەبەر</value>
+  </data>
+  <data name="ManagerAccessActivities" xml:space="preserve">
+    <value>چالاکییەکان</value>
+  </data>
+  <data name="ManagerAccessAdvs" xml:space="preserve">
+    <value>ڕیکلامەکان</value>
+  </data>
+  <data name="ManagerAccessComments" xml:space="preserve">
+    <value>بۆچوونەکان</value>
+  </data>
+  <data name="ManagerAccessObjectChecking" xml:space="preserve">
+    <value>وردبوونەوە لە بابەتەکان</value>
+  </data>
+  <data name="ManagerAccessPages" xml:space="preserve">
+    <value>پەڕەکان</value>
+  </data>
+  <data name="ManagerAccessSpecialPosts" xml:space="preserve">
+    <value>بڵاوکراوە تایبەتەکان</value>
+  </data>
+  <data name="ManagerAccessSuperAdmin" xml:space="preserve">
+    <value>بەرێوەبەرەکان</value>
+  </data>
+  <data name="ManagerAccessUserManagement" xml:space="preserve">
+    <value>بەرێوەبردنی بەکارهێنەران</value>
+  </data>
+  <data name="ManagerSettingDialogTitle" xml:space="preserve">
+    <value>جێبەجێ کردنی ئاستی دەسەڵاتی بەڕێوەبەری ماڵپەڕ</value>
+  </data>
+  <data name="SetAsManager" xml:space="preserve">
+    <value>وەک بەرێوەبەری تۆڕی کۆمەڵایەتی دیاری بکرێت</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>نیشانکردنەکان</value>
+  </data>
+</root>

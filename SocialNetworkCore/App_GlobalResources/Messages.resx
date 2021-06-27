@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccessDenied" xml:space="preserve">
+    <value>کاربر گرامی جهت ادامه باید وارد سایت شوید، چنانچه دارای حساب کاربری در vKurdistan نیستید،
+&lt;a href="/account/register"&gt;ثبت نام کنید.&lt;/a&gt;</value>
+  </data>
+  <data name="ActivationCodeIsIncorrect" xml:space="preserve">
+    <value>کد فعالسازی وارد شده صحیح نیست، لطفاً دوباره بررسی کنید و یا از طریق لینک فعالسازی ارسال شده به ایمیل خود اقدام نمایید.</value>
+  </data>
+  <data name="ActivationNotValidEmailOrCode" xml:space="preserve">
+    <value>ایمیل وارد شده یا کد فعالسازی نامعتبر است، لطفاً دوباره بررسی نمایید.</value>
+  </data>
+  <data name="ActivationSuccess" xml:space="preserve">
+    <value>حساب کاربری شما با موفقیت فعال گردید، از هم اکنون می توانید 
+&lt;a href="/account/login"&gt;وارد حساب کاربری خود شوید.&lt;/a&gt;&lt;br /&gt;به vKurdistan خوش آمدید!</value>
+  </data>
+  <data name="ActivationUserIsCurrentlyActive" xml:space="preserve">
+    <value>حساب کاربری با ایمیل وارد شده قبلاً فعال شده و نیازی به فعالسازی مجدد نیست.</value>
+  </data>
+  <data name="AjaxFail" xml:space="preserve">
+    <value>خطایی در ارتباط با سرور رخ داده است</value>
+  </data>
+  <data name="AliasExists" xml:space="preserve">
+    <value>نام کاربری وارد شده قبلاً انتخاب شده است، لطفاً نام دیگری وارد نمایید.</value>
+  </data>
+  <data name="AreYouSure" xml:space="preserve">
+    <value>آیا مطمئن هستید؟</value>
+  </data>
+  <data name="BasicHtmlUploader" xml:space="preserve">
+    <value>با آپلودگر فایل مشکل دارید؟ جهت استفاده از نسخه ساده شده کلیک کنید.</value>
+  </data>
+  <data name="ConfirmEmail" xml:space="preserve">
+    <value>تکرار آدرس ایمیل صحیح نیست</value>
+  </data>
+  <data name="DeleteAccountSuccessMEssage" xml:space="preserve">
+    <value>حساب کاربری شما با موفقیت برای حذف برنامه ریزی و شما از حساب خود خارج شدید، تا مدت 30 روز برای جلوگیری از حذف دائم حسابتان فرصت دارید، در صورن عدم ورود به حساب کاربری در این مدت حساب کاربریتان برای همیشه حذف خواهد شد.</value>
+  </data>
+  <data name="DontHaveAccess" xml:space="preserve">
+    <value>شما دارای مجوز دسترسی لازم نیستید.</value>
+  </data>
+  <data name="ExceedMaxAlbums" xml:space="preserve">
+    <value>متأسفانه شما حداکثر تعداد آلبوم های مجاز را ایجاد نموده اید و نمی توانید آلبوم جدیدی اضافه کنید.</value>
+  </data>
+  <data name="ExceedMaxPostPhotos" xml:space="preserve">
+    <value>متأسفیم، شما در هر پست حداکثر می توانید 3 تصویر ارسال نمایید.</value>
+  </data>
+  <data name="ExceptionTryAgain" xml:space="preserve">
+    <value>خطایی در عملیات رخ داده است، لطفاً مجدداً سعی کنید.</value>
+  </data>
+  <data name="HasSharedBefore" xml:space="preserve">
+    <value>شما قبلاً این مورد را به اشتراگ گذاشته اید، مجاز به اشتراک دوباره نیستید.</value>
+  </data>
+  <data name="IncorectPassword" xml:space="preserve">
+    <value>فرمت گذرواژه وارد شده صحیح نیست&lt;br /&gt;لطفاً به راهنمای کنار تکست باکس توجه کنید</value>
+  </data>
+  <data name="LargerThanMaximumUpload" xml:space="preserve">
+    <value>فایل ارسالی شما از حداکثر اندازه مجاز قابل ارسال تجاوز کرده است</value>
+  </data>
+  <data name="ListOfErrorsTitle" xml:space="preserve">
+    <value>خطا(ها)ی زیر رخ داده است:</value>
+  </data>
+  <data name="LoginDeletedAccount" xml:space="preserve">
+    <value>کاربر گرامی، حساب کاربری شما حذف شده است، با توجه به اینکه در مدت زمان مجاز برای بازیافت وارد حساب کاربریتان نشده اید، جهت بازیافت و فعالسازی مجدد حساب کاربریتان از طریق
+&lt;a href="/Pages/ContactUs"&gt;این صفحه&lt;/a&gt; با مدیریت تماس بگیرید.</value>
+  </data>
+  <data name="LoginNotValidAttempt" xml:space="preserve">
+    <value>آدرس ایمیل و یا گذرواژه وارد شده معتبر نیست، لطفاً به موارد زیر توجه کنید:
+&lt;br /&gt;
+&lt;ul&gt;
+&lt;li&gt;دقت نمایید که ایمیل وارد شده دارای فرمت صحیح باشد، مثال: xyz@vkurdistan.com&lt;/li&gt;
+&lt;li&gt;گذرواژه شما می بایست دارای شرایط ذکر شده صفحه ثبت نام باشد&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="LoginUserLockedOut" xml:space="preserve">
+    <value>کاربر گرامی حساب کاربری شما بدلیل مسائل امنیتی موقتاً مسدود شده است، پس از مدت زمانی کوتاه می توانید دوباره تلاش کنید</value>
+  </data>
+  <data name="LoginUserNotApproved" xml:space="preserve">
+    <value>حساب کاربری شما فعال نگردیده است، لطفاً یکی از موارد زیر را انجام دهید:
+&lt;br /&gt;
+&lt;ul&gt;
+&lt;li&gt;به ایمیل خود مراجعه کرده و بر روی لینک فعالسازی حساب کاربری کلیک کنید، دقت کنید ممکن است ایمیل فعالسازی در پوشه spam قرار گرفته باشد&lt;/li&gt;
+&lt;li&gt;برای ارسال مجدد لینک فعالسازی &lt;a href="/account/activation"&gt;به این صفحه&lt;/a&gt; مراجعه کنید&lt;/li&gt;&lt;/ul&gt;</value>
+  </data>
+  <data name="LoginUserNotExists" xml:space="preserve">
+    <value>آدرس ایمیل وارد شده صحیح نمی باشد، کاربری با این آدرس ایمیل وجود ندارد</value>
+  </data>
+  <data name="LoginWrongPassword" xml:space="preserve">
+    <value>کاربر گرامی گذرواژه وارد شده صحیح نیست، دقت کنید در صورت تکرار بیش از حد مجاز، حساب کاربریتان برای جلوگیری از دسترسی غیر مجاز موقتا مسدود خواهد شد</value>
+  </data>
+  <data name="MessageSent" xml:space="preserve">
+    <value>پیام شما با موفقیت ارسال شد.</value>
+  </data>
+  <data name="NoRecieverForMessage" xml:space="preserve">
+    <value>دریافت کننده ای برای پیام مشخص نکرده اید.</value>
+  </data>
+  <data name="NotAllowedToSendMessage" xml:space="preserve">
+    <value>شما اجازه ارسال پیام به این کاربر را ندارید.</value>
+  </data>
+  <data name="NotValidEmail" xml:space="preserve">
+    <value>آدرس ایمیل وارد شده معتبر نیست، لطفاً بررسی کرده و مجدداً اقدام کنید.</value>
+  </data>
+  <data name="NotValidPhotoFormat" xml:space="preserve">
+    <value>فرمت فایل انتخابی شما صحیح نیست، تنها می توانید فایلی با یکی از فرمت های زیر ارسال نمایید:
+&lt;br /&gt;
+jpg, png, gif</value>
+  </data>
+  <data name="NoUnreadMessages" xml:space="preserve">
+    <value>پیام خوانده نشده ای ندارید</value>
+  </data>
+  <data name="OldPasswordIncorrect" xml:space="preserve">
+    <value>گذرواژه قدیمی شما صحیح نمی باشد.</value>
+  </data>
+  <data name="PasswordHint" xml:space="preserve">
+    <value>حداقل طول گذرواژه: 8 &lt;br /&gt;حداقل تعداد حروف: 1&lt;br /&gt;حداقل تعداد رقم: 1</value>
+  </data>
+  <data name="PasswordSent" xml:space="preserve">
+    <value>گذرواژه شما به ایمیلتان ارسال شد، لطفاً به ایمیل خود مراجعه کنید.
+&lt;br /&gt;
+(توجه: ممکن است ایمیل ارسالی در پوشه spam قرار گرفته باشد.)</value>
+  </data>
+  <data name="RangeHeight" xml:space="preserve">
+    <value>مقدار وارد شده برای قد صحیح نمی باشد</value>
+  </data>
+  <data name="RangeMaritalStatus" xml:space="preserve">
+    <value>مقدار وارد شده برای وضعیت تأهل صحیح نمی باشد</value>
+  </data>
+  <data name="RangeWeight" xml:space="preserve">
+    <value>مقدار وارد شده برای وزن صحیح نمی باشد</value>
+  </data>
+  <data name="RegularExpressionAlias" xml:space="preserve">
+    <value>نام کاربری وارد شده صحیح نمی باشد.</value>
+  </data>
+  <data name="RegularExpressionEmail" xml:space="preserve">
+    <value>آدرس ایمیل وارد شده صحیح نمی باشد.</value>
+  </data>
+  <data name="RegularExpressionMobNumber" xml:space="preserve">
+    <value>شماره همراه وارد شده صحیح نمی باشد.</value>
+  </data>
+  <data name="RequiredAlbumName" xml:space="preserve">
+    <value>لطفاً نام آلبوم را وارد کنید</value>
+  </data>
+  <data name="RequiredAlias" xml:space="preserve">
+    <value>فیلد نام کاربری وارد نشده است.</value>
+  </data>
+  <data name="RequiredBirthDay" xml:space="preserve">
+    <value>لطفاً روز تولد خود را مشخص نمایید</value>
+  </data>
+  <data name="RequiredCommentText" xml:space="preserve">
+    <value>متن ارسالی شما خالی است، متنی برای نظر خود وارد نمایید.</value>
+  </data>
+  <data name="RequiredEmail" xml:space="preserve">
+    <value>لطفاً ایمیل خود را مشخص نمایید</value>
+  </data>
+  <data name="RequiredGender" xml:space="preserve">
+    <value>لطفاً جنسیت خود را مشخص نمایید</value>
+  </data>
+  <data name="RequiredID" xml:space="preserve">
+    <value>لطفاً شناسه را مشخص نمایید</value>
+  </data>
+  <data name="RequiredLastName" xml:space="preserve">
+    <value>لطفاً نام خانوادگی خود را مشخص نمایید</value>
+  </data>
+  <data name="RequiredMessageText" xml:space="preserve">
+    <value>متن پیام ارسالی شما خالی است، متنی برای پیامتان وارد نمایید.</value>
+  </data>
+  <data name="RequiredName" xml:space="preserve">
+    <value>لطفاً نام خود را مشخص نمایید</value>
+  </data>
+  <data name="RequiredPostTextOrPhoto" xml:space="preserve">
+    <value>پست ارسالی شما خالی است، جهت ارسال می بایست حداقل متن یا تصویری را وارد نمایید.</value>
+  </data>
+  <data name="RequiredRegistrationCode" xml:space="preserve">
+    <value>کد فعال سازی اکانت مشخص نشده است</value>
+  </data>
+  <data name="RequiredRegistrationDate" xml:space="preserve">
+    <value>تاریخ ثبت نام مشخص نشده است</value>
+  </data>
+  <data name="SendCodeSuccessful" xml:space="preserve">
+    <value>کد فعالسازی حساب کاربری به ایمیل شما ارسال گردید، لطفاً به ایمیل خود مراجعه کرده و کد فعالسازی را از طریق فرم بالا ارسال نمایید و یا بر روی لینک فعالسازی حساب کاربری در ایمیل خود کلیک کنید، دقت کنید ممکن است ایمیل فعالسازی در پوشه spam قرار گرفته باشد</value>
+  </data>
+  <data name="StringLengthAboutMe" xml:space="preserve">
+    <value>فیلد درباره من، حداکثر تعداد کاراکتر مجاز را رعایت نکرده است</value>
+  </data>
+  <data name="StringLengthAlbumDesc" xml:space="preserve">
+    <value>شرح آلبوم، حداکثر تعداد کاراکتر مجاز را رعایت نکرده است</value>
+  </data>
+  <data name="StringLengthAlbumName" xml:space="preserve">
+    <value>نام آلبوم، حداکثر تعداد کاراکتر مجاز را رعایت نکرده است</value>
+  </data>
+  <data name="StringLengthAlias" xml:space="preserve">
+    <value>فیلد نام کاربری، حداکثر تعداد کاراکتر مجاز را رعایت نکرده است</value>
+  </data>
+  <data name="StringLengthBehavior" xml:space="preserve">
+    <value>فیلد خلق و خوی، حداکثر تعداد کاراکتر مجاز را رعایت نکرده است</value>
+  </data>
+  <data name="StringLengthCommentText" xml:space="preserve">
+    <value>متن نظر حداکثر تعداد کاراکتر مجاز را رعایت نکرده است.</value>
+  </data>
+  <data name="StringLengthDescription" xml:space="preserve">
+    <value>فیلد درباره من، حداکثر تعداد کاراکتر مجاز را رعایت نکرده است</value>
+  </data>
+  <data name="StringLengthEducation" xml:space="preserve">
+    <value>فیلد تحصیلات، حداکثر تعداد کاراکتر مجاز را رعایت نکرده است</value>
+  </data>
+  <data name="StringLengthEmail" xml:space="preserve">
+    <value>فیلد ایمیل، حداکثر تعداد کاراکتر مجاز را رعایت نکرده است</value>
+  </data>
+  <data name="StringLengthFashion" xml:space="preserve">
+    <value>فیلد مد و ظاهر، حداکثر تعداد کاراکتر مجاز را رعایت نکرده است</value>
+  </data>
+  <data name="StringLengthFavoriteBooks" xml:space="preserve">
+    <value>فیلد کتاب های مورد علاقه، حداکثر تعداد کاراکتر مجاز را رعایت نکرده است</value>
+  </data>
+  <data name="StringLengthFavoriteMovies" xml:space="preserve">
+    <value>فیلد فیلم های مورد علاقه، حداکثر تعداد کاراکتر مجاز را رعایت نکرده است</value>
+  </data>
+  <data name="StringLengthFavoriteMusics" xml:space="preserve">
+    <value>فیلد موسیقی مورد علاقه، حداکثر تعداد کاراکتر مجاز را رعایت نکرده است</value>
+  </data>
+  <data name="StringLengthFavoriteQuotes" xml:space="preserve">
+    <value>فیلد نقل قول های مورد علاقه، حداکثر تعداد کاراکتر مجاز را رعایت نکرده است</value>
+  </data>
+  <data name="StringLengthGeneral" xml:space="preserve">
+    <value>تجاوز از حداکثر تعداد کاراکتر مجاز</value>
+  </data>
+  <data name="StringLengthHobbies" xml:space="preserve">
+    <value>فیلد سرگرمی ها و موضوعات مورد علاقه، حداکثر تعداد کاراکتر مجاز را رعایت نکرده است</value>
+  </data>
+  <data name="StringLengthID" xml:space="preserve">
+    <value>فیلد شناسه، حداکثر تعداد کاراکتر مجاز را رعایت نکرده است</value>
+  </data>
+  <data name="StringLengthLastName" xml:space="preserve">
+    <value>فیلد نام خانوادگی، حداکثر تعداد کاراکتر مجاز را رعایت نکرده است</value>
+  </data>
+  <data name="StringLengthName" xml:space="preserve">
+    <value>فیلد نام، حداکثر تعداد کاراکتر مجاز را رعایت نکرده است</value>
+  </data>
+  <data name="StringLengthPostText" xml:space="preserve">
+    <value>متن پست ارسالی از حداکثر طول مجاز تجاوز نموده است.</value>
+  </data>
+  <data name="StringLengthRegistrationCode" xml:space="preserve">
+    <value>فیلد کد فعال سازی اکانت، حداکثر تعداد کاراکتر مجاز را رعایت نکرده است</value>
+  </data>
+  <data name="SuccessfullyAddedComment" xml:space="preserve">
+    <value>نظر شما با موفقیت ارسال شد.</value>
+  </data>
+  <data name="SuccessfullyDeleted" xml:space="preserve">
+    <value>عملیـات حذف بـا موفقیت انجـام شد.</value>
+  </data>
+  <data name="SuccessfullySaved" xml:space="preserve">
+    <value>با موفقیت ذخیره شد.</value>
+  </data>
+  <data name="SuccessfullySent" xml:space="preserve">
+    <value>با موفقیت ارسال گردید.</value>
+  </data>
+  <data name="SuccessfullyUploadedAlbumPhoto" xml:space="preserve">
+    <value>فایل انتخابی با موفقیت ارسال شد، در زیر می توانید جزئیات مربوط به تصویر مورد نظرتان را ویرایش نمایید.</value>
+  </data>
+  <data name="SuccessfullyUploadedProfieCover" xml:space="preserve">
+    <value>فایل انتخابی با موفقیت ارسال شد، در زیر می توانید تصویر کاور پروفایلتان را ویرایش نمایید.</value>
+  </data>
+  <data name="UploadCoverImageText" xml:space="preserve">
+    <value>کاربر گرامی، تصویر کاور پروفایل خود را از روی کامپیوتر شخصی خود انتخاب نمایید:</value>
+  </data>
+  <data name="UploadProfileImageText" xml:space="preserve">
+    <value>کاربر گرامی، تصویر نمایه پروفایل خود را از روی کامپیوتر شخصی خود انتخاب نمایید:</value>
+  </data>
+  <data name="UserExists" xml:space="preserve">
+    <value>آدرس ایمیل وارد شده قبلاً ثبت شده است</value>
+  </data>
+  <data name="UserNotExists" xml:space="preserve">
+    <value>کاربری با ایمیل وارد شده موجود نمی باشد، لطفاً مجدداً بررسی و اقدام نمایید.</value>
+  </data>
+  <data name="WrongPasswordConfirm" xml:space="preserve">
+    <value>تکرار گذرواژه صحیح نیست.</value>
+  </data>
+  <data name="YouCantShareYourObjects" xml:space="preserve">
+    <value>شما مجاز به اشتراک مواردی که متعلق به خودتان است نمی باشید.</value>
+  </data>
+  <data name="RequiredSkillTitle" xml:space="preserve">
+    <value>عنوان مهارت خود را وارد نمایید</value>
+  </data>
+  <data name="RequiredEducationBranch" xml:space="preserve">
+    <value>تکمیل فیلد رشته تحصیلی الزامی می باشد.</value>
+  </data>
+  <data name="RequiredEducationLevel" xml:space="preserve">
+    <value>فیلد مقطع تحصیلی را انتخاب نمایید.</value>
+  </data>
+  <data name="AccessDeniedForObjects" xml:space="preserve">
+    <value>شما مجوز لازم برای دسترسی به این قسمت را ندارید.
+چنانچه دارای حساب کاربری در vKurdistan نیستید،
+&lt;a href="/account/register"&gt;ثبت نام کنید.&lt;/a&gt;</value>
+  </data>
+  <data name="PageNotFoundErrorText" xml:space="preserve">
+    <value>صفحه مورد نظر شما یافت نشد.
+&lt;br /&gt;
+شما ممکن است نتوانید این صفحه را به دلایل زیر ببینید:
+&lt;ul&gt;
+&lt;li&gt;
+آدرس وب سایت را اشتباهی وارد کردید.
+&lt;/li&gt;
+&lt;li&gt;
+موتور جست و جویی که استفاده می کنید یک لیست خارج از تاریخ از این وب سایت دارد.
+&lt;/li&gt;
+&lt;li&gt;
+تاریخ بوک مارک شما درست نباشد.
+&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="NotAllowedToSendFriendshipRequest" xml:space="preserve">
+    <value>شما اجازه ارسال درخواست دوستی به این کاربر را ندارید.</value>
+  </data>
+  <data name="FriendshipRequestExists" xml:space="preserve">
+    <value>یک درخواست دوستی پاسخ داده نشده بین شما وجود دارد، شما قادر به ارسال درخواست دوستی جدید نمی باشید.</value>
+  </data>
+  <data name="NoNewRequest" xml:space="preserve">
+    <value>درخواست دوستی جدیدی ندارید.</value>
+  </data>
+  <data name="YouAreFriendsNow" xml:space="preserve">
+    <value>شما قبلا در رابطه دوستی هستید.</value>
+  </data>
+  <data name="NoNotification" xml:space="preserve">
+    <value>اطلاعیه ای موجود نیست.</value>
+  </data>
+  <data name="RequiredContent" xml:space="preserve">
+    <value>محتوایی وارد نمایید.</value>
+  </data>
+  <data name="RequiredTitle" xml:space="preserve">
+    <value>عنوان را وارد نمایید.</value>
+  </data>
+  <data name="SuccessfullyCreatedAlbum" xml:space="preserve">
+    <value>آلبوم تصاویر با موفقیت ایجاد شد.
+&lt;a href="/HomePage/Photos"&gt;بازگشت به لیست آلبوم ها جهت ویرایش تصاویر.&lt;/a&gt;</value>
+  </data>
+  <data name="RegularExpressionPageName" xml:space="preserve">
+    <value>شناسه صفحه را بصورت صحیح وارد کنید.</value>
+  </data>
+  <data name="LoginBlockedAccount" xml:space="preserve">
+    <value>کاربر گرامی، حساب کاربری شما توسط مدیران سایت مسدود شده است، جهت اطلاع از علت مسدودسازی و یا درخواست رفع انسداد با مدیریت تماس بگیرید.</value>
+  </data>
+  <data name="EmptyList" xml:space="preserve">
+    <value>موردی جهت نمایش یافت نشد.</value>
+  </data>
+  <data name="RequiredAdvPaymentStatus" xml:space="preserve">
+    <value>وضعیت پرداخت هزینه را مشخص نمایید.</value>
+  </data>
+  <data name="RequiredAdvType" xml:space="preserve">
+    <value>نوع تبلیغات را انتخاب نمایید.</value>
+  </data>
+  <data name="RequiredBeginDate" xml:space="preserve">
+    <value>تاریخ شروع را انتخاب نمایید.</value>
+  </data>
+  <data name="RequiredCost" xml:space="preserve">
+    <value>میزان هزینه را مشخص نمایید.</value>
+  </data>
+  <data name="RequiredEndDate" xml:space="preserve">
+    <value>تاریخ  پایان را انتخاب نمایید.</value>
+  </data>
+  <data name="RequiredHeightBlocks" xml:space="preserve">
+    <value>تعداد خانه های ارتفاء را وارد نمایید.</value>
+  </data>
+  <data name="RequiredImageFile" xml:space="preserve">
+    <value>تصویر را انتخاب نمایید.</value>
+  </data>
+  <data name="RequiredLeftIndex" xml:space="preserve">
+    <value>میزان فاصله از چپ را وارد نمایید.</value>
+  </data>
+  <data name="RequiredTarget" xml:space="preserve">
+    <value>آدرس صفحه مقصد را وارد نمایید.</value>
+  </data>
+  <data name="RequiredTopIndex" xml:space="preserve">
+    <value>میزان فاصله از بالا را وارد نمایید.</value>
+  </data>
+  <data name="RequiredWidthBlocks" xml:space="preserve">
+    <value>تعداد خانه های عرض را وارد نمایید.</value>
+  </data>
+  <data name="RegularExpressionFullName" xml:space="preserve">
+    <value>نام و نام خانوادگی وارد شده دارای فرمت قابل قبول نمی باشد.</value>
+  </data>
+  <data name="NotAllowedToLeaveComment" xml:space="preserve">
+    <value>شما مجاز به ارسال نظر برای این مطلب نیستید.</value>
+  </data>
+  <data name="NotAllowedToPostOnWall" xml:space="preserve">
+    <value>شما مجاز به ارسال پست روی دیوار این کاربر نمی باشید.</value>
+  </data>
+  <data name="SpamPostMessage" xml:space="preserve">
+    <value>شما به تازگی یک پست ارسال کرده اید، حداکثر 60 ثانیه بعد می توانید پست جدید ارسال نمایید.</value>
+  </data>
+  <data name="SpamGenralMessage" xml:space="preserve">
+    <value>لطفاً چند ثانیه صبر کنید و دوباره ارسال کنید.</value>
+  </data>
+  <data name="AltEmailShouldBeActivated" xml:space="preserve">
+    <value>ایمیلی حاوی لینک فعالسازی به ایمیل جایگزین تعریف شده فرستاده شد، جهت فعال شدن باید به ایمیل خود مراجعه و بر روی لینک فعالسازی کلیک کنید.</value>
+  </data>
+  <data name="AltEmailActivationCodeIncorrect" xml:space="preserve">
+    <value>متأسفانه کد فعالسازی ایمیل جایگزین اشتباه می باشد، لطفاً به ایمیل خود وارد شده و بر روی لینک مربوطه کلیک کنید.
+&lt;br /&gt;
+در صورت تکرار این پیام، به حساب کاربری خود وارد شوید و نسبت به ارسال مجدد کد فعالسازی اقدام نمایید.</value>
+  </data>
+  <data name="AltEmailActivationNotValidEmailOrCode" xml:space="preserve">
+    <value>ایمیل وارد شده یا کد فعالسازی نامعتبر است، لطفاً دوباره بررسی نمایید.</value>
+  </data>
+  <data name="AltEmailActivationSuccess" xml:space="preserve">
+    <value>فعالسازی ایمیل جایگزین با موفقیت انجام شد.
+&lt;br /&gt;
+از این پس ایمیلهای آگاه ساز و سایر ایمیل ها از طرف شبکه اجتماعی vKurdistan به این ایمیل ارسال خواهند شد.
+&lt;br /&gt;
+توجه: شما برای ورود به سایت همچنان از ایمیل اصلی خود به عنوان نام کاربری استفاده خواهید کرد.</value>
+  </data>
+  <data name="NotAllowedToFollow" xml:space="preserve">
+    <value>شما مجاز به دنبال کردن این کاربر نیستید.</value>
+  </data>
+  <data name="FacebookConnectUnexpectedErrorMessage" xml:space="preserve">
+    <value>با عرض پوزش یک خطای غیر منتظره رخ داده است، لطفاً از طریق 
+&lt;a href="/account/connecttofacebook?step=1"&gt;این لینک&lt;/a&gt; مجدداً سعی کنید.</value>
+  </data>
+  <data name="FacebookConnectErrorMessage" xml:space="preserve">
+    <value>خطایی در ارتباط با حساب کاربری فیسبوک شما رخ داده است، لطفاً مجدداً تلاش کنید.</value>
+  </data>
+  <data name="FacebookConnectSuccessfullMessageForAuthenticated" xml:space="preserve">
+    <value>ارتباط با فیسبوک با موفقیت انجام شد، از این پس می توانید با حساب کاربری فیسبوک خود نیز وارد سایت شوید.</value>
+  </data>
+  <data name="NotValidFacebookEmail" xml:space="preserve">
+    <value>ایمیل اعلام شده از طرف فیسبوک صحیح نمی باشد، لطفاً مجدداً سعی کنید.
+&lt;br /&gt;
+توجه: در صورتی که از طریق شماره تلفن در فیسبوک ثبت نام کرده اید، قادر به برقراری ارتباط نخواهیم بود، در این صورت
+&lt;a href="/account/register"&gt;لطفاً در شبکه اجتماعی vKurdistan ثبت نام کنید.&lt;/a&gt;</value>
+  </data>
+  <data name="NotValidFacebookInformation" xml:space="preserve">
+    <value>مشکلی در دریافت اطلاعات شما از فیسبوک رخ داده است، لطفاً مجدداً سعی کنید.</value>
+  </data>
+  <data name="FacebookConnectSuccessfullMessageForAnonymous" xml:space="preserve">
+    <value>ارتباط با فیسبوک با موفقیت انجام شد، از این پس می توانید با حساب کاربری فیسبوک خود وارد سایت شوید، همچنین گذرواژه حساب کاربری شما در vKurdistan به ایمیل اعلام شده در فیسبوکتان ارسال گردید.</value>
+  </data>
+  <data name="FacebookLoginConnectionNotExists" xml:space="preserve">
+    <value>کاربر گرامی اطلاعات مربوط به ارتباط حساب فیسبوکی شما یافت نشد، لطفاً از طریق لینک زیر از برقراری ارتباط حساب کاربری خود با فیسبوک اطمینان حاصل کنید:
+&lt;br /&gt;
+&lt;a href="/account/connecttofacebook"&gt;ارتباط با فیسبوک&lt;/a&gt;</value>
+  </data>
+  <data name="FacebookShareSuccessfullMessage" xml:space="preserve">
+    <value>با موفقیت در فیسبوک به اشتراک گذاشته شد.</value>
+  </data>
+  <data name="ExceedMaxPostVideos" xml:space="preserve">
+    <value>در یک پست می توانید فقط یک فایل ویدئویی ارسال نمایید.</value>
+  </data>
+  <data name="NotValidFileFormat" xml:space="preserve">
+    <value>فرمت فایل انتخابی شما صحیح نیست.</value>
+  </data>
+  <data name="NotValidVideoFormat" xml:space="preserve">
+    <value>فرمت فایل انتخابی شما صحیح نیست، تنها می توانید فایلی با یکی از فرمت های زیر ارسال نمایید:
+&lt;br /&gt;
+mp4, mpeg, mov, flv, avi</value>
+  </data>
+  <data name="VideoNotProcessedYet" xml:space="preserve">
+    <value>کاربر گرامی، این فایل ویدئویی در حال پردازش است، در حال حاضر پخش این فایل ممکن نیست.
+&lt;br /&gt;
+پردازش فایل ویدئویی بر اساس مدت زمان آن ممکن است از چند ثانیه تا چند دقیقه بطول بیانجامد.</value>
+  </data>
+</root>

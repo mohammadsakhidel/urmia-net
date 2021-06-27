@@ -1,0 +1,28 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model FriendsPPSectionModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_FriendsPPSectionHeadTags.min.js")"></script>
+
+@if (Model.IsFriendsSectionVisibleToUser)
+{
+    <div id="pp_sec_friends" class="pp_section">
+        <div class="pp_section_title">
+            <a href="@Url.Content(Model.ProfileOwner.UrlOfProfilePage + "/friends")">
+                <span>@Resources.Words.Friends</span>
+            </a>
+            <span class="pp_friends_sec_title_lbl">(@Model.FriendsCount)</span>
+            <div class="clear"></div>
+        </div>
+        <div class="pp_section_content">
+            <div class="pp_sec_friends_in">
+                @foreach (var friend in Model.SomeFriends)
+                {
+                    <a class="friend_thumb_link" @(friend.Status == MemberStatus.Active ? Html.Raw("href=\"" + Url.Content(friend.UrlOfProfilePage) + "\"") : Html.Raw(""))>
+                        <img src="@Url.Content(friend.UrlOfThumb)" alt="@friend.FullName" class="friend_thumb_img" title="@friend.FullName" />
+                    </a>
+                }
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+}

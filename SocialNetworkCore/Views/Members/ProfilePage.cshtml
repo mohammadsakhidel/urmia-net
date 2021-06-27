@@ -1,0 +1,25 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model SocialNetApp.Views.Models.Members.ProfilePageViewModel
+@{
+    ViewBag.Title = "ShowProfilePage";
+    Layout = "~/Views/Layouts/_Site.cshtml";
+}
+@section head{
+    <title>
+        @Model.Member.FullName
+        @Strings.TitleSeparator
+        @Resources.Titles.StaticPageTitle
+    </title>
+}
+@section content{
+    @if (Model.Member != null)
+    {
+        var content = Model.ContentPage;
+        Html.RenderPartial(Urls.ModuleViews + "_Profile.cshtml", Model.ProfileModel);
+    }
+    else
+    {
+        Html.RenderPartial(Urls.ModuleViews + "_CustomErrorPage.cshtml", Model.CustomErrorModel);
+    }
+}

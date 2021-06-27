@@ -1,0 +1,241 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model PrivacyModel
+@{
+    var ps = Model.PrivacySetting;
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/_PrivacyHeadTags.min.js")"></script>
+<div id="privacy" class="viewpart">
+    @using (Ajax.BeginForm("Privacy", "HomePage", new AjaxOptions { HttpMethod = "Post", LoadingElementId = "SaveFormLoading", OnBegin = "SaveBegin", OnFailure = "SaveFailure", OnSuccess = "SaveSuccess" }))
+    {
+        <div class="viewpart_title">
+            <h2>@Resources.Words.PrivacyOfActivities</h2>
+        </div>
+        <div class="viewpart_content">
+            <table border="0" id="tbl_privacy">
+                <tr>
+                    <td class="tdlbl">
+                        <label for="WhoSeeLikeActivities">@Resources.Words.WhoCanSeeYourLikeActivities</label>
+                    </td>
+                    <td>
+                        <select name="WhoSeeLikeActivities" id="WhoSeeLikeActivities">
+                            <option value="1" @(ps.WhoSeeLikeActivities == 1 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToOnlyMe</option>
+                            <option value="2" @(ps.WhoSeeLikeActivities == 2 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToFriends</option>
+                            <option value="3" @(ps.WhoSeeLikeActivities == 3 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToMembers</option>
+                            <option value="4" @(ps.WhoSeeLikeActivities == 4 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToEveryOne</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label for="WhoSeeCommentActivities">@Resources.Words.WhoCanSeeYourCommentActivities</label>
+                    </td>
+                    <td>
+                        <select name="WhoSeeCommentActivities" id="WhoSeeCommentActivities">
+                            <option value="1" @(ps.WhoSeeCommentActivities == 1 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToOnlyMe</option>
+                            <option value="2" @(ps.WhoSeeCommentActivities == 2 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToFriends</option>
+                            <option value="3" @(ps.WhoSeeCommentActivities == 3 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToMembers</option>
+                            <option value="4" @(ps.WhoSeeCommentActivities == 4 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToEveryOne</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label for="WhoSeeFriendshipActivities">@Resources.Words.WhoCanSeeYourFriendshipActivities</label>
+                    </td>
+                    <td>
+                        <select name="WhoSeeFriendshipActivities" id="WhoSeeFriendshipActivities">
+                            <option value="1" @(ps.WhoSeeFriendshipActivities == 1 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToOnlyMe</option>
+                            <option value="2" @(ps.WhoSeeFriendshipActivities == 2 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToFriends</option>
+                            <option value="3" @(ps.WhoSeeFriendshipActivities == 3 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToMembers</option>
+                            <option value="4" @(ps.WhoSeeFriendshipActivities == 4 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToEveryOne</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label for="WhoSeeChangeInfoActivities">@Resources.Words.WhoCanSeeYourChangeInfoActivities</label>
+                    </td>
+                    <td>
+                        <select name="WhoSeeChangeInfoActivities" id="WhoSeeChangeInfoActivities">
+                            <option value="1" @(ps.WhoSeeChangeInfoActivities == 1 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToOnlyMe</option>
+                            <option value="2" @(ps.WhoSeeChangeInfoActivities == 2 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToFriends</option>
+                            <option value="3" @(ps.WhoSeeChangeInfoActivities == 3 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToMembers</option>
+                            <option value="4" @(ps.WhoSeeChangeInfoActivities == 4 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToEveryOne</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label for="WhoSeeEducationActivities">@Resources.Words.WhoCanSeeYourEducationActivities</label>
+                    </td>
+                    <td>
+                        <select name="WhoSeeEducationActivities" id="WhoSeeEducationActivities">
+                            <option value="1" @(ps.WhoSeeEducationActivities == 1 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToOnlyMe</option>
+                            <option value="2" @(ps.WhoSeeEducationActivities == 2 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToFriends</option>
+                            <option value="3" @(ps.WhoSeeEducationActivities == 3 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToMembers</option>
+                            <option value="4" @(ps.WhoSeeEducationActivities == 4 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToEveryOne</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label for="WhoSeeSkillActivities">@Resources.Words.WhoCanSeeYourSkillActivities</label>
+                    </td>
+                    <td>
+                        <select name="WhoSeeSkillActivities" id="WhoSeeSkillActivities">
+                            <option value="1" @(ps.WhoSeeSkillActivities == 1 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToOnlyMe</option>
+                            <option value="2" @(ps.WhoSeeSkillActivities == 2 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToFriends</option>
+                            <option value="3" @(ps.WhoSeeSkillActivities == 3 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToMembers</option>
+                            <option value="4" @(ps.WhoSeeSkillActivities == 4 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToEveryOne</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label for="WhoSeeChangeCoverActivities">@Resources.Words.WhoCanSeeYourChangeCoverActivities</label>
+                    </td>
+                    <td>
+                        <select name="WhoSeeChangeCoverActivities" id="WhoSeeChangeCoverActivities">
+                            <option value="1" @(ps.WhoSeeChangeCoverActivities == 1 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToOnlyMe</option>
+                            <option value="2" @(ps.WhoSeeChangeCoverActivities == 2 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToFriends</option>
+                            <option value="3" @(ps.WhoSeeChangeCoverActivities == 3 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToMembers</option>
+                            <option value="4" @(ps.WhoSeeChangeCoverActivities == 4 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToEveryOne</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="viewpart_title">
+            <h2>@Resources.Words.PrivacyOfAccess</h2>
+        </div>
+        <div class="viewpart_content">
+            <table border="0">
+                <tr>
+                    <td class="tdlbl">
+                        <label for="WhoCanWriteOnWall">@Resources.Words.WhoCanWriteOnYourWall</label>
+                    </td>
+                    <td>
+                        <select name="WhoCanWriteOnWall" id="WhoCanWriteOnWall">
+                            <option value="1" @(ps.WhoCanWriteOnWall == 1 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToOnlyMe</option>
+                            <option value="2" @(ps.WhoCanWriteOnWall == 2 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToFriends</option>
+                            <option value="3" @(ps.WhoCanWriteOnWall == 3 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToMembers</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label for="WhoCanSendMessage">@Resources.Words.WhoCanSendMessageForYou</label>
+                    </td>
+                    <td>
+                        <select name="WhoCanSendMessage" id="WhoCanSendMessage">
+                            <option value="1" @(ps.WhoCanSendMessage == 1 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToOnlyMe</option>
+                            <option value="2" @(ps.WhoCanSendMessage == 2 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToFriends</option>
+                            <option value="3" @(ps.WhoCanSendMessage == 3 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToMembers</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label for="WhoCanSendMessage">@Resources.Words.WhoCanBeginChat</label>
+                    </td>
+                    <td>
+                        <select name="WhoCanBeginChat" id="WhoCanBeginChat">
+                            <option value="1" @(ps.WhoCanBeginChat == 1 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToOnlyMe</option>
+                            <option value="2" @(ps.WhoCanBeginChat == 2 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToFriends</option>
+                            <option value="3" @(ps.WhoCanBeginChat == 3 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToMembers</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label for="WhoCanSeeFriends">@Resources.Words.WhoCanSeeYourFriends</label>
+                    </td>
+                    <td>
+                        <select name="WhoCanSeeFriends" id="WhoCanSeeFriends">
+                            <option value="1" @(ps.WhoCanSeeFriends == 1 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToOnlyMe</option>
+                            <option value="2" @(ps.WhoCanSeeFriends == 2 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToFriends</option>
+                            <option value="3" @(ps.WhoCanSeeFriends == 3 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToMembers</option>
+                            <option value="4" @(ps.WhoCanSeeFriends == 4 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToEveryOne</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label for="WhoCanSeeBasicInformation">@Resources.Words.WhoCanSeeYourBasicInformation</label>
+                    </td>
+                    <td>
+                        <select name="WhoCanSeeBasicInformation" id="WhoCanSeeBasicInformation">
+                            <option value="1" @(ps.WhoCanSeeBasicInformation == 1 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToOnlyMe</option>
+                            <option value="2" @(ps.WhoCanSeeBasicInformation == 2 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToFriends</option>
+                            <option value="3" @(ps.WhoCanSeeBasicInformation == 3 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToMembers</option>
+                            <option value="4" @(ps.WhoCanSeeBasicInformation == 4 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToEveryOne</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label for="WhoCanSeeFavorites">@Resources.Words.WhoCanSeeYourFavorites</label>
+                    </td>
+                    <td>
+                        <select name="WhoCanSeeFavorites" id="WhoCanSeeFavorites">
+                            <option value="1" @(ps.WhoCanSeeFavorites == 1 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToOnlyMe</option>
+                            <option value="2" @(ps.WhoCanSeeFavorites == 2 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToFriends</option>
+                            <option value="3" @(ps.WhoCanSeeFavorites == 3 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToMembers</option>
+                            <option value="4" @(ps.WhoCanSeeFavorites == 4 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToEveryOne</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <input type="checkbox" name="AllowSendFriendshipRequest" id="AllowSendFriendshipRequest" @(ps.AllowSendFriendshipRequest ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                        <label for="AllowSendFriendshipRequest">@Resources.Words.AllowSendFriendshipRequests</label>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <input type="checkbox" name="DisplayInSearch" id="DisplayInSearch" @(ps.DisplayInSearch ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                        <label for="DisplayInSearch">@Resources.Words.DisplayYouInSearches</label>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <input type="checkbox" name="MembersCanFollowMe" id="MembersCanFollowMe" @(ps.MembersCanFollowMe ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                        <label for="MembersCanFollowMe">@Resources.Words.MembersCanFollowYou</label>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="viewpart_title">
+            <h2>@Resources.Words.BlockUsers</h2>
+        </div>
+        <div class="viewpart_content">
+            <div class="text">
+                @Resources.Texts.BlockUsersText
+            </div>
+            <div>
+                @{Html.RenderPartial(Urls.ModuleViews + "_MemberBox.cshtml", Model.MemberBoxModel);}
+            </div>
+        </div>
+        
+        <div class="form_submit_sec">
+            <input type="submit" value="@Resources.Words.Save" />
+            <div id="SaveFormLoading" class="loading_small hide">
+            </div>
+            <div class="hide" id="msg_save">
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+    }
+    <input id="ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />
+    <input id="msg_errors_title" type="hidden" value="@Resources.Messages.ListOfErrorsTitle" />
+</div>

@@ -1,0 +1,31 @@
+﻿div#remove_friend_dialog RemoveFriendSuccess
+{
+    float: left;
+}
+
+div#remove_friend_dialog div#removing_friend
+{
+    margin-top: 10px;
+    border-top: dashed 1px #dfdfdf;
+    border-bottom: dashed 1px #dfdfdf;
+    padding: 10px 0;
+}
+
+div#remove_friend_dialog .dialog_user_fullname
+{
+    float: left;
+    margin: 17px 0 0 10px;
+}
+
+div#remove_friend_dialog div.dialog_actions div.loading_small_circle
+{
+    float: right;
+    margin: 5px 0 0 0;
+}
+
+div#remove_friend_dialog div#dialog_msg
+{
+    margin: 10px 0 0 0;
+    padding: 5px;
+    min-width: 250px;
+}

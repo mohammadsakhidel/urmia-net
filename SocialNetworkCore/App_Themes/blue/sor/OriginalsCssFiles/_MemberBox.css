@@ -1,0 +1,114 @@
+﻿div.member_box input.fullname_input
+{
+    border: solid 1px #7db6d5;
+}
+
+div.member_box div.members_pop
+{
+    position: absolute;
+    z-index: 1000;
+}
+
+div.member_box div.preloader
+{
+    padding: 15px;
+    background-color: #f1f2f2;
+    border-right: solid 1px #d1d3d4;
+    border-bottom: solid 1px #d1d3d4;
+    border-left: solid 1px #d1d3d4;
+}
+
+div.member_box div.preloader div.loading_small_circle
+{
+    margin: 0 auto 0 auto;
+}
+
+div.member_box div.members_list
+{
+    background-color: #fbfbfb;
+    border-right: solid 1px #d1d3d4;
+    border-bottom: solid 1px #d1d3d4;
+    border-left: solid 1px #d1d3d4;
+    font-size: 8pt;
+}
+
+div.member_box a.member_li
+{
+    display: block;
+    padding: 5px;
+    border-bottom: solid 1px #efeff0;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+}
+
+div.member_box a.member_li:hover
+{
+    background-color: #efeff0;
+}
+
+div.member_box a.member_li_hover
+{
+    background-color: #efeff0;
+}
+
+div.member_box img.member_li_thumb
+{
+    width: 25px;
+    float: right;
+}
+
+div.member_box span.member_li_fullname
+{
+    font-weight: bold;
+    color: #4a4747;
+    float: right;
+    margin: 5px 5px 0 0;
+}
+
+div.member_box div.selected_member
+{
+    float: right;
+    margin: 0 0 5px 5px;
+    padding: 5px;
+    border: solid 1px #bebebe;
+    background-color: #f4f4f4;
+    position: relative;
+    width: 30%;
+}
+
+div.member_box div.selected_member a.thumb_parent
+{
+    float: right;
+}
+
+div.member_box div.selected_member a.remove_item
+{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background-image: url(remove_item.png);
+    display: inline-block;
+}
+
+div.member_box div.selected_member label.selected_member_fullname
+{
+    float: right;
+    margin: 12px 0 0 0;
+    font-weight: bold;
+    font-size: 7.5pt;
+    color: #4a4747;
+}
+
+div.member_box img.userthumb
+{
+    width: 35px;
+    margin: 0 0 0 5px;
+}
+
+div.member_box div.selected_members_list
+{
+    margin-top: 10px;
+}

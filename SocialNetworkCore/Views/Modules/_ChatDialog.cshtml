@@ -1,0 +1,61 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@using CoreHelpers
+@model ChatDialogModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_ChatDialogHeadTags.min.js")"></script>
+<div id="chat_dialog">
+    <div class="dialog_title">
+        <a class="dialog_close" onclick="HideDialog();"></a>
+        <h2>@Resources.Words.ChatDialogTitle</h2>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="dialog_view_in">
+        <div class="chat_dlg_msgs">
+            @{
+                if (Model.TotalMessagesCount > Model.SessionMessageModels.Count())
+                {
+                    using (Ajax.BeginForm("GetOlderChatMessages", "Chating",
+                        null,
+                        new AjaxOptions
+                        {
+                            HttpMethod = "Post",
+                            OnBegin = "GetOlderChatMessagesBegin",
+                            OnFailure = "GetOlderChatMessagesFailure",
+                            OnSuccess = "GetOlderChatMessagesSuccess",
+                            OnComplete = "GetOlderChatMessagesComplete"
+                        }, new { @id = "frm_view_older_msgs" }))
+                    {
+                        <a id="view_older_msgs" class="view_older_msgs" onclick="submit_view_older_msgs_form();">@Resources.Words.LoadOlderMessages</a>
+                        <input type="hidden" name="sessionId" value="@Model.SessionId" />
+                        <input type="hidden" name="olderThanDate" value="@Model.OlderThanDateString" />
+                    }
+                }
+            }
+            <div class="chat_dlg_msgs_in">
+                @foreach (var msgModel in Model.SessionMessageModels)
+                {
+                    Html.RenderPartial(Urls.ModuleViews + "_ChatMessage.cshtml", msgModel);
+                }
+            </div>
+        </div>
+        <div class="chat_dlg_newmsg">
+            @using (Ajax.BeginForm("SendChatMessage", "Chating", new AjaxOptions { HttpMethod = "Post", OnFailure = "SendChatMessageFailure", OnSuccess = "SendChatMessageSuccess" }))
+            {
+                <input type="hidden" name="ChatSessionId" value="@Model.SessionId" />
+                <input type="hidden" name="From" value="@User.Identity.Name" />
+                <textarea name="Text" rows="1"></textarea>
+            }
+            <input type="hidden" name="NewMessageActionUrl" value="@Url.Action("GetNewChatMessages", "Messages")" />
+            <input type="hidden" name="MemberId" value="@User.Identity.Name" />
+        </div>
+    </div>
+</div>
+<!-- words: -->
+<input id="chat_dlg_w_write_your_msg" type="hidden" value="@Resources.Words.WriteNewMessage" />
+<input id="chat_dlg_w_ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />
+<!-- scripts: -->
+<script type="text/javascript">
+    $(function () {
+        _ChatDialogLoad();
+    });
+</script>

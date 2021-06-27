@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccessDenied" xml:space="preserve">
+    <value>Bikarhînerê / a hêja, Ji bo berdewamiyê, divê têkevî nava malperê. Eger we di vKurdistanê de ti hesabek tine ye,         Navnivîsiyê bikin.</value>
+  </data>
+  <data name="AccessDeniedForObjects" xml:space="preserve">
+    <value>Rê bi we nayê dayîn derbasî vê beşê bibin.                   Eger we hesaba vKurdistanê tine ye,                   Navnivîsiyê bikin.</value>
+  </data>
+  <data name="ActivationCodeIsIncorrect" xml:space="preserve">
+    <value>Koda çalakkirin şaş e. Ji kerema xwe re careke din hewl bidin yan jî bi riya lînka çalakkirinê di imailê de hewl bidin.</value>
+  </data>
+  <data name="ActivationNotValidEmailOrCode" xml:space="preserve">
+    <value>Ev imail bi vê kodê, di sîstemê de tine ye. Yek ji wan yan her du çewt in. Car din lê binêre.</value>
+  </data>
+  <data name="ActivationSuccess" xml:space="preserve">
+    <value>Hesaba we hat çalakirin. Ji niha ve dikarin        têkevin nava hesaba xwe.               Hûn bi xêr hatin vKurdistanê </value>
+  </data>
+  <data name="ActivationUserIsCurrentlyActive" xml:space="preserve">
+    <value>Ev hesab, beriya niha bi imailê hatiye çalakkrin û  pêwîst nîn e ku careke din bê çalakkirin.</value>
+  </data>
+  <data name="AjaxFail" xml:space="preserve">
+    <value>Çewtiyek di pêwendî bi serverê re derketiye</value>
+  </data>
+  <data name="AliasExists" xml:space="preserve">
+    <value>Navê bikarhîneriya ku we hilbijartiye, beriya niha hatiye bikaranîn. Navekî din hilbijêrin.</value>
+  </data>
+  <data name="AltEmailActivationCodeIncorrect" xml:space="preserve">
+    <value>Koda çalakkirina imaila cîgir şaş e, Ji kerema xwe re di imaila xwe de li ser linka taybet bi çalakirinê kirte bikin.                                           Eger careke din ev peyam hate şandin, têkevin nava malperê û car din daxwaza koda çaakkirina imaila cîgir bikin.</value>
+  </data>
+  <data name="AltEmailActivationNotValidEmailOrCode" xml:space="preserve">
+    <value>Ev imail bi koda çalakirinê re ne bawer in. Ji kerema xwe re careke din hewl bidin.</value>
+  </data>
+  <data name="AltEmailActivationSuccess" xml:space="preserve">
+    <value>Iamila cîgir ji we re hat çalakirin.         Ji niha û pê ve wê imailên haydariyê bi riya vKurdistanê ji bo wê imailê bên şandin.                Herwisa ji bo têketin di nava malperê de, hûnê ji imaila xwe ya sereke, mifahê bistînin.</value>
+  </data>
+  <data name="AltEmailShouldBeActivated" xml:space="preserve">
+    <value>Nameyek û linka çalakkirinê ji bo imaila cîgir hate şandin. Ji bo çalakkirinê divê di imaila xwe de wê linkê hilbijrênin ku ji we re hatiye şandin.</value>
+  </data>
+  <data name="AreYouSure" xml:space="preserve">
+    <value>Gelo hûn piştrast in?</value>
+  </data>
+  <data name="BasicHtmlUploader" xml:space="preserve">
+    <value>Hûn ji Uplodkera malperê hez nakin? Ji bo bikaranîna Uplodera normal, kirte bikin.</value>
+  </data>
+  <data name="ConfirmEmail" xml:space="preserve">
+    <value>Dubarekirî ya adresa imailê şaş e.</value>
+  </data>
+  <data name="DeleteAccountSuccessMEssage" xml:space="preserve">
+    <value>Hesaba we, bi awayekî demkî ji bo jêbirinê amade bû û hûn ji hesaba xwe derketin. 30 rojan we derfet heye ku têkevin nava hesaba xwe, da ku hesab neyê jêbirin.</value>
+  </data>
+  <data name="DontHaveAccess" xml:space="preserve">
+    <value>Hûn nikarin vir bi kar bînin.</value>
+  </data>
+  <data name="EmptyList" xml:space="preserve">
+    <value>Ti tiştek ji bo nimayişê nehat dîtin.</value>
+  </data>
+  <data name="ExceedMaxAlbums" xml:space="preserve">
+    <value>We zêdetirîn asta alboman çê kiriye û nikarin albomeke din çê bikin.</value>
+  </data>
+  <data name="ExceedMaxPostPhotos" xml:space="preserve">
+    <value>Hûn tenê dikarin di her şandiyekê de 3 wêneyan danîn.</value>
+  </data>
+  <data name="ExceedMaxPostVideos" xml:space="preserve">
+    <value>Di her postekê de tenê dikarin dîmenekê bikar bînin.</value>
+  </data>
+  <data name="ExceptionTryAgain" xml:space="preserve">
+    <value>Çewtiyek di kar de çê bûye. Ji kerema xwe re careke din hewl bidin.</value>
+  </data>
+  <data name="FacebookConnectErrorMessage" xml:space="preserve">
+    <value>Çewtiyek di pêwendî bi Facebookê re derketiye. Ji kerema xwe re car din hewl bidin.</value>
+  </data>
+  <data name="FacebookConnectSuccessfullMessageForAnonymous" xml:space="preserve">
+    <value>Girêdan bi Facebookê re çê bû. Ji niha û pêve hûn dikarin bi hesaba xwe ya Facebookê derbasî nava malperê bibin. Şifreya we ya vKurdistanê wê ji bo imaila ku we Facebook pê navnivîsî kiriye, bê şandin.</value>
+  </data>
+  <data name="FacebookConnectSuccessfullMessageForAuthenticated" xml:space="preserve">
+    <value>Girêdan bi Facebookê re çê bû. Ji niha û pêve hûn dikarin bi hesaba xwe ya Facebookê derbasî nava malperê bibin. </value>
+  </data>
+  <data name="FacebookConnectUnexpectedErrorMessage" xml:space="preserve">
+    <value>Şaştiyeke çaverênekirî çê bûye. Ji kerema xwe re bi riya                           Vê linkê ve careke din hewl bidin.</value>
+  </data>
+  <data name="FacebookLoginConnectionNotExists" xml:space="preserve">
+    <value>Bikarhînerê / a hêja, agahiyên hesaba we nehatin dîtin. Bi linka jêrîn ji girêdana bi Facebookê ve piştrast bibin.                      Girêdan bi Facebookê ve</value>
+  </data>
+  <data name="FacebookShareSuccessfullMessage" xml:space="preserve">
+    <value>Di Facebookê de hate parvekirin.</value>
+  </data>
+  <data name="FriendshipRequestExists" xml:space="preserve">
+    <value>We daxwaiyeke hevaltiyê ya bê bersiv heye. Hûn nikarin daxwaziya hevaltiyê ya nû bişînin.</value>
+  </data>
+  <data name="HasSharedBefore" xml:space="preserve">
+    <value>We beriya niha ev parve kiriye û nikarin car din parve bikin.</value>
+  </data>
+  <data name="IncorectPassword" xml:space="preserve">
+    <value>Formeta şifreyê şaş e. Bala xwe bidin rênimûniya li cem xişteyê.</value>
+  </data>
+  <data name="LargerThanMaximumUpload" xml:space="preserve">
+    <value>Ev belgeya ku we şandiye, asta herî zêde derbas kiriye.</value>
+  </data>
+  <data name="ListOfErrorsTitle" xml:space="preserve">
+    <value>Ev şaştî çê bûye:</value>
+  </data>
+  <data name="LoginBlockedAccount" xml:space="preserve">
+    <value>Bikarhînerê / a hêja, hesaba we ji aliyê rêveberên malperê ve hatiye astengkirin. Ji bo sedemên astengkirinê yan ji bo derketin ji astengiyê, bi rêveberan ve têkevin nava pêwendiyê.</value>
+  </data>
+  <data name="LoginDeletedAccount" xml:space="preserve">
+    <value>Bikarhînerê / a hêja, hesaba we hatiye jêbirin. We di heyama destnîşankirî de ji bo vegerandina hesaba xwe hewl nedaye. Ji bo çalakkirinê, bi                                                riya vê rûpelê     bi rêveberan re têkevin nava pêwendiyê.</value>
+  </data>
+  <data name="LoginNotValidAttempt" xml:space="preserve">
+    <value>Adresa imail û şifreyên we, ne bawer in. Ji kerema xwe re binêrin:                                             Imail bi dirustî hatibe şandin. Weke    xyz@vkurdistan.com                               Şifreya we, divê bi taybetmendiyên ku di rûpela navnivîsiyê de hatine, hemaheng be.</value>
+  </data>
+  <data name="LoginUserLockedOut" xml:space="preserve">
+    <value>Bikarhînerê / a hêja, hesaba we ji ber mijarên ewlehî, bi rengekî demkî hatiye astengkirin. Piştî heyamekê dikarin careke din hewl bidin.</value>
+  </data>
+  <data name="LoginUserNotApproved" xml:space="preserve">
+    <value>Hesaba we çalak nebûye. Ji kerema xwe re li van mijaran binêrin:                                                       Imaila çalakkirinê bibînin. Çê dibe ji bo Spamê hatibe şandin. Ji bo şandina dubare ya linka çalakkirinê                              serî li vê rûpelê                                           bidin.</value>
+  </data>
+  <data name="LoginUserNotExists" xml:space="preserve">
+    <value>Imaila we şaş e. Bikarhînerek bi vê imailê tine ye.</value>
+  </data>
+  <data name="LoginWrongPassword" xml:space="preserve">
+    <value>Bikarhînerê / a hêja, şifre şaş e. Haydar bin eger çendîn caran şaştiyê dubare bikin, wê hesaba we bi rengekî demkî were astengkirin.</value>
+  </data>
+  <data name="MessageSent" xml:space="preserve">
+    <value>Peyama we hat şandin.</value>
+  </data>
+  <data name="NoNewRequest" xml:space="preserve">
+    <value>Daxaziyeke nû ya hevaltiyê tine ye.</value>
+  </data>
+  <data name="NoNotification" xml:space="preserve">
+    <value>Ti daxuyaniyek (haydariyek) tine ye.</value>
+  </data>
+  <data name="NoRecieverForMessage" xml:space="preserve">
+    <value>Wergirek ji peyamê re nehatiye destnîşankirin.</value>
+  </data>
+  <data name="NotAllowedToFollow" xml:space="preserve">
+    <value>Hûn nikarin vî / vê endamî / ê bişopînin.</value>
+  </data>
+  <data name="NotAllowedToLeaveComment" xml:space="preserve">
+    <value>Hûn nikarin nerîna xwe li ser vê şandiyê binivîsînin.</value>
+  </data>
+  <data name="NotAllowedToPostOnWall" xml:space="preserve">
+    <value>Hûn nikarin li ser dîwarê vî / vê endamî / ê şandiyê danîn.</value>
+  </data>
+  <data name="NotAllowedToSendFriendshipRequest" xml:space="preserve">
+    <value>Hûn nikarin ji bo vî / wê endamî / ê daxwaza hevaltiyê bişînin.</value>
+  </data>
+  <data name="NotAllowedToSendMessage" xml:space="preserve">
+    <value>Hûn nikarin ji bo vî / vê endamî / ê peyamê bişînin.</value>
+  </data>
+  <data name="NotValidEmail" xml:space="preserve">
+    <value>Ev imail di sîstemê de tine ye. Ji kerema xwe re car din hewl bidin.</value>
+  </data>
+  <data name="NotValidFacebookEmail" xml:space="preserve">
+    <value>Imaila ku ji bo Facebookê hatiye ragihandin, şaş e. Car din hewl bidin.                               Têbînî: Eger we di Facebookê de bi hejmara telefûna xwe pêwendî çê kiriye, wê demê em nikarin pêwendiyê bi Facebooka we re çê bikin. Wê demê                        Hûn tenê dikarin di vKurdistanê de navnivîsiyê bikin.</value>
+  </data>
+  <data name="NotValidFacebookInformation" xml:space="preserve">
+    <value>Pirsgirêkek di wergirtina agahiyên we de di Facebookê de derketiye. Ji kerema xwe re careke din hewl bidin.</value>
+  </data>
+  <data name="NotValidFileFormat" xml:space="preserve">
+    <value>Formeta ku hûn bi kar tînin, şaş e.</value>
+  </data>
+  <data name="NotValidPhotoFormat" xml:space="preserve">
+    <value>Formeta ku hûn bi kar tînin, şaş e. Tenê ev formet dikarin bi kar bên:                                       JPG, PNG, GIF</value>
+  </data>
+  <data name="NotValidVideoFormat" xml:space="preserve">
+    <value>Formeta ku hûn bi kar tînin, şaş e. Tenê ev formet dikarin bi kar bên:                                       MP4, MPEG, MOV, FLV, AVI</value>
+  </data>
+  <data name="NoUnreadMessages" xml:space="preserve">
+    <value>We ti peyameke nexwendî tine ye.</value>
+  </data>
+  <data name="OldPasswordIncorrect" xml:space="preserve">
+    <value>Şifreya berê ya we şaş e.</value>
+  </data>
+  <data name="PageNotFoundErrorText" xml:space="preserve">
+    <value>Ew rûpel nehat dîtin.                                                Hûn ji ber yek ji van sedeman nikarin rûpelê bibînin:                                          Adresa malperê bi şaş be.                                       Sîstema we nekare malperê veke.                               Dîroka Bokmarkê şaş be.</value>
+  </data>
+  <data name="PasswordHint" xml:space="preserve">
+    <value>Şifre dibe herî kêm: 8         Kêmtirîn hejmara tîpan: 1            Asta herî kêm ya hejmaran: 1</value>
+  </data>
+  <data name="PasswordSent" xml:space="preserve">
+    <value>Serî li imaila xwe bidin şifre jê re hatiye şandin.                                                             (Têbînî: Çê dibe imail ji bo Spamê hatibe şandin.)</value>
+  </data>
+  <data name="RangeHeight" xml:space="preserve">
+    <value>Asta dirêjiyê şaş e.</value>
+  </data>
+  <data name="RangeMaritalStatus" xml:space="preserve">
+    <value>Rewşa zewacê şaş e.</value>
+  </data>
+  <data name="RangeWeight" xml:space="preserve">
+    <value>Hejmara ji bo giranahiyê şaş e.</value>
+  </data>
+  <data name="RegularExpressionAlias" xml:space="preserve">
+    <value>Navê bikarhîner şaş e.</value>
+  </data>
+  <data name="RegularExpressionEmail" xml:space="preserve">
+    <value>Adresa imailê şaş e.</value>
+  </data>
+  <data name="RegularExpressionFullName" xml:space="preserve">
+    <value>Nav û paşnav bi formeta bawerpêkirî nîn e.</value>
+  </data>
+  <data name="RegularExpressionMobNumber" xml:space="preserve">
+    <value>Hejmara telefûnê şaş e.</value>
+  </data>
+  <data name="RegularExpressionPageName" xml:space="preserve">
+    <value>Pênaseya rûpelê bi dirustî binivîsînin.</value>
+  </data>
+  <data name="RequiredAdvPaymentStatus" xml:space="preserve">
+    <value>Çawaniya şandina pere destnîşan bikin.</value>
+  </data>
+  <data name="RequiredAdvType" xml:space="preserve">
+    <value>Cureya rêklamê hilbijêrin.</value>
+  </data>
+  <data name="RequiredAlbumName" xml:space="preserve">
+    <value>Navê albomê binivîsînin.</value>
+  </data>
+  <data name="RequiredAlias" xml:space="preserve">
+    <value>Navê bikarhîner vala ye.</value>
+  </data>
+  <data name="RequiredBeginDate" xml:space="preserve">
+    <value>Dîroka destpêkê hilbijêrin.</value>
+  </data>
+  <data name="RequiredBirthDay" xml:space="preserve">
+    <value>Ji kerema xwe re rojbûna xwe destnîşan bikin.</value>
+  </data>
+  <data name="RequiredCommentText" xml:space="preserve">
+    <value>Peyama we vala ye. Ji kerema xwe re peyamê binivîsînin.</value>
+  </data>
+  <data name="RequiredContent" xml:space="preserve">
+    <value>Naverokê binivîsînin.</value>
+  </data>
+  <data name="RequiredCost" xml:space="preserve">
+    <value>Qasê xerciyê (mezaxtî) xuya bikin.</value>
+  </data>
+  <data name="RequiredEducationBranch" xml:space="preserve">
+    <value>Pêwîst e warê xwendinê bê destnîşankirin.</value>
+  </data>
+  <data name="RequiredEducationLevel" xml:space="preserve">
+    <value>Pileya xwendinê hilbijêre.</value>
+  </data>
+  <data name="RequiredEmail" xml:space="preserve">
+    <value>Ji kerema xwe re imaila xwe xuya bikin.</value>
+  </data>
+  <data name="RequiredEndDate" xml:space="preserve">
+    <value>Dîroka dawîbûnê destnîşan bikin.</value>
+  </data>
+  <data name="RequiredGender" xml:space="preserve">
+    <value>Ji kerema xwe re Nêr yan Mêbûna xwe destnîşan bikin.</value>
+  </data>
+  <data name="RequiredHeightBlocks" xml:space="preserve">
+    <value>Hejmara xaniyên serketî destnîşan bikin.</value>
+  </data>
+  <data name="RequiredID" xml:space="preserve">
+    <value>Ji kerma xwe re pênaseyê destnîşan bikin.</value>
+  </data>
+  <data name="RequiredImageFile" xml:space="preserve">
+    <value>Wêneyê hilbijêre.</value>
+  </data>
+  <data name="RequiredLastName" xml:space="preserve">
+    <value>Paşnava xwe binivîsînin.</value>
+  </data>
+  <data name="RequiredLeftIndex" xml:space="preserve">
+    <value>Rêjeya dûrî ji aliyê çepê ve destnîşan bikin.</value>
+  </data>
+  <data name="RequiredMessageText" xml:space="preserve">
+    <value>Peyama we vala ye. Ji kerema xwe re nerîna xwe binivîsînin.</value>
+  </data>
+  <data name="RequiredName" xml:space="preserve">
+    <value>Navê xwe binivîsînin.</value>
+  </data>
+  <data name="RequiredPostTextOrPhoto" xml:space="preserve">
+    <value>Şandiya we vala ye. Ji bo şandinê divê nivîsîn yan wêne pê re hebe.</value>
+  </data>
+  <data name="RequiredRegistrationCode" xml:space="preserve">
+    <value>Koda çalakkirina hesabê nehatiye danîn.</value>
+  </data>
+  <data name="RequiredRegistrationDate" xml:space="preserve">
+    <value>Dîroka navnivîsiyê nehatiye xuyakirin</value>
+  </data>
+  <data name="RequiredSkillTitle" xml:space="preserve">
+    <value>Şiyanên xwe binivîsîne.</value>
+  </data>
+  <data name="RequiredTarget" xml:space="preserve">
+    <value>Adresa rûpela ku dixwezî biçî, binivîsîne</value>
+  </data>
+  <data name="RequiredTitle" xml:space="preserve">
+    <value>Mijarê binivîsîne.</value>
+  </data>
+  <data name="RequiredTopIndex" xml:space="preserve">
+    <value>Dûrî ji aliyê jorî ve destnîşan bike.</value>
+  </data>
+  <data name="RequiredWidthBlocks" xml:space="preserve">
+    <value>Hejmara xaniyên paniyê destnîşan bike.</value>
+  </data>
+  <data name="SendCodeSuccessful" xml:space="preserve">
+    <value>Koda çalakkirinê ya hesabê, ji bo imaila we hatiye şandin. Bi imaila xwe koda çalakirinê bi kar bînin. Çê dibe di Spama imailê de be.</value>
+  </data>
+  <data name="SpamGenralMessage" xml:space="preserve">
+    <value>Çend çirkeyan bisekinin û careke din bişînin.</value>
+  </data>
+  <data name="SpamPostMessage" xml:space="preserve">
+    <value>Herî dawî şandiyeke we hebû. Hûn dikarin 60 çirkeyên din tişteke din bişînin.</value>
+  </data>
+  <data name="StringLengthAboutMe" xml:space="preserve">
+    <value>Beşa "Di Derbarê Min" de, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthAlbumDesc" xml:space="preserve">
+    <value>Şiroveya albomê, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthAlbumName" xml:space="preserve">
+    <value>Navê albomê, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthAlias" xml:space="preserve">
+    <value>Navê bikarhîner, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthBehavior" xml:space="preserve">
+    <value>Beşa riftarê, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthCommentText" xml:space="preserve">
+    <value>Nerînê, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthDescription" xml:space="preserve">
+    <value>Beşa "Di Derbarê Min" de, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthEducation" xml:space="preserve">
+    <value>Beşa xwendinê, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthEmail" xml:space="preserve">
+    <value>Beşa imaiمê, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthFashion" xml:space="preserve">
+    <value>Beşa modelê, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthFavoriteBooks" xml:space="preserve">
+    <value>Beşa pertûkên dilxwaz, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthFavoriteMovies" xml:space="preserve">
+    <value>Beşa fîlmên dilxwaz, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthFavoriteMusics" xml:space="preserve">
+    <value>Beşa mûzîka dilxwaz, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthFavoriteQuotes" xml:space="preserve">
+    <value>Beşa gotinên dilxwaz yên kesatiyan, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthGeneral" xml:space="preserve">
+    <value>Derbasbûn ji asta herî zêde ya nivîsînê.</value>
+  </data>
+  <data name="StringLengthHobbies" xml:space="preserve">
+    <value>Beşa dilxwaziyan, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthID" xml:space="preserve">
+    <value>Beşa pênaseyê, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthLastName" xml:space="preserve">
+    <value>Beşa paşnavê, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthName" xml:space="preserve">
+    <value>Beşa nav, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthPostText" xml:space="preserve">
+    <value>Beşa şandiyê, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="StringLengthRegistrationCode" xml:space="preserve">
+    <value>Beşa koda çalakkirina hesabê, asta herî zêde ya nivîsînê derbas kiriye.</value>
+  </data>
+  <data name="SuccessfullyAddedComment" xml:space="preserve">
+    <value>Nerîna we hat şandin.</value>
+  </data>
+  <data name="SuccessfullyCreatedAlbum" xml:space="preserve">
+    <value>Alboma wêneyan, hat çêkirin.                                   Vegeriyan ji bo lîsta alboman ji bo serrastkirinê.</value>
+  </data>
+  <data name="SuccessfullyDeleted" xml:space="preserve">
+    <value>Jêbirin bi dawî bû.</value>
+  </data>
+  <data name="SuccessfullySaved" xml:space="preserve">
+    <value>Bi awayekî serketî hat paşkeftkirin.</value>
+  </data>
+  <data name="SuccessfullySent" xml:space="preserve">
+    <value>Hat şandin.</value>
+  </data>
+  <data name="SuccessfullyUploadedAlbumPhoto" xml:space="preserve">
+    <value>Belge hat şandin. Hûn dikarin hûrgiliyên wêneyan serrast bikin.</value>
+  </data>
+  <data name="SuccessfullyUploadedProfieCover" xml:space="preserve">
+    <value>Belge hat şandin. Hûn dikarin wêneyê profila xwe serrast bikin.</value>
+  </data>
+  <data name="UploadCoverImageText" xml:space="preserve">
+    <value>Bikarhînerê / a hêja, wêneyê keverê ji Computera xwe hilbijêre:</value>
+  </data>
+  <data name="UploadProfileImageText" xml:space="preserve">
+    <value>Bikarhînerê / a hêja, wêneyê profila xwe ji Computera xwe hilbijêre:</value>
+  </data>
+  <data name="UserExists" xml:space="preserve">
+    <value>Ev adresa imailê, beriya niha di sîstemê de heye</value>
+  </data>
+  <data name="UserNotExists" xml:space="preserve">
+    <value>Ti bikarhînerek bi vê imailê tine ye. Ji kerema xwe re careke din hewl bide.</value>
+  </data>
+  <data name="VideoNotProcessedYet" xml:space="preserve">
+    <value>Bikarhînerê / a hêja, ev dîmen tê rêkxistin, Niha nikarî lê binêrî.                                                  Rêkxistina dîmenê, çê dibe ji çend çirkeyan heya çend xulekan bikşîne.</value>
+  </data>
+  <data name="WrongPasswordConfirm" xml:space="preserve">
+    <value>Dubareya şifreyê dirust nîn e</value>
+  </data>
+  <data name="YouAreFriendsNow" xml:space="preserve">
+    <value>Beriya niha hûn di pêwenidya hevaltiyê de ne.</value>
+  </data>
+  <data name="YouCantShareYourObjects" xml:space="preserve">
+    <value>Hûn nikarin şandiyên xwe parve bikin.</value>
+  </data>
+</root>

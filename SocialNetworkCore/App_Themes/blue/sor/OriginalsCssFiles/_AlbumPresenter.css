@@ -1,0 +1,78 @@
+﻿div.album_container
+{
+    border-bottom: solid 1px #e9e9e9;
+    padding: 20px 0 20px 0;
+}
+
+div.album_container img.album_cover
+{
+    float: right;
+    width: 100px;
+    height: 100px;
+}
+
+div.album_info
+{
+    float: right;
+    margin: 0 15px 0 0;
+    width: 500px;
+    position: relative;
+    height: 104px;
+}
+
+div.album_info h2
+{
+    font-size: 10pt;
+    font-weight: bold;
+    color: #115e8b;
+}
+
+div.album_info h3
+{
+    font-size: 8pt;
+    font-weight: normal;
+    color: #b3b4b5;
+    padding: 5px 0 5px 0;
+    margin: 0;
+}
+
+div.album_tools
+{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left:0;
+}
+
+div.album_tools a
+{
+    float: right;
+    
+    height: 16px;
+    padding: 0 20px 0 0;
+    color: #7db6d5;
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+
+div.album_tools a.album_edit
+{
+    background-image: url(album_tool_edit.png);
+}
+
+div.album_tools a.album_photos
+{
+    background-image: url(album_tool_photos.png);
+}
+
+div.album_tools a.album_delete
+{
+    background-image: url(album_tool_delete.png);
+}
+
+div.album_tools div.loading_small_circle_parent
+{
+    float: right;
+    margin: 0 5px 0 5px;
+    height: 16px;
+}

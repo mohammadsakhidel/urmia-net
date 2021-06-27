@@ -1,0 +1,19 @@
+﻿@using SocialNetApp.Models
+@using SocialNetApp.Views.Models.Modules
+@using CoreHelpers
+@model PhotoDetailsModel
+
+<div id="photo_details">
+    @if (Model.HasPhoto)
+    {
+        <div class="obj_det_info">
+            @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.PhotoOwnerIdentityModel);}
+        </div>
+        <div class="obj_det_photos">
+            @{Html.RenderPartial(Urls.ModuleViews + "_PhotoCollection.cshtml", Model.PhotoCollectionModel);}
+        </div>
+        <div class="obj_det_actions">
+            @{Html.RenderPartial(Urls.ModuleViews + "_SharedObjectActions.cshtml", Model.SharedObjectActionsModel);}
+        </div>
+    }
+</div>

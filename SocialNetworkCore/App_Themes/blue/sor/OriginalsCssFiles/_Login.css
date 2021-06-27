@@ -1,0 +1,124 @@
+﻿/* ************************ LOGIN ON HEADER *************************** */
+.login_on_header
+{
+    float: left;
+    margin-top: 10px;
+}
+
+.login_on_header input[type="submit"]
+{
+    background-color: #1570a6;
+    padding: 1px 5px 4px 5px;
+    color: #ffffff;
+    font-weight: bold;
+    border: solid 1px #ffffff;
+}
+
+.login_on_header input[type="submit"]:active
+{
+    background-color: #115e8b;
+}
+
+.login_on_header input[type="text"], .login_on_header input[type="password"]
+{
+    width: 130px;
+    padding: 4px;
+    border: solid 1px #7db6d5;
+    font-size: 7.5pt;
+    margin: 0 2px 0 2px;
+    direction: ltr;
+}
+
+.login_on_header label
+{
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+}
+
+.login_on_header label#labelForRememberMe
+{
+    float: right;
+    color: #7db6d5;
+    padding: 3px 0 0 0;
+    font-size: 7pt;
+    white-space: nowrap;
+}
+
+.login_on_header input[type="checkbox"]
+{
+    float: right;
+}
+
+.login_on_header a
+{
+    float: right;
+    color: #7db6d5;
+    font-size: 7pt;
+    text-decoration: none;
+}
+
+.login_on_header a:hover
+{
+    text-decoration: underline;
+}
+
+.login_on_header .loading_small
+{
+    width: 19px;
+    height: 16px;
+    background-image: url(loading_small_onheader.gif);
+}
+
+/* ************************ LOGIN ON CONTENT *************************** */
+.login_on_content
+{
+}
+
+.login_on_content #LoginLoading
+{
+    float: right;
+    margin: 5px 10px 0 0;
+}
+
+.login_on_content label
+{
+    font-weight: bold;
+    color: #4a4747;
+}
+
+.login_on_content input[type="text"], .login_on_content input[type="password"]
+{
+    direction: ltr;
+    width: 200px;
+}
+
+.login_on_content .login_a
+{
+    color: #00ade8;
+    text-decoration: none;
+}
+
+.login_on_content a:hover
+{
+    text-decoration: underline;
+}
+
+.login_on_content input[type="submit"]
+{
+    width: 75px;
+    float: right;
+}
+
+.login_on_content .frame_content table
+{
+    float: right;
+}
+
+.login_on_content #status_message
+{
+    float: right;
+    margin: 0 50px 0 0;
+    min-width: 200px;
+    max-width: 350px;
+}

@@ -1,0 +1,58 @@
+﻿#hp_suggestions img.userthumb
+{
+    border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+div.sugg_box
+{
+    margin-bottom: 15px;
+}
+
+div.sugg_box .sugg_box_title
+{
+    border-bottom: solid 1px #dcdcdc;
+    padding: 0 0 2px 0;
+    font-size: 7.5pt;
+}
+
+div.sugg_box .sugg_box_title span
+{
+    font-size: 7.5pt;
+    color: #333132;
+    font-family: Tahome;
+    display: inline-block;
+    font-weight: normal;
+}
+
+div.sugg_box .sugg_box_in
+{
+    padding: 5px 0 5px 2px;
+}
+
+div.sugg_box .sugg_box_in > div:last-child
+{
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.sugg_box_user
+{
+    float: left;
+    
+}
+
+.sugg_box_user:hover
+{
+    background-color: #f6f6f6;
+}
+
+.sugg_box_user a
+{
+    font-size: 7.5pt;
+}
+
+.sugg_box_user a:hover
+{
+    text-decoration: none;
+}

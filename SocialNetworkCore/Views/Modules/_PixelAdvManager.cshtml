@@ -1,0 +1,291 @@
+﻿@using CoreHelpers
+@model SocialNetApp.Views.Models.Modules.PixelAdvManagerModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_PixelAdvManagerHeadTags.min.js")"></script>
+<div id="pixel_adv_mngr" class="viewpart">
+    <div class="viewpart_title">
+        <h2>@Resources.Words.PixelAdv</h2>
+    </div>
+    <div class="viewpart_content">
+        @using (Html.BeginForm("SubmitPixelAdv", "Admin", FormMethod.Post, new { @id = "frm_pix_adv_editor", enctype = "multipart/form-data" }))
+        {
+            <input type="hidden" name="FormAction" value="@(Model.FormAction)" />
+            <input type="hidden" name="Id" value="@(Model.IsPostBack && !Model.Done ? Model.Form["Id"] : "")" />
+            <div class="pxl_adv_fileds">
+                <div class="pxl_adv_filed">
+                    <div class="pxl_adv_filed_name">
+                        <label for="Title">@Resources.Words.Title:</label>
+                    </div>
+                    <div class="pxl_adv_filed_val">
+                        <input type="text" name="Title" id="Title" value="@(Model.IsPostBack && !Model.Done ? Model.Form["Title"] : "")" />
+                    </div>
+                </div>
+                <div class="pxl_adv_filed">
+                    <div class="pxl_adv_filed_name">
+                        <label for="Target">@Resources.Words.PixelAdvTargetAddress:</label>
+                    </div>
+                    <div class="pxl_adv_filed_val">
+                        <input type="text" name="Target" id="Target" value="@(Model.IsPostBack && !Model.Done ? Model.Form["Target"] : "")" />
+                    </div>
+                </div>
+                <div class="pxl_adv_filed">
+                    <div class="pxl_adv_subfiled">
+                        <div class="pxl_adv_filed_name">
+                            <label for="WidthBlocks">@Resources.Words.PixelAdvWidthBlocks:</label>
+                        </div>
+                        <div class="pxl_adv_filed_val">
+                            <input type="text" name="WidthBlocks" id="WidthBlocks" value="@(Model.IsPostBack && !Model.Done ? Model.Form["WidthBlocks"] : "")" />
+                        </div>
+                    </div>
+                    <div class="pxl_adv_subfiled">
+                        <div class="pxl_adv_filed_name">
+                            <label for="HeightBlocks">@Resources.Words.PixelAdvHeightBlocks:</label>
+                        </div>
+                        <div class="pxl_adv_filed_val">
+                            <input type="text" name="HeightBlocks" id="HeightBlocks" value="@(Model.IsPostBack && !Model.Done ? Model.Form["HeightBlocks"] : "")" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="pxl_adv_filed">
+                    <div class="pxl_adv_subfiled">
+                        <div class="pxl_adv_filed_name">
+                            <label>@Resources.Words.BeginDate:</label>
+                        </div>
+                        <div class="pxl_adv_filed_val">
+                            @{
+            var begin_day = (Model.IsPostBack && !Model.Done ? Model.Form["BeginDateDay"] : "");
+            var begin_month = (Model.IsPostBack && !Model.Done ? Model.Form["BeginDateMonth"] : "");
+            var begin_year = (Model.IsPostBack && !Model.Done ? Model.Form["BeginDateYear"] : "");
+                            }
+                            <select name="BeginDateDay">
+                                <option value="" @(begin_day == "" ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.Day</option>
+                                @for (var i = 1; i <= 31; i++)
+                                {
+                                    <option value="@i" @(begin_day == @i.ToString() ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@i</option>
+                                }
+                            </select>
+                            <select name="BeginDateMonth">
+                                <option value="" @(begin_month == "" ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.Month</option>
+                                @for (var i = 1; i <= 12; i++)
+                                {
+                                    <option value="@i" @(begin_month == @i.ToString() ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Dictionaries.Months[@i]</option>
+                                }
+                            </select>
+                            <select name="BeginDateYear">
+                                <option value="" @(begin_year == "" ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.Year</option>
+                                @for (var i = Digits.BeginYear; i <= Digits.EndYearForFuture; i++)
+                                {
+                                    <option value="@i" @(begin_year == @i.ToString() ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@i</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="pxl_adv_subfiled">
+                        <div class="pxl_adv_filed_name">
+                            <label>@Resources.Words.EndDate:</label>
+                        </div>
+                        <div class="pxl_adv_filed_val">
+                            @{
+                                var end_day = (Model.IsPostBack && !Model.Done ? Model.Form["EndDateDay"] : "");
+                                var end_month = (Model.IsPostBack && !Model.Done ? Model.Form["EndDateMonth"] : "");
+                                var end_year = (Model.IsPostBack && !Model.Done ? Model.Form["EndDateYear"] : "");
+                            }
+                            <select name="EndDateDay">
+                                <option value="" @(end_day == "" ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.Day</option>
+                                @for (var i = 1; i <= 31; i++)
+                                {
+                                    <option value="@i" @(end_day == @i.ToString() ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@i</option>
+                                }
+                            </select>
+                            <select name="EndDateMonth">
+                                <option value="" @(end_month == "" ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.Month</option>
+                                @for (var i = 1; i <= 12; i++)
+                                {
+                                    <option value="@i" @(end_month == @i.ToString() ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Dictionaries.Months[@i]</option>
+                                }
+                            </select>
+                            <select name="EndDateYear">
+                                <option value="" @(end_month == "" ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.Year</option>
+                                @for (var i = Digits.BeginYear; i <= Digits.EndYearForFuture; i++)
+                                {
+                                    <option value="@i" @(end_year == @i.ToString() ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@i</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="pxl_adv_filed">
+                    <div class="pxl_adv_subfiled">
+                        <div class="pxl_adv_filed_name">
+                            <label for="Type">@Resources.Words.PixelAdvType:</label>
+                        </div>
+                        <div class="pxl_adv_filed_val">
+                            @{
+                                var adv_type = (Model.IsPostBack && !Model.Done ? Model.Form["Type"] : "");
+                            }
+                            <select id="Type" name="Type">
+                                <option value="" @(adv_type == "" ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.SelectItem</option>
+                                <option value="1" @(adv_type == "1" ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.PixelAdvFree</option>
+                                <option value="2" @(adv_type == "2" ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.PixelAdvPaid</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="pxl_adv_subfiled">
+                        <div class="pxl_adv_filed_name">
+                            <label for="PaymentStatus">@Resources.Words.PixelAdvPaymentStatus:</label>
+                        </div>
+                        <div class="pxl_adv_filed_val">
+                            @{
+                                var pay_status = (Model.IsPostBack && !Model.Done ? Model.Form["PaymentStatus"] : "");
+                            }
+                            <select id="PaymentStatus" name="PaymentStatus">
+                                <option value="" @(pay_status == "" ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.SelectItem</option>
+                                <option value="1" @(pay_status == "1" ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.PaidInCash</option>
+                                <option value="2" @(pay_status == "2" ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.PaidInCheque</option>
+                                <option value="3" @(pay_status == "3" ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.NotPaid</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="pxl_adv_subfiled">
+                        <div class="pxl_adv_filed_name">
+                            <label for="Cost">@Resources.Words.PixelAdvCost:</label>
+                        </div>
+                        <div class="pxl_adv_filed_val">
+                            <input type="text" id="Cost" name="Cost" value="@(Model.IsPostBack && !Model.Done ? Model.Form["Cost"] : "")" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="pxl_adv_filed">
+                    <div class="pxl_adv_filed_name">
+                        <label for="Considerations">@Resources.Words.Considerations:</label>
+                    </div>
+                    <div class="pxl_adv_filed_val">
+                        <textarea id="Considerations" name="Considerations">@(Model.IsPostBack && !Model.Done ? Model.Form["Considerations"] : "")</textarea>
+                    </div>
+                </div>
+                <div class="pxl_adv_filed">
+                    <div class="pxl_adv_filed_val">
+                        <input type="file" name="ImageFile" id="ImageFile" />
+                    </div>
+                </div>
+                <div class="pxl_adv_filed">
+                    <div class="pxl_adv_filed_val">
+                        <div class="pxl_adv_field_chbox">
+                            <input type="checkbox" name="HomeVis" id="HomeVis" @(Model.IsPostBack && !Model.Done && Model.Form["HomeVis"] != null && Model.Form["HomeVis"].ToLower() == "on" ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                            <label for="HomeVis">@Resources.Words.PixelAdvHome</label>
+                            <div style="margin-top: 10px;">
+                                <div class="pxl_adv_subfiled">
+                                    <div class="pxl_adv_filed_name">
+                                        <label for="HomeTopIndex">@Resources.Words.PixelAdvTopIndex:</label>
+                                    </div>
+                                    <div class="pxl_adv_filed_val">
+                                        <input type="text" name="HomeTopIndex" id="HomeTopIndex" value="@(Model.IsPostBack && !Model.Done ? Model.Form["HomeTopIndex"] : "")" />
+                                    </div>
+                                </div>
+                                <div class="pxl_adv_subfiled">
+                                    <div class="pxl_adv_filed_name">
+                                        <label for="HomeLeftIndex">@Resources.Words.PixelAdvLeftIndex:</label>
+                                    </div>
+                                    <div class="pxl_adv_filed_val">
+                                        <input type="text" name="HomeLeftIndex" id="HomeLeftIndex" value="@(Model.IsPostBack && !Model.Done ? Model.Form["HomeLeftIndex"] : "")" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pxl_adv_field_chbox">
+                            <input type="checkbox" name="HomePageVis" id="HomePageVis" @(Model.IsPostBack && !Model.Done && Model.Form["HomePageVis"] != null && Model.Form["HomePageVis"].ToLower() == "on" ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                            <label for="HomePageVis">@Resources.Words.PixelAdvHomePage</label>
+                            <div style="margin-top: 10px;">
+                                <div class="pxl_adv_subfiled">
+                                    <div class="pxl_adv_filed_name">
+                                        <label for="HomePageTopIndex">@Resources.Words.PixelAdvTopIndex:</label>
+                                    </div>
+                                    <div class="pxl_adv_filed_val">
+                                        <input type="text" name="HomePageTopIndex" id="HomePageTopIndex" value="@(Model.IsPostBack && !Model.Done ? Model.Form["HomePageTopIndex"] : "")" />
+                                    </div>
+                                </div>
+                                <div class="pxl_adv_subfiled">
+                                    <div class="pxl_adv_filed_name">
+                                        <label for="HomePageLeftIndex">@Resources.Words.PixelAdvLeftIndex:</label>
+                                    </div>
+                                    <div class="pxl_adv_filed_val">
+                                        <input type="text" name="HomePageLeftIndex" id="HomePageLeftIndex" value="@(Model.IsPostBack && !Model.Done ? Model.Form["HomePageLeftIndex"] : "")" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pxl_adv_field_chbox">
+                            <input type="checkbox" name="ProfileVis" id="ProfileVis" @(Model.IsPostBack && !Model.Done && Model.Form["ProfileVis"] != null && Model.Form["ProfileVis"].ToLower() == "on" ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                            <label for="ProfileVis">@Resources.Words.PixelAdvProfilePage</label>
+                            <div style="margin-top: 10px;">
+                                <div class="pxl_adv_subfiled">
+                                    <div class="pxl_adv_filed_name">
+                                        <label for="ProfileTopIndex">@Resources.Words.PixelAdvTopIndex:</label>
+                                    </div>
+                                    <div class="pxl_adv_filed_val">
+                                        <input type="text" name="ProfileTopIndex" id="ProfileTopIndex" value="@(Model.IsPostBack && !Model.Done ? Model.Form["ProfileTopIndex"] : "")" />
+                                    </div>
+                                </div>
+                                <div class="pxl_adv_subfiled">
+                                    <div class="pxl_adv_filed_name">
+                                        <label for="ProfileLeftIndex">@Resources.Words.PixelAdvLeftIndex:</label>
+                                    </div>
+                                    <div class="pxl_adv_filed_val">
+                                        <input type="text" name="ProfileLeftIndex" id="ProfileLeftIndex" value="@(Model.IsPostBack && !Model.Done ? Model.Form["ProfileLeftIndex"] : "")" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border">
+                <div class="sub_pix_adv">
+                    <input type="submit" value="@Resources.Words.Send" />
+                    <div id="prg_sub_pixel_adv" class="loading_small_circle hide">
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            if (Model.IsPostBack)
+            {
+            <div style="margin-top: 10px;" class="@(Model.Done ? "success_message" : "error_message")">
+                @if (!Model.Done)
+                {
+                    <ul>
+                        @foreach (var error in Model.Errors)
+                        {
+                            <li>@error</li>   
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <span>@Resources.Messages.SuccessfullySaved</span>
+                }
+            </div>
+            }
+        }
+        <div id="adv_list">
+            @foreach (var adv in Model.Ads)
+            {
+                <div id="@("adv_item_" + adv.Id)" class="adv_item">
+                    @Ajax.ActionLink(Resources.Words.Delete, "DeletePixelAdv", "Admin", new { id = adv.Id }, new AjaxOptions { HttpMethod = "Post", OnSuccess = "DeletePixelAdvSuccess", OnFailure = "DeletePixelAdvFailure", LoadingElementId = "prg_adv_action_" + adv.Id }, new { @class = "adv_item_action" })
+                    @Ajax.ActionLink(Resources.Words.Edit, "EditPixelAdv", "Admin", new { id = adv.Id }, new AjaxOptions { HttpMethod = "Post", OnSuccess = "EditPixelAdvSuccess", OnFailure = "EditPixelAdvFailure", LoadingElementId = "prg_adv_action_" + adv.Id }, new { @class = "adv_item_action" })
+                    @Ajax.ActionLink((adv.Visible ? Resources.Words.Hide : Resources.Words.Show), "ChangeVisibilityPixelAdv", "Admin", new { id = adv.Id }, new AjaxOptions { HttpMethod = "Post", OnFailure = "ChangeVisibilityPixelAdvFailure", OnSuccess = "ChangeVisibilityPixelAdvSuccess", LoadingElementId = "prg_adv_action_" + adv.Id }, new { @class = "adv_item_action", @id = "btn_change_adv_vis_" + adv.Id })
+                    <div id="@("prg_adv_action_" + adv.Id)" class="loading_small_circle hide"></div>
+                    <span class="@(adv.Visible ? "" : "adv_item_hidden")">@adv.Title</span>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<input type="hidden" id="w_ajax_fail" value="@Resources.Messages.AjaxFail" />

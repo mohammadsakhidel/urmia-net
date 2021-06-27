@@ -1,0 +1,21 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@using SocialNetApp.Models
+@model SocialNetApp.Views.Models.Objects.ObjectDetailsViewModel
+@{
+    Layout = "~/Views/Layouts/_TitleLessFrame.cshtml";
+}
+@section head{
+    <title>
+        @Resources.Titles.ObjectDetails
+        @Strings.TitleSeparator
+        @Resources.Titles.StaticPageTitle
+    </title>
+}
+@section content{
+    <div id="obj_details_parent">
+        @{
+            Html.RenderPartial(Urls.ModuleViews + "_SharedObjectDetails.cshtml", Model.SharedObjectDetailsModel);
+        }
+    </div>
+}

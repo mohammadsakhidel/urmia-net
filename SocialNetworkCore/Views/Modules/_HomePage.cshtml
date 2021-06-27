@@ -1,0 +1,44 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model HomePageModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_HomePageHeadTags.min.js")"></script>
+<div id="homepage_mod">
+    <div id="hp_content">
+        @{Html.RenderPartial(Urls.ModuleViews + "_PostEditor.cshtml", Model.PostEditorModel);}
+        <div class="hp_title"><div><h2>@Resources.Words.NewsFeed</h2></div></div>
+        <div id="hp_activities">
+            @if (Model.IsDeservedForWelcome)
+            {
+                foreach (var wpModel in Model.WelcomePosts)
+                {
+                    Html.RenderPartial(Urls.ModuleViews + "_SpecialPost.cshtml", wpModel);
+                }
+            }
+            @foreach (var ppModel in Model.PinnedPosts)
+            {
+                Html.RenderPartial(Urls.ModuleViews + "_SpecialPost.cshtml", ppModel);
+            }
+            @foreach (var actRecord in Model.ActivityRecords)
+            {
+                Html.RenderPartial(actRecord.Item1.PartialViewUrl, actRecord.Item2);
+            }
+        </div>
+        @{Html.RenderPartial(Urls.ModuleViews + "_ViewMore.cshtml", Model.ViewMoreModel);}
+    </div>
+    <div id="hp_bar">
+        @{Html.RenderPartial(Urls.ModuleViews + "_HomePageSuggestions.cshtml", Model.HomePageSuggestionsModel);}
+    </div>
+    <div class="clear">
+    </div>
+</div>
+<!-- words and settings: -->
+<input type="hidden" id="w_read_more" value="@Resources.Words.ReadMore" />
+<input type="hidden" id="w_read_less" value="@Resources.Words.ReadLess" />
+<input type="hidden" id="config_show_more_length" value="@Digits.ShowMoreLength" />
+<input type="hidden" id="w_write_your_comment" value="@Resources.Words.WriteYourComment" />
+<input type="hidden" id="w_comment" value="@Resources.Words.Comment" />
+<input type="hidden" id="w_share" value="@Resources.Words.Share" />
+<input type="hidden" id="w_like" value="@Resources.Words.Like" />
+<input type="hidden" id="w_unlike" value="@Resources.Words.Unlike" />
+<input type="hidden" id="w_people_like_this" value="@Resources.Words.PeopleLikeThis" />
+<input type="hidden" id="w_ajax_fail" value="@Resources.Messages.AjaxFail" />

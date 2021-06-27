@@ -1,0 +1,53 @@
+﻿div#share_dialog div.sharing_object
+{
+    margin-top: 10px;
+    border-top: solid 1px #cacaca;
+    border-bottom: solid 1px #cacaca;
+    padding: 15px 0;
+}
+
+div#share_dialog div.dialog_actions div.loading_small_circle
+{
+    float: right;
+    margin: 5px 0 0 0;
+}
+
+div#share_dialog div#dialog_msg
+{
+    margin: 10px 0 0 0;
+    padding: 5px;
+    min-width: 250px;
+}
+
+div#share_dialog .object_sender
+{
+    float: left;
+}
+
+div#share_dialog .shared_object_details
+{
+    float: left; 
+    max-height: 250px; 
+    width: 610px; 
+    margin: 0 10px 0 0;
+    overflow-y: auto;
+}
+
+div#share_dialog div.sharing_selects
+{
+    float: left;
+    margin: 10px 0 0 0;
+}
+
+div#share_dialog div.sharing_selects select
+{
+    float: left;
+    margin: 0 7px 0 0;
+}
+
+div#share_dialog div.sharing_selects label
+{
+    float: left;
+    font-size: 7.5pt;
+    margin: 2px 1px 0 0;
+}

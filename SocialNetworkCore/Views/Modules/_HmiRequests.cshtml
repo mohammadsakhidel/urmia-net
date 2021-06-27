@@ -1,0 +1,45 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model HmiRequestsModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_HmiRequestsHeadTags.min.js")"></script>
+<div id="hmi_requests">
+    <div class="hmi_req_in">
+        @if (Model.NewFriendshipRequests.Any())
+        {
+            foreach (var record in Model.NewFriendshipRequests)
+            {
+                var req = record.Item1;
+                var sender = record.Item2;
+            <div class="hmi_req" id="@("hmi_req_" + req.Id)">
+                <div class="loading_small_circle hide">
+                </div>
+                <div class="hmi_req_actions">
+                    @Ajax.ActionLink(Resources.Words.Accept, "AcceptFriendshipRequest", "Members", new { requestId = req.Id }, new AjaxOptions { HttpMethod = "Post", OnSuccess = "AcceptFriendshipRequestSuccess" }, new { @class = "okey" })
+                    @Ajax.ActionLink(Resources.Words.Reject, "RejectFriendshipRequest", "Members", new { requestId = req.Id }, new AjaxOptions { HttpMethod = "Post", OnSuccess = "RejectFriendshipRequestSuccess" }, new { @class = "cancel" })
+                </div>
+                <div class="hmi_req_thumb">
+                    @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", record.Item3);}
+                </div>
+                <div class="hmi_req_details">
+                    <div class="hmi_req_sdr_fullname">
+                        @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", record.Item4);}
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            }
+        }
+        else
+        {
+            <div class="hmi_req_empty">
+                @Resources.Messages.NoNewRequest
+            </div>
+        }
+    </div>
+    <div class="hmi_req_footer">
+        <a href="@Url.Action("Friends", "HomePage")">@Resources.Words.SeeListOfFriends</a>
+    </div>
+    <!-- **************************** Hidden Fields ************************** -->
+    <input type="hidden" id="w_noNewRequest" value="@Resources.Messages.NoNewRequest" />
+</div>

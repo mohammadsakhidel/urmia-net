@@ -1,0 +1,58 @@
+﻿div.notification
+{
+    position: relative;
+}
+
+div.notification div.not_time
+{
+    position: absolute;
+    left:0;
+    top: -5px;
+    font-size: 7pt;
+    color: #c7c8ca;
+}
+
+div.notification div.not_actor
+{
+    float: right;
+}
+
+div.notification div.not_content
+{
+    float: right;
+    margin: 0px 5px 0 0;
+    max-width: 350px;
+    color: #808285;
+    line-height: 18px;
+}
+
+div.notification span.not_quote
+{
+    font-style: italic;
+    color: #414042;
+}
+/* like notification */
+div.notification div.likenot_in
+{
+    margin-top: 10px;
+}
+/* comment notification */
+div.notification div.commnot_in
+{
+    margin-top: 2px;
+}
+/* share notification */
+div.notification div.sharenot_in
+{
+    margin-top: 10px;
+}
+/* wallpost notification */
+div.notification div.wallpost_in
+{
+    margin-top: 10px;
+}
+/* accept request notification */
+div.notification div.accreq_in
+{
+    margin-top: 10px;
+}

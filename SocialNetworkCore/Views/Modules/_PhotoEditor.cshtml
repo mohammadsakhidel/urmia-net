@@ -1,0 +1,98 @@
+﻿@using CoreHelpers;
+@model SocialNetApp.Views.Models.Modules.PhotoEditorModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_PhotoEditorHeadTags.min.js")"></script>
+<div id="@("photo_editor_" + Model.Photo.Id)" class="photo_editor border">
+    <div class="thumb_parent">
+        @using (Html.BeginForm("DeletePhoto", "Photos", FormMethod.Post, new { @onclick = "return confirm('" + Resources.Messages.AreYouSure + "');" }))
+        {
+            <input name="Id" type="hidden" value="@Model.Photo.Id" />
+            <input name="AlbumId" type="hidden" value="@Model.Photo.AlbumId" />
+            <input type="submit" name="DeletePhoto" value="@Resources.Words.DeletePhoto" />
+        }
+        <img class="thumb" src="@Url.Content(Model.Photo.LargeThumbUrl)" alt="" />
+        <div class="imgaction">
+            <a id="@("btn_edit_thumb_" + Model.Photo.Id)">@Resources.Words.EditThumbnail</a>
+            <div class="loading_small_circle hide">
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    <input name="Url" type="hidden" value="@Url.Content(Model.Photo.Url)" />
+    <input name="Width" type="hidden" value="@Model.Photo.Width" />
+    <input name="Height" type="hidden" value="@Model.Photo.Height" />
+    @using (Ajax.BeginForm("EditPhoto", "Photos", new AjaxOptions { HttpMethod = "Post", LoadingElementId = "prg_EditPhoto_" + Model.Photo.Id, OnSuccess = "EditPhotoSuccess" }))
+    {
+        <input name="Id" type="hidden" value="@Model.Photo.Id" />
+        <input id="@("thumb_x_" + Model.Photo.Id)" name="ThumbX" type="hidden" value="0" />
+        <input id="@("thumb_y_" + Model.Photo.Id)" name="ThumbY" type="hidden" value="0" />
+        <input id="@("thumb_w_" + Model.Photo.Id)" name="ThumbW" type="hidden" value="0" />
+        <input id="@("thumb_h_" + Model.Photo.Id)" name="ThumbH" type="hidden" value="0" />
+        <input id="@("scale_" + Model.Photo.Id)" name="Scale" type="hidden" value="1" />
+        <div class="photo_info">
+            @{var description = (!String.IsNullOrEmpty(Model.Photo.Description) ? Model.Photo.Description : "");}
+            <div class="desc">
+                <label for="@("Description_" + Model.Photo.Id)">@Resources.Words.Description:</label><br />
+                <textarea name="Description" id="@("Description_" + Model.Photo.Id)">@description</textarea>
+            </div>
+            <div class="fields">
+                <table border="0">
+                    <tr>
+                        <td class="tdlbl">
+                            <label for="@("VisibleTo_" + Model.Photo.Id)">@Resources.Words.VisibleTo:</label>
+                        </td>
+                        <td>
+                            <select name="VisibleTo" id="@("VisibleTo_" + Model.Photo.Id)">
+                                <option value="1" @(Model.Photo.VisibleTo == (byte)VisibleTo.OnlyMe ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToOnlyMe</option>
+                                <option value="2" @(Model.Photo.VisibleTo == (byte)VisibleTo.Friends ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToFriends</option>
+                                <option value="3" @(Model.Photo.VisibleTo == (byte)VisibleTo.Members ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToMembers</option>
+                                <option value="4" @(Model.Photo.VisibleTo == (byte)VisibleTo.EveryOne ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToEveryOne</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="@("AllowCommentTo" + Model.Photo.Id)">@Resources.Words.AllowCommentTo:</label>
+                        </td>
+                        <td>
+                            <select name="AllowCommentTo" id="@("AllowCommentTo" + Model.Photo.Id)">
+                                <option value="3" @(Model.Photo.AllowCommentTo == (byte)AllowCommentTo.OnlyMe ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToOnlyMe</option>
+                                <option value="1" @(Model.Photo.AllowCommentTo == (byte)AllowCommentTo.Friends ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToFriends</option>
+                                <option value="2" @(Model.Photo.AllowCommentTo == (byte)AllowCommentTo.Members ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.VisibleToMembers</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="checkbox" name="IsAlbumCover" id="@("IsAlbumCover_" + Model.Photo.Id)" @(Model.Photo.IsAlbumCover ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                            <label for="@("IsAlbumCover_" + Model.Photo.Id)">@Resources.Words.IsAlbumCover</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="checkbox" name="IsProfilePhoto" id="@("IsProfilePhoto_" + Model.Photo.Id)" @(Model.Photo.IsProfilePhoto ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                            <label for="@("IsProfilePhoto_" + Model.Photo.Id)">@Resources.Words.IsProfilePhoto</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" name="SavePhoto" value="@Resources.Words.Save" />
+                            <div class="loading_small hide" id="@("prg_EditPhoto_" + Model.Photo.Id)">
+                            </div>
+                            <div id="@("msg_edit_photo_" + Model.Photo.Id)" class="msg">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        <div id="@("div_thumb_editor_" + Model.Photo.Id)" class="thumb_editor hide">
+            <a id="@("close_editor_" + Model.Photo.Id)" class="close_thumb_editor">@Resources.Words.Cancle</a>
+            <img id=@("img_photo_" + Model.Photo.Id) class="photo" />
+        </div>
+    }
+</div>

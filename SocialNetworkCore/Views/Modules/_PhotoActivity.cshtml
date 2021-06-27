@@ -1,0 +1,36 @@
+﻿@using SocialNetApp.Models
+@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model PhotoActivityModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_ActivityHeadTags.min.js")"></script>
+@if (Model.IsActivityVisibleToUser)
+{
+    <div class="activity" id="@("activity_" + Model.Activity.Id)">
+        @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.ActorThumbIdentityModel);}
+        <div class="act_tools">
+            <div class="act_settings">
+                @{Html.RenderPartial(Urls.ModuleViews + "_ActivitySettings.cshtml", Model.ActivitySettingsModel);}
+            </div>
+            <div class="act_info">
+                @{Html.RenderPartial(Urls.ModuleViews + "_ActivityInfo.cshtml", Model.ActivityInfoModel);}
+            </div>
+        </div>
+        <div class="act_content">
+            @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.ActorNameIdentityModel);}
+            @if (!String.IsNullOrEmpty(Model.AssociatedPhotoDesc))
+            {
+                <div class="act_photo_desc">
+                    @Html.Raw(TextsProcessor.RenderText(Model.AssociatedPhotoDesc))
+                </div>
+            }
+            <a class="thumb_parent act_img_parent" href="@Url.Content(Model.AssociatedPhotoDetailsUrl)">
+                <img src="@Url.Content(Model.AssociatedPhoto.Url)" alt="@TextsProcessor.RenderText(Model.AssociatedPhotoDesc)" class="@(Model.AssociatedPhoto.Height > Model.AssociatedPhoto.Width && Model.AssociatedPhoto.Height > Digits.MaxPhotoActivityHeight ? "act_vert_img" : "act_img")" />
+            </a>
+        </div>
+        <div class="clear">
+        </div>
+        <div class="actions">
+            @{Html.RenderPartial(Urls.ModuleViews + "_SharedObjectActions.cshtml", Model.SharedObjectActionsModel);}
+        </div>
+    </div>
+}

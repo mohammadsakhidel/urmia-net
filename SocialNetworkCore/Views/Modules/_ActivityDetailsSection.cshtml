@@ -1,0 +1,95 @@
+﻿@using SocialNetApp.Models
+@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model ActivityDetailsSectionModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_ActivityDetailsSectionHeadTags.min.js")"></script>
+@if (Model.ActedOnSharedObjectRoot is Post)
+{
+    var post = (Post)Model.RootObjectInformation["post"];
+    var photos_count = (int)Model.RootObjectInformation["photosCount"];
+    var has_video = (bool)Model.RootObjectInformation["hasVideo"];
+    var output_text = Model.RootObjectInformation["outputText"].ToString();
+    var tags = (List<SharedObjectTag>)Model.RootObjectInformation["tags"];
+    if (!String.IsNullOrEmpty(output_text))
+    {
+        <div class="@(Model.Abbreviated ? "actdet_post_text_abbr" : "actdet_post_text")">
+            @Html.Raw(output_text)
+        </div>
+    }
+    if (photos_count > 0)
+    {
+        var photosRecs = (List<Tuple<PostPhoto, string>>)Model.RootObjectInformation["photoRecords"];
+        if (photos_count == 1)
+        {
+            var photoRec = photosRecs.First();
+            <div class="actdet_post_photo">
+                <a class="actdet_post_img_large_a" href="@Url.Content(photoRec.Item2)">
+                    <img src="@Url.Content(photoRec.Item1.LargeThumbUrl)" alt="@output_text" 
+                        class="@(Model.Abbreviated ? "actdet_post_img_large_abbr" : "actdet_post_img_large")" />
+                </a>
+            </div>
+        }
+        else
+        {
+            <div class="actdet_post_photos">
+                @foreach (var photoRec in photosRecs)
+                {
+                    <a class="actdet_post_img_small_a" href="@Url.Content(photoRec.Item2)">
+                        <img src="@Url.Content(photoRec.Item1.SmallThumbUrl)" alt="" 
+                            class="@(Model.Abbreviated ? "actdet_post_img_small_abbr" : "actdet_post_img_small")" />
+                    </a>
+                }
+            </div>
+        }
+    }
+    else if (has_video)
+    {
+        var videoPlayerModel = (VideoPlayerModel)Model.RootObjectInformation["videoPlayerModel"];
+        <div class="actdet_post_video">
+            @{
+                Html.RenderPartial(Urls.ModuleViews + "_VideoPlayer.cshtml", videoPlayerModel);
+            }
+        </div>
+    }
+    if (tags.Any() && !Model.Abbreviated)
+    {
+        <div class="clear"></div>
+        <div class="actdet_post_tags">
+            @foreach (var tag in tags)
+            {
+                <a href="@Url.Action("Public", "HomePage", new { @tag = tag.Tag })" class="tag">
+                    <span>@tag.Tag</span>
+                </a>
+            }
+        </div>
+    }
+}
+else if (Model.ActedOnSharedObjectRoot is AlbumPhoto)
+{
+    var aphoto = (AlbumPhoto)Model.RootObjectInformation["albumPhoto"];
+    var aphoto_desc = aphoto.Description;
+    var url_of_details = Model.RootObjectInformation["urlOfDetails"].ToString();
+    if (!String.IsNullOrEmpty(aphoto_desc))
+    {
+        <div class="@(Model.Abbreviated ? "actdet_photo_desc_abbr" : "actdet_photo_desc")">
+            @Html.Raw(TextsProcessor.RenderText(aphoto_desc))
+        </div>
+    }
+    <a class="thumb_parent actdet_img_parent" href="@Url.Content(url_of_details)">
+        <img src="@Url.Content(aphoto.Url)" alt="@TextsProcessor.RenderText(aphoto_desc)" 
+            class="@(aphoto.Height > aphoto.Width && aphoto.Height > Digits.MaxPhotoActivityHeight ? 
+                (Model.Abbreviated ? "actdet_vert_img_abbr" : "actdet_vert_img") : 
+                (Model.Abbreviated ? "actdet_img_abbr" : "actdet_img"))" />
+    </a>
+}
+else if (Model.ActedOnSharedObjectRoot is Photo)
+{
+    var photo = (Photo)Model.ActedOnSharedObjectRoot;
+    var url_of_details = Model.RootObjectInformation["urlOfDetails"].ToString();
+    <a class="thumb_parent actdet_img_parent" href="@Url.Content(url_of_details)">
+        <img src="@Url.Content(photo.Url)" 
+            class="@(photo.Height > photo.Width && photo.Height > Digits.MaxPhotoActivityHeight ? 
+            (Model.Abbreviated ? "actdet_vert_img_abbr" : "actdet_vert_img") : 
+            (Model.Abbreviated ? "actdet_img_abbr" : "actdet_img"))" />
+    </a>
+}

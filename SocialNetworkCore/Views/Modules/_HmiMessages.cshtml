@@ -1,0 +1,41 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model HmiMessagesModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_HmiMessagesHeadTags.min.js")"></script>
+<div id="hmi_messages">
+    <div class="hmi_msg_header">
+        @Ajax.ActionLink(Resources.Words.NewMessage, "ShowNewMessageDialog", "Messages", null, new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "dialog_view", OnFailure = "ShowDialogFailure" }, new { @class = "hmi_new_message" })
+    </div>
+    <div id="hmi_messages_in">
+        @if (Model.UnreadMessagesRecords.Count > 0)
+        {
+            foreach (var record in Model.UnreadMessagesRecords)
+            {
+                var msg = record.Item1;
+                var sender = record.Item2;
+            <div class="hmi_msg">
+                <div class="hmi_msg_thumb">
+                    @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", record.Item3);}
+                </div>
+                <div class="hmi_msg_details">
+                    @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", record.Item4);}
+                    <a class="hmi_msg_txt" href="@Url.Action("Messages", "HomePage", new { id = sender.Alias })">
+                        @MyHelper.CutString(msg.MessageContent.Text, 60)
+                    </a>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            }
+        }
+        else
+        {
+            <div class="hmi_msg_empty">
+                @Resources.Messages.NoUnreadMessages
+            </div>
+        }
+    </div>
+    <div class="hmi_msg_footer">
+        <a href="@Url.Action("Messages", "HomePage")">@Resources.Words.SeeAllMessages</a>
+    </div>
+</div>

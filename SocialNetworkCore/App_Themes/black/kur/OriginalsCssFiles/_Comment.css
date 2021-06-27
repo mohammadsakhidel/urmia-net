@@ -1,0 +1,69 @@
+﻿div.comment
+{
+    background-color: #edeff4;
+    padding: 7px;
+    border-top: solid 1px #ffffff;
+    color: #291029;
+    position: relative;
+}
+
+div.comment div.com_user_iden
+{
+    float: right;
+}
+
+div.comment div.comment_in
+{
+    float: right;
+    margin: 0 5px 0 0;
+}
+
+div.comment a.fullname
+{
+    font-size: 7.5pt;
+}
+
+div.comment div.comment_text
+{
+    padding: 3px 0 0 0;
+    max-width: 400px;
+    line-height: 18px;
+}
+
+div.comment div.comment_date
+{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    color: #7db6d5;
+    font-size: 7pt;
+    white-space: nowrap;
+}
+
+div.comment div.comment_actions 
+{
+    padding: 7px 0 0 0;
+}
+
+div.comment div.comment_actions a
+{
+    margin-left: 5px;
+    font-size: 7.5pt;
+}
+
+div.comment a.comment_likes
+{
+    background-image: url(small_heart.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+    min-height: 10px;
+    padding: 0 12px 0 0;
+    color: #115e8b;
+    display: inline-block;
+}
+
+div.comment a.comment_likes:hover
+{
+    text-decoration: none;
+    background-color: #d0d2d9;
+}

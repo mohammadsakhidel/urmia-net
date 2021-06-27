@@ -1,0 +1,62 @@
+﻿@using CoreHelpers
+@model SocialNetApp.Views.Models.Modules.FacebookConnectModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_FacebookConnectHeadTags.min.js")"></script>
+<div id="fb_connect">
+
+    @if (Model.Step == FacebookConnectStep.Begin)
+    {
+        <div class="text">
+            @Html.Raw(Resources.Texts.ConnectToFacebookExplanation)
+        </div>
+
+        <div class="change_step">
+            <a class="submit" href="@Url.Action("ConnectToFacebook", "Account", new { @step = (byte)FacebookConnectStep.LoginIfHasAccount })">@Resources.Words.NextStep</a>
+        </div>
+    } 
+    else if (Model.Step == FacebookConnectStep.LoginIfHasAccount)
+    {
+        <div class="text">
+            @Html.Raw(Resources.Texts.ConnectToFacebookLoginExplanation)
+        </div>
+        Html.RenderPartial(Urls.ModuleViews + "_Login.cshtml", Model.LoginModel);
+        <div class="change_step">
+            <a href="@Url.Action("ConnectToFacebook", "Account", new { @step = (byte)FacebookConnectStep.ConnectAnonymous })">@Resources.Words.SkipThisStep</a>
+        </div>
+    }
+    else if (Model.Step == FacebookConnectStep.ConnectAuthenticated)
+    {
+        if (Model.IsAuthenticated && Model.AuthenticatedMember != null)
+        {
+            <div class="text">
+                @Html.Raw(Resources.Texts.ConnectToFacebookAuthenticatedMemberTextPart1)
+            </div>
+            <div class="authMemberUserIdentity">
+                @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.AuthenticatedMemberIdentityModel);}
+            </div>
+            <div class="text">
+                @Html.Raw(Resources.Texts.ConnectToFacebookAuthenticatedMemberTextPart2)
+            </div>
+            <a id="btnConnect" onclick="connectToFb();">@Resources.Words.ConnectToFacebook</a>
+            <div id="prgFbConnect" class="loading_small_circle hide"></div>
+            <div class="clear"></div>
+            <div id="msgFbConnect" class="hide"></div>
+        }
+        else
+        {
+            <div class="error_message">
+                @Html.Raw(Resources.Messages.FacebookConnectUnexpectedErrorMessage)
+            </div>
+        }
+    }
+    else if (Model.Step == FacebookConnectStep.ConnectAnonymous)
+    {
+        <div class="text">
+            @Html.Raw(Resources.Texts.ConnectToFacebookAnonymousTextPart1)
+        </div>
+        <a id="btnConnect" onclick="connectToFb();">@Resources.Words.ConnectToFacebook</a>
+        <div id="prgFbConnect" class="loading_small_circle hide"></div>
+        <div class="clear"></div>
+        <div id="msgFbConnect" class="hide"></div>
+    }
+    <input id="hid_fb_connect_error" type="hidden" value="@Resources.Messages.FacebookConnectErrorMessage" />
+</div>

@@ -1,0 +1,27 @@
+﻿#mngr_set_dialog .mngr_sett_in {
+    padding: 15px;
+}
+
+#mngr_set_dialog .mngr_sett_in fieldset > legend {
+    font-family: Tahoma;
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+#mngr_set_dialog .dialog_actions .loading_small_circle {
+    float: left;
+    margin: 5px 0 0 5px;
+}
+
+#mngr_set_dialog .dialog_actions .okey {
+    float: left;
+    margin: 0 0 0 5px;
+}
+
+#mngr_set_dialog .dialog_actions .cancel {
+    float: left;
+}
+
+#mngr_set_dialog #dialog_msg {
+    margin-top: 10px;
+}

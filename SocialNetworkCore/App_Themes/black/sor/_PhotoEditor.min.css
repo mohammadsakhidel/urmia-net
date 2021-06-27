@@ -1,0 +1,118 @@
+﻿div.photo_editor
+{
+    margin-top: 10px;
+}
+
+div.photo_editor div.thumb_parent
+{
+    float: right;
+}
+
+div.photo_editor div.thumb_parent div.imgaction
+{
+    height: 16px;
+    margin-top: 5px;
+}
+
+div.photo_editor div.thumb_parent a
+{
+    font-size: 7.5pt;
+    color: #ef4523;
+    text-align: center;
+    display: block;
+}
+
+div.photo_editor div.thumb_parent div.loading_small_circle
+{
+    margin: 0 2px 0 0;
+    float: right;
+}
+
+div.photo_editor img.thumb
+{
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+div.photo_editor div.photo_info
+{
+    float: right;
+    margin: 0 10px 0 0;
+    color: #333132;
+    font-size: 8pt;
+}
+
+div.photo_editor div.photo_info div.desc
+{
+    float: right;
+    margin-left: 15px;
+}
+
+div.photo_editor div.photo_info div.fields
+{
+    float: right;
+}
+
+div.photo_editor div.photo_info textarea
+{
+    width: 290px;
+    height: 115px;
+    font-size: 8pt;
+    margin-top: 4px;
+}
+
+div.photo_editor div.thumb_editor
+{
+    position: relative;
+    margin-top: 10px;
+}
+
+div.thumb_editor a.close_thumb_editor
+{
+    position: absolute;
+    width: 80px;
+    color: White;
+    background-color: #c9252c;
+    padding: 7px;
+    top: 10px;
+    right: 10px;
+    z-index: 900;
+    text-align: center;
+    text-decoration: none;
+}
+
+div.photo_editor div.thumb_editor img.photo
+{
+    border: solid 1px #a7a9ac;
+    padding: 2px;
+    background-color: White;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+div.photo_editor input[name="SavePhoto"]
+{
+    margin-top: 10px;
+    float: right;
+}
+
+div.photo_editor div.photo_info div.fields div.loading_small
+{
+    float: right;
+    margin: 15px 5px 0 0;
+}
+
+div.photo_editor div.photo_info div.fields div.msg
+{
+    float: right;
+    margin: 15px 5px 0 0;
+}
+
+div.photo_editor input[name="DeletePhoto"]
+{
+    background-color: #fdba4d;
+    width: 100%;
+    padding: 4px 0;
+    font-size: 7.5pt;
+}

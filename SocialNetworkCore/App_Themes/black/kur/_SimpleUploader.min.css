@@ -1,0 +1,47 @@
+﻿#file_upload 
+{
+    width: 500px;
+    margin: 0 auto;
+}
+
+#file_upload div.uploader
+{
+    width: 99px;
+    float: left;
+    overflow: hidden;
+    cursor: pointer;
+    background-image: url(uploader_browse.png);
+    border-right: 0;
+    border-top: solid 1px #aaaaaa;
+    border-left: solid 1px #aaaaaa;
+    border-bottom: solid 1px #aaaaaa;
+    height: 30px;
+}
+
+#file_upload div.uploader input[type="file"]
+{
+    opacity:0;
+    filter:alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    
+    height: 30px;
+    width: 200px;
+    cursor: pointer;
+}
+
+#file_upload div.uploader_filename
+{
+    width: 400px;
+    float: left;
+}
+
+#file_upload div.uploader_filename input[type="text"]
+{
+    display: block;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    height: 30px;
+}

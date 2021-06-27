@@ -1,0 +1,77 @@
+﻿div#search_members .search_info
+{
+    float: right;
+    width: 300px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #fbfbfb;
+    border: solid 1px #e6e7e8;
+}
+
+div#search_members .search_result
+{
+    float: left;
+    width: 540px;
+}
+
+div#search_members div.search_info_in
+{
+    padding: 20px;
+}
+
+div#search_members .search_info_item
+{
+    margin-bottom: 6px;
+}
+
+div#search_members .search_info_item input[type="text"]
+{
+    padding: 5px;
+    width: 250px;
+    color: #a9a9a9;
+}
+
+div#search_members .search_info_item select
+{
+    width: 262px;
+    padding: 5px;
+    color: #a9a9a9;
+}
+
+div#search_members .search_info_item select[name="AgeFrom"]
+{
+    float: right;
+    width: 125px;
+}
+
+div#search_members .search_info_item select[name="AgeTo"]
+{
+    float: right;
+    width: 125px;
+    margin-right: 10px;
+}
+
+div#search_members .search_info_item input[type="checkbox"]
+{
+    float: right;
+    margin: 4px 0 0 0;
+}
+
+div#search_members .search_info_item label.for_chbox
+{
+    float: right;
+    margin: 0 3px 0 0;
+    color: #808285;
+    white-space: nowrap;
+}
+
+div#search_members div.search_info input[type="submit"]
+{
+    width: 70px;
+}
+
+div#search_members #prg_search_members
+{
+    display: block;
+    margin: 120px auto 120px auto;
+}

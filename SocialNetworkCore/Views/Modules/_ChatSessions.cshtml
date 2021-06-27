@@ -1,0 +1,30 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@using CoreHelpers
+@model ChatSessionsModel
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/_ChatSessionsHeadTags.min.js")"></script>
+@if (Model.IsVisible)
+{
+    <div id="chat_sessions" class="chat_sessions">
+        <input type="hidden" id="ActiveChatSessionId" value="@Model.ActiveSessionId" />
+        <div class="chat_sessions_title">
+            @Resources.Words.ChatSessionsTitle
+        </div>
+        @foreach (var sessionRec in Model.SessionRecords)
+        {
+            var session = sessionRec.Item1;
+            var session_new_msg_count = sessionRec.Item3;
+            <div class="chat_session_thumb">
+                @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", sessionRec.Item2);}
+                <input name="action_url" type="hidden" value="@Url.Action("ContinueChat", "Chating")" />
+                <input name="sessionId" type="hidden" value="@session.Id" />
+                @if (session_new_msg_count > 0 && session.Id != Model.ActiveSessionId)
+                {
+                    <div id="@("chat_session_thumb_buble_" + session.Id)" class="chat_session_thumb_buble">
+                        @session_new_msg_count
+                    </div>
+                }
+            </div>
+        }
+    </div>
+}

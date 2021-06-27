@@ -1,0 +1,71 @@
+﻿div#hmi_notifications
+{
+    min-width: 300px;
+}
+
+    div#hmi_notifications div#notifications_in {
+        max-height: 450px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+        div#hmi_notifications div#notifications_in > div {
+            margin-right: 20px;
+        }
+
+div#hmi_notifications div.hmi_not
+{
+    width: 500px;
+    background-color: White;
+    border-bottom: solid 1px #ededee;
+}
+
+div#hmi_notifications div.hmi_not:hover
+{
+    background-color: #fbfbfb;
+}
+
+div#hmi_notifications .hmi_not_empty
+{
+    padding: 15px 0;
+    text-align: center;
+    font-size: 8pt;
+    color: #d1d3d4;
+}
+
+div#hmi_notifications .hmi_not_header
+{
+    background-color: #f7f7f7;
+    border-bottom: solid 1px #c5c5c5;
+    padding: 8px;
+    text-align:right;
+}
+
+div#hmi_notifications .hmi_not_header a
+{
+    float: right;
+    padding: 0;
+    color: #ef4523;
+    font-family: 'RegNaskh';
+}
+
+div#hmi_notifications .hmi_not_header div.loading_small_circle
+{
+    float: right;
+    margin: 3px 10px 0 0;
+    padding: 0;
+}
+
+div#hmi_notifications .hmi_not_footer
+{
+    background-color: #f7f7f7;
+    border-top: solid 1px #c5c5c5;
+    padding: 8px;
+    text-align:center;
+}
+
+div#hmi_notifications .hmi_not_footer a
+{
+    color: #ef4523;
+    font-family: 'RegNaskh';
+}

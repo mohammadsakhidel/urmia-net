@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+  <core>
+    <DefaultTheme>black</DefaultTheme>
+    <DateType>Milady</DateType>
+    <DomainName>www.vkurdistan.com</DomainName>
+    <RefreshOnlinesSecurityKey>Qd2Aag59sSctEyh15juP</RefreshOnlinesSecurityKey>
+    <LowLoadBeginHour>1</LowLoadBeginHour>
+    <LowLoadEndHour>7</LowLoadEndHour>
+    <SocialNetworksAccount>admin@vkurdistan.com</SocialNetworksAccount>
+    <SocialNetworkName>vKurdistan</SocialNetworkName>
+    <ConvertedVideosFormat>flv</ConvertedVideosFormat>
+    <SupportedLanguages>
+      <SupportedLanguage DisplayName="سۆرانی" IsDefault="True">sor</SupportedLanguage>
+      <SupportedLanguage DisplayName="Kurmancî">kur</SupportedLanguage>
+    </SupportedLanguages>
+    <SupportedPhotoFormats>
+      <SupportedPhotoFormat>jpg</SupportedPhotoFormat>
+      <SupportedPhotoFormat>jpeg</SupportedPhotoFormat>
+      <SupportedPhotoFormat>png</SupportedPhotoFormat>
+      <SupportedPhotoFormat>gif</SupportedPhotoFormat>
+    </SupportedPhotoFormats>
+    <SupportedVideoFormats>
+      <SupportedVideoFormat>mp4</SupportedVideoFormat>
+      <SupportedVideoFormat>flv</SupportedVideoFormat>
+      <SupportedVideoFormat>avi</SupportedVideoFormat>
+      <SupportedVideoFormat>mov</SupportedVideoFormat>
+      <SupportedVideoFormat>mpeg</SupportedVideoFormat>
+    </SupportedVideoFormats>
+  </core>
+  <emailAccount>
+    <Provider>mail.vkurdistan.com</Provider>
+    <Email>info@vkurdistan.com</Email>
+    <Password>R0n@j0j01nfo</Password>
+    <ProviderIP>5.63.9.110</ProviderIP>
+  </emailAccount>
+</settings>

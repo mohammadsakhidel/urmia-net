@@ -1,0 +1,226 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@using CoreHelpers
+@model RegisterModel
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/_RegisterHeadTags.min.js")"></script>
+<div id="register" class="@Model.PositioningCssClass">
+    <div id="password-hint" class="hint hide">@Html.Raw(Resources.Messages.PasswordHint)</div>
+    @using (Ajax.BeginForm("Register", "Account", null, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "RegisterLoading", OnBegin = "BeginRegister", OnFailure = "FailureRegister", OnSuccess = "SuccessRegister", OnComplete = "CompleteRegister" }))
+    {
+        if (Model.Type == RegisterType.OnHome)
+        {
+        <fieldset>
+            <legend>
+                @Resources.Words.RegisterInSocialNet
+            </legend>
+            <a id="fbConnect" href="@Url.Action("ConnectToFacebook", "Account")">@Resources.Words.ConnectToFacebook</a>
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>
+                        <label for="register_Name">@Resources.Words.Name:</label>
+                    </td>
+                    <td class="tdpadd">
+                        <label for="register_LastName">@Resources.Words.LastName:</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="Name" id="register_Name" />
+                    </td>
+                    <td class="tdpadd">
+                        <input type="text" name="LastName" id="register_LastName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="register_Email">@Resources.Words.Email:</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="text" name="Email" id="register_Email" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="register_EmailConfirm">@Resources.Words.EmailConfirm:</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="text" name="EmailConfirm" id="register_EmailConfirm" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="register_Password">@Resources.Words.Password:</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="password" name="Password" id="register_Password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label>@Resources.Words.BirthDay:</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <select name="Day">
+                            <option value="">@Resources.Words.Day</option>
+                            @for (var i = 1; i <= 31; i++)
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        </select>
+                        <select name="Month">
+                            <option value="">@Resources.Words.Month</option>
+                            @for (var i = 1; i <= 12; i++)
+                            {
+                                <option value="@i">@Dictionaries.Months[@i]</option>
+                            }
+                        </select>
+                        <select name="Year">
+                            <option value="">@Resources.Words.Year</option>
+                            @for (var i = Digits.BeginYear; i <= Digits.EndYear; i++)
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input id="Male" type="radio" name="Gender" value="Male" />
+                        <label for="Male" class="label_for_radio">@Resources.Words.Male</label>
+                        <input id="Female" type="radio" name="Gender" value="Female" />
+                        <label for="Female" class="label_for_radio">@Resources.Words.Female</label>
+                        <div class="clear">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" name="SubmitRegisterForm" value="@Resources.Words.ConfirmAndRegister" class="submit_large" />
+                        <div id="RegisterLoading" class="hide loading_medium">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <ul class="errors">
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        }
+        else if (Model.Type == RegisterType.OnItsPage)
+        {
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>
+                    <label for="register_Name">@Resources.Words.Name:</label>
+                </td>
+                <td class="tdpadd">
+                    <label for="register_LastName">@Resources.Words.LastName:</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="Name" id="register_Name" />
+                </td>
+                <td class="tdpadd">
+                    <input type="text" name="LastName" id="register_LastName" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="register_Email">@Resources.Words.Email:</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="text" name="Email" id="register_Email" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="register_EmailConfirm">@Resources.Words.EmailConfirm:</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="text" name="EmailConfirm" id="register_EmailConfirm" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="register_Password">@Resources.Words.Password:</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="password" name="Password" id="register_Password" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label>@Resources.Words.BirthDay:</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <select name="Day">
+                        <option value="">@Resources.Words.Day</option>
+                        @for (var i = 1; i <= 31; i++)
+                        {
+                            <option value="@i">@i</option>
+                        }
+                    </select>
+                    <select name="Month">
+                        <option value="">@Resources.Words.Month</option>
+                        @for (var i = 1; i <= 12; i++)
+                        {
+                            <option value="@i">@Dictionaries.Months[@i]</option>
+                        }
+                    </select>
+                    <select name="Year">
+                        <option value="">@Resources.Words.Year</option>
+                        @for (var i = Digits.BeginYear; i <= Digits.EndYear; i++)
+                        {
+                            <option value="@i">@i</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input id="Male" type="radio" name="Gender" value="Male" />
+                    <label for="Male" class="label_for_radio">@Resources.Words.Male</label>
+                    <input id="Female" type="radio" name="Gender" value="Female" />
+                    <label for="Female" class="label_for_radio">@Resources.Words.Female</label>
+                    <div class="clear">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="SubmitRegisterForm" value="@Resources.Words.ConfirmAndRegister" class="submit_large" />
+                    <div id="RegisterLoading" class="hide loading_medium">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <ul class="errors">
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        }
+    }
+    <input id="ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />
+</div>

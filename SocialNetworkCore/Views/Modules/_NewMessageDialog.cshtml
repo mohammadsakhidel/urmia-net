@@ -1,0 +1,42 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Models
+@using SocialNetApp.Views.Models.Modules
+@model NewMessageDialogModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_NewMessageDialogHeadTags.min.js")"></script>
+<div id="new_msg_dlg">
+    <div class="dialog_title">
+        <a class="dialog_close" onclick="HideDialog();"></a>
+        <h2>@Resources.Words.NewMessage</h2>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="dialog_view_in">
+        @using (Ajax.BeginForm("SendMessage", "Messages", new AjaxOptions { HttpMethod = "Post", 
+            LoadingElementId = "dialog_prg", OnBegin = "SendNewMessageBegin", 
+            OnFailure = "SendNewMessageFailure", OnSuccess = "SendNewMessageSuccess" }))
+        {
+            <input type="hidden" name="ReturnSentMessage" value="false" />
+            <div>
+                <textarea name="Text" cols="" rows=""></textarea>
+            </div>
+            <div>
+                <label>@Resources.Words.ListOfRecievers:</label>
+                @{Html.RenderPartial(Urls.ModuleViews + "_MemberBox.cshtml", Model.MemberBoxModel);}
+            </div>
+            <div class="dialog_actions">
+                <a class="cancel" onclick="HideDialog();">@Resources.Words.Cancle</a> <a class="okey">@Resources.Words.Send</a>
+                <div id="dialog_prg" class="loading_small_circle hide">
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div id="dialog_msg" class="hide">
+            </div>
+        }
+    </div>
+    <!-- words: -->
+    <input id="dlg_new_msg_w_write_new_message" type="hidden" value="@Resources.Words.WriteNewMessage" />
+    <input id="dlg_new_msg_w_ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />
+</div>

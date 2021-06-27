@@ -1,0 +1,29 @@
+﻿div#friends .friend_item
+{
+    padding: 7px;
+    background-color: #f6f6f6;
+    border: solid 1px #d1d3d4;
+    float: left;
+    width: 45%;
+    margin: 2% 2% 0 0;
+}
+
+div#friends div.friend_user_id
+{
+    float: left;
+}
+
+div#friends .friend_fullname
+{
+    margin: 17px 0 0 10px;
+}
+
+div#friends .friend_remove
+{
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-image: url(remove_item.png);
+    float: right;
+    margin: 20px 5px 0 0;
+}

@@ -1,0 +1,86 @@
+﻿@using CoreHelpers
+@model SocialNetApp.Views.Models.Modules.ManagerSettingDialogModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_ManagerSettingDialogHeadTags.min.js")"></script>
+<div id="mngr_set_dialog">
+    <div class="dialog_title">
+        <a class="dialog_close" onclick="HideDialog();"></a>
+        <h2>@Resources.Words.ManagerSettingDialogTitle</h2>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="dialog_view_in">
+        @using (Ajax.BeginForm("SaveManagerSetting", "Admin", new AjaxOptions 
+        { 
+            HttpMethod = "Post",
+            OnSuccess = "SaveManagerSettingSuccess",
+            OnFailure = "SaveManagerSettingFailure",
+            OnBegin = "SaveManagerSettingBegin",
+            LoadingElementId = "dialog_prg"
+        }))
+        {
+            <input type="hidden" name="AssociatedMemberAlias" value="@Model.AssociatedMember.Alias" />
+            <div class="mngr_sett_in">
+                <fieldset>
+                    <legend>
+                        <input type="checkbox" id="IsManager" name="IsManager" @(Model.IsUserManager ? "checked=\"checked\"" : "") />
+                        <label for="IsManager">@Resources.Words.SetAsManager</label>
+                    </legend>
+                    <table border="0" style="width: 100%">
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="core_spec_posts" name="core_spec_posts" @(Model.Access.Contains("core_spec_posts") ? "checked=\"checked\"" : "") />
+                                <label for="core_spec_posts">@Resources.Words.ManagerAccessSpecialPosts</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" id="core_user_mngr" name="core_user_mngr" @(Model.Access.Contains("core_user_mngr") ? "checked=\"checked\"" : "") />
+                                <label for="core_user_mngr">@Resources.Words.ManagerAccessUserManagement</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="core_acts" name="core_acts" @(Model.Access.Contains("core_acts") ? "checked=\"checked\"" : "") />
+                                <label for="core_acts">@Resources.Words.ManagerAccessActivities</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" id="core_comments" name="core_comments" @(Model.Access.Contains("core_comments") ? "checked=\"checked\"" : "") />
+                                <label for="core_comments">@Resources.Words.ManagerAccessComments</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="core_obj_check" name="core_obj_check" @(Model.Access.Contains("core_obj_check") ? "checked=\"checked\"" : "") />
+                                <label for="core_obj_check">@Resources.Words.ManagerAccessObjectChecking</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" id="core_pages" name="core_pages" @(Model.Access.Contains("core_pages") ? "checked=\"checked\"" : "") />
+                                <label for="core_pages">@Resources.Words.ManagerAccessPages</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="core_advs" name="core_advs" @(Model.Access.Contains("core_advs") ? "checked=\"checked\"" : "") />
+                                <label for="core_advs">@Resources.Words.ManagerAccessAdvs</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" id="core_super_admin" name="core_super_admin" @(Model.Access.Contains("core_super_admin") ? "checked=\"checked\"" : "") />
+                                <label for="core_super_admin">@Resources.Words.ManagerAccessSuperAdmin</label>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </div>
+            <div class="dialog_actions">
+                <a class="cancel" onclick="HideDialog();">@Resources.Words.CloseDialog</a>
+                <input type="submit" class="okey" value="@Resources.Words.Save" />
+                <div id="dialog_prg" class="loading_small_circle hide">
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div id="dialog_msg" class="hide"></div>
+        }
+    </div>
+    <input type="hidden" id="hid_ajax_fail" value="@Resources.Messages.AjaxFail" />
+</div>

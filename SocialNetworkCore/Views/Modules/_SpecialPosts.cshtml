@@ -1,0 +1,54 @@
+﻿@using CoreHelpers
+@model SocialNetApp.Views.Models.Modules.SpecialPostsModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_SpecialPostsHeadTags.min.js")"></script>
+<div id="special_posts" class="viewpart">
+    <div class="viewpart_title">
+        <h2>@Resources.Words.SpecialPosts</h2>
+    </div>
+    <div class="viewpart_content">
+        @using (Ajax.BeginForm("SendSpecialPost", "Admin", null, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "prg_send_spec_post", OnSuccess = "SendSpecialPostSuccess", OnFailure = "SendSpecialPostFailure", OnBegin = "SendSpecialPostBegin", OnComplete = "SendSpecialPostComplete" }, new { @id = "frm_special_post_editor" }))
+        {
+            <input type="hidden" name="FormAction" value="new" />
+            <input type="hidden" name="PostId" value="0" />
+            <textarea id="special_post_editor" name="PostText" cols="" rows=""></textarea>
+            <div id="spec_post_settings" class="border">
+                <div class="show_meth_sel">
+                    <label>@Resources.Words.SpecialPostShowMethod:</label>
+                    <select name="ShowMethod">
+                        <option value="1">@Resources.Words.WelcomePost</option>
+                        <option value="2">@Resources.Words.PinnedPost</option>
+                    </select>
+                    <label>@Resources.Words.Priority:</label>
+                    <input type="text" name="Priority" value="" style="width: 30px;" />
+                </div>
+                <div class="spec_post_submit">
+                    <input id="btn_send_spec_post" type="submit" value="@Resources.Words.Send" onclick="return confirm('@Resources.Messages.AreYouSure');" />
+                    <div id="prg_send_spec_post" class="loading_small_circle hide">
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div id="msg_spec_post">
+            </div>
+        }
+        <div id="spec_posts_list">
+            @foreach (var postModel in Model.SpecialPostModels)
+            {
+                Html.RenderPartial(Urls.ModuleViews + "_SpecialPost.cshtml", postModel);
+            }
+        </div>
+    </div>
+</div>
+<!-- words and settings: -->
+<input type="hidden" id="w_read_more" value="@Resources.Words.ReadMore" />
+<input type="hidden" id="w_read_less" value="@Resources.Words.ReadLess" />
+<input type="hidden" id="config_show_more_length" value="@Digits.ShowMoreLength" />
+<input type="hidden" id="w_write_your_comment" value="@Resources.Words.WriteYourComment" />
+<input type="hidden" id="w_comment" value="@Resources.Words.Comment" />
+<input type="hidden" id="w_share" value="@Resources.Words.Share" />
+<input type="hidden" id="w_like" value="@Resources.Words.Like" />
+<input type="hidden" id="w_unlike" value="@Resources.Words.Unlike" />
+<input type="hidden" id="w_people_like_this" value="@Resources.Words.PeopleLikeThis" />
+<input type="hidden" id="w_ajax_fail" value="@Resources.Messages.AjaxFail" />
+<input type="hidden" id="w_are_you_sure" value="@Resources.Messages.AreYouSure" />

@@ -1,0 +1,37 @@
+﻿div#delete_comment_dialog div#deleting_comment
+{
+    margin-top: 10px;
+    border-top: dashed 1px #dfdfdf;
+    border-bottom: dashed 1px #dfdfdf;
+    padding: 10px 0;
+}
+
+div#delete_comment_dialog div#deleting_comment div.dialog_user_identity
+{
+    float: left;
+}
+
+div#delete_comment_dialog div.deleting_comment_text
+{
+    float: left;
+    margin: 0 0 0 10px;
+    background-color: #f3f4f4;
+    font-size: 7.5pt;
+    line-height: 17px;
+    border: solid 1px #d1d3d4;
+    padding: 10px;
+    width: 420px;
+}
+
+div#delete_comment_dialog div.dialog_actions div.loading_small_circle
+{
+    float: right;
+    margin: 5px 0 0 0;
+}
+
+div#delete_comment_dialog div#dialog_msg
+{
+    margin: 10px 0 0 0;
+    padding: 5px;
+    min-width: 250px;
+}

@@ -1,0 +1,28 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@using CoreHelpers
+@model MessageSenderModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_MessageSenderHeadTags.min.js")"></script>
+<div id="@("msg_sender_" + Model.RandomId)" class="@("msg_sender" + (!String.IsNullOrEmpty(Model.PositioningCssClass) ? " " + Model.PositioningCssClass : ""))" style="@("width: " + Model.Width + "px;")">
+    @using (Ajax.BeginForm("SendMessage", "Messages", new AjaxOptions { HttpMethod = "Post", LoadingElementId = "prg_SendMessage", OnBegin = "SendMessageBegin", OnFailure = "SendMessageFailure", OnSuccess = "SendMessageSuccess" }))
+    {
+        <input type="hidden" name="OpponentId" value="@Model.ConversationId" />
+        <input type="hidden" name="ReturnSentMessage" value="true" />
+        <div class="msg_text_parent">
+            <div class="error_message snd_result hide">
+            </div>
+            <textarea class="msg_text" name="Text" rows="" cols="" style="@("height: " + Model.TextAreaHeight + "px;")" @(Model.IsEnabled ? Html.Raw("") : Html.Raw("disabled=\"disabled\""))></textarea>
+        </div>
+        <div class="msg_sender_tools">
+            <input type="submit" value="@Resources.Words.Send" @(Model.IsEnabled ? Html.Raw("") : Html.Raw("disabled=\"disabled\"")) />
+            <div id="prg_SendMessage" class="loading_small_circle hide">
+            </div>
+            <div class="fields">
+                <input @(Model.IsEnabled ? Html.Raw("") : Html.Raw("disabled=\"disabled\"")) id="@("ch_send_on_enter_" + Model.RandomId)" type="checkbox" />
+                <label for="@("ch_send_on_enter_" + Model.RandomId)">@Resources.Words.SendOnPressEnter</label>
+            </div>
+        </div>
+    }
+</div>
+<!-- words: -->
+<input id="msg_w_write_new_message" type="hidden" value="@Resources.Words.WriteNewMessage" />
+<input id="msg_w_ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />

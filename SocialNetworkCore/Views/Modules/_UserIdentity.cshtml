@@ -1,0 +1,32 @@
+﻿@using CoreHelpers
+@model SocialNetApp.Views.Models.Modules.UserIdentityModel
+@{
+    var member = Model.Member;
+    var status = (MemberStatus)member.StatusCode;
+}
+<div class="@("user_id" + (!String.IsNullOrEmpty(Model.PositioningCssClass) ? " " + Model.PositioningCssClass : ""))">
+    @if (Model.Type == UserIdentityType.Thumb || Model.Type == UserIdentityType.ThumbAndFullName)
+    {
+        <!--<div class="online_small_ico"></div>-->
+        if (status != MemberStatus.ScheduledForDelete)
+        {
+        <a href="@Url.Content(member.UrlOfProfilePage)" class="@("thumb_parent" + (!String.IsNullOrEmpty(Model.ThumbLinkPositioningCssClass) ? " " + Model.ThumbLinkPositioningCssClass : ""))">
+            <img class="@("userthumb" + (!String.IsNullOrEmpty(Model.ThumbImageCssClass) ? " " + Model.ThumbImageCssClass : ""))" src="@Url.Content(member.UrlOfThumb)" alt="@member.FullName" width="@(Model.Sides + "px")" title="@member.FullName" />
+        </a>
+        }
+        else
+        {
+        <img class="@("userthumb" + (!String.IsNullOrEmpty(Model.ThumbImageCssClass) ? " " + Model.ThumbImageCssClass : ""))" src="@Url.Content(Defaults.UrlForDeletedAccountThumb)" alt="@Resources.Words.DeletedAccount" width="@(Model.Sides + "px")" title="@member.FullName" />
+        }
+    }
+    @if (Model.Type == UserIdentityType.FullName || Model.Type == UserIdentityType.ThumbAndFullName)
+    {
+        <a style="@("color: " + (member.Gender.HasValue && !member.Gender.Value ? "#a53385" : "#115e8b") + ";")" 
+            class="@((status != MemberStatus.ScheduledForDelete ? "fullname" : "fullname_deleted_account") + (!String.IsNullOrEmpty(Model.FullNamePositioningCssClass) ? " " + Model.FullNamePositioningCssClass : ""))" 
+            @(status != MemberStatus.ScheduledForDelete ? Html.Raw("href=\"" + Url.Content(member.UrlOfProfilePage) + "\"") : Html.Raw(""))>
+            @(status != MemberStatus.ScheduledForDelete ? member.FullName : Resources.Words.DeletedAccount)
+        </a>
+    }
+    <div class="clear">
+    </div>
+</div>

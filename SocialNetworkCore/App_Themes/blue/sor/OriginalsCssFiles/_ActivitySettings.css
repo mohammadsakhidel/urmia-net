@@ -1,0 +1,36 @@
+﻿a.act_set
+{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-image: url(act_settings.png);
+}
+
+div.act_menu
+{
+    background-color: White;
+    padding: 0 8px 8px 8px;
+    border: solid 1px #949494;
+    position: absolute;
+    z-index: 99;
+}
+
+div.act_menu div.loading_small_circle
+{
+    position: absolute;
+}
+
+div.act_menu a
+{
+    display: block;
+    padding: 3px 10px 3px 20px;
+    background-color: White;
+    margin-top: 8px;
+    color: #4a4747;
+    text-decoration: none;
+}
+
+div.act_menu a:hover
+{
+    background-color: #ebebec;
+}

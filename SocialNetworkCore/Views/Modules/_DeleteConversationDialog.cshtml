@@ -1,0 +1,41 @@
+﻿@using CoreHelpers
+@model SocialNetApp.Views.Models.Modules.DeleteConversationDialogModel
+@{
+    var other_side = @Model.Conversation.ThatMemberId;
+    var other_side_member = Model.ConversationOtherSide;
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/_DeleteConversationDialogHeadTags.min.js")"></script>
+<div id="delete_conv_dialog">
+    <div class="dialog_title">
+        <a class="dialog_close" onclick="HideDialog();"></a>
+        <h2>@Resources.Words.DeleteConversationDialogTitle</h2>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="dialog_view_in">
+        @Resources.Texts.DeleteConversationText_Part1
+        @Html.Raw(other_side_member.InlineFullNameLink)
+        @Resources.Texts.DeleteConversationText_Part2
+        <div id="deleting_conv">
+            @Resources.Words.MessagesCount:
+            @Model.Conversation.Messages.Count()
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @Resources.Words.UnreadMessagesCount:
+            @Model.Conversation.UnreadsCount
+        </div>
+        <div class="dialog_actions">
+            <a class="cancel" onclick="HideDialog();">@Resources.Words.Cancle</a>
+            @Ajax.ActionLink(Resources.Words.DeleteConversation, "DeleteConversation", "Messages", new { id = Model.Conversation.Id }, 
+                new AjaxOptions { HttpMethod = "Post", LoadingElementId = "dialog_prg", OnBegin = "DeleteConversationBegin", 
+                    OnFailure = "DeleteConversationFailure", OnSuccess = "DeleteConversationSuccess" }, new { @class = "okey" })
+            <div id="dialog_prg" class="loading_small_circle hide">
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        <div id="dialog_msg" class="hide">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@using SocialNetApp.Models
+@model ShareDialogModel
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/_ShareDialogHeadTags.min.js")"></script>
+<div id="share_dialog">
+    <div class="dialog_title">
+        <a class="dialog_close" onclick="HideDialog();"></a>
+        <h2>@Resources.Words.ShareDialogTitle</h2>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="dialog_view_in">
+        @using (Ajax.BeginForm("ReshareObject", "Objects", null, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "dialog_prg", OnBegin = "ReshareObjectBegin", OnFailure = "ReshareObjectFailure", OnSuccess = "ReshareObjectSuccess" }, new { @id = "frm_share_dialog" }))
+        {
+            <input type="hidden" value="@Model.SharedObject.Id" name="SharedObjectId" />
+            @Resources.Texts.ShareDialogText
+            <div class="sharing_object">
+                @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.OwnerIdentityModel);}
+                <div class="shared_object_details">
+                    @{Html.RenderPartial(Urls.ModuleViews + "_ActivityDetailsSection.cshtml", Model.ActivityDetailsSectionModel);}
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="sharing_selects">
+                <label for="sharedialog_vt">@Resources.Words.VisibleTo:</label>
+                <select name="VisibleTo" id="sharedialog_vt">
+                    <option value="1">@Resources.Words.VisibleToOnlyMe</option>
+                    <option value="2">@Resources.Words.VisibleToFriends</option>
+                    <option value="3" selected="selected">@Resources.Words.VisibleToMembers</option>
+                    <option value="4">@Resources.Words.VisibleToEveryOne</option>
+                </select>
+                <label for="sharedialog_act">@Resources.Words.AllowCommentTo:</label>
+                <select name="AllowCommentTo" id="sharedialog_act">
+                    <option value="3">@Resources.Words.VisibleToOnlyMe</option>
+                    <option value="1">@Resources.Words.VisibleToFriends</option>
+                    <option value="2" selected="selected">@Resources.Words.VisibleToMembers</option>
+                </select>
+            </div>
+            <div class="dialog_actions">
+                <a class="cancel" onclick="HideDialog();">@Resources.Words.Cancle</a> <a class="okey">@Resources.Words.ShareIt</a>
+                <div id="dialog_prg" class="loading_small_circle hide">
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div id="dialog_msg" class="hide">
+            </div>
+        }
+        <input type="hidden" id="share_dlg_randomId" value="@Model.RandomId" />
+    </div>
+</div>

@@ -1,0 +1,213 @@
+﻿#post_editor {
+    box-shadow: 1px 1px 2px 1px #d0d1d5;
+}
+
+#post_editor .post_editor_head {
+    padding: 8px 0 5px 0;
+    border-bottom: solid 1px #e1e1e1;
+    margin: 0 8px;
+}
+
+    #post_editor .post_editor_head a {
+        height: 16px;
+        background-position: center left;
+        padding: 2px 5px 2px 20px;
+        background-repeat: no-repeat;
+        color: #3f3333;
+        font-weight: bold;
+        font-size: 8pt;
+        text-decoration: none;
+        border-radius: 2px;
+        -moz-border-radius: 2px;
+        float: left;
+        margin: 0 5px 0 0;
+    }
+
+        #post_editor .post_editor_head a:hover {
+            background-color: #ededed;
+            text-decoration: none;
+        }
+
+        #post_editor .post_editor_head a.add_photo {
+            background-image: url(post_editor_add_photo.png);
+        }
+
+        #post_editor .post_editor_head a.add_video {
+            background-image: url(post_editor_add_video.png);
+        }
+
+    #post_editor .post_editor_tags {
+        padding: 5px 0;
+        border-top: solid 1px #e1e1e1;
+        margin: 0 8px;
+    }
+
+    #post_editor div.tag_icon {
+        width: 24px;
+        height: 24px;
+        float: right;
+        margin: 0 5px 0 0;
+        background-image: url(tag.png);
+    }
+
+    #post_editor input#post_tags {
+        border-radius: 2px;
+        -moz-border-radius: 2px;
+        height: 24px;
+        width: 100%;
+        padding: 3px 6px;
+        border: solid 1px #e1e1e1;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+
+    #post_editor div.post_tags_container {
+        float: right;
+        width: 90%;
+    }
+
+    #post_editor .post_editor_tag {
+        float: left;
+        margin: 5px 5px 0 0;
+    }
+
+#post_editor textarea#post_txt
+{
+    display: block;
+    min-height: 60px;
+    width: 97%;
+    max-width: 97%;
+    border: 0;
+    margin: 0 auto 0 auto;
+    resize: none;
+    font-size: 9.5pt;
+}
+
+#post_editor div#post_tools
+{
+    background-color: #f2f2f2;
+    border-top: solid 1px #e6e6e6;
+}
+
+#post_editor div#post_tools a
+{
+    width: 24px;
+    height: 24px;
+    background-color: #f2f2f2;
+    display: inline-block;
+    float: left;
+    border-right: solid 1px #e6e6e6;
+    padding: 0 3px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 35px;
+}
+
+#post_editor div#post_tools a:hover
+{
+    background-color: #e6e7e8;
+}
+
+#post_editor div#post_tools a#btn_add_photo
+{
+    background-image: url(add_photo.png);
+}
+
+#post_editor div#post_tools input[type="submit"]
+{
+    float: right;
+    margin: 5px 5px 5px 0;
+    height: 25px;
+    padding: 0 10px;
+}
+
+#post_editor div#post_tools label
+{
+    float: right;
+    margin: 9px 2px 5px 0;
+    font-size: 7.5pt;
+    color: #939598;
+}
+
+#post_editor div#post_tools select
+{
+    float: right;
+    margin: 5px 5px 5px 0;
+    height: 25px;
+    width: 110px;
+}
+
+#post_editor div#post_tools div.loading_small_circle_parent
+{
+    float: right;
+    margin: 10px 5px 5px 0;
+}
+
+#post_editor #uploaded_files
+{
+    float: left;
+    margin: 0 0 5px 0;
+}
+
+#post_editor #uploaded_files div.added_photo_parent {
+    float: left;
+    margin: 5px 0 0 5px;
+    position: relative;
+}
+
+#post_editor #uploaded_files div.added_photo_parent img
+{
+    width: 70px;
+}
+
+#post_editor #uploaded_files a.added_photo_remove {
+    width: 10px;
+    height: 10px;
+    background-image: url(remove_item.png);
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+#post_editor #post_message
+{
+    padding: 3px 5px;
+}
+
+/* PROGRESS */
+#post_editor #upload_progress
+{
+    display: none;
+    direction: ltr;
+    margin: 0 10px 10px 0;
+    float: right;
+}
+
+#upload_progress .progress
+{
+    width: 190px;
+    background-color: #4a4747;
+    padding: 1px;
+    float: right;
+    margin: 2px 0 0 0;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+
+#upload_progress .bar
+{
+    background-color: #ef4523;
+    background-image: url(progress_bar_bg.png);
+    width: 0;
+    height: 10px;
+    background-repeat :repeat;
+}
+
+#upload_progress .percent
+{
+    margin: 0 5px 0 0;
+    float: right;
+    font-size: 7pt;
+    color: #4a4747;
+}

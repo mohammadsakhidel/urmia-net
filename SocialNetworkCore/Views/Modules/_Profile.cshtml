@@ -1,0 +1,139 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model ProfileModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_ProfileHeadTags.min.js")"></script>
+<div id="member_profile">
+    <div id="cover">
+        @if (Model.ShowAdminActions)
+        {
+            Html.RenderPartial(Urls.ModuleViews + "_ProfilePageAdminActions.cshtml", Model.ProfilePageAdminActionsModel);
+        }
+        <div id="cover_in">
+            @if (Model.HasProfileCover)
+            {
+                <img src="@Url.Content(Model.UrlOfCover)" alt="@Model.ProfileOwner.FullName" />
+            }
+            else
+            {
+                <div class="nocover"></div>
+            }
+        </div>
+        <div class="cover_actions">
+            <div class="member_fullname">
+                <h2>@Model.ProfileOwner.FullName</h2>
+                @if (Model.IsProfileOwnerOnline)
+                {
+                    <div class="online">
+                    </div>
+                }
+            </div>
+            <div class="cover_actions_in">
+                @if (Model.IsUserAllowedToBeginChat && Model.IsProfileOwnerOnline)
+                {
+                    @Ajax.ActionLink(Resources.Words.BeginChat, "BeginChat", "Chating", new { from = (Model.Viewer != null ? Model.Viewer.Alias : ""), to = Model.ProfileOwner.Alias }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "dialog_view", OnFailure = "ShowDialogFailure" }, new { @onclick = "ShowChatDialogBegin();", @class = "chat" })
+                }
+                @if (Model.IsUserAllowedToSendMessage)
+                {
+                    @Ajax.ActionLink(Resources.Words.SendMessage, "ShowNewMessageDialog", "Messages", new { to = Model.ProfileOwner.Alias }, new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "dialog_view", OnFailure = "ShowDialogFailure" }, new { @id = "ppbtn_send_message", @class = "message" })
+                }
+                @if (!Model.AreViewerAndProfileOwnerFriends && Model.IsUserAllowedToSendFriendshipRequest)
+                {
+                    var cancel_vis = Model.HasPendingFriendshipRequest;
+                    var send_vis = !Model.HasPendingFriendshipRequest;
+                    @Ajax.ActionLink(Resources.Words.CancelFriendshipRequest, "CacelFriendshipRequest", "Members", new { requestId = (Model.HasPendingFriendshipRequest ? Model.PendingFriendshipRequest.Id : 0) }, new AjaxOptions { HttpMethod = "Post", OnBegin = "CacelFriendshipRequestBegin", OnSuccess = "CacelFriendshipRequestSuccess" }, new { @id = "ppbtn_cnl_fnd_req", @class = "friendship" + (cancel_vis ? "" : " hide") })
+                    @Ajax.ActionLink(Resources.Words.SendFriendshipRequest, "SendFriendshipRequest", "Members", new { from = Model.Viewer.Alias, to = Model.ProfileOwner.Alias }, new AjaxOptions { HttpMethod = "Post", OnBegin = "SendFriendshipRequestBegin", OnSuccess = "SendFriendshipRequestSuccess" }, new { @id = "ppbtn_snd_fnd_req", @class = "friendship" + (send_vis ? "" : " hide") })
+                }
+                @if (Model.IsFollowingAllowed || Model.IsCurrentlyFallowing)
+                {
+                    @Ajax.ActionLink((!Model.IsCurrentlyFallowing ? Resources.Words.Follow : Resources.Words.Unfollow), "ToggleFollowing", "Members", 
+                    new { id = Model.ProfileOwner.Alias },
+                    new AjaxOptions
+                    {
+                        HttpMethod = "Post",
+                        OnBegin = "ToggleFollowingBegin",
+                        OnSuccess = "ToggleFollowingSuccess"
+                    }, 
+                    new { @class = "follow", @id = "ppbtn_follow" })
+                }
+            </div>
+        </div>
+    </div>
+    <div id="profile_top_bar">
+        <div class="profile_photo_parent">
+            <a class="@(Model.HasPP ? "" : " ppp_disabled")" @(Model.HasPP ? Html.Raw("href=\"" + Url.Content(Model.ProfileOwnerPP.UrlOfAlbumDetails) + "\"") : Html.Raw(""))>
+                <img id="profile_photo_thumb" src="@Url.Content(Model.ProfileOwner.UrlOfLargeThumb)" alt="@Model.ProfileOwner.FullName" />
+            </a>
+            <div class="lst_lgn">
+                @Resources.Words.LastActivity:
+                @Model.LastActivityTimeText
+            </div>
+            @if (Model.ShowAdminActions)
+            {
+                <div class="member_status">
+                    @Resources.Words.AccountStatus:
+                    @Model.ProfileOwner.StatusText
+                </div>
+            }
+        </div>
+        <div class="top_bar_links">
+            @Ajax.ActionLink(Resources.Words.ProfilePageLink_Photos, "ProfilePage", "Members", new { username = Model.ProfileOwner.Alias, content = "photos" }, new AjaxOptions { HttpMethod = "Get", OnFailure = "LoadPPContentFailure", UpdateTargetId = "pp_in_update_panel" }, new { @class = (Model.Content == "photos" ? "top_bar_link_selected" : "top_bar_link") })
+            @Html.ActionLink(Resources.Words.ProfilePageLink_Activities, "ProfilePage", "Members", new { username = Model.ProfileOwner.Alias, content = "activities" }, new { @class = (Model.Content == "activities" ? "top_bar_link_selected" : "top_bar_link") })
+            @Ajax.ActionLink(Resources.Words.ProfilePageLink_Friends, "ProfilePage", "Members", new { username = Model.ProfileOwner.Alias, content = "friends" }, new AjaxOptions { HttpMethod = "Get", OnFailure = "LoadPPContentFailure", UpdateTargetId = "pp_in_update_panel" }, new { @class = (Model.Content == "friends" ? "top_bar_link_selected" : "top_bar_link") })
+            @Ajax.ActionLink(Resources.Words.ProfilePageLink_Information, "ProfilePage", "Members", new { username = Model.ProfileOwner.Alias, content = "info" }, new AjaxOptions { HttpMethod = "Get", OnFailure = "LoadPPContentFailure", UpdateTargetId = "pp_in_update_panel" }, new { @class = (Model.Content == "info" ? "top_bar_link_selected" : "top_bar_link") })
+            @Html.ActionLink(Resources.Words.ProfilePageLink_TimeLine, "ProfilePage", "Members", new { username = Model.ProfileOwner.Alias, content = "timeline" }, new { @class = (Model.Content == "timeline" ? "top_bar_link_selected" : "top_bar_link") })
+        </div>
+        <div class="prof_stats" title="@Resources.Words.ProfileVisitsCount">
+            <div class="prof_stats_ico visits_counter_ico"></div>
+            <span class="prof_stats_txt">
+                @MyHelper.FormatNumber(Model.ProfileOwner.ProfileVisitCounter)
+            </span>
+        </div>
+        <div class="prof_stats" title="@Resources.Words.FollowersCount">
+            <div class="prof_stats_ico follower_counter_ico"></div>
+            <span class="prof_stats_txt">
+                @MyHelper.FormatNumber(Model.FollowersCount)
+            </span>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="profile_page_in">
+        <div class="pp_in_bar">
+            @{
+                Html.RenderPartial(Urls.ModuleViews + "_ConsiderationsPPSection.cshtml", Model.ConsiderationsPPSectionModel);
+                Html.RenderPartial(Urls.ModuleViews + "_ProfilePagePixelAdv.cshtml", Model.ProfilePagePixelAdvModel);
+                Html.RenderPartial(Urls.ModuleViews + "_InfoPPSection.cshtml", Model.InfoPPSectionModel);
+                Html.RenderPartial(Urls.ModuleViews + "_FriendsPPSection.cshtml", Model.FriendsPPSectionModel);
+            }
+        </div>
+        <div class="pp_in_content">
+            <div id="pp_in_update_panel">
+                @switch (Model.Content)
+                {
+                    case "timeline":
+                        Html.RenderPartial(Urls.ModuleViews + "_ProfilePageTimeLine.cshtml", Model.ProfilePageTimeLineModel);
+                        break;
+                    case "friends":
+                        Html.RenderPartial(Urls.ModuleViews + "_ProfilePageFriends.cshtml", Model.ProfilePageFriendsModel);
+                        break;
+                    case "info":
+                        Html.RenderPartial(Urls.ModuleViews + "_ProfilePageInfo.cshtml", Model.ProfilePageInfoModel);
+                        break;
+                    case "photos":
+                        Html.RenderPartial(Urls.ModuleViews + "_ProfilePagePhotos.cshtml", Model.ProfilePagePhotosModel);
+                        break;
+                    case "activities":
+                        Html.RenderPartial(Urls.ModuleViews + "_ProfilePageActivities.cshtml", Model.ProfilePageActivitiesModel);
+                        break;
+                    default:
+                        Html.RenderPartial(Urls.ModuleViews + "_ProfilePageTimeLine.cshtml", Model.ProfilePageTimeLineModel);
+                        break;
+                }
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <!-- Hidden Fields: -->
+    <input type="hidden" id="pp_w_ajax_fail" value="@Resources.Messages.AjaxFail" />
+</div>

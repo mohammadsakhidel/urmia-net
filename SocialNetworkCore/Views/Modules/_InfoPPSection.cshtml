@@ -1,0 +1,81 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model InfoPPSectionModel
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/_InfoPPSectionHeadTags.min.js")"></script>
+@if (Model.IsBasicInfoVisibleToUser)
+{
+    <div id="pp_sec_info" class="pp_section">
+        <div class="pp_section_title">
+            <a href="@Url.Content(Model.ProfileOwner.UrlOfProfilePage + "/info")"><span>@Resources.Words.InfoSummary</span>
+            </a>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="pp_section_content">
+            <div class="pp_sec_info_in">
+                <div class="pp_sec_info_item">
+                    @(Model.ProfileOwner.Gender.Value ? @Resources.Words.Male : @Resources.Words.Female)
+                    -
+                    @Model.ProfileOwner.Age
+                    @Resources.Words.YearsOld
+                    (@DateHelper.DateToText(Model.ProfileOwner.BirthDay.Value))
+                    @if (Model.HasBasicInfo && Model.OwnerBasicInformation.MaritalStatus.HasValue)
+                    {
+                        @("- ")
+                        @Model.OwnerBasicInformation.MaritalStatusText
+                    }
+                    @if (Model.HasBasicInfo && (Model.OwnerBasicInformation.LivingRegion.HasValue || !String.IsNullOrEmpty(Model.OwnerBasicInformation.LivingCity)))
+                    {
+                        <br />
+                        <span>
+                            @Resources.Words.LivesInBeginingPart
+                            <a href="@Url.Action("Search", "Members", 
+                                new { 
+                                    region = (Model.OwnerBasicInformation.LivingRegion.HasValue ? Model.OwnerBasicInformation.LivingRegion : 0), 
+                                    city = (!String.IsNullOrEmpty(Model.OwnerBasicInformation.LivingCity) ? Model.OwnerBasicInformation.LivingCity : ""),
+                                    invoke = "true"
+                                    })">
+                                @(Model.OwnerBasicInformation.LivingRegion.HasValue ? Model.OwnerBasicInformation.LivingRegionName : "")
+                                @(!String.IsNullOrEmpty(Model.OwnerBasicInformation.LivingCity) ? (Model.OwnerBasicInformation.LivingRegion.HasValue ? " - " : "") + Model.OwnerBasicInformation.LivingCity : "")
+                            </a>
+                            @Resources.Words.LivesInEndingPart
+                        </span>
+                    }
+                </div>
+                @if (Model.HasBasicInfo && !String.IsNullOrEmpty(Model.OwnerBasicInformation.AboutMe))
+                {
+                    <div class="pp_sec_info_item">
+                        @Resources.Words.AboutMe_InProfilePage:
+                        @Html.Raw(TextsProcessor.RenderText(Model.OwnerBasicInformation.AboutMe))
+                    </div>
+                }
+                @if (Model.IsEducationVisibleToUser)
+                {
+                    <div class="pp_sec_info_item">
+                        @Model.OwnerHighestEducation.Text
+                    </div>
+                }
+                @if (Model.HasBasicInfo && (Model.OwnerBasicInformation.Height.HasValue || Model.OwnerBasicInformation.Weight.HasValue))
+                {
+                    <div class="pp_sec_info_item">
+                        @if (Model.OwnerBasicInformation.Height.HasValue)
+                        {
+                            @Resources.Words.Height
+                            @(": ")
+                            @Dictionaries.Heights[(int)Model.OwnerBasicInformation.Height]
+                            @(" ")
+                        }
+                        @if (Model.OwnerBasicInformation.Weight.HasValue)
+                        {
+                            @Resources.Words.Weight
+                            @(": ")
+                            @Dictionaries.Weights[(int)Model.OwnerBasicInformation.Weight]
+                            @(" ")
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2611d692-58ec-4aac-967d-8d119095111d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:63892/Services/Tasks/BackgroundTasksService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BackgroundTasksService2.xsd" MetadataType="Schema" ID="9bac9225-494e-464d-b62b-4a0f6c641e65" SourceId="1" SourceUrl="http://localhost:63892/Services/Tasks/BackgroundTasksService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BackgroundTasksService21.xsd" MetadataType="Schema" ID="e5bb2153-0522-4cd7-b5c6-df95281dbbb6" SourceId="1" SourceUrl="http://localhost:63892/Services/Tasks/BackgroundTasksService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BackgroundTasksService1.wsdl" MetadataType="Wsdl" ID="92bd0054-90a9-4a7b-8e44-b857a9d16414" SourceId="1" SourceUrl="http://localhost:63892/Services/Tasks/BackgroundTasksService.svc?wsdl" />
+    <MetadataFile FileName="BackgroundTasksService1.disco" MetadataType="Disco" ID="b58526d0-25b8-4ff8-a902-08f7b310d5b9" SourceId="1" SourceUrl="http://localhost:63892/Services/Tasks/BackgroundTasksService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

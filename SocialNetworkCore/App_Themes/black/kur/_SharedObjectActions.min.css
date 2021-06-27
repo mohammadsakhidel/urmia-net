@@ -1,0 +1,117 @@
+﻿div.obj_actions div.action_links
+{
+    padding: 0 0 5px 0;
+}
+
+div.obj_actions div.action_links a.action_link
+{
+    font-size: 8pt;
+    margin: 2px 10px 0 0;
+    float: left;
+}
+
+div.obj_actions div.action_links a.fb_share {
+    width: 50px;
+    height: 18px;
+    background-image: url(fb_share.png);
+    float: right;
+    cursor: pointer;
+}
+
+div.obj_actions div.actions_summery
+{
+    background-color: #f4f4f4;
+    padding: 7px;
+    border: solid 1px #d2d9e7;
+}
+
+    div.obj_actions div.actions_summery a.nolike {
+        color: #7ba9c1;
+        cursor: default;
+    }
+
+        div.obj_actions div.actions_summery a.nolike:hover {
+            text-decoration: none;
+        }
+
+    div.obj_actions div.actions_summery div.visits_counter {
+        float: right;
+    }
+
+    div.obj_actions div.actions_summery div.visits_counter_ico {
+        width: 12px;
+        height: 12px;
+        float: right;
+        background-image: url(visits_counter_ico.png);
+        margin: 2px 0 0 0;
+    }
+
+    div.obj_actions div.actions_summery span.visits_counter_txt {
+        font-size: 8pt;
+        float: right;
+        color: #888888;
+        margin: 0 3px 0 0;
+        font-weight: bold;
+        line-height: 15px;
+    } 
+
+div.obj_actions div.like
+{
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin: 0 5px 0 0;
+    background-image: url(like_thumb.png);
+}
+
+div.obj_actions div.new_comment
+{
+    background-color: #f4f4f4;
+    padding: 7px;
+    border-top: solid 1px #ffffff;
+    color: #291029;
+    border-bottom: solid 1px #d2d9e7;
+    border-right: solid 1px #d2d9e7;
+    border-left: solid 1px #d2d9e7;
+}
+
+div.obj_actions div.new_comment textarea.txt_comment
+{
+    width: 97%;
+    max-width: 97%;
+    min-width: 97%;
+    padding: 0 3px 0 3px;
+    border: solid 1px #d2d9e7;
+    resize: none;
+    height: 20px;
+    font-size: 8pt;
+}
+
+div.obj_actions div.more_comments
+{
+    background-color: #f4f4f4;
+    padding: 5px 0 6px 0;
+    border-top: solid 1px #ffffff;
+    color: #291029;
+    text-align: center;
+    border-bottom: solid 1px #d2d9e7;
+    border-right: solid 1px #d2d9e7;
+    border-left: solid 1px #d2d9e7;
+}
+
+div.obj_actions div.more_comments .loading_small_circle
+{
+    position: absolute;
+}
+
+div.obj_actions div.new_comment .loading_small_circle
+{
+    margin: 5px auto 0 auto;
+}
+
+div.obj_actions div.new_comment div.msg_add_comment
+{
+    max-width: 350px;
+    margin: 7px auto 0 auto;
+    padding: 3px 8px;
+}

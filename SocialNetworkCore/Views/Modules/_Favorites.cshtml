@@ -1,0 +1,219 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@model FavoritesModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_FavoritesHeadTags.min.js")"></script>
+<div id="favorites">
+    @using (Ajax.BeginForm("Favorites", "HomePage", new AjaxOptions { HttpMethod = "Post", LoadingElementId = "SaveFormLoading", OnBegin = "SaveBegin", OnFailure = "SaveFailure", OnSuccess = "SaveSuccess" }))
+    {
+        <div class="viewpart_title">
+            <h2>@Resources.Words.FavoritePerson</h2>
+        </div>
+        <div class="viewpart_content">
+            <input type="hidden" name="Email" value="@User.Identity.Name" />
+            <table border="0">
+                <tr>
+                    <td class="tdlbl">
+                        <label>@Resources.Words.RangeOfAge:</label>
+                    </td>
+                    <td>
+                        <select name="AgeFrom">
+                            <option value="">@Resources.Words.NotImportant</option>
+                            @for (var i = 16; i < 60; i++)
+                            {
+                                <option value="@i" @(Model.AgeFrom == i ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@i</option>
+                            }
+                        </select>
+                        -
+                        @Resources.Words.To
+                        -
+                        <select name="AgeTo">
+                            <option value="">@Resources.Words.NotImportant</option>
+                            @for (var i = 16; i < 60; i++)
+                            {
+                                <option value="@i" @(Model.AgeTo == i ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@i</option>
+                            }
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label>@Resources.Words.MaritalStatus:</label>
+                    </td>
+                    <td>
+                        <select name="MaritalStatus">
+                            <option value="">@Resources.Words.NotImportant</option>
+                            <option value="1" @(Model.MaritalStatus == CoreHelpers.MaritalStatus.Single ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.Single</option>
+                            <option value="2" @(Model.MaritalStatus == CoreHelpers.MaritalStatus.Married ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.Married</option>
+                            <option value="3" @(Model.MaritalStatus == CoreHelpers.MaritalStatus.InRelationship ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.InRelationship</option>
+                            <option value="4" @(Model.MaritalStatus == CoreHelpers.MaritalStatus.Divorced ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.Divorced</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label>@Resources.Words.Height:</label>
+                    </td>
+                    <td>
+                        <select name="Height">
+                            <option value="">@Resources.Words.NotImportant</option>
+                            <option value="1" @(Model.Height == 1 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.LessThan
+                                135</option>
+                            <option value="2" @(Model.Height == 2 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                135-140</option>
+                            <option value="3" @(Model.Height == 3 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                140-145</option>
+                            <option value="4" @(Model.Height == 4 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                145-150</option>
+                            <option value="5" @(Model.Height == 5 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                150-155</option>
+                            <option value="6" @(Model.Height == 6 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                155-160</option>
+                            <option value="7" @(Model.Height == 7 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                160-165</option>
+                            <option value="8" @(Model.Height == 8 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                165-170</option>
+                            <option value="9" @(Model.Height == 9 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                170-175</option>
+                            <option value="10" @(Model.Height == 10 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                175-180</option>
+                            <option value="11" @(Model.Height == 11 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                180-185</option>
+                            <option value="12" @(Model.Height == 12 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                185-190</option>
+                            <option value="13" @(Model.Height == 13 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                190-195</option>
+                            <option value="14" @(Model.Height == 14 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                195-200</option>
+                            <option value="15" @(Model.Height == 15 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.MoreThan
+                                200</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label>@Resources.Words.Weight:</label>
+                    </td>
+                    <td>
+                        <select name="Weight">
+                            <option value="">@Resources.Words.NotImportant</option>
+                            <option value="1" @(Model.Weight == 1 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.LessThan
+                                40</option>
+                            <option value="2" @(Model.Weight == 2 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                40-45</option>
+                            <option value="3" @(Model.Weight == 3 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                45-50</option>
+                            <option value="4" @(Model.Weight == 4 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                50-55</option>
+                            <option value="5" @(Model.Weight == 5 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                55-60</option>
+                            <option value="6" @(Model.Weight == 6 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                60-65</option>
+                            <option value="7" @(Model.Weight == 7 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                65-70</option>
+                            <option value="8" @(Model.Weight == 8 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                70-75</option>
+                            <option value="9" @(Model.Weight == 9 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                75-80</option>
+                            <option value="10" @(Model.Weight == 10 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                80-85</option>
+                            <option value="11" @(Model.Weight == 11 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                85-90</option>
+                            <option value="12" @(Model.Weight == 12 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                90-95</option>
+                            <option value="13" @(Model.Weight == 13 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>
+                                95-100</option>
+                            <option value="14" @(Model.Weight == 14 ? Html.Raw("selected=\"selected\"") : Html.Raw(""))>@Resources.Words.MoreThan
+                                100</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label for="Behavior">@Resources.Words.Behavior:</label>
+                    </td>
+                    <td>
+                        <textarea name="Behavior" id="Behavior">@Model.Behaviour</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label>@Resources.Words.Fashion:</label>
+                    </td>
+                    <td>
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="Comfortable" id="ch_Comfortable" @(Model.Fashion[0] == '1' ? Html.Raw("checked=\"checked\"") : Html.Raw(""))/>
+                                    <label for="ch_Comfortable">@Resources.Words.Comfortable</label>
+                                </td>
+                                <td style="padding-right: 20px;">
+                                    <input type="checkbox" name="Jean" id="ch_Jean" @(Model.Fashion[1] == '1' ? Html.Raw("checked=\"checked\"") : Html.Raw(""))/>
+                                    <label for="ch_Jean">@Resources.Words.Jean</label>
+                                </td>
+                                <td style="padding-right: 20px;">
+                                    <input type="checkbox" name="Suit" id="ch_Suit" @(Model.Fashion[2] == '1' ? Html.Raw("checked=\"checked\"") : Html.Raw(""))/>
+                                    <label for="ch_Suit">@Resources.Words.Suit</label>
+                                </td>
+                                <td style="padding-right: 20px;">
+                                    <input type="checkbox" name="Usual" id="ch_Usual" @(Model.Fashion[3] == '1' ? Html.Raw("checked=\"checked\"") : Html.Raw(""))/>
+                                    <label for="ch_Usual">@Resources.Words.Usual</label>
+                                </td>
+                                <td style="padding-right: 20px;">
+                                    <input type="checkbox" name="Modern" id="ch_Modern" @(Model.Fashion[4] == '1' ? Html.Raw("checked=\"checked\"") : Html.Raw(""))/>
+                                    <label for="ch_Modern">@Resources.Words.Modern</label>
+                                </td>
+                                <td style="padding-right: 20px;">
+                                    <input type="checkbox" name="UpToDate" id="ch_UpToDate" @(Model.Fashion[5] == '1' ? Html.Raw("checked=\"checked\"") : Html.Raw(""))/>
+                                    <label for="ch_UpToDate">@Resources.Words.UpToDate</label>
+                                </td>
+                                <td style="padding-right: 20px;">
+                                    <input type="checkbox" name="Variable" id="ch_Variable" @(Model.Fashion[6] == '1' ? Html.Raw("checked=\"checked\"") : Html.Raw(""))/>
+                                    <label for="ch_Variable">@Resources.Words.Variable</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="viewpart_title">
+            <h2>@Resources.Words.OtherFavoriteThings</h2>
+        </div>
+        <div id="other_favorite_things" class="viewpart_content">
+            <div>
+                <label for="Hobbies">@Resources.Words.Hobbies:</label><br />
+                <textarea name="Hobbies" id="Hobbies">@Model.Hobbies</textarea>
+            </div>
+            <div>
+                <label for="FavoriteMusic">@Resources.Words.FavoriteMusic:</label><br />
+                <textarea name="FavoriteMusics" id="FavoriteMusics">@Model.FavoriteMusics</textarea>
+            </div>
+            <div>
+                <label for="FavoriteMovies">@Resources.Words.FavoriteMovies:</label><br />
+                <textarea name="FavoriteMovies" id="FavoriteMovies">@Model.FavoriteMovies</textarea>
+            </div>
+            <div>
+                <label for="FavoriteBooks">@Resources.Words.FavoriteBooks:</label><br />
+                <textarea name="FavoriteBooks" id="FavoriteBooks">@Model.FavoriteBooks</textarea>
+            </div>
+            <div>
+                <label for="FavoriteQuotes">@Resources.Words.FavoriteQuotes:</label><br />
+                <textarea name="FavoriteQuotes" id="FavoriteQuotes">@Model.FavoriteQuotes</textarea>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+
+        <div class="form_submit_sec">
+            <input type="submit" value="@Resources.Words.Save" />
+            <div id="SaveFormLoading" class="loading_small hide">
+            </div>
+            <div class="hide" id="msg_save">
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+    }
+    <input id="ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />
+    <input id="msg_errors_title" type="hidden" value="@Resources.Messages.ListOfErrorsTitle" />
+</div>

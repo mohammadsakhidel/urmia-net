@@ -1,0 +1,31 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@using SocialNetApp.Views.Models.Layouts
+
+@model SocialNetApp.Views.Models.Home.IndexViewModel
+@{
+    Layout = "~/Views/Layouts/_Site.cshtml";
+}
+@section head{
+    <link href="@Url.Content(SiteViewModel.StyleSheetsUrl + "IndexPage.min.css")" rel="stylesheet" type="text/css" />
+    <title>
+        @Resources.Titles.StaticPageTitle
+    </title>
+}
+@section content{
+    @{ Html.RenderPartial(Urls.ModuleViews + "_Register.cshtml", Model.RegisterModel); }
+    <div id="index_page_content">
+        @{ Html.RenderPartial(Urls.ModuleViews + "_HomePixelAdv.cshtml", Model.HomePixelAdvModel); }
+        <div class="index_pg_imglinks">
+            <a class="img_link img_link_people" href="@Url.Action("Search", "Members", null)" title="@Resources.Words.SearchPeople"></a>
+            <a class="img_link img_link_publicwall" href="@Url.Action("Public", "HomePage", null)" title="@Resources.Words.PublicShares"></a>
+            <a class="img_link img_link_rules" href="@Url.Action("Rules", "Pages", null)" title="@Resources.Words.Rules"></a>
+            <a class="img_link img_link_help" href="@Url.Action("Help", "Pages", null)" title="@Resources.Words.Help"></a>
+        </div>
+        <div class="clear">
+        </div>
+        @{ Html.RenderPartial(Urls.ModuleViews + "_HomeMemberCollection.cshtml", Model.HomeMemberCollectionModel); }
+    </div>
+    <div class="clear">
+    </div>
+}

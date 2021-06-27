@@ -1,0 +1,21 @@
+﻿@using CoreHelpers
+@model SocialNetApp.Views.Models.Members.IndexViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layouts/_Frame.cshtml";
+}
+@section head{
+    <title>
+        @Resources.Words.People
+        @Strings.TitleSeparator
+        @Resources.Titles.StaticPageTitle
+    </title>
+}
+@section title{
+    @Resources.Words.People
+}
+@section content{
+    @{
+        Html.RenderPartial(Urls.ModuleViews + "_People.cshtml", Model.PeopleModel);
+    }
+}

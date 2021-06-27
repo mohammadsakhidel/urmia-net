@@ -1,0 +1,18 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@using CoreHelpers
+@model ActivitySettingsModel
+@if (User.Identity.IsAuthenticated)
+{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/_ActivitySettingsHeadTags.min.js")"></script>
+    <a class="act_set"></a>
+    <div class="act_menu hide">
+        <div id="@("prg_activity_setting_" + Model.Activity.Id)" class="loading_small_circle hide">
+        </div>
+        @if (Model.IsDeleteEnabled)
+        {
+            @Ajax.ActionLink(Resources.Words.Delete, "DeleteActivity", "Activities", new { id = Model.Activity.Id }, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "prg_activity_setting_" + Model.Activity.Id, OnFailure = "DeleteActivityFailure", OnSuccess = "DeleteActivitySuccess" }, new { @class = "act_menu_a" })
+        }
+        @Ajax.ActionLink(Resources.Words.DontShowActivity, "HideActivity", "Activities", new { id = Model.Activity.Id }, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "prg_activity_setting_" + Model.Activity.Id, OnFailure = "HideActivityFailure", OnSuccess = "HideActivitySuccess" }, new { @class = "act_menu_a" })
+        @Ajax.ActionLink(Resources.Words.DontShowOwner1 + " " + Model.Actor.FullName + " " + Resources.Words.DontShowOwner2, "HideMemberActivities", "Activities", new { id = Model.Activity.Id }, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "prg_activity_setting_" + Model.Activity.Id, OnSuccess = "HideMemberActivitiesSuccess", OnFailure = "HideMemberActivitiesFailure" }, new { @class = "act_menu_a" })
+    </div>
+}

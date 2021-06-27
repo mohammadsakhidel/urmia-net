@@ -1,0 +1,53 @@
+﻿@model SocialNetApp.Views.Models.Modules.PagesModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_PagesHeadTags.min.js")"></script>
+<div id="pages" class="viewpart">
+    <div class="viewpart_title">
+        <h2>@Resources.Words.Pages</h2>
+    </div>
+    <div class="viewpart_content">
+        @using (Ajax.BeginForm("SendPage", "Admin", null, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "prg_send_page", OnSuccess = "SendPageSuccess" }, new { @id = "frm_page_editor" }))
+        {
+            <div class="page_row">
+                <label>@Resources.Words.Id</label><br />
+                <input type="text" name="PageName" />
+            </div>
+            foreach (var lang in Model.Languages)
+            {
+                <h2 class="lang_name">@lang.DisplayName:</h2>
+                <div class="page_row">
+                    <label>@Resources.Words.Title</label><br />
+                    <input type="text" name="@("Title_" + lang.Code)" />
+                </div>
+                <div class="page_editor_con">
+                    <textarea id="@(string.Format("page_editor_{0}", lang.Code))" class="page_editor" name="@("Content_" + lang.Code)" cols="" rows=""></textarea>
+                </div>
+            }
+            <input name="PageId" type="hidden" />
+            <div id="page_set" class="border">
+                <div class="page_set_sub">
+                    <input id="btn_send_page" type="submit" value="@Resources.Words.Send" />
+                    <div id="prg_send_page" class="loading_small_circle hide">
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div id="msg_page_editor">
+            </div>
+        }
+        <div class="page_list">
+            @foreach (var p in Model.Pages)
+            {
+                <div class="page_list_li" id="@("page_" + p.Name)">
+                    <div class="page_list_li_actions">
+                        @Ajax.ActionLink(Resources.Words.Delete, "DeletePage", "Admin", new { name = p.Name }, new AjaxOptions { HttpMethod = "Post", OnSuccess = "DeletePageSuccess", LoadingElementId = "prg_page_actions_" + p.Name })
+                        @Ajax.ActionLink(Resources.Words.Edit, "EditPage", "Admin", new { name = p.Name }, new AjaxOptions { HttpMethod = "Post", OnSuccess = "EditPageSuccess", LoadingElementId = "prg_page_actions_" + p.Name })
+                    </div>
+                    <div class="loading_small_circle hide" id="@("prg_page_actions_" + p.Name)">
+                    </div>
+                    <a href="@Url.Content(p.Url)">@p.Name</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

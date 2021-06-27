@@ -1,0 +1,85 @@
+﻿div#hmi_messages
+{
+    min-width: 300px;
+}
+
+div#hmi_messages div#hmi_messages_in {
+    max-height: 450px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+div#hmi_messages div.hmi_msg
+{
+    width: 400px;
+    padding: 7px;
+    background-color: White;
+    border-bottom: solid 1px #ededee;
+}
+
+div#hmi_messages div.hmi_msg:hover
+{
+    background-color: #fbfbfb;
+}
+
+div#hmi_messages .hmi_msg_thumb
+{
+    float: left;
+}
+
+div#hmi_messages .hmi_msg_details
+{
+    float: left;
+    margin: 2px 0 0 5px;
+}
+
+div#hmi_messages a.hmi_msg_txt
+{
+    margin: 7px 0 0 0;
+    color: #bcbec0;
+    font-size: 7.5pt;
+    display: block;
+    text-decoration: none;
+}
+
+div#hmi_messages a.hmi_msg_txt:hover
+{
+    text-decoration: none;
+    color: Gray;
+}
+
+div#hmi_messages .hmi_msg_header
+{
+    background-color: #ffffff;
+    border-bottom: solid 1px #c5c5c5;
+    padding: 8px;
+    text-align:right;
+}
+
+div#hmi_messages .hmi_msg_header a
+{
+    color: #ef4523;
+    font-family: 'RegNaskh';
+}
+
+div#hmi_messages .hmi_msg_footer
+{
+    background-color: #f7f7f7;
+    border-top: solid 1px #c5c5c5;
+    padding: 8px;
+    text-align:center;
+}
+
+div#hmi_messages .hmi_msg_footer a
+{
+    color: #ef4523;
+    font-family: 'RegNaskh';
+}
+
+div#hmi_messages .hmi_msg_empty
+{
+    padding: 15px 0;
+    text-align: center;
+    font-size: 8pt;
+    color: #d1d3d4;
+}

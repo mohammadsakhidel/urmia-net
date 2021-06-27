@@ -1,0 +1,31 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model LikesDialogModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_LikesDialogHeadTags.min.js")"></script>
+<div id="likes_dialog">
+    <div class="dialog_title">
+        <a class="dialog_close" onclick="HideDialog();"></a>
+        <h2>@Resources.Words.LikesDialogTitle</h2>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="dialog_view_in">
+        <div class="dialog_likers">
+            @foreach (var likerModel in Model.LikerModels)
+            {
+                <div class="dialog_liker">
+                    @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", likerModel);}
+                </div>
+            }
+        </div>
+        <div class="dialog_actions">
+            <a class="cancel" onclick="HideDialog();">@Resources.Words.CloseDialog</a>
+            <div id="dialog_prg" class="loading_small_circle hide">
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>

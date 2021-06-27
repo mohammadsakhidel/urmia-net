@@ -1,0 +1,60 @@
+﻿@using CoreHelpers;
+
+@model SocialNetApp.Views.Models.Modules.ProfileCoverModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_ProfileCoverHeadTags.min.js")"></script>
+<div id="profile_cover" class="viewpart">
+    <input id="cover_h" type="hidden" value="@Digits.CoverHeight" />
+    <input id="cover_w" type="hidden" value="@Digits.CoverWidth" />
+    <input id="ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />
+    <div class="viewpart_title">
+        <h2>@Resources.Words.UploadCoverImage</h2>
+    </div>
+    <div class="viewpart_content">
+        <div class="text">
+            @Html.Raw(Resources.Texts.ProfileCoverText)
+        </div>
+        @using (Html.BeginForm("UploadProfileCover", "Photos", FormMethod.Post, new { enctype = "multipart/form-data", @id = "form_upload" }))
+        {
+            Html.RenderPartial(Urls.ModuleViews + "_SimpleUploader.cshtml", Model.SimpleUploaderModel);
+        }
+        <div id="msg">
+            @if (Model.IsPostBack && Model.UploadingDone.Value)
+            {
+                <div class="success_message">@Resources.Messages.SuccessfullyUploadedProfieCover</div>
+            }
+            else if (Model.IsPostBack)
+            {
+                <div class="error_message">@(Model.UploadingErrorMessage)</div>
+            }
+        </div>
+        <div id="edit_cover">
+            @if (Model.PCP != null)
+            {
+                <div>
+                    <img id="img_cover" src="@Url.Content(Urls.ProfileCoverBases + Model.PCP.FileName)" alt="" width="680" />
+                </div>
+                <div id="submit_sec">
+                    @using (Ajax.BeginForm("EditCover", "Photos", new AjaxOptions { HttpMethod = "Post", LoadingElementId = "prg_EditCover", OnBegin = "EditCoverBegin", OnFailure = "EditCoverFailure", OnSuccess = "EditCoverSuccess" }))
+                    {
+                        <input id="x" name="X" type="hidden" value="0" />
+                        <input id="y" name="Y" type="hidden" value="0" />
+                        <input id="w" name="W" type="hidden" value="0" />
+                        <input id="h" name="H" type="hidden" value="0" />
+                        <input id="scale" name="Scale" type="hidden" value="1" />
+                        <input name="EditCover" type="submit" value="@Resources.Words.Save" />
+                        <div id="prg_EditCover" class="loading_small hide">
+                        </div>
+                        <div class="clear">
+                        </div>
+                    }
+                    @using (Html.BeginForm("DeleteCoverPhoto", "Photos", FormMethod.Post, new { @onclick = "return confirm('" + Resources.Messages.AreYouSure + "');" }))
+                    {
+                        <input type="submit" class="delete" value="@Resources.Words.DeletePhoto" />
+                    }
+                    <div id="msg_EditCover" class="hide">
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+﻿div.special_post
+{
+    padding: 15px 0 15px 0;
+    border-bottom: solid 1px #dcddde;
+    position: relative;
+}
+
+div.special_post div.special_post_actor
+{
+    float: right;
+}
+
+div.special_post div.special_post_actor_fullname
+{
+    margin-top: 5px;
+}
+
+div.special_post div.special_post_in
+{
+    float: right;
+    margin: 0 5px 0 0;
+    max-width: 450px;
+}
+
+div.special_post div.special_post_text
+{
+    margin-top: 5px;
+    font-size: 9.5pt;
+    line-height: 20px;
+    color: #414042;
+}
+
+div.special_post div.special_post_actions
+{
+    margin: 10px 45px 0 0;
+    padding: 7px 0 0 0;
+}
+
+div.special_post div.special_post_settings
+{
+    position: absolute;
+    left: 0;
+    top: 10px;
+}

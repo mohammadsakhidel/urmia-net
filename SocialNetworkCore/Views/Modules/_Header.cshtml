@@ -1,0 +1,54 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@using CoreHelpers
+@model HeaderModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_HeaderHeadTags.min.js")"></script>
+<h1 class="header_h">@Resources.Titles.StaticPageTitle</h1>
+@if (@Model.Type == HeaderType.Slim)
+{
+    <div id="header" class="header_slim">
+        <div id="content">
+            @Html.ActionLink(" ", "Index", "HomePage", null, new { id = "logolink" })
+            <div class="clear">
+            </div>
+            <div id="hmenu">
+                <div id="hbubble_reqs" class="@("hmenu_bubble" + (Model.NewRequestsCount > 0 ? "" : " hide"))">@Model.NewRequestsCount</div>
+                <div id="hbubble_msgs" class="@("hmenu_bubble" + (Model.NewMessagesCount > 0 ? "" : " hide"))">@Model.NewMessagesCount</div>
+                <div id="hbubble_nots" class="@("hmenu_bubble" + (Model.NewNotificationsCount > 0 ? "" : " hide"))">@Model.NewNotificationsCount</div>
+                @Ajax.ActionLink(" ", "HmiSettings", "HomePage", null, new AjaxOptions { HttpMethod = "Get", OnBegin = "hmi_SettingsBegin", UpdateTargetId = "hsubmenu_in" }, new { @id = "hmi_settings", @class = "hmi_settings", @title = Resources.Words.Acount })
+                @Ajax.ActionLink(" ", "HmiRequests", "HomePage", null, new AjaxOptions { HttpMethod = "Get", OnBegin = "hmi_RequestsBegin", OnSuccess = "hmi_RequestsSuccess" }, new { @id = "hmi_requests", @class = "hmi_requests", @title = Resources.Words.Requests })
+                @Ajax.ActionLink(" ", "HmiMessages", "HomePage", null, new AjaxOptions { HttpMethod = "Get", OnBegin = "hmi_MessagesBegin", OnSuccess = "hmi_MessagesSuccess" }, new { @id = "hmi_messages", @class = "hmi_messages", @title = Resources.Words.Messages })
+                @Ajax.ActionLink(" ", "HmiNotifications", "HomePage", null, new AjaxOptions { HttpMethod = "Get", OnBegin = "hmi_NotificationsBegin", OnSuccess = "hmi_NotificationsSuccess" }, new { @id = "hmi_notifications", @class = "hmi_notifications", @title = Resources.Words.Notifications })
+                @Html.ActionLink(" ", "Public", "HomePage", null, new { @id = "hmi_public_shares", @class = "hmi_public_shares", @title = Resources.Words.PublicShares })
+                @Html.ActionLink(" ", "Index", "HomePage", null, new { @id = "hmi_home", @class = "hmi_home", @title = Resources.Words.Homepage })
+                <div id="hsubmenu" class="hsubmenu hide">
+                    <div class="hsubmenu_pointer">
+                    </div>
+                    <div class="hsubmenu_border">
+                        <div id="hsubmenu_in">
+                            <div class="loading_small_circle">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="htooltip" class="htooltip hide">
+                    <div class="htooltip_bg">
+                    </div>
+                    <div class="htooltip_pointer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div id="header" class="header_thick">
+        <div id="content">
+            @if (Model.ShowLogin)
+            {
+                Html.RenderPartial(@Url.Content(Urls.ModuleViews + "_Login.cshtml"), Model.LoginModel);
+            }
+            @Html.ActionLink(" ", "Index", "Home", null, new { id = "logolink" })
+        </div>
+    </div>
+}

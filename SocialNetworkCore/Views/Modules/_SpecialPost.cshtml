@@ -1,0 +1,25 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model SpecialPostModel
+<div class="special_post" id="@("special_post_" + Model.SpecialPost.Id)">
+    <script type="text/javascript" src="@Url.Content("~/Scripts/_SpecialPostHeadTags.min.js")"></script>
+    <div class="special_post_actor">
+        @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.PostOwnerThumbIdentityModel);}
+    </div>
+    <div class="special_post_in">
+        <div class="special_post_actor_fullname">
+            @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.PostOwnerNameIdentityModel);}
+        </div>
+        <div class="special_post_text">
+            @Html.Raw(Model.SpecialPost.Text)
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="special_post_actions">
+        @{Html.RenderPartial(Urls.ModuleViews + "_SharedObjectActions.cshtml", Model.SharedObjectActionsModel);}
+    </div>
+    <div class="special_post_settings">
+        @{Html.RenderPartial(Urls.ModuleViews + "_SpecialPostSettings.cshtml", Model.SpecialPostSettingsModel);}
+    </div>
+</div>

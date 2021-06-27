@@ -1,0 +1,50 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@using SocialNetApp.Models
+@model ChangeCoverActivityModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_ActivityHeadTags.min.js")"></script>
+@if (Model.IsActivityVisibleToUser)
+{
+    var activity = Model.Activity;
+    var pcp = Model.PCP;
+    var actor = Model.ActivityActor;
+    var actor_status = (MemberStatus)Model.ActivityActor.StatusCode;
+    <div class="activity" id="@("activity_" + activity.Id)">
+        @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.ActorThumbIdentityModel);}
+        <div class="act_tools">
+            <div class="act_settings">
+                @{Html.RenderPartial(Urls.ModuleViews + "_ActivitySettings.cshtml", Model.ActivitySettingsModel);}
+            </div>
+            <div class="act_info">
+                @{Html.RenderPartial(Urls.ModuleViews + "_ActivityInfo.cshtml", Model.ActivityInfoModel);}
+            </div>
+        </div>
+        <div class="act_content">
+            @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.ActorNameIdentityModel);}
+            <div class="act_title">
+                @{
+                    @Resources.Words.ChangeCoverActivityTitle_Part1
+              if (actor_status != MemberStatus.ScheduledForDelete)
+              {
+                    <a href="@Url.Content(actor.UrlOfProfilePage)">@Resources.Words.HisProfileCover</a>
+              }
+              else
+              {
+                    @Resources.Words.HisProfileCover
+              }
+                    @Resources.Words.ChangeCoverActivityTitle_Part2
+                }
+            </div>
+            <a class="thumb_parent act_img_parent" href="@Url.Content(pcp.UrlOfDetails)">
+                <img src="@Url.Content(Urls.ProfileCovers + pcp.FileName)" alt="@actor.FullName" class="act_img" />
+            </a>
+        </div>
+        <div class="clear">
+        </div>
+        <div class="actions">
+            @{
+                Html.RenderPartial(Urls.ModuleViews + "_SharedObjectActions.cshtml", Model.SharedObjectActionsModel);
+            }
+        </div>
+    </div>
+}

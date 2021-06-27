@@ -1,0 +1,102 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model SearchMembersModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_SearchMembersHeadTags.min.js")"></script>
+<div id="search_members">
+    <div class="search_info">
+        @using (Ajax.BeginForm("SearchMember", "Members", null, new AjaxOptions { HttpMethod = "Post", OnBegin = "SearchMemberBegin", OnFailure = "SearchMemberFailure", OnSuccess = "SearchMemberSuccess", OnComplete = "SearchMemberComplete" }, new { @id = "frm_search_members" }))
+        {
+            <div class="search_info_in">
+                <div class="search_info_item">
+                    <input type="text" name="FullName" />
+                </div>
+                <div class="search_info_item">
+                    <select name="Gender">
+                        <option value="">@Resources.Words.Gender</option>
+                        <option value="true">@Resources.Words.Male</option>
+                        <option value="false">@Resources.Words.Female</option>
+                    </select>
+                </div>
+                <div class="search_info_item">
+                    <select name="EducationLevel">
+                        <option value="">@Resources.Words.EducationLevelForSearch</option>
+                        @foreach (var level in Dictionaries.EducationLevels)
+                        {
+                            <option value="@level.Key">@level.Value</option>
+                        }
+                    </select>
+                </div>
+                <div class="search_info_item">
+                    <select name="MaritalStatus">
+                        <option value="">@Resources.Words.MaritalStatus</option>
+                        <option value="1">@Resources.Words.Single</option>
+                        <option value="2">@Resources.Words.Married</option>
+                        <option value="3">@Resources.Words.InRelationship</option>
+                        <option value="4">@Resources.Words.Divorced</option>
+                    </select>
+                </div>
+                <div class="search_info_item">
+                    <select name="AgeFrom">
+                        <option value="">@Resources.Words.AgeFrom</option>
+                        @for (var i = 16; i < 60; i++)
+                        {
+                            <option value="@i">@i</option>
+                        }
+                    </select>
+                    <select name="AgeTo">
+                        <option value="">@Resources.Words.AgeTo</option>
+                        @for (var i = 16; i < 60; i++)
+                        {
+                            <option value="@i">@i</option>
+                        }
+                    </select>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="search_info_item">
+                    <select name="LivingRegion">
+                        <option value="">@Resources.Words.LivingRegion</option>
+                        <option value="@((byte)LivingRegion.North)" @(Model.LivingRegion == (byte)LivingRegion.North ? "selected=\"selected\"" : "")>@Resources.Words.LivingRegionNorth</option>
+                        <option value="@((byte)LivingRegion.East)" @(Model.LivingRegion == (byte)LivingRegion.East ? "selected=\"selected\"" : "")>@Resources.Words.LivingRegionEast</option>
+                        <option value="@((byte)LivingRegion.South)" @(Model.LivingRegion == (byte)LivingRegion.South ? "selected=\"selected\"" : "")>@Resources.Words.LivingRegionSouth</option>
+                        <option value="@((byte)LivingRegion.West)" @(Model.LivingRegion == (byte)LivingRegion.West ? "selected=\"selected\"" : "")>@Resources.Words.LivingRegionWest</option>
+                        <option value="@((byte)LivingRegion.Abroad)" @(Model.LivingRegion == (byte)LivingRegion.Abroad ? "selected=\"selected\"" : "")>@Resources.Words.LivingRegionAbroad</option>
+                    </select>
+                </div>
+                <div class="search_info_item">
+                    <input type="text" name="LivingCity" value="@Model.LivingCity" />
+                    <input type="hidden" value="@Url.Action("FindLivingCity", "Suggestions")" />
+                </div>
+                <div class="search_info_item">
+                    <input type="checkbox" name="JustOnlines" id="ch_JustOnlines" value="true" />
+                    <label class="for_chbox" for="ch_JustOnlines">@Resources.Words.JustSearchOnlines</label>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="search_info_item">
+                    <input type="checkbox" name="JustWithPP" id="ch_JustWithPP" value="true" />
+                    <label class="for_chbox" for="ch_JustWithPP">@Resources.Words.JustWithPP</label>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" value="@Resources.Words.Search" id="btn_srch_submit" />
+                </div>
+            </div>
+        }
+    </div>
+    <div class="search_result" id="search_result">
+        @foreach(var briefModel in Model.RandomMemberBriefModels)
+        {
+            Html.RenderPartial(Urls.ModuleViews + "_MemberBrief.cshtml", briefModel);
+        }
+        <div class="clear"></div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+<!-- hiddens: -->
+<input id="w_fullname" type="hidden" value="@Resources.Words.FullName" />
+<input id="w_livingCity" type="hidden" value="@Resources.Words.LivingCity" />
+<input id="w_ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />
+<input id="hid_invoke" type="hidden" value="@Model.Invoke.ToString()" />

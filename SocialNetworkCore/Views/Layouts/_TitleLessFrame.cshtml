@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Layouts/_Site.cshtml";
+}
+@section head{
+    @RenderSection("head")
+}
+@section content{
+    <div class="frame_parent">
+        <div class="frame">
+            <div class="frame_content">
+                @RenderSection("content")
+            </div>
+        </div>
+    </div>
+}

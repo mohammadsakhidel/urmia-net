@@ -1,0 +1,17 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@using CoreHelpers
+@model SpecialPostSettingsModel
+@if (Model.IsUserAdmin)
+{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/_SpecialPostSettingsHeadTags.min.js")"></script>
+    <div class="special_post_settings">
+        <a class="spec_pst_set"></a>
+        <div class="post_menu hide">
+            <div id="@("prg_post_setting_" + Model.SpecialPost.Id)" class="loading_small_circle hide">
+            </div>
+            @Ajax.ActionLink(Resources.Words.Delete, "DeleteSpecialPost", "Admin", new { id = Model.SpecialPost.Id }, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "prg_post_setting_" + Model.SpecialPost.Id, OnSuccess = "DeleteSpecialPostSuccess" }, new { @class = "post_menu_a", @id = "pma_del_pst_" + Model.SpecialPost.Id })
+            @Ajax.ActionLink(Resources.Words.Edit, "EditSpecialPost", "Admin", new { id = Model.SpecialPost.Id }, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "prg_post_setting_" + Model.SpecialPost.Id, OnSuccess = "EditSpecialPostSuccess" }, new { @class = "post_menu_a", @id = "pma_edit_pst_" + Model.SpecialPost.Id })
+            @Ajax.ActionLink((Model.SpecialPost.Status == (byte)PostStatus.Visible ? Resources.Words.Hide : Resources.Words.Show), "ToggleVisibilitySpecialPost", "Admin", new { id = Model.SpecialPost.Id }, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "prg_post_setting_" + Model.SpecialPost.Id, OnSuccess = "ToggleVisibilitySpecialPostSuccess" }, new { @class = "post_menu_a", @id = "pma_tgl_pst_" + Model.SpecialPost.Id })
+        </div>
+    </div>
+}

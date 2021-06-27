@@ -1,0 +1,26 @@
+﻿@using SocialNetApp.Models
+@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model MessageModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_MessageHeadTags.min.js")"></script>
+<div class="message">
+    <div class="msg_other_side_thumb">
+        @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.SenderThumbIdentityModel);}
+    </div>
+    <div class="msg_details">
+        @{ Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.SenderNameIdentityModel); }
+        <div class="msg_text">
+            @Html.Raw(TextsProcessor.RenderText(Model.MessageText))
+        </div>
+    </div>
+    <div class="msg_info">
+        <label>@Model.Message.DateOfSendText</label>
+        @if (Model.Message is OutboxMessage && Model.Message.Status == (byte)OutboxMessageStatus.Delivered)
+        {
+            <div class="msg_read" title="@(Resources.Words.SeenAt + ": " + Model.Message.SeenAtText)">
+            </div>
+        }
+    </div>
+    <div class="clear">
+    </div>
+</div>

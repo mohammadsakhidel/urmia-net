@@ -1,0 +1,15 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model SearchResultModel
+@if (Model.MemberBriefModels.Any())
+{
+    foreach (var briefModel in Model.MemberBriefModels)
+    {
+        Html.RenderPartial(Urls.ModuleViews + "_MemberBrief.cshtml", briefModel);
+    }
+    <div class="clear"></div>
+}
+else
+{
+    Html.RenderPartial(Urls.ModuleViews + "_EmptyList.cshtml", Model.EmptyListModel);
+}

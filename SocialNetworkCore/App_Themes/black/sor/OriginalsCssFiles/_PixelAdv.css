@@ -1,0 +1,75 @@
+﻿/* HOME PIXEL ADV */
+#home_pixeladv
+{
+    height: 120px;
+    width: 560px;
+    background-image: url(pixel_adv_bg.png);
+    border: solid 2px #dcddde;
+    margin-bottom: 7px;
+    position: relative;
+}
+
+/* PROFILE PAGE PIXEL ADV */
+#profile_pixeladv
+{
+    margin-bottom: 15px;
+    position: relative;
+    background-image: url(pixel_adv_bg.png);
+    border: solid 2px #b1b3b6;
+}
+
+#profile_pixeladv .profile_pixeladv_title
+{
+    display: inline-block;
+    font-weight: normal;
+    font-size: 7pt;
+    color: #ffffff;
+    background-color: #b1b3b6;
+    padding: 2px 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#profile_pixeladv .profile_pixeladv_in
+{
+    clear: both;
+    height: 120px;
+    width: 320px;
+}
+
+/* HOME PAGE PIXEL ADV */
+#hp_pixeladv
+{
+    margin-bottom: 15px;
+    position: relative;
+    background-image: url(pixel_adv_bg.png);
+    border: solid 2px #dcddde;
+}
+
+#hp_pixeladv .hp_pixeladv_title
+{
+    display: inline-block;
+    font-weight: normal;
+    font-size: 7pt;
+    color: #ffffff;
+    background-color: #dcddde;
+    padding: 2px 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#hp_pixeladv .hp_pixeladv_in
+{
+    clear: both;
+    height: 80px;
+    width: 220px;
+}
+
+/* ********************* COMMON ******************** */
+a.pxl_adv_lnk
+{
+    position: absolute;
+    border: 0;
+}

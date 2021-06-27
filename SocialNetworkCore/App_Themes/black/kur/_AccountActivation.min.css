@@ -1,0 +1,29 @@
+﻿#acc_activation input[type="submit"]
+{
+    float: left;
+}
+
+#acc_activation input[type="text"]
+{
+    width: 200px;
+    direction: ltr;
+}
+
+#acc_activation .loading_small
+{
+    float: left;
+    margin: 6px 0 0 6px;
+}
+
+#acc_activation table
+{
+    float: left;
+}
+
+#acc_activation #msg_activate, #acc_activation #msg_sendcode
+{
+    float: left;
+    margin: 0 0 0 50px;
+    min-width: 200px;
+    max-width: 350px;
+}

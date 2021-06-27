@@ -1,0 +1,18 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@model MemberBoxModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_MemberBoxHeadTags.min.js")"></script>
+<div class="member_box">
+    <input type="text" class="fullname_input" style="@("width: " + Model.Width.ToString() + "px;")" autocomplete="off" onkeydown="return (event.keyCode!=13);" />
+    <div class="members_pop">
+    </div>
+    <div class="selected_members_list">
+    </div>
+    <!-- hidden values: -->
+    <input type="hidden" name="@Model.Name" value="@Model.SelectedMemberKeys" />
+    <input type="hidden" name="action_url" value="@Url.Action(Model.ActionName, Model.ControllerName)" disabled="disabled" />
+    <input type="hidden" name="selected_index" value="-1" disabled="disabled" />
+    <input type="hidden" name="id_type" value="@Model.SelectedIdentifier" disabled="disabled" />
+    <input type="hidden" name="selected_members" value="@Model.SelectedMemberInfos" disabled="disabled" />
+    <input type="hidden" name="selected_members_hidden_name" value="@Model.Name" disabled="disabled" />
+    <input type="hidden" name="key_property" value="@Model.KeyProperty" disabled="disabled" />
+</div>

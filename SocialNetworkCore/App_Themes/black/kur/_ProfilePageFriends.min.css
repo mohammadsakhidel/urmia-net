@@ -1,0 +1,16 @@
+﻿div#pp_friends div.pp_friend_item
+{
+    padding: 5px 0 5px 0;
+    border-bottom: solid 1px #e9eaed;
+    color: #333333;
+}
+
+div#pp_friends div.pp_friend_item:hover
+{
+    background-color: #f8f8f8;
+}
+
+div#pp_friends .pp_friends_frnd_fullname
+{
+    margin: 28px 0 0 5px;
+}

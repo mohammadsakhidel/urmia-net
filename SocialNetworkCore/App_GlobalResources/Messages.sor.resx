@@ -1,0 +1,573 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccessDenied" xml:space="preserve">
+    <value>بەکارهێنەری بەڕێز بۆ کەڵک وەرگرتن دەبێت بچنەناو ماڵپەڕەکە، ئەگەر خاوەنی هەژمار لە vKurdistan نیەن،
+&lt;a href=/account/register&gt;ببنە ئەندام.&lt;/a&gt;</value>
+  </data>
+  <data name="AccessDeniedForObjects" xml:space="preserve">
+    <value>ئێوە مۆڵەتی پێویست بۆ چوونەناوەوەی ئەم بەشتانە نیە.
+ئەگەر خاوەنی هەژمار لە vKurdistan نیەن، 
+&lt;a href=/account/register&gt;ببنە ئەندام.&lt;/a&gt;</value>
+  </data>
+  <data name="ActivationCodeIsIncorrect" xml:space="preserve">
+    <value>ئەو نهێنوشەی چالاککردنە وا نووسیوتانە هەڵەیە، تکایە دیسان لێی ورد ببنەوە، یا لە ڕێگای ئەو بەستەری چالاککردنە وا نێردراوە بۆ ئیمەیلەکەتان دەستبەکاربن.</value>
+  </data>
+  <data name="ActivationNotValidEmailOrCode" xml:space="preserve">
+    <value>ئیمەیلە نووسراوەکە یا نهێنوشەی چالاککردن بڕواپێکراو نیە، تکایە دیسان لێی ورد ببنەوە.</value>
+  </data>
+  <data name="ActivationSuccess" xml:space="preserve">
+    <value>هەژمارەکەی ئێوە بە سەرکەوتوویی چالاک کرا، لە ئێستاوە ئەتوانن
+&lt;a href=/account/login&gt;بچنە ناو هەژمارەکەتان.&lt;/a&gt;
+&lt;br /&gt;
+بەخێرهاتن بۆ vKurdistan</value>
+  </data>
+  <data name="ActivationUserIsCurrentlyActive" xml:space="preserve">
+    <value>هەژماری پەیوەندیدار بە ئیمەیلەوە پێشتر چالاک کراوە و پێویستی بە چالاککردنی سەرلەنوێ نیە.</value>
+  </data>
+  <data name="AjaxFail" xml:space="preserve">
+    <value>هەڵەیەک لە پەیوەندی لەگەڵ ڕاژەکار ڕووی داوە</value>
+  </data>
+  <data name="AliasExists" xml:space="preserve">
+    <value>ناوی بەکارهێنەریی نووسراو پێشتر هەڵبژێردراوە، تکایە ناوێکی تر هەڵبژێرن.</value>
+  </data>
+  <data name="AreYouSure" xml:space="preserve">
+    <value>ئایا دڵنیان؟</value>
+  </data>
+  <data name="BasicHtmlUploader" xml:space="preserve">
+    <value>لەگەڵ بارکەری پەڕگە کێشەتان هەیە؟ بۆ کەڵک وەرگرتن لە وەشانی سادەکراو کرتە بکەن.</value>
+  </data>
+  <data name="ConfirmEmail" xml:space="preserve">
+    <value>دووبارەکراوەی ئیمەیل دروست نیە</value>
+  </data>
+  <data name="DeleteAccountSuccessMEssage" xml:space="preserve">
+    <value>هەژمارەکەی ئێوە لە قۆناغی سڕینەوەدایە و ئێوە لە هەژمارەکەتان چوونەتە دەرەوە، ماوەی 30 ڕۆژ بۆ ڕێگریکردن لە سڕینەوەی هەمیشەیی هەژمارەکەتان دەرفەتتان هەیە، لە ئەگەری نەچوونەژوورەوە لەم ماوەیەدا بۆ هەمیشە هەژمارەکەتان ئەسڕێتەوە.</value>
+  </data>
+  <data name="DontHaveAccess" xml:space="preserve">
+    <value>ئێوە خاوەن مۆڵەتی چوونەژوورەوەی پێویست نیەن.</value>
+  </data>
+  <data name="EmptyList" xml:space="preserve">
+    <value>هیچ بڕگەیەک بۆ پیشاندان نەدۆزرایەوە.</value>
+  </data>
+  <data name="ExceedMaxAlbums" xml:space="preserve">
+    <value>بە داوای لێبوردنەوە ئێوە بەرزترین ئاستی ژمارەی ئەلبومە ڕێپێدراوەکانتان دروست کردووە و ناتوانن ئەلبومیکی نوێ زێدە بکەن.</value>
+  </data>
+  <data name="ExceedMaxPostPhotos" xml:space="preserve">
+    <value>داوای لێبوردن ئەکەین، ئێوە لە هەر بڵاوکراوەیەک ئەتوانن لانی زۆر 3 وێنە بنێرن.</value>
+  </data>
+  <data name="ExceptionTryAgain" xml:space="preserve">
+    <value>هەڵەیەک لە جێبەجێ کردن ڕووی داوە، تکایە دیسان هەوڵ بدەن.</value>
+  </data>
+  <data name="FriendshipRequestExists" xml:space="preserve">
+    <value>داواکارییەکی هاوڕێیەتی وەڵام نەدراوە لە نێوان ئێوەدا هەیە، ئێوە توانای ناردنی داواکاری هاوڕییەتی نوێتان نیە.</value>
+  </data>
+  <data name="HasSharedBefore" xml:space="preserve">
+    <value>ئێوە پێشتر ئەم بابەتتانە پارڤە کردووە، ناتوانن دیسان پارڤەی کەن.</value>
+  </data>
+  <data name="IncorectPassword" xml:space="preserve">
+    <value>داڕشتی نهێنوشەی نووسراو دروست نیە
+&lt;br /&gt;
+تکایە سەرنجێک بدەنە ڕێنوێنی نووسراو لە تەنیشت چوارچێوەکە.</value>
+  </data>
+  <data name="LargerThanMaximumUpload" xml:space="preserve">
+    <value>ئەو پەڕگە ئەتانەوێت بینێرن لە زۆرترین قەبارەی ڕێپێدراوی خۆی لای داوە.</value>
+  </data>
+  <data name="ListOfErrorsTitle" xml:space="preserve">
+    <value>هەڵە(کان)ی ژێر ڕووی داوە:</value>
+  </data>
+  <data name="LoginBlockedAccount" xml:space="preserve">
+    <value>بەکارهێنەری بەڕێز، هەژماری ئێوە لە لایەن بەڕێوەبەرانی ماڵپەڕەوە بەربەست کراوە، بۆ ئاگاداربوون لە هۆکاری بەربەست بوون یا داواکاری شکاندنی بەربەست پەیوەندی به بەڕێوەبەرانی ماڵپەڕەوە بکەن.</value>
+  </data>
+  <data name="LoginDeletedAccount" xml:space="preserve">
+    <value>بەکارهێنەری بەڕێز، هەژمارەکەی ئێوە سڕاوەتەوە، بەپێی ئەوەی لەو ماوە دیاریکراوەدا بۆ هێنانەوە نەچوونەتە نێو هەژمارەکەتان، بۆ هێنانەوە و چالاککردنی سەرلەنوێی هەژمارەکەتان لە ڕێگای 
+&lt;a href=/Pages/ContactUs&gt;ئەم پەڕە&lt;/a&gt;
+پەیوەندی لەگەڵ بەڕێوەبەرانی ماڵپەڕ بکەن</value>
+  </data>
+  <data name="LoginNotValidAttempt" xml:space="preserve">
+    <value>ناونیشانی ئیمەیل یا نهێنوشە بڕواپێکراو نیە، تکایە سەرنج بدەنە خاڵەکانی ژێرەوە:
+&lt;br /&gt;
+&lt;ul&gt;
+&lt;li&gt;وریا بن ئیمەیلە نووسراوەکە داڕشتێکی دروستی بێت، بۆ نموونە: xyz@vkurdistan.com&lt;/li&gt;
+&lt;li&gt;نهێنوشەی ئێوە دەبێت هەموو مەرجە وتراوەکان لە پەڕەی خۆتۆمارکردنی هەبێت&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="LoginUserLockedOut" xml:space="preserve">
+    <value>بەکارهێنەری بەڕێز هەژمارەکەی ئێوە بە هۆی پرسە ئەمنییەکان بەشێوازێکی کاتی بەربەست کراوە، دوای ماوەیەکی کورت ئەتوانن دیسان دەستبەکاربن.</value>
+  </data>
+  <data name="LoginUserNotApproved" xml:space="preserve">
+    <value>هەژمارەکەی ئێوە چالاک نەکراوە، تکایە یەکێک لە خاڵەکانی ژێر جێبەجێ بکەن:
+&lt;br /&gt;
+&lt;ul&gt;
+&lt;li&gt;سەردانی ئیمەیلەکەتان بکەن و لەسەر بەستەری چالاککردنی هەژمار کرتە بکەن، وریا بن لەوانەیە ئیمەیلی چالاککردن لە بوخچەی spam دا بێت.&lt;/li&gt;
+&lt;li&gt;بۆ ناردنی سەرلەنوێێ بەستەری چ</value>
+  </data>
+  <data name="LoginUserNotExists" xml:space="preserve">
+    <value>ناونیشانی ئیمەیلی نووسراو دروست نیە، ئەندامێک بە ئەم ئیمەیلەوە بوونی نیە.</value>
+  </data>
+  <data name="LoginWrongPassword" xml:space="preserve">
+    <value>بەکارهێنەری بەڕێز نهێنوشەی نووسراو دروست نیە، وریا بن لە ئەگەری دووبارەکردنەوەی لەڕادەبەدەر، هەژمارەکەتان بۆ ڕێگری لە چوونەژوورەوەی نایاسایی بەشێوازێکی کاتی بەربەست ئەکرێت.</value>
+  </data>
+  <data name="MessageSent" xml:space="preserve">
+    <value>پەیامەکەی ئێوە بە سەرکەوتوویی نێردرا.</value>
+  </data>
+  <data name="NoNewRequest" xml:space="preserve">
+    <value>داواکاری هاوڕێیەتییەکی نوێتان نیە.</value>
+  </data>
+  <data name="NoNotification" xml:space="preserve">
+    <value>هیچ ڕاگەیەندراوێک نیە.</value>
+  </data>
+  <data name="NoRecieverForMessage" xml:space="preserve">
+    <value>وەرگرتان بۆ پەیامەکەتان دیاری نەکردووە.</value>
+  </data>
+  <data name="NotAllowedToSendFriendshipRequest" xml:space="preserve">
+    <value>ئێوە ئیجازەی ناردنی داواکاری هاوڕێیەتی بۆ ئەم ئەندامتانە نیە.</value>
+  </data>
+  <data name="NotAllowedToSendMessage" xml:space="preserve">
+    <value>ئێوە ئیجازەی ناردنی پەیام بۆ ئەم ئەندامتانە نیە.</value>
+  </data>
+  <data name="NotValidEmail" xml:space="preserve">
+    <value>ناونیشانی ئیمەیلی نووسراو بڕواپیکراو نیە، تکایە ورد ببنەوە و سەرلەنوێ هەوڵ بدەن.</value>
+  </data>
+  <data name="NoUnreadMessages" xml:space="preserve">
+    <value>پەیامێکی نەخوێندراوتان نیە.</value>
+  </data>
+  <data name="OldPasswordIncorrect" xml:space="preserve">
+    <value>نهێنوشەی پێشینی ئێوە دروست نیە.</value>
+  </data>
+  <data name="PageNotFoundErrorText" xml:space="preserve">
+    <value>پەڕەی مەبەستی ئێوە نەدۆزرایەوە.</value>
+  </data>
+  <data name="PasswordHint" xml:space="preserve">
+    <value>کەمترین درێژی نهێنوشە: 8
+&lt;br /&gt;
+کەمترین ژمارەی پیتەکان: ١
+&lt;br /&gt;
+کەمترین ژمارەی ڕەقەم: ١</value>
+  </data>
+  <data name="PasswordSent" xml:space="preserve">
+    <value>نهێنوشەکەتان بۆ ئیمەیلەکەتان نێردراوە ، تکایە سەردانی ئیمەیلەکەتان بکەن.
+&lt;br /&gt;
+(تێبینی: لەوانەیە ئیمەیلە نێردراوەکە لە بوخچەی spam دا بێت)</value>
+  </data>
+  <data name="RangeHeight" xml:space="preserve">
+    <value>ڕێژەی نووسراو بۆ بەرزی دروست نیە.</value>
+  </data>
+  <data name="RangeMaritalStatus" xml:space="preserve">
+    <value>ڕێژەی نووسراو بۆ باری هاوسەرێتی دروست نیە.</value>
+  </data>
+  <data name="RangeWeight" xml:space="preserve">
+    <value>ڕێژەی نووسراو بۆ کێش دروست نیە.</value>
+  </data>
+  <data name="RegularExpressionAlias" xml:space="preserve">
+    <value>ناوی ئەندامێتی نووسراو دروست نیە.</value>
+  </data>
+  <data name="RegularExpressionEmail" xml:space="preserve">
+    <value>ناونیشانی ئیمەیلی نووسراو دروست نیە.</value>
+  </data>
+  <data name="RegularExpressionMobNumber" xml:space="preserve">
+    <value>ژمارەی مۆبایلی نووسراو دروست نیە.</value>
+  </data>
+  <data name="RegularExpressionPageName" xml:space="preserve">
+    <value>شوناسی پەڕە بەشێوازی دروست بنووسن.</value>
+  </data>
+  <data name="RequiredAdvPaymentStatus" xml:space="preserve">
+    <value>ڕەوشی پێدانی تێچووەکە دیاری بکەن.</value>
+  </data>
+  <data name="RequiredAdvType" xml:space="preserve">
+    <value>جۆری ڕێکلامەکە هەڵبژێرن.</value>
+  </data>
+  <data name="RequiredAlbumName" xml:space="preserve">
+    <value>تکایە ناوی ئەلبومەکە بنووسن.</value>
+  </data>
+  <data name="RequiredAlias" xml:space="preserve">
+    <value>خانووی ناوی بەکارهێنەری هیچی تێدا نەنووسراوە.</value>
+  </data>
+  <data name="RequiredBeginDate" xml:space="preserve">
+    <value>بەرواری دەستپێکردن دیاری بکەن.</value>
+  </data>
+  <data name="RequiredBirthDay" xml:space="preserve">
+    <value>تکایە ڕۆژی لەدایکبوونتان دیاری بکەن.</value>
+  </data>
+  <data name="RequiredCommentText" xml:space="preserve">
+    <value>پەیامەکەتان هیچی تێدا نەنووسراوە، بۆچوونی خۆتان بنووسن.</value>
+  </data>
+  <data name="RequiredContent" xml:space="preserve">
+    <value>ناوەڕۆکێک بنووسن.</value>
+  </data>
+  <data name="RequiredCost" xml:space="preserve">
+    <value>بڕی تێچوو دیاری بکەن.</value>
+  </data>
+  <data name="RequiredEducationBranch" xml:space="preserve">
+    <value>پڕ کردنی خانووی بواری خوێندن پێویستە.</value>
+  </data>
+  <data name="RequiredEducationLevel" xml:space="preserve">
+    <value>خانووی پلەی خوێندن هەڵبژێرە.</value>
+  </data>
+  <data name="RequiredEmail" xml:space="preserve">
+    <value>تکایە ئیمەیلەکەتان دیاری بکەن.</value>
+  </data>
+  <data name="RequiredEndDate" xml:space="preserve">
+    <value>بەرواری کۆتایی دیاری بکەن.</value>
+  </data>
+  <data name="RequiredGender" xml:space="preserve">
+    <value>تکایە ڕەگەزی خۆتان دیاری بکەن</value>
+  </data>
+  <data name="RequiredHeightBlocks" xml:space="preserve">
+    <value>ژمارەی خانووە بەرزبووەکان بنووسە.</value>
+  </data>
+  <data name="RequiredID" xml:space="preserve">
+    <value>تکایە شوناس دیاری بکەن.</value>
+  </data>
+  <data name="RequiredImageFile" xml:space="preserve">
+    <value>وێنەکە هەڵبژێرە.</value>
+  </data>
+  <data name="RequiredLastName" xml:space="preserve">
+    <value>تکایە ناوی بنەماڵەی خۆتان دیاری بکەن</value>
+  </data>
+  <data name="RequiredLeftIndex" xml:space="preserve">
+    <value>ڕێژەی دووری لە چەپەوە دیاری بکەن.</value>
+  </data>
+  <data name="RequiredMessageText" xml:space="preserve">
+    <value>پەیامەکەتان هیچی تێدا نەنووسراوە، بۆچوونی خۆتان بنووسن.</value>
+  </data>
+  <data name="RequiredName" xml:space="preserve">
+    <value>تکایە ناوی خۆتان دیاری بکەن.</value>
+  </data>
+  <data name="RequiredPostTextOrPhoto" xml:space="preserve">
+    <value>بڵاوکراوەکەی ئێوە هیچی تێدانیە، بۆ ناردن دەبێت لانیکەم دەق یا وێنەیەک زێدە بکەن.</value>
+  </data>
+  <data name="RequiredRegistrationCode" xml:space="preserve">
+    <value>کۆدی چالاککردنی هەژمار دیاری نەکراوە</value>
+  </data>
+  <data name="RequiredRegistrationDate" xml:space="preserve">
+    <value>بەرواری خۆتۆمارکردن دیاری نەکراوە</value>
+  </data>
+  <data name="RequiredSkillTitle" xml:space="preserve">
+    <value>سەردێڕی تواناییەکانی خۆت بنووسە.</value>
+  </data>
+  <data name="RequiredTarget" xml:space="preserve">
+    <value>ناونیشانی پەڕەی مەبەست بنووسە.</value>
+  </data>
+  <data name="RequiredTitle" xml:space="preserve">
+    <value>سەردێڕەکە بنووسن.</value>
+  </data>
+  <data name="RequiredTopIndex" xml:space="preserve">
+    <value>ڕێژەی دووری لە سەرەوە دیاری بکەن.</value>
+  </data>
+  <data name="RequiredWidthBlocks" xml:space="preserve">
+    <value>ژمارەی خانووەکانی پانایی دیاری بکەن.</value>
+  </data>
+  <data name="SendCodeSuccessful" xml:space="preserve">
+    <value>کۆدی چالاککردنی هەژمار بۆ ئیمەیلەکەی ئێوە نێردرا، تکایە سەردانی ئیمەیلەکەتان بکەن و کۆدی چالاککردن لە ڕێگای فۆرمی سەرەوە بنێرن و یا لەسەر بەستەری چالاککردنی هەژمار لە ئیمەیلەکەتان کرتە بکەن، وریا بن لەوانەیە ئیمەیلی چالاککردن لە بوخچەی spam دا بێت.</value>
+  </data>
+  <data name="StringLengthAboutMe" xml:space="preserve">
+    <value>خانووی سەبارەت بە من، بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="StringLengthAlbumDesc" xml:space="preserve">
+    <value>شرۆڤەی ئەلبوم، بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="StringLengthAlbumName" xml:space="preserve">
+    <value>ناوی ئەلبوم، بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="StringLengthAlias" xml:space="preserve">
+    <value>خانووی ناوی ئەندامێتی، بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="StringLengthBehavior" xml:space="preserve">
+    <value>خانووی ڕەوشت و هەڵسووکەوت، بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="StringLengthCommentText" xml:space="preserve">
+    <value>دەقی بۆچوون بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="StringLengthDescription" xml:space="preserve">
+    <value>خانووی سەبارەت بە من، بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="StringLengthEducation" xml:space="preserve">
+    <value>خانووی خوێندنەکان، بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="StringLengthEmail" xml:space="preserve">
+    <value>خانووی ئیمەیل، بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="StringLengthFashion" xml:space="preserve">
+    <value>خانووی شێوە و باو، بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="StringLengthFavoriteBooks" xml:space="preserve">
+    <value>خانووی پەرتووکە دڵخوازەکان، بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="StringLengthFavoriteMovies" xml:space="preserve">
+    <value>خانووی فیلمە دڵخوازەکان، بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="StringLengthFavoriteMusics" xml:space="preserve">
+    <value>خانووی مۆسیقای دڵخواز، بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="StringLengthFavoriteQuotes" xml:space="preserve">
+    <value>خانووی وتە وەرگیراوە دڵخوازەکان، بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="StringLengthGeneral" xml:space="preserve">
+    <value>پشتگوێخستنی بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراو</value>
+  </data>
+  <data name="StringLengthHobbies" xml:space="preserve">
+    <value>خانووی سەرگەرمی و بابەتە دڵخوازەکان، بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="StringLengthID" xml:space="preserve">
+    <value>خانووی شوناس، بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="StringLengthLastName" xml:space="preserve">
+    <value>خانووی ناوی بنەماڵە ، بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="StringLengthName" xml:space="preserve">
+    <value>خانووی ناو، بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="StringLengthPostText" xml:space="preserve">
+    <value>دەقی بڵاوکراوەکە زۆرترین درێژایی ڕیپێدراوی پشتگوێ خستووە.</value>
+  </data>
+  <data name="StringLengthRegistrationCode" xml:space="preserve">
+    <value>خانووی کۆدی چالاککردنی هەژمار، بەرزترین ئاستی ژمارەی نووسەی ڕێپێدراوی لەبەرچاو نەگرتووە</value>
+  </data>
+  <data name="SuccessfullyAddedComment" xml:space="preserve">
+    <value>بۆچوونی ئێوە بە سەرکەوتوویی نێردرا.</value>
+  </data>
+  <data name="SuccessfullyCreatedAlbum" xml:space="preserve">
+    <value>ئەلبومی وێنەکان بە سەرکەوتوویی دروست کرا.
+&lt;a href=/HomePage/Photos&gt;
+گەڕانەوە بۆ لیستی ئەلبومەکان بۆ ڕێکوپێک کردنی وێنەکان.
+&lt;/a&gt;</value>
+  </data>
+  <data name="SuccessfullyDeleted" xml:space="preserve">
+    <value>سڕینەوە بە سەرکەوتوویی جێبەجێ کرا.</value>
+  </data>
+  <data name="SuccessfullySaved" xml:space="preserve">
+    <value>بە سەرکەوتوویی پاشەکەوت کرا.</value>
+  </data>
+  <data name="SuccessfullySent" xml:space="preserve">
+    <value>بە سەرکەوتوویی نێردرا.</value>
+  </data>
+  <data name="SuccessfullyUploadedAlbumPhoto" xml:space="preserve">
+    <value>پەڕگە هەڵبژێردراوەکەی ئێوە بە سەرکەوتوویی نێردرا، لە خوارەوە ئەتوانن وردەکارییە پەیوەندیدارەکان بە وێنە دڵخوازەکەتان دەستکاری بکەن.</value>
+  </data>
+  <data name="SuccessfullyUploadedProfieCover" xml:space="preserve">
+    <value>پەڕگەی هەڵبژێردراو بە سەرکەوتوویی نێردرا، لە خوارەوە ئەتوانن وێنەی کەڤەری لاپەڕەکەتان دەستکاری بکەن.</value>
+  </data>
+  <data name="UploadCoverImageText" xml:space="preserve">
+    <value>ئەندامی بەڕێز، وێنەی کەڤەری لاپەڕەکەتان لە سەر کۆمپیوتەرە کەسیەکەی خۆتان هەڵبژێرن.</value>
+  </data>
+  <data name="UploadProfileImageText" xml:space="preserve">
+    <value>ئەندامی بەڕێز، وێنەی ڕوونوێنی لاپەڕەکەتان لە سەر کۆمپیوتەرە کەسیەکەی خۆتان هەڵبژێرن.</value>
+  </data>
+  <data name="UserExists" xml:space="preserve">
+    <value>ناونیشانی ئیمەیلی نووسراو پێشتر تۆمار کراوە</value>
+  </data>
+  <data name="UserNotExists" xml:space="preserve">
+    <value>ئەندامێک بە ئەم ئیمەیلە نووسراوە بوونی نیە، تکایە سەرلەنوێ ورد ببنەوە و هەوڵ بدەن.</value>
+  </data>
+  <data name="WrongPasswordConfirm" xml:space="preserve">
+    <value>نهێنوشەی دووبارەکراو دروست نیە.</value>
+  </data>
+  <data name="YouAreFriendsNow" xml:space="preserve">
+    <value>ئێوە ئێستا پەیوەندی هاورێیەتیتان هەیە.</value>
+  </data>
+  <data name="YouCantShareYourObjects" xml:space="preserve">
+    <value>ئێوە ناتوانن ئەو شتانە وا هینی خۆتانە پارڤەی کەن.</value>
+  </data>
+  <data name="RegularExpressionFullName" xml:space="preserve">
+    <value>ناو و شورەتی نووسراو داڕشتی ڕێپێدراوی نیە.</value>
+  </data>
+  <data name="NotAllowedToLeaveComment" xml:space="preserve">
+    <value>ڕێگە بە ئێوە نەدراوە لە سەر ئەم بابەتە بۆچوونتان بنووسن.</value>
+  </data>
+  <data name="NotAllowedToPostOnWall" xml:space="preserve">
+    <value>ڕێگە بە ئێوە نەدراوە بڵاوکراوە بنێرنە سەر دیواری ئەم بەکارهێنەرە.</value>
+  </data>
+  <data name="SpamPostMessage" xml:space="preserve">
+    <value>ئێوە چەند چرکە لەمەوپێش بڵاوکراوەیەکتان ناردووە، لانیکەم 60 چرکەی تر ئەتوانن بڵاوکراوەی نوێ بنێرن.</value>
+  </data>
+  <data name="SpamGenralMessage" xml:space="preserve">
+    <value>تکایە چەند چرکە ڕاوەستن و سەرلەنوێ بینێرن.</value>
+  </data>
+  <data name="AltEmailShouldBeActivated" xml:space="preserve">
+    <value>ئیمەیلێکی هەڵگری بەستەری چالاککردن بۆ ئیمەیلی دیاریکراو نێردرا، بۆ چالاککردن دەبێت سەردانی ئیمەیلەکەتان بکەن و لە سەر بەستەری چالاککردن کرتە بکەن.</value>
+  </data>
+  <data name="AltEmailActivationCodeIncorrect" xml:space="preserve">
+    <value>بەداخەوە بەستەری چالاککردنی ئیمەیلی جێگر هەڵەیە، تکایە سەردانی ئیمەیلەکەتان بکەن و لە سەر بەستەری پەیوەندیدار کرتە بکەن.
+ &lt;br /&gt;
+لە ئەگەری دوبارەبوونەوەی ئەم پەیامە، بچنە نێو هەژمارەکەتان و هەوڵ بدەن سەرلەنوێ بەستەری چالاککردن بنێرن.</value>
+  </data>
+  <data name="AltEmailActivationNotValidEmailOrCode" xml:space="preserve">
+    <value>ئیمەیلە نووسراوەکە یا نهێنوشەی چالاککردن بڕواپێکراو نیە، تکایە دیسان لێی ورد ببنەوە.</value>
+  </data>
+  <data name="AltEmailActivationSuccess" xml:space="preserve">
+    <value>چالاککردنی ئیمەیلی جێگر بە سەرکەوتوویی جێبەجێ کرا.
+&lt;br /&gt;
+لەمەوبەر ئیمەیلە ئاگاکەرەوەکان و دیکەی ئیمەیلەکان لە لایەن تۆڕی کۆمەڵایەتی vKurdistan بۆ ئەم ئیمەیلە دەنێردرێت.
+&lt;br /&gt;
+تێبینی: ئێوە بۆ هاتنەناو ماڵپەڕ هەر دەبێت لە ئیمەیلی سەرەکی خۆتان لە جیاتی ناوی بەکارهێنەر کەڵک وەربگرن.</value>
+  </data>
+  <data name="NotAllowedToFollow" xml:space="preserve">
+    <value>ڕێگە بە ئێوە نەدراوە شوێنی ئەم بەکارهێنەرە بکەون.</value>
+  </data>
+  <data name="FacebookConnectUnexpectedErrorMessage" xml:space="preserve">
+    <value>هەڵەیەک لە پەیوەندی لەگەڵ هەژماری فەیسبووکتان ڕووی داوە، تکایە سەرلەنوێ هەوڵ بدەن.</value>
+  </data>
+  <data name="FacebookConnectErrorMessage" xml:space="preserve">
+    <value>هەڵەیەک لە پەیوەندی لەگەڵ فەیسبووک ڕووی داوە، تکایە دیسان هەوڵ بدەن.</value>
+  </data>
+  <data name="FacebookConnectSuccessfullMessageForAuthenticated" xml:space="preserve">
+    <value>پەیوەندی لەگەڵ فەیسبووک بە سەرکەوتوویی جێبەجێ کرا، لەمەوبەر ئەتوانن بە هەژماری فەیسبووک لە ماڵپەرەکە کەڵک وەربگرن.</value>
+  </data>
+  <data name="NotValidFacebookEmail" xml:space="preserve">
+    <value>ئیمەیلی ڕاگەیەندراوی فەیسبووک دروست نیە، تکایە سەرلەنوێ هەوڵ بدەن.
+&lt;br /&gt;
+تێبینی: ئەگەر لە ڕێگای ژمارەی مۆبایل لە فەیسبووک خۆتان تۆمار کردووە، توانایی سازکردنی پەیوەندیمان نیە، کەواتە
+&lt;a href="/account/register"&gt;تکایە لە تۆڕی کۆمەڵایەتی vKurdistan خۆتان تۆمار کەن.&lt;/a&gt;</value>
+  </data>
+  <data name="NotValidFacebookInformation" xml:space="preserve">
+    <value>کێشەیەک لە وەرگرتنی زانیاری ئێوە لە فەیسبووک ڕووی داوە، تکایە سەرلەنوێ هەوڵ بدەن.</value>
+  </data>
+  <data name="FacebookConnectSuccessfullMessageForAnonymous" xml:space="preserve">
+    <value>پەیوەندی لەگەڵ فەیسبووک بە سەرکەوتوویی جێبەجێ کرا، لەمەوبەر ئەتوانن بە هەژماری فەیسبووکەکەتان کەڵک لە ئەم ماڵپەڕە وەربگرن، هەروەها نهێنوشەی هەژمارەکەتان لە vkurdistan  بۆ ئیمەیلی دیاریکراوی فەیسبوکەکەتان نێردرا.</value>
+  </data>
+  <data name="FacebookLoginConnectionNotExists" xml:space="preserve">
+    <value>بەکارهێنەری بەڕێز زانیاری گرێدراو بە پەیوەندی هەژماری فەیسبووکی ئێوە نەدۆزرایەوە. تکایە لە ڕێگای بەستەری ژێر لە سازکردنی پەیوەندی هەژمارەکەتان لەگەڵ فەیسبووک دڵنیا ببنەوە.
+&lt;br /&gt;
+&lt;a href="/account/connecttofacebook"&gt;پەیوەندی لەگەڵ فەیسبووک&lt;/a&gt;</value>
+  </data>
+  <data name="FacebookShareSuccessfullMessage" xml:space="preserve">
+    <value>بە سەرکەوتوویی لە فەیسبووک پارڤە کرا.</value>
+  </data>
+  <data name="ExceedMaxPostVideos" xml:space="preserve">
+    <value>لە یەک بڵاوکراوە ئەتوانن تەنیا یەک پەرگەی ویدئۆ بنێرن.</value>
+  </data>
+  <data name="NotValidFileFormat" xml:space="preserve">
+    <value>داڕشتی پەرگەی هەڵبژێردراوی ئێوە دروست نیە.</value>
+  </data>
+  <data name="NotValidPhotoFormat" xml:space="preserve">
+    <value>داڕشتی پەرگەی هەڵبژێردراوی ئێوە دروست نیە، تەنیا ئەتوانن پەرگەیەک بە یەکێک لە داڕشتەکانی ژێر بنێرن:
+&lt;br /&gt;
+jpg, png, gif</value>
+  </data>
+  <data name="NotValidVideoFormat" xml:space="preserve">
+    <value>داڕشتی پەرگەی هەڵبژێردراوی ئێوە دروست نیە، تەنیا ئەتوانن پەرگەیەک بە یەکێک لە داڕشتەکانی ژێر بنێرن:
+&lt;br /&gt;
+mp4, mpeg, mov, flv, avi</value>
+  </data>
+  <data name="VideoNotProcessedYet" xml:space="preserve">
+    <value>بەکارهێنەری بەڕێز، ئەم پەرگە ویدئۆییە لە ژێر ڕێکخستندایە، لە ئێستادا ناکرێت بڵاو ببێتەوە.
+&lt;br /&gt;
+ڕێکخستنی پەرگەی ویدئۆ بە پێی قەبارەی ویدئۆکە لەوانەیە لە چەند چرکە تا چەند خولەک بخایێنێت.</value>
+  </data>
+</root>

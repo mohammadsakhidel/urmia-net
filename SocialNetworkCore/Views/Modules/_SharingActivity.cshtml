@@ -1,0 +1,41 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model SharingActivityModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_ActivityHeadTags.min.js")"></script>
+@if (Model.IsActivityVisibleToUser)
+{
+    <div class="activity" id="@("activity_" + Model.Activity.Id)">
+        @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.ActorThumbIdentityModel);}
+        <div class="act_tools">
+            <div class="act_settings">
+                @{Html.RenderPartial(Urls.ModuleViews + "_ActivitySettings.cshtml", Model.ActivitySettingsModel);}
+            </div>
+            <div class="act_info">
+                @{Html.RenderPartial(Urls.ModuleViews + "_ActivityInfo.cshtml", Model.ActivityInfoModel);}
+            </div>
+        </div>
+        <div class="act_content">
+            @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.ActorNameIdentityModel);}
+            <div class="act_title">
+                @Resources.Words.SharingActivityTitle_Part1
+                @if (Model.RootObjectOwner.Status != MemberStatus.ScheduledForDelete)
+                {
+                    <a href="@Url.Content(Model.RootObjectOwner.UrlOfProfilePage)">@Model.RootObjectOwner.YouOrFullName</a>
+                }
+                else
+                {
+                    @Model.RootObjectOwner.YouOrFullName
+                }
+                @Resources.Words.SharingActivityTitle_Part2
+            </div>
+            <div class="act_details">
+                @{Html.RenderPartial(Urls.ModuleViews + "_ActivityDetailsSection.cshtml", Model.ActivityDetailsSectionModel);}
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        <div class="actions">
+            @{Html.RenderPartial(Urls.ModuleViews + "_SharedObjectActions.cshtml", Model.SharedObjectActionsModel);}
+        </div>
+    </div>
+}

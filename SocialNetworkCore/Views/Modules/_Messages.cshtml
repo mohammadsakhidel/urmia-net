@@ -1,0 +1,81 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model MessagesModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_MessagesHeadTags.min.js")"></script>
+<div id="messages" class="viewpart">
+    <div class="viewpart_title">
+        @Ajax.ActionLink(@Resources.Words.NewMessage, "ShowNewMessageDialog", "Messages",
+            null, new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "dialog_view", OnFailure = "ShowDialogFailure" },
+            new { @class = "pg_tool new_msg" })
+        <h2>@Resources.Words.Messages</h2>
+    </div>
+    <div class="viewpart_content">
+        <div class="conversations">
+            <input type="hidden" id="selected_conv_id" value="@Model.SelectedConversationId" />
+            <input type="hidden" value="@Url.Action("Messages", "HomePage")" name="messages_url" disabled="disabled" />
+            <div class="conversations_in">
+                @foreach (var c in Model.ConversationRecords)
+                {
+                    var other_side = c.Item1.ThatMember.Email;
+                    var other_side_member = c.Item1.ThatMember;
+                    var unreads_count = c.Item1.UnreadsCount;
+                    <div class="@(c.Item1.Id != Model.SelectedConversationId ? "conversation_item" : "conversation_item_selected")" id="@("conversation_item_" + c.Item1.Id)">
+                        <input type="hidden" disabled="disabled" name="unreads_count" value="@unreads_count" />
+                        <input type="hidden" value="@Url.Action("Messages", "HomePage", new { id = other_side_member.Alias })" name="conv_url" disabled="disabled" />
+                        <div class="con_item_thumb">
+                            @{ Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", c.Item2); }
+                        </div>
+                        <div class="conv_item_brief">
+                            @{ Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", c.Item3); }
+                            <div class="con_brief_text">
+                                @MyHelper.CutString(c.Item1.BriefText, 25)
+                            </div>
+                        </div>
+                        <div class="loading_small_circle hide" id="@("prg_load_conversation_" + c.Item1.Id)">
+                        </div>
+                        <div class="@("unreads_bubble" + (unreads_count > 0 && c.Item1.Id != Model.SelectedConversationId ? "" : " hide"))">@unreads_count</div>
+                        @Ajax.ActionLink(" ", "ShowDeleteConversationDialog", "Messages", new { id = c.Item1.Id }, new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "dialog_view", OnFailure = "ShowDialogFailure" }, new { @class = "remove_conv" })
+                        @using (Ajax.BeginForm("LoadConversation", "Messages", null, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "prg_load_conversation_" + c.Item1.Id, OnFailure = "LoadConversationFailure", OnSuccess = "LoadConversationSuccess" }, new { @class = "hide" }))
+                        {
+                            <input type="hidden" name="ConversationId" value="@c.Item1.Id" />
+                        }
+                        <div class="clear">
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="conversation_details" id="conversation_details">
+            <div id="conv_messages" class="conv_messages">
+                <div id="conv_messages_in">
+                    @if (Model.IsAConversationSelected && Model.HasSelectedConversationAnyMessages)
+                    {
+                        if (!Model.HasCurrentUserParticipated)
+                        {
+                            <div class="error_message">
+                                @Resources.Messages.DontHaveAccess
+                            </div>
+                        }
+                        else
+                        {
+                            foreach (var msgModel in Model.SelectedConversationMessageModels)
+                            {
+                                Html.RenderPartial(Urls.ModuleViews + "_Message.cshtml", msgModel);
+                            }
+                        }
+                    }
+                </div>
+            </div>
+            <div id="conv_reply" class="conv_reply">
+                @{ 
+                    Html.RenderPartial(Urls.ModuleViews + "_MessageSender.cshtml", Model.MessageSenderModel); 
+                }
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <!-- ******************** Hiddens: ********************* -->
+    <input type="hidden" id="hid_updated_unreads_count" value="@Model.UpdatedUnreadsCount" />
+    <input type="hidden" id="w_ajax_fail" value="@Resources.Messages.AjaxFail" />
+</div>

@@ -1,0 +1,49 @@
+﻿div.album_view h2.album_view_title
+{
+    display: inline-block;
+    padding: 2px 5px;
+    font-weight: bold;
+    font-size: 8.5pt;
+    color: White;
+    background-color: #d1d3d4;
+    float: right;
+    border-top-right-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-left-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+}
+
+div.album_view .album_view_in
+{
+    clear: both;
+    border-top: solid 1px #d1d3d4;
+    padding: 10px 15px;
+    line-height: 18px;
+    font-size: 8pt;
+    color: #6d6e71;
+}
+
+div.album_view .album_view_info
+{
+    padding: 2px 5px 0 0;
+    float: right;
+    color: #a7a9ac;
+}
+
+div.album_view .album_photos_container
+{
+    margin-top: 10px;
+}
+
+div.album_view .a_thumb
+{
+    border: 0;
+    float: right;
+    margin: 0 0 7px 7px;
+}
+
+div.album_view .ph_thumb
+{
+    width: 120px;
+    border: solid 1px #acacac;
+}

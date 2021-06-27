@@ -1,0 +1,124 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model AccountSettingsModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_AccountSettingsHeadTags.min.js")"></script>
+<div id="acc_set" class="viewpart">
+    <div class="viewpart_title">
+        <h2>@Resources.Words.AccountSettings</h2>
+    </div>
+    <div class="viewpart_content">
+        @using (Ajax.BeginForm("AccountSettings", "HomePage", 
+            new AjaxOptions 
+            { 
+                HttpMethod = "Post", 
+                LoadingElementId = "SaveFormLoading", 
+                OnBegin = "SaveBegin", 
+                OnFailure = "SaveFailure", 
+                OnSuccess = "SaveSuccess" 
+            }))
+        {
+            <div class="setting_item">
+                <span class="setting_item_title">@Resources.Words.Email</span>
+                <div class="setting_item_in">
+                    <span class="spn_email">@Model.AssociatedMember.Email</span>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="setting_item">
+                <span class="setting_item_title">@Resources.Words.AlternativeEmail</span>
+                <div class="setting_item_in">
+                    <input type="text" name="AlternativeEmail" value="@Model.AccountSetting.AlternativeEmail" 
+                        class="setting_item_input" maxlength="50" />
+                </div>
+                <div class="clear">
+                </div>
+                <div class="field_expl text">
+                    @Html.Raw(Resources.Texts.AlternativeEmailExplan)
+                </div>
+            </div>
+            <div class="setting_item">
+                <span class="setting_item_title">@Resources.Words.AliasName</span>
+                <div class="setting_item_in">
+                    <span class="spn_alias">@Html.Raw(Configs.DomainName + "/@")</span>
+                    <input type="text" name="Alias" value="@Model.AssociatedMember.Alias" class="setting_item_input" />
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="setting_item mobnumber_item">
+                <span class="setting_item_title">@Resources.Words.MobNumber</span>
+                <div class="setting_item_in">
+                    <input type="text" name="MobNumber" value="@Model.AccountSetting.MobNumber" 
+                        class="setting_item_input" maxlength="10" />
+                </div>
+                <div class="clear">
+                </div>
+                <div class="field_expl text">
+                    @Html.Raw(Resources.Texts.MobNumberText)
+                </div>
+            </div>
+            <div class="setting_item">
+                <span class="setting_item_title">@Resources.Words.Language</span>
+                <div class="setting_item_in">
+                    <select name="Language">
+                        <option value="@Model.SupportedLanguages[0].Code" @(Model.AccountSetting.Language == Model.SupportedLanguages[0].Code ? "selected=\"selected\"" : "")>@Model.SupportedLanguages[0].DisplayName</option>
+                        @*<option value="@Model.SupportedLanguages[1].Code" @(Model.AccountSetting.Language == Model.SupportedLanguages[1].Code ? "selected=\"selected\"" : "")>@Model.SupportedLanguages[1].DisplayName</option>*@
+                    </select>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="setting_item">
+                <span class="setting_item_title">@Resources.Words.ChangePassword</span>
+                <div class="setting_item_in">
+                    <div id="password-hint" class="hint hide">@Html.Raw(Resources.Messages.PasswordHint)</div>
+                    <div class="tbl_chng_pass">
+                        <table border="0" cellpadding="1" cellspacing="0">
+                            <tr>
+                                <td class="tdlbl">
+                                    <span>@Resources.Words.OldPassword:</span>
+                                </td>
+                                <td>
+                                    <input type="password" name="OldPassword" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdlbl">
+                                    <span>@Resources.Words.NewPassword:</span>
+                                </td>
+                                <td>
+                                    <input type="password" name="NewPassword" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tdlbl">
+                                    <span>@Resources.Words.NewPasswordConfirm:</span>
+                                </td>
+                                <td>
+                                    <input type="password" name="NewPasswordConfirm" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="field_expl text">
+                        @Html.Raw(Resources.Texts.ChangePasswordText)
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="setting_save_sec">
+                <input type="submit" value="@Resources.Words.Save" />
+                <div id="SaveFormLoading" class="loading_small hide">
+                </div>
+                <div class="hide" id="msg_save">
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        }
+        <input id="ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />
+        <input id="msg_errors_title" type="hidden" value="@Resources.Messages.ListOfErrorsTitle" />
+    </div>
+</div>

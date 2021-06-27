@@ -1,0 +1,139 @@
+﻿/* ************************ LOGIN ON HEADER *************************** */
+.login_on_header
+{
+    float: left;
+    margin-top: 10px;
+}
+
+.login_on_header input[type="submit"]
+{
+    background-color: #ef4523;
+    padding: 2px 6px 5px 6px;
+    color: #ffffff;
+    font-weight: bold;
+    border: solid 1px #ffffff;
+}
+
+.login_on_header input[type="submit"]:active
+{
+    background-color: #d83515;
+}
+
+.login_on_header input[type="text"], .login_on_header input[type="password"]
+{
+    width: 130px;
+    padding: 4px;
+    border: solid 1px #939598;
+    font-size: 7.5pt;
+    margin: 0 2px 0 2px;
+    direction: ltr;
+    height: 14px;
+}
+
+.login_on_header label
+{
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+}
+
+.login_on_header label#labelForRememberMe
+{
+    float: right;
+    color: #fdba4d;
+    padding: 3px 0 0 0;
+    font-size: 7pt;
+    white-space: nowrap;
+}
+
+.login_on_header input[type="checkbox"]
+{
+    float: right;
+}
+
+.login_on_header a
+{
+    float: right;
+    color: #fdba4d;
+    font-size: 7pt;
+    text-decoration: none;
+}
+
+.login_on_header a:hover
+{
+    text-decoration: underline;
+}
+
+.login_on_header .loading_small
+{
+    width: 19px;
+    height: 16px;
+    background-image: url(loading_small_onheader.gif);
+}
+
+    .login_on_header a.fb_login {
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        background-image: url(fb_login_hdr.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+/* ************************ LOGIN ON CONTENT *************************** */
+.login_on_content
+{
+    padding: 15px;
+}
+
+.login_on_content #LoginLoading
+{
+    float: right;
+    margin: 5px 10px 0 0;
+}
+
+.login_on_content label
+{
+    font-weight: bold;
+    color: #4a4747;
+}
+
+.login_on_content input[type="text"], .login_on_content input[type="password"]
+{
+    direction: ltr;
+    width: 200px;
+}
+
+.login_on_content a:hover
+{
+    text-decoration: underline;
+}
+
+.login_on_content input[type="submit"]
+{
+    width: 75px;
+    float: right;
+}
+
+.login_on_content table
+{
+    float: right;
+}
+
+.login_on_content #status_message
+{
+    float: right;
+    margin: 0 30px 0 0;
+    min-width: 200px;
+    max-width: 350px;
+}
+
+.login_on_content a.fb_login {
+    background-image: url(fb_login_pg.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    padding: 0 21px;
+    color: #3b5998;
+    font-size: 8pt;
+}

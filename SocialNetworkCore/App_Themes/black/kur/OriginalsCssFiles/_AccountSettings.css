@@ -1,0 +1,112 @@
+﻿div#acc_set div.setting_item
+{
+    background-color: White;
+    border-bottom: solid 1px #e9e9e9;
+    padding: 13px;
+    display: block;
+    position: relative;
+}
+
+div#acc_set div.setting_item:hover
+{
+    text-decoration: none;
+    background-color: #f7f7f7;
+}
+
+div#acc_set .setting_item_title
+{
+    font-weight: bold;
+    color: #333333;
+    float: right;
+    margin: 7px 0 0 0;
+}
+
+div#acc_set div.setting_item_in
+{
+    float: left;
+    margin: 0 0 0 300px;
+}
+
+div#acc_set div.setting_item_in span
+{
+    color: #727272;
+}
+
+div#acc_set .setting_save_sec
+{
+    margin: 15px 0 0 0;
+}
+
+div#acc_set input[name="Email"]
+{
+    width: 200px;
+    direction: ltr;
+}
+
+div#acc_set input[name="Alias"], input[name="MobNumber"]
+{
+    width: 120px;
+    direction: ltr;
+    float: left;
+}
+
+div#acc_set select[name="Language"]
+{
+    width: 120px;
+    direction: ltr;
+}
+
+div#acc_set .spn_alias, .spn_code
+{
+    direction: ltr;
+    float: left;
+    margin: 7px 0 0 2px;
+    color: #727272;
+}
+
+div#acc_set .spn_email
+{
+    float: left;
+    color: #727272;
+}
+
+div#acc_set div.field_expl
+{
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    max-width: 230px;
+    line-height: 18px;
+    text-align: justify;
+    z-index: 1;
+    font-size: 7.5pt;
+}
+
+div#acc_set div.tbl_chng_pass input
+{
+    width: 120px;
+}
+
+div#acc_set .setting_save_sec input[type="submit"]
+{
+    float: right;
+}
+
+div#acc_set .setting_save_sec .loading_small
+{
+    float: right;
+    margin: 5px 5px 0 0;
+}
+
+div#acc_set #msg_save
+{
+    float: right;
+    margin: 0 50px 0 0;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+div#acc_set .mobnumber_item
+{
+    min-height: 55px;
+}

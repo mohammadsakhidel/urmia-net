@@ -1,0 +1,98 @@
+﻿#file_upload 
+{
+    width: 500px;
+    margin: 0 auto;
+}
+
+#file_upload div.uploader
+{
+    width: 99px;
+    float: left;
+    overflow: hidden;
+    cursor: pointer;
+    background-image: url(uploader_browse.png);
+    border-left: 0;
+    border-top: solid 1px #aaaaaa;
+    border-right: solid 1px #aaaaaa;
+    border-bottom: solid 1px #aaaaaa;
+    height: 30px;
+}
+
+#file_upload div.uploader input[type="file"]
+{
+    opacity:0;
+    filter:alpha(opacity=0);
+    height: 30px;
+    width: 200px;
+    cursor: pointer;
+}
+
+#file_upload div.uploader_filename
+{
+    width: 400px;
+    float: left;
+}
+
+#file_upload div.uploader_filename input[type="text"]
+{
+    display: block;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    height: 30px;
+}
+
+#file_upload .basic_uploader
+{
+    text-align: center;
+    padding: 15px;
+}
+
+/* PROGRESS */
+#file_upload #upload_progress
+{
+    float: right;
+    direction: ltr;
+    display: none;
+}
+
+#upload_progress .progress
+{
+    width: 250px;
+    border: solid 1px #aaaaaa;
+    padding: 1px;
+    float: right;
+}
+
+#upload_progress .bar
+{
+    background-color: #00b0e9;
+    width: 0;
+    height: 12px;
+}
+
+#upload_progress .percent
+{
+    float: right;
+    margin: 0 5px 0 0;
+}
+
+#upload_progress .status
+{
+    float: right;
+    margin: 0 5px 0 0;
+}
+
+.upload_done
+{
+    width: 16px;
+    height: 16px;
+    background-image: url(done.png);
+}
+
+.upload_fail
+{
+    width: 45px;
+    height: 16px;
+    background-image: url(fail.png);
+}

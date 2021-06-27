@@ -1,0 +1,16 @@
+﻿@model SocialNetApp.Views.Models.Modules.AltEmailActivationModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_AltEmailActivationHeadTags.min.js")"></script>
+<div id="altemail_activation">
+    @if (Model.ActivationSucceed)
+    {
+        <div class="success_message">
+            @Html.Raw(Resources.Messages.AltEmailActivationSuccess)
+        </div>
+    }
+    else
+    {
+        <div class="error_message">
+            @Html.Raw(Model.ActivationErrorMessage)
+        </div>
+    }
+</div>

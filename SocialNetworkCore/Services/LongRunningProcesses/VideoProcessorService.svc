@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SocialNetApp.Services.LongRunningProcesses.VideoProcessorService" CodeBehind="VideoProcessorService.svc.cs" %>

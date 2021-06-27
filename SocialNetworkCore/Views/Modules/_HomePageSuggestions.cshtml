@@ -1,0 +1,55 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model HomePageSuggestionsModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_HomePageSuggestionsHeadTags.min.js")"></script>
+<div id="hp_suggestions">
+    @{Html.RenderPartial(Urls.ModuleViews + "_HomePagePixelAdv.cshtml", Model.HomePagePixelAdvModel);}
+    @if (User.Identity.IsAuthenticated)
+    {
+        if (Model.RecommendedPeople.Any())
+        {
+        <div class="sugg_box">
+            <div class="sugg_box_title">
+                <span>@Resources.Words.RecommendedPeople</span>
+            </div>
+            <div class="sugg_box_in">
+                @foreach (var record in Model.RecommendedPeople)
+                {
+                    Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", record.Item2);
+                }
+                <div class="clear"></div>
+            </div>
+        </div>
+        }
+        if (Model.ProfileViewers.Any())
+        {
+        <div class="sugg_box">
+            <div class="sugg_box_title">
+                <span>@Resources.Words.YourProfileViewers</span>
+            </div>
+            <div class="sugg_box_in">
+                @foreach (var record in Model.ProfileViewers)
+                {
+                    Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", record.Item2);
+                }
+                <div class="clear"></div>
+            </div>
+        </div>
+        }
+        if (Model.SomeRandomOnlines.Any())
+        {
+        <div class="sugg_box">
+            <div class="sugg_box_title">
+                <span>@Resources.Words.RecommendedOnlines</span>
+            </div>
+            <div class="sugg_box_in">
+                @foreach (var record in Model.SomeRandomOnlines)
+                {
+                    Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", record.Item2);
+                }
+                <div class="clear"></div>
+            </div>
+        </div>
+        }
+    }
+</div>

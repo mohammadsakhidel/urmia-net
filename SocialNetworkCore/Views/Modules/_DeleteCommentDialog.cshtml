@@ -1,0 +1,34 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model DeleteCommentDialogModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_DeleteCommentDialogHeadTags.min.js")"></script>
+<div id="delete_comment_dialog">
+    <div class="dialog_title">
+        <a class="dialog_close" onclick="HideDialog();"></a>
+        <h2>@Resources.Words.DeleteComment</h2>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="dialog_view_in">
+        @Resources.Texts.DeleteCommentText
+        <div id="deleting_comment">
+            @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.CommentOwnerIdentityModel);}
+            <div class="deleting_comment_text">
+                @Model.Comment.Text
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="dialog_actions">
+            <a class="cancel" onclick="HideDialog();">@Resources.Words.Cancle</a>
+            @Ajax.ActionLink(Resources.Words.DeleteComment, "DeleteComment", "Comments", new { id = Model.Comment.Id }, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "dialog_prg", OnBegin = "DeleteCommentBegin", OnFailure = "DeleteCommentFailure", OnSuccess = "DeleteCommentSuccess" }, new { @class = "okey" })
+            <div id="dialog_prg" class="loading_small_circle hide">
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear">
+        </div>
+        <div id="dialog_msg" class="hide">
+        </div>
+    </div>
+</div>

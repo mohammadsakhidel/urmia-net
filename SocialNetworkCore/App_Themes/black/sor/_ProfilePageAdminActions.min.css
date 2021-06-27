@@ -1,0 +1,33 @@
+﻿div#pp_admin_actions {
+    position: absolute; 
+    left: 15px; 
+    top : 15px;
+    background-color: #353334;
+    padding: 7px 7px 7px 0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    color: #333333;
+    font-weight: bold;
+    font-size: 8pt;
+}
+
+    div#pp_admin_actions a {
+        float: left;
+        padding: 2px 5px;
+        background-color: #f7f8f9;
+        border: solid 1px #747474;
+        margin: 0 0 0 7px;
+        font-size: 7.5pt;
+        color: #333333;
+    }
+
+        div#pp_admin_actions a:hover {
+            background-color: #eaeaea;
+            text-decoration: none;
+        }
+
+div#pp_admin_actions #ppbtn_tgl_mem_block {
+}
+
+div#pp_admin_actions #ppbtn_del_prof_cover {
+}

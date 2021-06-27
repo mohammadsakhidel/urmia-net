@@ -1,0 +1,54 @@
+﻿div#people div.people_pager
+{
+    border-top: solid 1px #d4e7f1;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+div#people div.people_pager a.next
+{
+    width: 16px;
+    height: 16px;
+    background-image: url('next.png');
+    display: block;
+}
+
+div#people div.people_pager a.next_dis
+{
+    width: 16px;
+    height: 16px;
+    background-image: url('next_dis.png');
+    display: block;
+    cursor: default;
+}
+
+div#people div.people_pager a.prev
+{
+    width: 16px;
+    height: 16px;
+    background-image: url('prev.png');
+    display: block;
+}
+
+div#people div.people_pager a.prev_dis
+{
+    width: 16px;
+    height: 16px;
+    background-image: url('prev_dis.png');
+    display: block;
+    cursor: default;
+}
+
+div#people div.people_pager .pager_txt
+{
+    padding: 0 15px;
+    font-size: 8pt;
+    color: #1570a6;
+}
+
+div#people .people_head
+{
+    border-bottom: solid 1px #d4e7f1;
+    padding: 5px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,44 @@
+﻿#album_editor table td
+{
+    padding-bottom: 5px;
+}
+
+#album_editor input[name="Name"]
+{
+    width: 200px;
+}
+
+#album_editor textarea[name="Description"]
+{
+    width: 400px;
+    height: 80px;
+}
+
+#album_editor div.form_submit_sec
+{
+    margin-top: 10px;
+}
+
+#album_editor div.border
+{
+    margin-bottom: 10px;
+}
+
+#album_editor div.form_submit_sec input[type="submit"]
+{
+    float: right;
+}
+
+#album_editor div.form_submit_sec div.loading_small
+{
+    float: right;
+    margin: 5px 5px 0 0;
+}
+
+#album_editor div#msg_save
+{
+    float: right;
+    margin: 0 50px 0 0;
+    min-width: 300px;
+    max-width: 400px;
+}

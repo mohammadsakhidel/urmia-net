@@ -1,0 +1,37 @@
+﻿@using SocialNetApp.Models
+@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model SharingDetailsModel
+
+@if (Model.IsSharingVisibleToUser)
+{
+    <div id="sharing_details">
+        <div class="obj_det_info">
+            @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.SharingOwnerIdentityModel);}
+        </div>
+        <div class="obj_det_in">
+            <div class="obj_det_text">
+                @Html.Raw(Model.OutputText);
+            </div>
+            @if (Model.Photos.Any())
+            {
+                <div class="obj_det_photos">
+                    @{Html.RenderPartial(Urls.ModuleViews + "_PhotoCollection.cshtml", Model.PhotoCollectionModel);}
+                </div>
+            }
+            else if (Model.HasVideo)
+            {
+                <div class="obj_det_video">
+                    @{Html.RenderPartial(Urls.ModuleViews + "_VideoPlayer.cshtml", Model.VideoPlayerModel);}
+                </div>
+            }
+        </div>
+        <div class="obj_det_actions">
+            @{Html.RenderPartial(Urls.ModuleViews + "_SharedObjectActions.cshtml", Model.SharedObjectActionsModel);}
+        </div>
+    </div>
+}
+else
+{
+    Html.RenderPartial(Urls.ModuleViews + "_AccessDenied.cshtml", Model.AccessDeniedModel);
+}

@@ -1,0 +1,157 @@
+﻿@using SocialNetApp.Models
+@using CoreHelpers
+@model SocialNetApp.Views.Models.Modules.EducationsAndSkillsModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_EducationsAndSkillsHeadTags.min.js")"></script>
+<div id="educations_skills" class="viewpart">
+    <input type="hidden" name="Email" value="@User.Identity.Name" />
+    <div class="viewpart_title">
+        <h2>@Resources.Words.Educations</h2>
+    </div>
+    <div id="educations" class="viewpart_content">
+        <div class="text educations_txt">
+            @Resources.Texts.EducationsText
+        </div>
+        @using (Ajax.BeginForm("AddEducation", "HomePage", null, new AjaxOptions { HttpMethod = "Post", OnBegin = "AddEducationBegin", OnFailure = "AddEducationFailure", OnSuccess = "AddEducationSuccess", LoadingElementId = "prg_add_edu" }, new { @id = "frm_add_edu" }))
+        {
+            <input type="hidden" name="MemberId" value="@User.Identity.Name" />
+            <table border="0">
+                <tr>
+                    <td class="tdlbl">
+                        <label for="EducationLevel">@Resources.Words.EducationLevel:</label>
+                    </td>
+                    <td>
+                        <select name="EducationLevel" id="EducationLevel">
+                            <option value="">@Resources.Words.SelectItem</option>
+                            @foreach (var level in Model.EducationLevels)
+                            {
+                                <option value="@level.Key">@level.Value</option>
+                            }
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label for="EducationBranch">@Resources.Words.EducationBranch:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="EducationBranch" id="EducationBranch" />
+                        <input type="hidden" value="@Url.Action("FindEducationBranch", "Suggestions")" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label for="EducationLocation">@Resources.Words.EducationLocation:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="EducationLocation" id="EducationLocation" />
+                        <input type="hidden" value="@Url.Action("FindEducationLocation", "Suggestions")" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label>@Resources.Words.EducationDuration:</label>
+                    </td>
+                    <td>
+                        <select name="FromYear">
+                            <option value="">@Resources.Words.Year</option>
+                            @for (var i = Digits.BeginYear; i <= Digits.EndYear; i++)
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        </select>
+                        -
+                        @Resources.Words.To
+                        -
+                        <select name="ToYear">
+                            <option value="">@Resources.Words.Year</option>
+                            @for (var i = Digits.BeginYear; i <= Digits.EndYear; i++)
+                            {
+                                <option value="@i">@i</option>
+                            }
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td class="add_edu">
+                        <a id="btn_add_edu" class="submit">+ @Resources.Words.AddToList</a>
+                        <div id="prg_add_edu" class="loading_small_circle hide">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        }
+        <div class="error_message hide" id="msg_add_edu">
+        </div>
+        @using (Ajax.BeginForm("DeleteEducation", "HomePage", null, new AjaxOptions { HttpMethod = "Post", OnSuccess = "DeleteEducationSuccess", LoadingElementId = "prg_delete_edu" }, new { @id = "frm_delete_edu" }))
+        {
+            <div id="prg_delete_edu" class="loading_small_circle hide">
+            </div>
+            <input name="EducationId" type="hidden" value="0" id="edu_to_delete" />
+            <div id="educations_list">
+                @foreach (var edu in Model.Educations)
+                {
+                    <div class="edu_row" id="@("edu_row_" + edu.Id)">
+                        <a class="remove_edu">@Resources.Words.Delete</a>
+                        <input type="hidden" disabled="disabled" value="@edu.Id" />
+                        @edu.EducationBranch
+                        <span class="edu_row_explan">
+                            @Model.EducationLevels[edu.EducationLevel]
+                            @if (!String.IsNullOrEmpty(edu.EducationLocation))
+                            {
+                                <span>
+                                    @Resources.Words.In
+                                    @edu.EducationLocation
+                                </span>
+                            }
+                        </span>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+    <div class="viewpart_title">
+        <h2>@Resources.Words.Skills</h2>
+    </div>
+    <div id="skills" class="viewpart_content">
+        <div class="text skills_txt">
+            @Resources.Texts.SkillsText
+        </div>
+        <div>
+            @using (Ajax.BeginForm("AddSkill", "HomePage", null, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "prg_add_skill", OnBegin = "AddSkillBegin", OnSuccess = "AddSkillSuccess", OnFailure = "AddSkillFailure" }, new { @id = "frm_add_skill" }))
+            {
+                <input type="text" id="txt_add_skill" name="AddedSkill" onkeydown="return txt_skills_key_down(event);" />
+                <input type="hidden" value="@Url.Action("FindSkill", "Suggestions")" />
+                <div id="prg_add_skill" class="loading_small_circle hide">
+                </div>
+                <input type="hidden" name="MemberId" value="@User.Identity.Name" />
+                <div class="clear">
+                </div>
+            }
+            <div id="msg_skills" class="error_message hide">
+            </div>
+            @using (Ajax.BeginForm("DeleteSkill", "HomePage", null, new AjaxOptions { HttpMethod = "Post", OnSuccess = "DeleteSkillSuccess", LoadingElementId = "prg_delete_skill" }, new { @id = "frm_delete_skill" }))
+            {
+                <div id="prg_delete_skill" class="loading_small_circle hide">
+                </div>
+                <input name="SkillID" type="hidden" value="0" id="skill_to_delete" />
+                <div id="skills_list">
+                    @foreach (var skill in Model.Skills)
+                    {
+                        <div class="skill_row" id="@("skill_row_" + skill.Id)">
+                            <a class="remove_skill">@Resources.Words.Delete</a>
+                            <input type="hidden" disabled="disabled" value="@skill.Id" />
+                            @skill.SkillTitle
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+    <!-- **************** Hiddens: ************** -->
+    <input id="ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />
+    <input id="msg_errors_title" type="hidden" value="@Resources.Messages.ListOfErrorsTitle" />
+    <input id="w_delete" type="hidden" value="@Resources.Words.Delete" />
+    <input id="w_in" type="hidden" value="@Resources.Words.In" />
+</div>

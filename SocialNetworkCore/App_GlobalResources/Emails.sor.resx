@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EmailsFooter" xml:space="preserve">
+    <value>بە سوپاسەوە
+&lt;br /&gt;
+تیمی بەرنامەنووسی vKurdistan
+&lt;/div&gt;</value>
+  </data>
+  <data name="EmailsTitle" xml:space="preserve">
+    <value>پەیامێک لە vKurdistan</value>
+  </data>
+  <data name="EnotCommentsCount" xml:space="preserve">
+    <value>بۆچوونە نێردراوەکان بۆ بابەتەکانی ئێوە</value>
+  </data>
+  <data name="ENotFriendshipRequestsCount" xml:space="preserve">
+    <value>داواکاری هاوڕێیەتی نوێ</value>
+  </data>
+  <data name="ENotificationContentPart1" xml:space="preserve">
+    <value>ئەندامی بەڕێزی تۆڕی کۆمەڵایەتی vkurdistan،
+&lt;br /&gt;
+کاتێک وا ئێوە لە سەر هێڵ نەبوون ڕووداوێکی نوێ بۆ ئێوە ڕووی دا ، بۆ بەدەستهێنانی زانیاری لە سەر ئەم ڕووداوانە بچنە نێو هەژمارەکەتان و ئاگاکەرەوەکان ببینن.
+&lt;br /&gt;
+بۆ چوونەنێو هەژمارەکەتان لە سەر بەستەری ژێر کرتە بکەن:
+&lt;br /&gt;</value>
+  </data>
+  <data name="ENotificationSubject" xml:space="preserve">
+    <value>vKurdistan | ئاگادارکەرەوە</value>
+  </data>
+  <data name="EnotLikesCount" xml:space="preserve">
+    <value>پەسەندە نوێکان بۆ بابەتەکانی ئێوە</value>
+  </data>
+  <data name="EnotNewMessagesCount" xml:space="preserve">
+    <value>پەیامە نوێیە نەخوێندراوەکان</value>
+  </data>
+  <data name="EnotSharesCount" xml:space="preserve">
+    <value>بابەتە پارڤە کراوەکانی ئێوە</value>
+  </data>
+  <data name="EnotWallPostsCount" xml:space="preserve">
+    <value>نووسراوە نوێکانی سەر دیواری ئێوە</value>
+  </data>
+  <data name="LoginToYourAccount" xml:space="preserve">
+    <value>بچنە ناو هەژمارەکەتان</value>
+  </data>
+  <data name="PasswordRecoveryEmail" xml:space="preserve">
+    <value>ئەندامی بەڕێزی تۆڕی کۆمەڵایەتی vKurdistan&lt;br /&gt;
+بە سڵامەوە،
+&lt;br /&gt;
+نهێنوشەی هەژمارەکەی ئێوە بە داواکاری ئێوە نێردرا و بە ئەم شێوازەیە:
+&lt;br /&gt;</value>
+  </data>
+  <data name="PasswordRecoverySubject" xml:space="preserve">
+    <value>vKurdistan | هێنانەوەی نهێنوشە</value>
+  </data>
+  <data name="RegisterationCodeLink" xml:space="preserve">
+    <value>بەستەری چالاککردنی هەژمار</value>
+  </data>
+  <data name="RegisterationCodePhrase1" xml:space="preserve">
+    <value>ئەندامی بەڕێزی تۆڕی کۆمەڵایەتی vKurdistan
+&lt;br /&gt;
+بە سڵامەوە
+&lt;br /&gt;
+نهێنوشەی چالاککردنی هەژمارەکەی ئێوە ئەمەیە:
+&lt;br /&gt;
+نهێنوشە:</value>
+  </data>
+  <data name="RegisterationCodePhrase2" xml:space="preserve">
+    <value>&lt;br /&gt;
+هەروەها ئەتوانن بە کرتە لە سەر بەستەری ژێر دەستبکەن بە چالاککردنی هەژمارەکەتان:
+&lt;br /&gt;</value>
+  </data>
+  <data name="RegisterationCodeSubject" xml:space="preserve">
+    <value>vKurdistan | نهێنوشەی چالاککردنی هەژمار</value>
+  </data>
+  <data name="AltEmailActivationCodeLink" xml:space="preserve">
+    <value>بەستەری پشتڕاستکردنەوەی ئیمەیلی جێگر بۆ وەرگرتنی ئیمەیل لە تۆڕی کۆمەڵایەتی vKurdistan</value>
+  </data>
+  <data name="AltEmailActivationCodePhrase1" xml:space="preserve">
+    <value>ئەم ئیمەیلە بە بۆنەی پشتڕاستکردنەوەی ئیمەیلی جێگر لە تۆڕی کۆمەڵایەتی vKurdistan و بە داواکاری</value>
+  </data>
+  <data name="AltEmailActivationCodePhrase2" xml:space="preserve">
+    <value>نێردراوە، بۆ پشتڕاستکردنەوە و گۆڕینی ئیمەیلی جێگر لە سەر بەستەری ژێر کرتە بکەن.
+&lt;br /&gt;
+تێبینی: ئەگەر ئەم ئیمەیلە لە سەر داواکاری ئێوە نەنێردراوە، ئاگاداربن لە سەر ئەو بەستەرە کرتە نەکەن.</value>
+  </data>
+  <data name="AlternatveEmailActivationSubject" xml:space="preserve">
+    <value>پشتڕاستکردنەوەی ئیمەیلی جێگر</value>
+  </data>
+  <data name="GeneratedPasswordEmailPart1" xml:space="preserve">
+    <value>بەکارهێنەری بەرێزی تۆڕی کۆمەڵایەتی vKurdistan،
+&lt;br /&gt;
+بە سڵامەوە
+&lt;br /&gt;
+ناوی بەکارهێنەری و نهێنوشەی هەژماری ساز کراو بۆ ئێوە بەم شێوازەیە:
+&lt;br /&gt;</value>
+  </data>
+  <data name="GeneratedPasswordEmailPart2" xml:space="preserve">
+    <value>بۆ چوونەنێو هەژمارەکەتان لە سەر بەستەری ژێر کرتە بکەن:</value>
+  </data>
+  <data name="GeneratedPasswordSubject" xml:space="preserve">
+    <value>نهێنوشەی هەژمار</value>
+  </data>
+</root>

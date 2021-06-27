@@ -1,0 +1,100 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@using SocialNetApp.Models
+@using SocialNetApp.Views.Models.Layouts
+@{
+    Layout = "~/Views/Layouts/_Site.cshtml";
+}
+@model SocialNetApp.Views.Models.HomePage.IndexViewModel
+@section head{
+    <link href="@Url.Content(SiteViewModel.StyleSheetsUrl + "HomePage_IndexPage.min.css")" rel="stylesheet" type="text/css" />
+    <title>
+        @Resources.Titles.StaticPageTitle
+    </title>
+}
+@section content{
+    <div id="homepage">
+        @{Html.RenderPartial(Urls.ModuleViews + "_PanelBar.cshtml", Model.PanelBarModel);}
+        <div id="panel_container">
+            <input type="hidden" value="0" id="scroll_top" />
+            <div id="panel" class="panel">
+                @{
+                    switch (Model.PageName)
+                    {
+                        case "BasicInfo":
+                            Html.RenderPartial(Urls.ModuleViews + "_BasicInfo.cshtml", (BasicInfoModel)Model.PageModel);
+                            break;
+                        case "Favorites":
+                            Html.RenderPartial(Urls.ModuleViews + "_Favorites.cshtml", (FavoritesModel)Model.PageModel);
+                            break;
+                        case "EducationsAndSkills":
+                            Html.RenderPartial(Urls.ModuleViews + "_EducationsAndSkills.cshtml", (EducationsAndSkillsModel)Model.PageModel);
+                            break;
+                        /* Photos: */
+                        case "Photos":
+                            Html.RenderPartial(Urls.ModuleViews + "_Photos.cshtml", (PhotosModel)Model.PageModel);
+                            break;
+                        case "CreateAlbum":
+                            Html.RenderPartial(Urls.ModuleViews + "_AlbumEditor.cshtml", (AlbumEditorModel)Model.PageModel);
+                            break;
+                        case "EditAlbum":
+                            Html.RenderPartial(Urls.ModuleViews + "_AlbumEditor.cshtml", (AlbumEditorModel)Model.PageModel);
+                            break;
+                        case "AlbumPhotos":
+                            Html.RenderPartial(Urls.ModuleViews + "_AlbumPhotos.cshtml", (AlbumPhotosModel)Model.PageModel);
+                            break;
+                        /* ----------------------- */
+                        case "ProfileCover":
+                            Html.RenderPartial(Urls.ModuleViews + "_ProfileCover.cshtml", (ProfileCoverModel)Model.PageModel);
+                            break;
+                        case "Friends":
+                            Html.RenderPartial(Urls.ModuleViews + "_Friends.cshtml", (FriendsModel)Model.PageModel);
+                            break;
+                        case "Messages":
+                            Html.RenderPartial(Urls.ModuleViews + "_Messages.cshtml", (MessagesModel)Model.PageModel);
+                            break;
+                        case "Privacy":
+                            Html.RenderPartial(Urls.ModuleViews + "_Privacy.cshtml", (PrivacyModel)Model.PageModel);
+                            break;
+                        case "NewsFeedSettings":
+                            Html.RenderPartial(Urls.ModuleViews + "_NewsFeedSettings.cshtml", (NewsFeedSettingsModel)Model.PageModel);
+                            break;
+                        case "MailInforms":
+                            Html.RenderPartial(Urls.ModuleViews + "_MailInforms.cshtml", (MailInformsModel)Model.PageModel);
+                            break;
+                        case "AccountSettings":
+                            Html.RenderPartial(Urls.ModuleViews + "_AccountSettings.cshtml", (AccountSettingsModel)Model.PageModel);
+                            break;
+                        case "DeleteAccount":
+                            Html.RenderPartial(Urls.ModuleViews + "_DeleteAccount.cshtml", (DeleteAccountModel)Model.PageModel);
+                            break;
+                        case "PublicShares":
+                            Html.RenderPartial(Urls.ModuleViews + "_PublicShares.cshtml", (PublicSharesModel)Model.PageModel);
+                            break;
+                        case "Notifications":
+                            Html.RenderPartial(Urls.ModuleViews + "_Notifications.cshtml", (NotificationsModel)Model.PageModel);
+                            break;
+                        /* -------------- Administration -------------- */
+                        case "SpecialPosts":
+                            Html.RenderPartial(Urls.ModuleViews + "_SpecialPosts.cshtml", (SpecialPostsModel)Model.PageModel);
+                            break;
+                        case "ObjectChecker":
+                            Html.RenderPartial(Urls.ModuleViews + "_ObjectChecker.cshtml", (ObjectCheckerModel)Model.PageModel);
+                            break;
+                        case "Pages":
+                            Html.RenderPartial(Urls.ModuleViews + "_Pages.cshtml", (PagesModel)Model.PageModel);
+                            break;
+                        case "PixelAdv":
+                            Html.RenderPartial(Urls.ModuleViews + "_PixelAdvManager.cshtml", (PixelAdvManagerModel)Model.PageModel);
+                            break;
+                        default:
+                            Html.RenderPartial(Urls.ModuleViews + "_HomePage.cshtml", (HomePageModel)Model.PageModel);
+                            break;
+                    }
+                }
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+}

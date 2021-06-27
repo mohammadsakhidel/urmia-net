@@ -1,0 +1,26 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model FriendsModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_FriendsHeadTags.min.js")"></script>
+<div id="friends" class="viewpart">
+    <div class="viewpart_title">
+        <h2>@Resources.Words.FriendsTitle</h2>
+    </div>
+    <div class="viewpart_content">
+        @foreach (var f in Model.Friendships)
+        {
+            var item_id = f.Item1.RegistrationCode;
+            <div class="friend_item" id="@("friend_item_" + item_id)">
+                @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", f.Item2);}
+                @Ajax.ActionLink(" ", "ShowRemoveFriendDialog", "HomePage", new { id = f.Item1.Alias }, 
+                    new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "dialog_view", OnFailure = "ShowDialogFailure" }, 
+                    new { @id = "btn_remove_friend_" + f.Item1.Email, @class = "friend_remove" })
+                <div class="clear">
+                </div>
+            </div>
+        }
+        <div class="clear"></div>
+        <input type="hidden" value="" id="hid_removing_item" />
+    </div>
+    <input type="hidden" id="w_ajax_fail" value="@Resources.Messages.AjaxFail" />
+</div>

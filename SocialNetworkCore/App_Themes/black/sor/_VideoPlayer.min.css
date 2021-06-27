@@ -1,0 +1,33 @@
+﻿.video_player
+{
+    display: block;
+    border: solid 1px #dcdcdc;
+    background-color: black;
+}
+
+.video_player_splash
+{
+    margin-top: 16px;
+    position: relative;
+}
+
+.video_player_splash_play {
+    width: 64px;
+    height: 64px;
+    background-image: url(play.png);
+    position: absolute;
+}
+
+    .video_player_splash_play:hover {
+        background-image: url(play_hover.png);
+    }
+
+.video_player_splash_bg {
+    position: absolute;
+    background-image: url(vid_splash_bg.png);
+    background-repeat: repeat;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

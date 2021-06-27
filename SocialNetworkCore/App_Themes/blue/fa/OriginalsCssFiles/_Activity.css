@@ -1,0 +1,201 @@
+﻿div.activity
+{
+    padding: 15px 0 15px 0;
+    border-bottom: solid 1px #dcddde;
+    position: relative;
+}
+
+div.activity div.actor
+{
+    float: right;
+}
+
+div.activity div.actor img.userthumb
+{
+    width: 40px;
+}
+
+div.activity a.actor_name
+{
+    margin: 3px 0 0 0;
+}
+
+div.activity div.act_tools
+{
+    position: absolute;
+    left: 0;
+    top: 15px;
+    min-width: 320px;
+    z-index: 10;
+}
+
+div.activity div.act_info
+{
+    color: #b0b0b0;
+    font-size: 7pt;
+    float: left;
+    margin: 0 0 0 7px;
+}
+
+div.activity div.act_info div.act_time
+{
+    margin: 1px 0 0 0;
+    float: left;
+    white-space: nowrap;
+}
+
+div.activity div.act_info .share_type
+{
+    width: 12px;
+    height: 12px;
+    float: left;
+    margin: 0 0 0 7px;
+    border: 0;
+    display: block;
+}
+
+div.activity div.act_info .shared_public
+{
+    background-image: url(shared_public.png);
+}
+
+div.activity div.act_info .shared_members
+{
+    background-image: url(shared_members.png);
+}
+
+div.activity div.act_info .shared_friends
+{
+    background-image: url(shared_friends.png);
+}
+
+div.activity div.act_info .shared_onlyme
+{
+    background-image: url(shared_onlyme.png);
+}
+
+div.activity div.act_settings
+{
+    float: left;
+}
+
+div.activity div.actions
+{
+    margin: 10px 45px 0 0;
+    padding: 7px 0 0 0;
+}
+
+div.activity div.act_content
+{
+    float: right;
+    margin-right: 5px;
+    max-width: 450px;
+    z-index: 9;
+}
+
+div.activity .post_img_large
+{
+    border: solid 1px #d2d9e7;
+    width: 430px;
+}
+
+div.activity .post_img_small
+{
+    border: solid 1px #d2d9e7;
+    width: 100px;
+}
+
+div.activity a.post_img_small_a
+{
+    float: right;
+    border: 0;
+    margin-left: 10px;
+}
+
+div.activity a.post_img_large_a
+{
+    float: right;
+    border: 0;
+}
+
+div.activity div.act_title
+{
+    clear: both;
+    color: #808285;
+    font-size: 9pt;
+    margin-top: 4px;
+    line-height: 20px;
+}
+
+div.activity div.act_details
+{
+    margin-top: 10px;
+}
+
+div.activity div.act_post_text
+{
+    margin: 0 10px 0 0;
+    font-size: 9.5pt;
+    line-height: 20px;
+}
+
+div.activity div.act_post_photo
+{
+    margin: 10px 10px 0 0;
+}
+
+div.activity div.act_post_photos
+{
+    clear: both;
+    margin: 10px 10px 0 0;
+}
+
+div.activity div.act_photo_desc
+{
+    margin: 10px 10px 0 0;
+    font-size: 9.5pt;
+    line-height: 20px;
+}
+
+div.activity a.act_img_parent
+{
+    display: block;
+    margin: 10px 10px 0 0;
+}
+
+div.activity img.act_img
+{
+    border: solid 1px #d2d9e7;
+    width: 430px;
+}
+
+div.activity img.act_vert_img
+{
+    border: solid 1px #d2d9e7;
+    height: 400px;
+}
+
+/* specific for comment activity: */
+div.activity div.comment_quote
+{
+    margin: 10px 10px 0 0;
+}
+/* ------------------------------ */
+/* specific for post activity: */
+div.activity div.post_text
+{
+    margin: 10px 10px 0 0;
+}
+/* ------------------------------ */
+/* specific for like activity: */
+div.activity div.liked_comment_quote
+{
+    margin: 10px 10px 0 0;
+}
+/* ------------------------------ */
+/* specific for change cover activity: */
+div.activity img.act_img_pp
+{
+    border: solid 1px #d2d9e7;
+}
+/* ------------------------------ */

@@ -1,0 +1,40 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@using CoreHelpers
+@model PeopleModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_PeopleHeadTags.min.js")"></script>
+<div id="people">
+    <div class="people_head">
+        @Html.ActionLink(Resources.Words.SearchPeople, "Search", "Members")
+    </div>
+    @foreach(var memBriefModel in Model.MemberBriefModels)
+    {
+        Html.RenderPartial(Urls.ModuleViews + "_MemberBrief.cshtml", memBriefModel);
+    }
+    <div class="clear">
+    </div>
+    @if (Model.PagesCount > 1)
+    {
+        <div class="people_pager">
+            <table class="center">
+                <tr>
+                    <td>
+                        <a class="@(Model.PreviousVisible ? "prev" : "prev_dis")" @Html.Raw(Model.PreviousVisible ? "href=\"" + Request.Url.GetLeftPart(UriPartial.Path) + "?page=" + (Model.PageIndex - 1) + "\"" : "")>
+                        </a>
+                    </td>
+                    <td>
+                        <span class="pager_txt">
+                            @Resources.Words.Page
+                            @(Model.PageIndex + 1)
+                            @Resources.Words.Of
+                            @Model.PagesCount
+                        </span>
+                    </td>
+                    <td>
+                        <a class="@(Model.NextVisible ? "next" : "next_dis")" @Html.Raw(Model.NextVisible ? "href=\"" + Request.Url.GetLeftPart(UriPartial.Path) + "?page=" + (Model.PageIndex + 1) + "\"" : "")>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    }
+</div>

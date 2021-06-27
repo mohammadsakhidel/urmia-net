@@ -1,0 +1,75 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@using SocialNetApp.Models
+@using CoreHelpers
+@model SharedObjectActionsModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_SharedObjectActionsHeadTags.min.js")"></script>
+<div class="obj_actions">
+    <div class="action_links">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="like">
+            </div>
+            @Ajax.ActionLink((!Model.HasUserLikedObject ? @Resources.Words.Like : @Resources.Words.Unlike), "LikeSharedObject", "Activities", new { id = Model.SharedObject.Id }, new AjaxOptions { HttpMethod = "Post" }, new { @id = "btn_like_object_" + Model.RandomId, @class = "action_link", @onclick = "btn_like_obj_click(this);" })
+            <input type="hidden" value="@Model.SharedObject.Id" name="SharedObjectId" />
+            if (Model.IsCommentingAllowedForUser)
+            {
+                <a id="@("btn_add_comment_" + Model.RandomId)" onclick="btn_add_comment_click(this);" class = "action_link">@(Resources.Words.Comment + "(" + Model.CommentsCount + ")")</a>
+            }
+            @Ajax.ActionLink(Resources.Words.Share + "(" + Model.SharesCount + ")", "ShowShareDialog", "Objects", new { id = Model.SharedObject.Id, randomId = Model.RandomId }, new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "dialog_view", OnFailure = "ShowDialogFailure" }, new { @id = "btn_object_share_" + Model.RandomId, @class = "action_link", @onclick = "btn_obj_share_click();" })
+        }
+        @Ajax.ActionLink(" ", "ShowFacebookShareDialog", "Objects", new { id = Model.SharedObject.Id }, new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "dialog_view", OnFailure = "ShowDialogFailure" }, new { @id = "btn_fb_share_" + Model.RandomId, @class = "fb_share", @onclick = "btn_fb_share_click();" })
+        <div class="clear">
+        </div>
+    </div>
+    <div class="actions_summery">
+        <input type="hidden" value="@Model.LikesCount" name="likes_count" />
+        <input type="hidden" value="@Model.HasUserLikedObject.ToString().ToLower()" name="has_liked_shared_obj" />
+        @Ajax.ActionLink(
+            Model.LikesCountDisplayText, 
+            "ShowObjectLikesDialog", "Objects", new { id = Model.SharedObject.Id }, 
+            new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "dialog_view", OnFailure = "ShowDialogFailure" }, 
+            new { @id = "btn_object_likes_" + Model.RandomId, @class=(Model.LikesCount > 0 ? "" : "nolike"), @onclick = (Model.LikesCount > 0 ? "btn_obj_likes_click();" : "") })
+        <div class="visits_counter" title="@Resources.Words.VisitsCount">
+            <div class="visits_counter_ico"></div>
+            <span class="visits_counter_txt">
+                @MyHelper.FormatNumber(Model.SharedObject.VisitsCounter)
+            </span>
+        </div>
+    </div>
+    @if (User.Identity.IsAuthenticated && Model.IsCommentingAllowedForUser)
+    {
+        <div class="new_comment">
+            @using (Ajax.BeginForm("AddComment", "Comments", new AjaxOptions { HttpMethod = "Post", LoadingElementId = "prg_add_comment_" + Model.RandomId, OnBegin = "AddCommentBegin", OnSuccess = "AddCommentSuccess" }))
+            {
+                <input type="hidden" value="@Model.RandomId" name="RandomId" />
+                <input type="hidden" value="@Model.SharedObject.Id" name="SharedObjectId" />
+                <textarea class="txt_comment" name="Comment" id="@("txt_comment_" + Model.RandomId)" onkeypress="return txt_comment_keypress(event, this);"></textarea>
+                <div class="loading_small_circle hide" id="@("prg_add_comment_" + Model.RandomId)">
+                </div>
+                <div id="@("msg_add_comment_" + Model.RandomId)" class="msg_add_comment hide">
+                </div>
+            }
+        </div>
+    }
+    @if (Model.CommentsCount > Digits.MaxCommentsToShow)
+    {
+        <div id="@("more_comments_" + Model.RandomId)" class="more_comments">
+            <input type="hidden" value="@Model.CommentsCount" id="@("comments_count_" + Model.RandomId)" />
+            @using (Ajax.BeginForm("GetMoreComments", "Comments", new AjaxOptions { HttpMethod = "Post", OnSuccess = "GetMoreCommentsSuccess", LoadingElementId = "prg_more_comments_" + Model.RandomId }))
+            {
+                <a id="@("btn_more_comments_" + Model.RandomId)" onclick="btn_more_comments_click(this);">@Resources.Words.ViewMoreComments</a>
+                <div id="@("prg_more_comments_" + Model.RandomId)" class="loading_small_circle hide">
+                </div>
+                <input type="hidden" value="@Model.SharedObject.Id" name="SharedObjectId" />
+                <input type="hidden" id="@("date_of_first_comment_" + Model.RandomId)" value="@Model.LastCommentModels.First().Comment.DateOfComment.ToString("yyyy-MM-dd HH:mm:ss.fff")" name="DateOfComment" />
+                <input type="hidden" value="@Model.RandomId" name="RandomId" />
+            }
+        </div>
+    }
+    <div id="@("comments_" + Model.RandomId)">
+        @foreach (var commentModel in Model.LastCommentModels)
+        {
+            Html.RenderPartial(Urls.ModuleViews + "_Comment.cshtml", commentModel);
+        }
+    </div>
+</div>

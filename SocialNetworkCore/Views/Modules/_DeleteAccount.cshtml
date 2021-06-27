@@ -1,0 +1,36 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@model DeleteAccountModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_DeleteAccountHeadTags.min.js")"></script>
+<div id="del_account">
+    @using (Ajax.BeginForm("DeleteAccount", "HomePage", new AjaxOptions { HttpMethod = "Post", LoadingElementId = "SaveFormLoading", OnBegin = "SaveBegin", OnFailure = "SaveFailure", OnSuccess = "SaveSuccess", OnComplete = "SaveComplete" }))
+    {
+        <input type="hidden" name="MemberId" value="@User.Identity.Name" />
+        <div class="viewpart_title">
+            <h2>@Resources.Words.DeleteAccount</h2>
+        </div>
+        <div class="viewpart_content">
+            <div class="text">
+                @Html.Raw(Resources.Texts.DeleteAccountText_Part1)
+            </div>
+            <div style="margin: 10px 0 10px 0;">
+                <label for="Reason">@Resources.Words.WhatIsYourReason</label>
+                <br />
+                <textarea name="Reason" id="Reason"></textarea>
+            </div>
+            <div class="text">
+                @Html.Raw(Resources.Texts.DeleteAccountText_Part2)
+            </div>
+            <div class="form_submit_sec">
+                <input type="submit" value="@Resources.Words.DeleteAccount" />
+                <div id="SaveFormLoading" class="loading_small hide">
+                </div>
+                <div class="hide" id="msg_save">
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+    }
+    <input id="ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />
+    <input id="msg_errors_title" type="hidden" value="@Resources.Messages.ListOfErrorsTitle" />
+</div>

@@ -1,0 +1,20 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@using CoreHelpers
+@model ViewMoreModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_ViewMoreHeadTags.min.js")"></script>
+@if (Model.IsThereMore)
+{
+    var randomId = Model.RandomId;
+    using (Ajax.BeginForm(Model.ActionName, Model.ControllerName, null, new AjaxOptions { HttpMethod = "Post", OnSuccess = "ViewMoreSuccess", OnFailure = "ViewMoreFailure" }, new { @id = "frm_view_more_" + randomId }))
+    {
+        <!-- Submiting Values: -->
+        <input type="hidden" name="CurrentPageIndex" value="@Model.CurrentPageIndex" />
+        <input type="hidden" name="RandomId" value="@randomId" />
+        <input type="hidden" name="Parameters" value="@Model.Parameters" />
+        <!-- ----------------- -->
+        <a class="view_more">@Resources.Words.ViewMoreItems</a>
+        <input type="hidden" name="w_view_more" disabled="disabled" value="@Resources.Words.ViewMoreItems" />
+        <input type="hidden" name="update_target_id" disabled="disabled" value="@Model.UpdateTargetId" />
+        <input type="hidden" name="is_auto_alowed" disabled="disabled" value="true" />
+    }
+}

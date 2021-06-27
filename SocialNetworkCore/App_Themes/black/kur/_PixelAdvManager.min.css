@@ -1,0 +1,123 @@
+﻿#pixel_adv_mngr .sub_pix_adv
+{
+    float: right;
+}
+
+#pixel_adv_mngr .sub_pix_adv input[type="submit"]
+{
+    float: right;
+}
+
+#pixel_adv_mngr .sub_pix_adv div.loading_small_circle
+{
+    float: right;
+    margin: 7px 7px 0 0;
+}
+
+#pixel_adv_mngr .pxl_adv_fileds
+{
+    margin-bottom: 10px;
+}
+
+#pixel_adv_mngr .pxl_adv_filed
+{
+    margin-top: 10px;
+}
+
+#pixel_adv_mngr .pxl_adv_filed .pxl_adv_subfiled
+{
+    float: left;
+    margin-right: 30px;
+}
+
+#pixel_adv_mngr .pxl_adv_filed_name
+{
+    margin-bottom: 2px;
+    color: #808285;
+}
+
+#pixel_adv_mngr .pxl_adv_filed_val
+{
+}
+
+#pixel_adv_mngr .pxl_adv_fileds input[name="Title"]
+{
+    width: 300px;
+}
+
+#pixel_adv_mngr .pxl_adv_fileds input[name="Target"]
+{
+    width: 300px;
+}
+
+#pixel_adv_mngr .pxl_adv_fileds input[name="HeightBlocks"], 
+#pixel_adv_mngr .pxl_adv_fileds input[name="WidthBlocks"]
+{
+    width: 100px;
+}
+
+#pixel_adv_mngr .pxl_adv_fileds .pxl_adv_field_chbox input[type="text"]
+{
+    width: 60px;
+}
+
+#pixel_adv_mngr .pxl_adv_fileds select
+{
+    min-width: 65px;
+}
+
+#pixel_adv_mngr .pxl_adv_fileds select[name="Type"], #pixel_adv_mngr .pxl_adv_fileds input[name="Cost"]
+{
+    width: 150px;
+}
+
+#pixel_adv_mngr .pxl_adv_fileds textarea[name="Considerations"]
+{
+    width: 450px;
+    height: 40px;
+}
+
+#pixel_adv_mngr .pxl_adv_fileds input[name="ImageFile"]
+{
+    background-color: #f6f6f6;
+    padding: 5px;
+    border: solid 1px Gray;
+    width: 300px;
+}
+
+#pixel_adv_mngr .pxl_adv_fileds .pxl_adv_field_chbox
+{
+    float: left;
+    margin-right: 10px;
+}
+
+#pixel_adv_mngr #adv_list .adv_item
+{
+    padding: 10px 0 10px 0;
+    font-weight: bold;
+    border-bottom: solid 1px #dcddde;
+    color: #1570a6;
+}
+
+#pixel_adv_mngr #adv_list .adv_item:hover
+{
+    background-color: #f1f2f2;
+}
+
+#pixel_adv_mngr #adv_list .adv_item_hidden
+{
+    color: #9d9fa2;
+}
+
+#pixel_adv_mngr #adv_list .adv_item .loading_small_circle
+{
+    float: right;
+}
+
+#pixel_adv_mngr #adv_list .adv_item_action
+{
+    float: right;
+    margin: 0 0 0 15px;
+    font-weight: normal;
+    font-size: 8pt;
+}

@@ -1,0 +1,16 @@
+﻿#homepage #panel_container
+{
+    float: right; 
+    min-height: 540px; 
+    border-left: solid 1px #333132; 
+    border-bottom: solid 1px #333132; 
+    border-right: solid 1px #333132; 
+    margin-bottom: 20px; 
+    width: 768px;
+    position: relative;
+}
+
+#homepage div.panel
+{
+    padding: 15px;
+}

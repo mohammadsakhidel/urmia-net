@@ -1,0 +1,48 @@
+﻿div#in_hmi_settings
+{
+   padding: 10px;
+}
+
+div#in_hmi_settings a.profile_link
+{
+    border: 0;
+    padding: 5px;
+    background-color: #f3f4f4;
+    display: block;
+}
+
+div#in_hmi_settings a.profile_link:hover
+{
+    background-color: #ebebec;
+}
+
+div#in_hmi_settings a.profile_link > img
+{
+    width: 40px;
+    border: solid 1px #7db6d5;
+    float: right;
+}
+
+div#in_hmi_settings a.profile_link > span
+{
+    float: right;
+    margin: 13px 7px 0 0;
+    font-weight: bold;
+    font-size: 7.5pt;
+    color: #4a4747;
+}
+
+div#in_hmi_settings a.in_hmi_link
+{
+    display: block;
+    padding: 3px 10px 3px 10px;
+    background-color: White;
+    margin-top: 8px;
+    color: #4a4747;
+    text-decoration: none;
+}
+
+div#in_hmi_settings a.in_hmi_link:hover
+{
+    background-color: #ebebec;
+}

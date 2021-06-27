@@ -1,0 +1,28 @@
+﻿@model SocialNetApp.Views.Models.Modules.AlbumPresenterModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_AlbumPresenterHeadTags.min.js")"></script>
+<div id="@("album_" + Model.AlbumId.ToString())" class="album_container">
+    <img alt="@Model.AlbumDescription" class="album_cover thumb" src="@Url.Content(Model.AlbumCoverThumbUrl)" />
+    <div class="album_info">
+        <h2>@(Model.AlbumName + " (" + Model.AlbumPhotosCount + ")")</h2>
+        <h3>@Model.AlbumDescription</h3>
+        <div class="album_tools">
+            @Ajax.ActionLink(@Resources.Words.EditDetails, "EditAlbum", "Photos", new { id = Model.AlbumId }, new AjaxOptions { HttpMethod = "Get", LoadingElementId = "prg_album_edit_" + Model.AlbumId, UpdateTargetId = "panel", OnComplete = "EditAlbumComplete" }, new { @class = "album_edit" })
+            <div class="loading_small_circle_parent">
+                <div id="@("prg_album_edit_" + Model.AlbumId)" class="loading_small_circle hide">
+                </div>
+            </div>
+            @Ajax.ActionLink(@Resources.Words.EditPhotos, "AlbumPhotos", "Photos", new { id = Model.AlbumId }, new AjaxOptions { HttpMethod = "Get", LoadingElementId = "prg_album_photos_" + Model.AlbumId, UpdateTargetId = "panel", OnComplete = "AlbumPhotosComplete" }, new { @class = "album_photos" })
+            <div class="loading_small_circle_parent">
+                <div id="@("prg_album_photos_" + Model.AlbumId)" class="loading_small_circle hide">
+                </div>
+            </div>
+            @Ajax.ActionLink(@Resources.Words.DeleteAlbum, "DeleteAlbum", "Photos", new { id = Model.AlbumId }, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "prg_album_delete_" + Model.AlbumId, UpdateTargetId = "panel", Confirm = Resources.Messages.AreYouSure, OnBegin = "DeleteAlbumBegin", OnComplete = "DeleteAlbumComplete" }, new { @class = "album_delete" })
+            <div class="loading_small_circle_parent">
+                <div id="@("prg_album_delete_" + Model.AlbumId)" class="loading_small_circle hide">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+</div>

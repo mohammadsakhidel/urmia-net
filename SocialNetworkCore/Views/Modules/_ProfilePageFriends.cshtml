@@ -1,0 +1,25 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@using CoreHelpers
+@model ProfilePageFriendsModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_ProfilePageFriendsHeadTags.min.js")"></script>
+<div id="pp_friends">
+    @if (Model.AreFriendsVisibleToUser)
+    {
+        <div class="pp_in_title">
+            <h2>@Resources.Words.ProfilePageLink_Friends</h2>
+        </div>
+        <div id="pp_friends_list">
+            @foreach (var friendModel in Model.FriendModels)
+            {
+                <div class="pp_friend_item">
+                    @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", friendModel);}
+                </div>
+            }
+        </div>
+            Html.RenderPartial(Urls.ModuleViews + "_ViewMore.cshtml", Model.ViewMoreModel);
+    }
+    else
+    {
+        Html.RenderPartial(Urls.ModuleViews + "_AccessDenied.cshtml", Model.AccessDeniedModel);
+    }
+</div>

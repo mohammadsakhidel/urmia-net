@@ -1,0 +1,37 @@
+﻿@using SocialNetApp.Models
+@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model AlbumViewModel
+
+@if (Model.IsAnyVisiblePhotoForUser)
+{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/_AlbumViewHeadTags.min.js")"></script>
+    <div id="@("album_view_" + Model.Album.Id)" class="album_view">
+        <div class="visits_counter" title="@Resources.Words.VisitsCount">
+            <div class="visits_counter_ico"></div>
+            <span class="visits_counter_txt">
+                @MyHelper.FormatNumber(Model.Album.VisitsCounter)
+            </span>
+        </div>
+        <h2 class="album_view_title">@Model.Album.Name</h2>
+        <div class="album_view_info">
+            <label>@Model.AlbumPhotoRecords.Count()</label>
+        </div>
+        <div class="album_view_in">
+            @Html.Raw(TextsProcessor.RenderText(Model.AlbumDesc))
+            <div class="album_photos_container">
+                @foreach (var phRec in Model.AlbumPhotoRecords)
+                {
+                    if (phRec.Item2)
+                    {
+                    <a class="a_thumb" href="@Url.Content(phRec.Item1.UrlOfAlbumDetails)">
+                        <img src="@Url.Content(phRec.Item1.LargeThumbUrl)" alt="" class="ph_thumb" />
+                    </a>
+                    }
+                }
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+}

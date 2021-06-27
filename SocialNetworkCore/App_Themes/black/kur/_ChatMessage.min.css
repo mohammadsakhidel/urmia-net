@@ -1,0 +1,78 @@
+﻿div.chat_msg
+{
+    padding: 0 0 10px 0;
+}
+
+div.chat_msg .chat_message_from_parent
+{
+    float: left;
+}
+
+div.chat_msg .chat_message_from_parent_otherside
+{
+    float: right;
+    margin-right: 10px;
+}
+
+div.chat_msg .chat_message_txt
+{
+    float: left;
+    margin: 0 0 0 8px;
+    font-size: 8.5pt;
+    padding: 8px;
+    background-color: #f4f7fc;
+    border: solid 1px #adcdec;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    width: 300px;
+    position: relative;
+}
+
+div.chat_msg .chat_message_txt_otherside
+{
+    float: right;
+    margin: 0 8px 0 0;
+    font-size: 8.5pt;
+    padding: 8px;
+    background-color: #f8f8f8;
+    border: solid 1px #d8d3d3;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    width: 300px;
+    position: relative;
+    text-align: right;
+}
+
+div.chat_msg .chat_msg_time
+{
+    position: absolute;
+    font-size: 7pt;
+    right: 3px;
+    top: 1px;
+    color: #7db6d5;
+}
+
+div.chat_msg .chat_msg_time_otherside
+{
+    position: absolute;
+    font-size: 7pt;
+    left: 3px;
+    top: 1px;
+    color: #d8d3d3;
+}
+
+    div.chat_msg div.delivered {
+        width: 12px;
+        height: 12px;
+        background-image: url(seen.png);
+        float: left;
+        margin: 12px 0 0 7px;
+    }
+
+    div.chat_msg div.delivered_otherside {
+        width: 12px;
+        height: 12px;
+        background-image: url(seen.png);
+        float: right;
+        margin: 12px 7px 0 0;
+    }

@@ -1,0 +1,12 @@
+﻿@using CoreHelpers
+@model SocialNetApp.Views.Models.Modules.ProfilePagePixelAdvModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_PixelAdvHeadTags.min.js")"></script>
+<div id="profile_pixeladv">
+    <h2 class="profile_pixeladv_title">@Resources.Words.PixelAdv</h2>
+    <div class="profile_pixeladv_in" style="@("height: " + Digits.PixelOfProfileHeight + "px;")">
+        @foreach (var adv in Model.Ads)
+        {
+            @Html.Raw(adv.GetImageLink("profile"))
+        }
+    </div>
+</div>

@@ -1,0 +1,97 @@
+﻿div#educations_skills table td
+{
+    padding-bottom: 5px;
+}
+
+div#educations_skills input[name="EducationBranch"], div#educations_skills input[name="EducationLocation"]
+{
+    width: 270px;
+}
+
+div#educations_skills select[name="EducationLevel"]
+{
+    width: 280px;
+}
+
+div#educations_skills select[name="FromYear"], div#educations_skills select[name="ToYear"]
+{
+    width: 90px;
+}
+
+div#educations_skills .educations_txt, .skills_txt
+{
+    padding: 10px 0 20px 0;
+    line-height: 20px;
+}
+
+div#educations_skills td.add_edu
+{
+    padding-top: 8px;
+}
+
+div#educations_skills td.add_edu a.submit
+{
+    float: right;
+}
+
+div#educations_skills td.add_edu div.loading_small_circle
+{
+    float: right;
+    margin: 7px 7px 0 0;
+}
+
+div#educations_skills input#txt_add_skill
+{
+    float: right;
+    width: 300px;
+    padding: 7px;
+}
+
+div#educations_skills #prg_add_skill
+{
+    float: right;
+    margin: 8px 5px 0 0;
+}
+
+div#educations_skills #skills .error_message
+{
+    margin-top: 10px;
+}
+
+div#educations_skills div#skills_list, div#education_list
+{
+    margin-top: 10px;
+}
+
+div#educations_skills div.skill_row, div.edu_row
+{
+    padding: 10px 0;
+    border-bottom: solid 1px #dcddde;
+    color: #333333;
+}
+
+div#educations_skills div.skill_row:hover, div.edu_row:hover
+{
+    background-color: #f6f6f6;
+}
+
+div#educations_skills div.skill_row .remove_skill, div.edu_row .remove_edu
+{
+    float: left;
+}
+
+div#educations_skills #prg_delete_skill, #prg_delete_edu
+{
+    position: absolute;
+}
+
+div#educations_skills div#msg_add_edu
+{
+    margin-top: 10px;
+}
+
+div#educations_skills .edu_row_explan
+{
+    color: #c7c8ca;
+    font-size: 7.5pt;
+}

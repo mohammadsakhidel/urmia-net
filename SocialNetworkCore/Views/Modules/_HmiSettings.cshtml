@@ -1,0 +1,16 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@model HmiSettingsModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_HmiSettingsHeadTags.min.js")"></script>
+<div id="in_hmi_settings">
+    <a class="profile_link" href="@Url.Content(Model.AssociatedMember.UrlOfProfilePage)">
+        <img src="@Url.Content(Model.AssociatedMember.UrlOfThumb)" alt="@Model.AssociatedMember.FullName" />
+        <span>@Model.AssociatedMember.FullName</span>
+        <div class="clear">
+        </div>
+    </a>
+    <a class="in_hmi_link" href="@Url.Action("ConnectToFacebook", "Account")">@Resources.Words.ConnectToFacebook</a>
+    <a class="in_hmi_link" href="@Url.Action("Search", "Members")">@Resources.Words.SearchPeople</a>
+    <a class="in_hmi_link" href="@Url.Action("Help", "Pages")">@Resources.Words.Help</a>
+    <a class="in_hmi_link" href="@Url.Action("Rules", "Pages")">@Resources.Words.Rules</a>
+    @Html.ActionLink(Resources.Words.LogOut, "LogOut", "Account", null, new { @class = "in_hmi_link" })
+</div>

@@ -1,0 +1,38 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model EditCommentDialogModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_EditCommentDialogHeadTags.min.js")"></script>
+<div id="edit_comment_dialog">
+    <div class="dialog_title">
+        <a class="dialog_close" onclick="HideDialog();"></a>
+        <h2>@Resources.Words.EditComment</h2>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="dialog_view_in">
+        @using (Ajax.BeginForm("EditComment", "Comments", null, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "dialog_prg", OnBegin = "EditCommentBegin", OnFailure = "EditCommentFailure", OnSuccess = "EditCommentSuccess" }, new { @id = "frm_edit_comment" }))
+        {
+            <input type="hidden" name="CommentId" value="@Model.Comment.Id" />
+            @Resources.Texts.EditCommentText
+            <div id="editing_comment">
+                @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.CommentOwnerIdentityModel);}
+                <div class="editing_comment_text_parent">
+                    <textarea name="CommentText" id="dialog_txt_comment">@Model.Comment.Text</textarea>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="dialog_actions">
+                <a class="cancel" onclick="HideDialog();">@Resources.Words.Cancle</a> <a class="okey">@Resources.Words.Save</a>
+                <div id="dialog_prg" class="loading_small_circle hide">
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div id="dialog_msg" class="hide">
+            </div>
+        }
+    </div>
+</div>

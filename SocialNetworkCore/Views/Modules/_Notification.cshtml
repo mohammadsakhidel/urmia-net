@@ -1,0 +1,94 @@
+﻿@using SocialNetApp.Models
+@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model NotificationModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_NotificationHeadTags.min.js")"></script>
+<div title="@Model.Notification.CreateTimeText" class="@("notification" + (Model.NotificationStatus == NotificationStatus.Unread ? " not_new" : ""))">
+    @if (Model.HasThumb)
+    {
+        <a class="not_thumb" href="@Url.Content(Model.NotificationThumbHrefUrl)">
+            <img src="@Url.Content(Model.NotificationThumbImageUrl)" />
+        </a>
+    }
+    <!--
+    <div class="not_time">
+        <label>@Model.Notification.CreateTimeText</label>
+    </div>
+    -->
+    <div class="not_actor">
+        @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.ActorIdentityModel);}
+    </div>
+    <div class="not_content">
+    @if (Model.Notification is LikeNotification)
+    {
+        if (Model.AssociatedLike is SharedObjectLike)
+        {
+            <div class="likenot_in">
+                @Html.Raw(Model.Actor.InlineFullNameLink)
+                @Resources.Words.NotificationTxt_ObjLike_Part1
+                <a href="@Url.Content(((SharedObject)Model.AssociatedLikedItem).UrlOfDetails)">@Resources.Words.NotificationTxt_ThisObject</a>
+                @Resources.Words.NotificationTxt_ObjLike_Part2
+            </div>
+        }
+        else if (Model.AssociatedLike is CommentLike)
+        {
+            <div class="commnot_in">
+                @Html.Raw(Model.Actor.InlineFullNameLink)
+                @Resources.Words.NotificationTxt_CommLike_Part1
+                <a href="@Url.Content(Model.AssociatedLikedItemObject.UrlOfDetails)">@Resources.Words.NotificationTxt_ThisObject</a>
+                @Resources.Words.NotificationTxt_CommLike_Part2:
+                <br />
+                <span class="not_quote">"@MyHelper.CutString(((Comment)Model.AssociatedLikedItem).Text, 50)"</span>
+            </div>
+        }
+    }
+    else if (Model.Notification is CommentNotification)
+    {
+        <div class="commnot_in">
+            @Html.Raw(Model.Actor.InlineFullNameLink)
+            @Resources.Words.NotificationTxt_Comment_Part1
+            <a href="@Url.Content(Model.AssociatedCommentedObject.UrlOfDetails)">@Resources.Words.NotificationTxt_ThisObject</a>
+            @Resources.Words.NotificationTxt_Comment_Part2:
+            <br />
+            <span class="not_quote">"@MyHelper.CutString(Model.AssociatedComment.Text, 50)"</span>
+        </div>
+    }
+    else if (Model.Notification is AlsoCommentNotification)
+    {
+        <div class="commnot_in">
+            @Html.Raw(Model.Actor.InlineFullNameLink)
+            @Resources.Words.NotificationTxt_AlsoComment_Part1
+            <a href="@Url.Content(Model.AssociatedCommentedObject.UrlOfDetails)">@Resources.Words.NotificationTxt_ThisObject</a>
+            @Resources.Words.NotificationTxt_AlsoComment_Part2:
+            <br />
+            <span class="not_quote">"@MyHelper.CutString(Model.AssociatedComment.Text, 50)"</span>
+        </div>
+    }
+    else if (Model.Notification is ShareNotification)
+    {
+        <div class="sharenot_in">
+            @Html.Raw(Model.Actor.InlineFullNameLink)
+            @Resources.Words.NotificationTxt_Share_Part1
+            <a href="@Url.Content(Model.AssociatedSharing.UrlOfDetails)">@Resources.Words.NotificationTxt_ThisObject</a>
+            @Resources.Words.NotificationTxt_Share_Part2
+        </div>
+    }
+    else if (Model.Notification is PostOnWallNotification)
+    {
+        <div class="wallpost_in">
+            @Html.Raw(Model.Actor.InlineFullNameLink)
+            @Resources.Words.NotificationTxt_WallPost_Part1
+            <a href="@Url.Content(Model.AssociatedPost.UrlOfDetails)">@Resources.Words.NotificationTxt_ThisObject</a>
+            @Resources.Words.NotificationTxt_WallPost_Part2
+        </div>
+    }
+    else if (Model.Notification is AcceptRequestNotification)
+    {
+        <div class="accreq_in">
+            @Html.Raw(Model.Actor.InlineFullNameLink)
+            @Resources.Words.NotificationTxt_AcceptRequest
+        </div>
+    }
+    </div>
+    <div class="clear"></div>
+</div>

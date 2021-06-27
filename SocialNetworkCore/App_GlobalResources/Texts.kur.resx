@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActivateAccountText" xml:space="preserve">
+    <value>Bikarhînerê / a hêja ji bo çalakkirina hesaba xwe, koda ku ji imaila we re hatiye şadin, di forma jêrîn de binivîsînin (Têbînî: Çê dibe imail ji bo beşa Spamê ya imaila we hatibe şandin)</value>
+  </data>
+  <data name="AlbumPhotosText" xml:space="preserve">
+    <value>Hûn dikarin wêneyekî herî zêde bi qasî 4 MB li alboma xwe zêde bikin.               Wêneyên rêpêdayî bi formatên JPG, PNG û GIF ne.         Eger mijarên jêrîn bi kar bînin, wê werin reşkirin û eger car din heman karî encam bidin, wê demê wê hesaba we were jêbirin.     Wêneyên Sexî       Wêneyên nejadperestiyê û bêrêzî li hemberê kes yan girûpan     Wêneyên mijarên siyasî     Wêneyên bikaranîna tundiyê</value>
+  </data>
+  <data name="AlternativeEmailExplan" xml:space="preserve">
+    <value>Eger imaila cîgir were danîn, wê demê wê imail û haydariyên vê torê ji bo wê imailê  bên şandin.</value>
+  </data>
+  <data name="BlockUsersText" xml:space="preserve">
+    <value>Endamên astengkirî, nikarin daxwaza hevaltiyê ji we re bişînin, bi we re biaxivin, li ser dêwarê we tiştan binivîsînin û nikarin nerînên xwe li ser nivîsên we jî binivîsînin.</value>
+  </data>
+  <data name="ChangePasswordText" xml:space="preserve">
+    <value>Bikarhînerê / a hêja, tenê wê demê şifreya we tê guhertin ku her 3 xaniyên pêwîst, tijî bikin û eger vî karî encam nedin, şifreya we nayê guhertin.</value>
+  </data>
+  <data name="ConnectToFacebookAnonymousTextPart1" xml:space="preserve">
+    <value>Bikarhînerê / a hêja di vê qonaxê de, tevî ku hûn di tora civakî ya vKurdistanê de endam nîn in, ji bo we, wê hesabek li gora agahiyên li ser Facebooka we, were çêkirin û pêve were girêdan.        Ji bo têketina di nava malperê de, dikarin him hejmara xwe ya Facebookê û yan jî hejmara xwe ya vKurdistanê bikar bînin.      Şifreya we, wê ji bo imaila ku we Facebook pê çê kiriye, bê şandin.</value>
+  </data>
+  <data name="ConnectToFacebookAuthenticatedMemberTextPart1" xml:space="preserve">
+    <value>Hûn mijûlî girêdana hesabê bi Facebookê ve ne.</value>
+  </data>
+  <data name="ConnectToFacebookAuthenticatedMemberTextPart2" xml:space="preserve">
+    <value>Tora civakî ya vKurdistanê we piştrast dike ku bi bêy rêpêdana we, ti zanyariyên li ser Facebookê nayê parvekirin. Herwisa ev tor, nikare zanyariyên we yên Facebookê bi dest xwe ve bîne.</value>
+  </data>
+  <data name="ConnectToFacebookExplanation" xml:space="preserve">
+    <value>Bikarhînerê / a hêja, hûn dikarin bi bêy endambûn di vKurdistanê de û bi bêy girêdan bi Facebookê ve, ji vê vKurdistanê mifahê bigirin. Xalên jêrîn ji bîra we nekin:                    Tora civakî ya vKurdistanê ti caran şifreya Facebooka we li cem xwe naragire.           Em tenê zanyariyên ji bo navnivîsiya we weke (Nav, Paşnav, Imail, Zayedî û Rojbûnê) ji Facebooka we werdigirin.           Eger we hesabeke vKurdistanê hebe, dikarin wê hesaba xwe bi hesaba xwe ya Facebookê ve girê bidin.                Piştî girêdana bi Facebookê ve, him dikarin di riya navê bikarhîner û şifreyên Facebookê û him jî bi şifreya xwe ya di vKurdistanê de jî têkevin nava malperê.</value>
+  </data>
+  <data name="ConnectToFacebookLoginExplanation" xml:space="preserve">
+    <value>Bikarhînerê / a hêja eger we hesabeke vKurdistanê heye, ji kerema xwe re bi forma jêrîn, têkevin nava hesaba xwe de. Eger vî karî encam nedin, wê vKurdistan ji we re hesabeke nû veke.           Eger we ti hesabeke vKurdistanê tine ye, ji vê beşê derbas bibin.</value>
+  </data>
+  <data name="DeleteAccountText_Part1" xml:space="preserve">
+    <value>Bikarhînerê / a hêja eger ji ber zêdebûna hejmara peyaman yan jî, ji ber ku hûn naxwazin hin mijar werin parvekirin, dixwezin hesaba xwe jê bibin, dikarin bi beşa                                                                       Rêkxistina Sînorê Taybet                  Veşartina xwe di dema lêgerînan de yan wernegirtina peyaman, çalak bikin. Herwisa hûn dikarin ji bo tevahiya nivîs û mijaran, asta nimayişê destînşan bikin.</value>
+  </data>
+  <data name="DeleteAccountText_Part2" xml:space="preserve">
+    <value>Bi hilbijartina "Nehiştina Hesaba We", amadekarî ji bo nehiştina hertimî ya hesaba we tê kirin. Di wê heyamê de, ti endamekî / e torê nikare zanyariyên we bibîne. We heya 30 rojên din derfet heye da ku careke din rêgiriyê ji jêbirina hertimî ya hesaba xwe bikin. Ji bo vê yekê pêwîst e tenê têkevin nava hesaba xwe de.</value>
+  </data>
+  <data name="DeleteCommentText" xml:space="preserve">
+    <value>Hûn dixwezin hesaba xwe bi giştî jê bibin. Piştrast in ku dixwazin vî karî encam bidin?</value>
+  </data>
+  <data name="DeleteConversationText_Part1" xml:space="preserve">
+    <value>Hûn dixwezin axivîna xwe bi</value>
+  </data>
+  <data name="DeleteConversationText_Part2" xml:space="preserve">
+    <value>Ne, Piştrast in?</value>
+  </data>
+  <data name="EditCommentText" xml:space="preserve">
+    <value>Hûn mijûlî guhertina nerînan in. Guhertinan paşkeft bikin:</value>
+  </data>
+  <data name="EducationsText" xml:space="preserve">
+    <value>Endamê / a hêja, em ji zanyariyên jêrîn ji bo vedîtina hevalên serdema dibistanê, zanîngehê û yan jî, ji bo danasîna şiyanên weke we, wê mifahê bistînin. Ji kerema xwe re wan agahiyan bi baldarî û rast, tijî bikin.</value>
+  </data>
+  <data name="FacebookShareDialogText" xml:space="preserve">
+    <value>Hûn mijûlî parvekirina mijar yan nivîsa jêrîn di Facebooka xwe de ne, çawaniya parvekirinê hilbijêrin û piştrat bikin.                     Têbînî: Çê dibe pencereyek ji aliyê Facebookê ve were vekirin û daxwaz ji we were kirin ku têkevin nava Facebookê ji bo ku rê bi derbasbûnê bidin. Bi vî rengî, dema hûn têdikevin nava Facebookê, wê proseya parvekirinê, bixwe bidome.</value>
+  </data>
+  <data name="MobNumberText" xml:space="preserve">
+    <value>Hejmara telefûna we veşartî dimîne. Tenê li beşên weke vegerandina şifreyê û gihandina agahiyan û … wê mifah jê were standin.</value>
+  </data>
+  <data name="NewFeedUnwantedUsers" xml:space="preserve">
+    <value>Hûn, endamên lîsteya jorîn, weke bikarhînerên lîsteya reş, di rûpela xwe ya nûçeyên destpêkê de nabînin.</value>
+  </data>
+  <data name="NewsFeedViewChangeCover" xml:space="preserve">
+    <value>Guhertinên di wêneyê kever yên hevalên xwe di rûpela destpêkê yên nûçeyan de wê bibînin.</value>
+  </data>
+  <data name="NewsFeedViewChangeInfo" xml:space="preserve">
+    <value>Guhertinên agahiyên hevalan, di rûpela xwe ya nûçeyan ya destpêkê de wê bibînin.</value>
+  </data>
+  <data name="NewsFeedViewChangePP" xml:space="preserve">
+    <value>Guhertinên di wêneyê profila hevalên xwe de, di rûpela destpêkê ya nûçeyên xwe de wê bibînin.</value>
+  </data>
+  <data name="NewsFeedViewComments" xml:space="preserve">
+    <value>Nerînên ku ji aliyê hevalên we ve hatine şandin, di rûpela destpêkê ya nûçeyên xwe de wê bibînin.</value>
+  </data>
+  <data name="NewsFeedViewEducations" xml:space="preserve">
+    <value>Zêdebûna serdema dibistanê ya hevalên xwe wê di rûpela xwe ya destpêkê ya nûçeyan de bibînin.</value>
+  </data>
+  <data name="NewsFeedViewLikes" xml:space="preserve">
+    <value>Mijarên ecibandî ji aliyê hevalên xwe ve, hûnê li ser rûpela xwe ya destpêkê ya nûçeyan bibînin.</value>
+  </data>
+  <data name="NewsFeedViewPhotos" xml:space="preserve">
+    <value>Hûnê wêneyên parvekirî ji aliyê hevalên xwe ve li ser rûpela xwe ya destpêka ya nûçeyan bibînin.</value>
+  </data>
+  <data name="NewsFeedViewPosts" xml:space="preserve">
+    <value>Şandiyên hevalên xwe, hûnê di rûpela destpêkê ya nûçeyên xwe de bibînin.</value>
+  </data>
+  <data name="NewsFeedViewShares" xml:space="preserve">
+    <value>Parvekiriyên hevalên xwe, hûnê li ser rûpela nûçeyên xwe yên nû bibînin.</value>
+  </data>
+  <data name="NewsFeedViewSkills" xml:space="preserve">
+    <value>Hûnê zêdekirina şiyanên nû yên hevalên xwe, li ser rûpela xwe ya destpêkê ya nûçeyan bibînin.</value>
+  </data>
+  <data name="OnCommentText" xml:space="preserve">
+    <value>Nerînên li ser mijar, nivîs û wêneyên we tên, di riya imailê ji we re tên şandin.</value>
+  </data>
+  <data name="OnFriendshipRequestText" xml:space="preserve">
+    <value>Di dema hatina daxwaziyên hevaltiyê yên nû de, hûnê bi riya imailê ve bên haydarkirin.</value>
+  </data>
+  <data name="OnLikeText" xml:space="preserve">
+    <value>Ecibandinên li ser nivîs, mijar û wêneyên we, di riya imailê re wê ji we re bên şandin.</value>
+  </data>
+  <data name="OnNewMessageText" xml:space="preserve">
+    <value>Dema hatina peyamên nû, hûnê di riya imailê re werin haydarkirin.</value>
+  </data>
+  <data name="OnShareText" xml:space="preserve">
+    <value>Parvekirina nivîs yan wêneyên we, wê di riya imailê re, ji we re bên şandin.</value>
+  </data>
+  <data name="OnWallPostText" xml:space="preserve">
+    <value>Şandiyên li ser dîwarê we, wê di riya imailê re ji we re bên şandin.</value>
+  </data>
+  <data name="PasswordRecoveryText" xml:space="preserve">
+    <value>Bikarhînerê / a hêja, eger we şifreya xwe ji bîr kiriy, hûn dikarin bi forma jêrîn, daxwaza şandina şifreyê ji bo imailê bikin.                                 (Têbînî: Çê dibe imaila ku hatiye şandin, di beşa Spamê de be.)</value>
+  </data>
+  <data name="PostEditorWarningForFileTypes" xml:space="preserve">
+    <value>Bikarhînerê / a hêja, hûn nikarin di şandiyeke xwe de, wêne, dîmen û deng bi hev re bi kar bînin. Di her şandiyekê de, hûn dikarin hin wêneyan, dîmenekê û yan jî belgeyeke dengî, bi nivîsa xwe re biweşînin.               Têbînî: Eger hûn vê yekê bipejirînin, wê demê wê belgeyên ku we beriya niha şandine, werin jêbirin û yên nû, bikevin dewsa wan.</value>
+  </data>
+  <data name="ProfileCoverText" xml:space="preserve">
+    <value>Bikarhînerê / a hêja, hûn dikarin li vir, wêneyekî, weke wêneyê kever ê xwe danîn.              Wêneyê keverê, wêneyek e ku li aliyê jorîn, di profila we de wê were nimayişkirin.</value>
+  </data>
+  <data name="RemoveFriendText" xml:space="preserve">
+    <value>Bikarhînerê / a hêja, hûn dikarin li vir, wêneyekî, weke wêneyê kever ê xwe danîn.              Wêneyê keverê, wêneyek e ku li aliyê jorîn, di profila we de wê were nimayişkirin.</value>
+  </data>
+  <data name="SendRegistrationCodeText" xml:space="preserve">
+    <value>Herwisa hûn dikarin lînka çalakkirina hesabê, di imalia xwe de hilbijêrin.                                            Eger di imailê de koda çalakkirinê ji we re nehatibe şandin, wê demê hûn dikarin bi forma jêrîn, ji bo ku car din ji we re bê şandin, daxwazê bikin.</value>
+  </data>
+  <data name="ShareDialogText" xml:space="preserve">
+    <value>Hûn mijûlî parvekirina nivîs yan mijara jêrîn in. Rêkxistinên pêwîst pêk bînin û paşkeft bikin:</value>
+  </data>
+  <data name="SkillsText" xml:space="preserve">
+    <value>Di xişteya jêrîn de, şiyanên xwe bi awayên cuda binivîsîne û pişt re Enter bike û eger di lîsteyê de hebe, hilbijêre.</value>
+  </data>
+</root>

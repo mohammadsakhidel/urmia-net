@@ -1,0 +1,33 @@
+﻿@using SocialNetApp.Models
+@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model AlbumDetailsModel
+
+<div id="album_details">
+    @if (Model.IsDefaultPhotoVisibleToUser)
+    {
+        <div class="obj_det_info">
+            <h2>@Model.Album.Name</h2>
+            @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.AlbumOwnerIdentityModel);}
+        </div>
+    }
+    <div class="obj_det_in">
+        @if (Model.IsDefaultPhotoVisibleToUser)
+        {
+            <div class="obj_det_text">
+                @Html.Raw(TextsProcessor.RenderText(Model.DefaultPhoto.Description))
+            </div>
+        }
+        <div class="obj_det_photos">
+            @{
+                Html.RenderPartial(Urls.ModuleViews + "_PhotoCollection.cshtml", Model.PhotoCollectionModel);
+            }
+        </div>
+    </div>
+    @if (Model.IsDefaultPhotoVisibleToUser)
+    {
+        <div class="obj_det_actions">
+            @{Html.RenderPartial(Urls.ModuleViews + "_SharedObjectActions.cshtml", Model.SharedObjectActionsModel);}
+        </div>
+    }
+</div>

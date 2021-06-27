@@ -1,0 +1,17 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model ConsiderationsPPSectionModel
+@if (Model.IsUserAdmin)
+{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/_ConsiderationsPPSectionHeadTags.min.js")"></script>
+    <div id="pp_sec_cons" class="pp_section">
+        <div class="pp_section_title">
+            @Ajax.ActionLink(Resources.Words.Considerations, "GetEditMemberConsiderationsDialog", "Admin", new { id = Model.ProfileOwner.Alias }, new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "dialog_view", OnFailure = "ShowDialogFailure", OnBegin = "GetEditMemberConsiderationsDialogBegin" })
+            <div class="clear">
+            </div>
+        </div>
+        <div class="pp_section_content">
+            @Html.Raw((!String.IsNullOrEmpty(Model.ProfileOwner.Considerations) ? TextsProcessor.RenderText(Model.ProfileOwner.Considerations) : ""))
+        </div>
+    </div>
+}

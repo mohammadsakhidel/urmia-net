@@ -1,0 +1,210 @@
+﻿@using SocialNetApp.Models
+@using SocialNetApp.Views.Models.Modules
+@using CoreHelpers
+@model ProfilePageInfoModel
+<div id="pp_info">
+    @if (Model.IsBasicInfoVisibleToUser || Model.IsFavoritesVisibleToUser || Model.IsEducationsVisibleToUser || Model.IsSkillsVisibleToUser)
+    {
+        <!-- *BASIC INFORMATION* -->
+        
+        if (Model.IsBasicInfoVisibleToUser)
+        {
+            <!-- *BASIC INFORMATION* -->
+            <div class="pp_in_section_title">
+                <h2>@Resources.Words.BasicSpecifications</h2>
+            </div>
+            <div class="pp_in_section_content">
+                @(Model.ProfileOwner.Gender.Value ? @Resources.Words.Male : @Resources.Words.Female)
+                -
+                @Model.ProfileOwner.Age
+                @Resources.Words.YearsOld
+                (@MyHelper.DateToText_WithoutTime(Model.ProfileOwner.BirthDay.Value))
+                @if (Model.HasBasicInformation && Model.BasicInformation.MaritalStatus.HasValue)
+                {
+                    @("- ")
+                    @Model.BasicInformation.MaritalStatusText
+                }
+                @if (Model.HasBasicInformation && (Model.BasicInformation.LivingRegion.HasValue || !String.IsNullOrEmpty(Model.BasicInformation.LivingCity)))
+                {
+                    <br />
+                    <span>
+                        @Resources.Words.LivesInBeginingPart
+                        <a href="@Url.Action("Search", "Members", 
+                            new { 
+                                region = (Model.BasicInformation.LivingRegion.HasValue ? Model.BasicInformation.LivingRegion : 0), 
+                                city = (!String.IsNullOrEmpty(Model.BasicInformation.LivingCity) ? Model.BasicInformation.LivingCity : ""),
+                                invoke = "true"
+                                })">
+                            @(Model.BasicInformation.LivingRegion.HasValue ? Model.BasicInformation.LivingRegionName : "")
+                            @(!String.IsNullOrEmpty(Model.BasicInformation.LivingCity) ? (Model.BasicInformation.LivingRegion.HasValue ? " - " : "") + Model.BasicInformation.LivingCity : "")
+                        </a>
+                        @Resources.Words.LivesInEndingPart
+                    </span>
+                }
+                @if (Model.HasBasicInformation && (Model.BasicInformation.Height.HasValue || Model.BasicInformation.Weight.HasValue))
+                {
+                    <br />
+                    if (Model.BasicInformation.Height.HasValue)
+                    {
+                    <span class="pp_in_section_content_subject">
+                        @Resources.Words.Height
+                        @(": ")
+                    </span>
+                    @Dictionaries.Heights[(int)Model.BasicInformation.Height]
+                    @(" ")
+                    }
+                    if (Model.BasicInformation.Weight.HasValue)
+                    {
+                    <span class="pp_in_section_content_subject">
+                        @Resources.Words.Weight
+                        @(": ")
+                    </span>
+                    @Dictionaries.Weights[(int)Model.BasicInformation.Weight]
+                    @(" ")
+                    }
+                }
+                @if (Model.HasBasicInformation && Model.BasicInformation.HasFashion)
+                {
+                    <br />
+                    <span class="pp_in_section_content_subject">
+                        @Resources.Words.Fashion
+                        @(": ")
+                    </span>
+                    @Model.BasicInformation.FashionsText
+                }
+                @if (Model.HasBasicInformation && !String.IsNullOrEmpty(Model.BasicInformation.Behavior))
+                {
+                    <br />
+                    <span class="pp_in_section_content_subject">
+                        @Resources.Words.Behavior
+                        @(": ")
+                    </span>
+                    @Html.Raw(TextsProcessor.RenderText(Model.BasicInformation.Behavior))
+                }
+            </div>
+            <!-- *ABOUT ME* -->
+            if (Model.HasBasicInformation && !String.IsNullOrEmpty(Model.BasicInformation.AboutMe))
+            {
+                <div class="pp_in_section_title">
+                    <h2>@Resources.Words.AboutMe_InProfilePage</h2>
+                </div>
+                <div class="pp_in_section_content">
+                    @Html.Raw(TextsProcessor.RenderText(Model.BasicInformation.AboutMe))
+                </div>
+            }
+        }
+        <!-- *EDUCATIONS* -->
+        if (Model.IsEducationsVisibleToUser)
+        {
+            if (Model.HasEducation)
+            {
+                <div class="pp_in_section_title">
+                    <h2>@Resources.Words.Educations</h2>
+                </div>
+                <div class="pp_in_section_content">
+                    <ul>
+                        @foreach (var edu in Model.Educations)
+                        {
+                            <li>
+                                @edu.EducationBranch
+                                <span class="pp_in_section_explan">
+                                    @Dictionaries.EducationLevels[edu.EducationLevel]
+                                    @if (!String.IsNullOrEmpty(edu.EducationLocation))
+                                    {
+                                        <span>
+                                            @Resources.Words.In
+                                            @edu.EducationLocation
+                                        </span>
+                                    }
+                                </span></li>
+                        }
+                    </ul>
+                </div>
+            }
+        }
+        <!-- *SKILLS* -->
+        if (Model.IsSkillsVisibleToUser)
+        {
+            if (Model.HasSkill)
+            {
+            <div class="pp_in_section_title">
+                <h2>@Resources.Words.Skills</h2>
+            </div>
+            <div class="pp_in_section_content">
+                <ul>
+                    @foreach (var skill in Model.Skills)
+                    {
+                        <li>@skill.SkillTitle</li>
+                    }
+                </ul>
+            </div>
+            }
+        }
+        <!-- *FAVRITES* -->
+        if (Model.IsFavoritesVisibleToUser)
+        {
+            if (Model.HasFavorites)
+            {
+                <div class="pp_in_section_title">
+                    <h2>@Resources.Words.Favorites</h2>
+                </div>
+                <div class="pp_in_section_content">
+                    @if (!String.IsNullOrEmpty(Model.Favorites.Hobbies))
+                    {
+                        <span class="pp_in_section_content_subject">
+                            @Resources.Words.Hobbies
+                            @(": ")
+                        </span>
+                        <br />
+                        @Html.Raw(TextsProcessor.RenderText(Model.Favorites.Hobbies))
+                        <br />
+                    }
+                    @if (!String.IsNullOrEmpty(Model.Favorites.FavoriteMusics))
+                    {
+                        <span class="pp_in_section_content_subject">
+                            @Resources.Words.FavoriteMusic
+                            @(": ")
+                        </span>
+                        <br />
+                        @Html.Raw(TextsProcessor.RenderText(Model.Favorites.FavoriteMusics))
+                        <br />
+                    }
+                    @if (!String.IsNullOrEmpty(Model.Favorites.FavoriteMovies))
+                    {
+                        <span class="pp_in_section_content_subject">
+                            @Resources.Words.FavoriteMovies
+                            @(": ")
+                        </span>
+                        <br />
+                        @Html.Raw(TextsProcessor.RenderText(Model.Favorites.FavoriteMovies))
+                        <br />
+                    }
+                    @if (!String.IsNullOrEmpty(Model.Favorites.FavoriteBooks))
+                    {
+                        <span class="pp_in_section_content_subject">
+                            @Resources.Words.FavoriteBooks
+                            @(": ")
+                        </span>
+                        <br />
+                        @Html.Raw(TextsProcessor.RenderText(Model.Favorites.FavoriteBooks))
+                        <br />
+                    }
+                    @if (!String.IsNullOrEmpty(Model.Favorites.FavoriteQuotes))
+                    {
+                        <span class="pp_in_section_content_subject">
+                            @Resources.Words.FavoriteQuotes
+                            @(": ")
+                        </span>
+                        <br />
+                        @Html.Raw(TextsProcessor.RenderText(Model.Favorites.FavoriteQuotes))
+                        <br />
+                    }
+                </div>
+            }
+        }
+    }
+    else
+    {
+        Html.RenderPartial(Urls.ModuleViews + "_AccessDenied.cshtml", Model.AccessDeniedModel);
+    }
+</div>

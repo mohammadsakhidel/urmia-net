@@ -1,0 +1,17 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model ChatMessageModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_ChatMessageHeadTags.min.js")"></script>
+<div class="chat_msg" id="@("chat_msg_" + Model.ChatMessage.Id)">
+    <div class="@("chat_message_from_parent" + Model.CssExtension)">
+        @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.UserIdentityModel);}
+    </div>
+    <div class="@("chat_message_txt" + Model.CssExtension)">
+        <span class="@("chat_msg_time" + Model.CssExtension)">@Model.ChatMessage.DateOfSend.Hour.ToString("D2"):@Model.ChatMessage.DateOfSend.Minute.ToString("D2")</span>
+        @Html.Raw(TextsProcessor.RenderText(Model.ChatMessage.Text))
+    </div>
+    <div id="@("chat_msg_del_" + Model.ChatMessage.Id)" title="@(Resources.Words.Delivered)"
+        class="@((Model.ChatMessage.From == User.Identity.Name && Model.ChatMessage.Status == (byte)ChatMessageStatus.ShowedToReciever ? "" : "hide ") + "delivered" + Model.CssExtension)"></div>
+    <div class="clear">
+    </div>
+</div>

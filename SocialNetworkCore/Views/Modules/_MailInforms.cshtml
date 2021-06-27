@@ -1,0 +1,66 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@model MailInformsModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_MailInformsHeadTags.min.js")"></script>
+<div id="mail_nots" class="viewpart">
+    @using (Ajax.BeginForm("MailInforms", "HomePage", new AjaxOptions { HttpMethod = "Post", LoadingElementId = "SaveFormLoading", OnBegin = "SaveBegin", OnFailure = "SaveFailure", OnSuccess = "SaveSuccess" }))
+    {
+        <div class="viewpart_title">
+            <h2>@Resources.Words.EmailInformingSettings</h2>
+        </div>
+        <div class="viewpart_content">
+            <div class="setting_item">
+                <input type="checkbox" id="OnNewMessage" name="OnNewMessage" @(Model.NotificationSetting.OnNewMessage ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                <label for="OnNewMessage">@Resources.Words.OnNewMessage</label>
+                <span>@Resources.Texts.OnNewMessageText</span>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="setting_item">
+                <input type="checkbox" id="OnFriendshipRequest" name="OnFriendshipRequest" @(Model.NotificationSetting.OnFriendshipRequest ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                <label for="OnFriendshipRequest">@Resources.Words.OnFriendshipRequest</label>
+                <span>@Resources.Texts.OnFriendshipRequestText</span>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="setting_item">
+                <input type="checkbox" id="OnWallPost" name="OnWallPost" @(Model.NotificationSetting.OnWallPost ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                <label for="OnWallPost">@Resources.Words.OnWallPost</label>
+                <span>@Resources.Texts.OnWallPostText</span>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="setting_item">
+                <input type="checkbox" id="OnComment" name="OnComment" @(Model.NotificationSetting.OnComment ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                <label for="OnComment">@Resources.Words.OnComment</label>
+                <span>@Resources.Texts.OnCommentText</span>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="setting_item">
+                <input type="checkbox" id="OnShare" name="OnShare" @(Model.NotificationSetting.OnShare ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                <label for="OnShare">@Resources.Words.OnShare</label>
+                <span>@Resources.Texts.OnShareText</span>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="setting_item">
+                <input type="checkbox" id="OnLike" name="OnLike" @(Model.NotificationSetting.OnLike ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                <label for="OnLike">@Resources.Words.OnLike</label>
+                <span>@Resources.Texts.OnLikeText</span>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="form_submit_sec">
+                <input type="submit" value="@Resources.Words.Save" />
+                <div id="SaveFormLoading" class="loading_small hide">
+                </div>
+                <div class="hide" id="msg_save">
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+    }
+    <input id="ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />
+    <input id="msg_errors_title" type="hidden" value="@Resources.Messages.ListOfErrorsTitle" />
+</div>

@@ -1,0 +1,2387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5845B2C4-58C5-47E9-A14C-A3C6446FC6F6}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SocialNetApp</RootNamespace>
+    <AssemblyName>SocialNetApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Facebook.6.8.0\lib\net40-client\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\..\SocialNetXXX\SocialNetApp\bin\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Owin">
+      <HintPath>..\..\SocialNetXXX\SocialNetApp\bin\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
+      <HintPath>..\..\SocialNetXXX\SocialNetApp\bin\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\..\SocialNetXXX\SocialNetApp\bin\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Helpers">
+      <HintPath>..\packages\microsoft-web-helpers.2.1.20710.2\lib\net40\Microsoft.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\..\SocialNetXXX\SocialNetApp\bin\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Persia">
+      <HintPath>..\..\..\..\..\Projects\WPF\VS 2012\WPF_Qobooz\WPF_Qobooz\bin\Debug\Persia.dll</HintPath>
+    </Reference>
+    <Reference Include="SalarSoft.WebTaskScheduler">
+      <HintPath>..\..\SocialNetXXX\SocialNetApp\bin\SalarSoft.WebTaskScheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="sysglobl" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Published\www.urmianet.com\bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.30506.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\Emails.kur.designer.cs">
+      <DependentUpon>Emails.kur.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Messages.kur.designer.cs">
+      <DependentUpon>Messages.kur.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Texts.kur.designer.cs">
+      <DependentUpon>Texts.kur.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Titles.kur.designer.cs">
+      <DependentUpon>Titles.kur.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Words.kur.designer.cs">
+      <DependentUpon>Words.kur.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Words.sor.designer.cs">
+      <DependentUpon>Words.sor.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Titles.sor.designer.cs">
+      <DependentUpon>Titles.sor.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Texts.sor.designer.cs">
+      <DependentUpon>Texts.sor.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Messages.sor.designer.cs">
+      <DependentUpon>Messages.sor.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Emails.sor.designer.cs">
+      <DependentUpon>Emails.sor.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Emails.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Emails.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Texts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Texts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Titles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Titles.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Words.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Words.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ActivitiesController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ChatingController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\PagesController.cs" />
+    <Compile Include="Controllers\SuggestionsController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomePageController.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
+    <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Controllers\ObjectsController.cs" />
+    <Compile Include="Controllers\PhotosController.cs" />
+    <Compile Include="Controllers\PostsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Statics\Dictionaries.cs" />
+    <Compile Include="Helpers\Statics\WebConfigs.cs" />
+    <Compile Include="Helpers\UtilityFunctions\ChatHelper.cs" />
+    <Compile Include="Helpers\UtilityFunctions\EmailHelper.cs" />
+    <Compile Include="Helpers\SignalR\SocialNetHub.cs" />
+    <Compile Include="Helpers\UtilityFunctions\FacebookHelper.cs" />
+    <Compile Include="Helpers\UtilityFunctions\OnlinesHelper.cs" />
+    <Compile Include="Helpers\UtilityFunctions\Tasks.cs" />
+    <Compile Include="Helpers\UtilityFunctions\TextsProcessor.cs" />
+    <Compile Include="Helpers\UtilityFunctions\YoutubeHelper.cs" />
+    <Compile Include="Models\PartialEntities\AccountDeleteSchedule.cs" />
+    <Compile Include="Models\PartialEntities\AccountSetting.cs" />
+    <Compile Include="Models\PartialEntities\Activity.cs" />
+    <Compile Include="Models\PartialEntities\ActivitySetting.cs" />
+    <Compile Include="Models\CustomModels\ChatMessage.cs" />
+    <Compile Include="Helpers\SignalR\ChatMessageDeliverySignal.cs" />
+    <Compile Include="Helpers\SignalR\ChatMessageSignal.cs" />
+    <Compile Include="Models\CustomModels\ChatSession.cs" />
+    <Compile Include="Models\PartialEntities\Comment.cs" />
+    <Compile Include="Helpers\SignalR\SignalConnection.cs" />
+    <Compile Include="Models\CustomModels\Conversation.cs" />
+    <Compile Include="Models\PartialEntities\Education.cs" />
+    <Compile Include="Models\CustomModels\ENotification.cs" />
+    <Compile Include="Models\PartialEntities\FacebookConnection.cs" />
+    <Compile Include="Models\PartialEntities\Like.cs" />
+    <Compile Include="Models\PartialEntities\BoxMessage.cs" />
+    <Compile Include="Models\PartialEntities\MessageContent.cs" />
+    <Compile Include="Models\CustomModels\MessageSendingResult.cs" />
+    <Compile Include="Models\ModelExtensions\ModelDefinedFunctions.cs" />
+    <Compile Include="Helpers\SignalR\NotifySignal.cs" />
+    <Compile Include="Models\CustomModels\NewsFeedInforming.cs" />
+    <Compile Include="Models\PartialEntities\Notification.cs" />
+    <Compile Include="Models\PartialEntities\NotificationSetting.cs" />
+    <Compile Include="Models\PartialEntities\Page.cs" />
+    <Compile Include="Models\PartialEntities\Photo.cs" />
+    <Compile Include="Models\PartialEntities\PixelAdvertisement.cs" />
+    <Compile Include="Models\PartialEntities\PostVideo.cs" />
+    <Compile Include="Models\PartialEntities\PrivacySetting.cs" />
+    <Compile Include="Models\Repository\ActivityRepository.cs" />
+    <Compile Include="Models\PartialEntities\Album.cs" />
+    <Compile Include="Models\PartialEntities\BasicInformation.cs" />
+    <Compile Include="Models\PartialEntities\Favorite.cs" />
+    <Compile Include="Models\CustomModels\LoginAttempt.cs" />
+    <Compile Include="Models\PartialEntities\Member.cs" />
+    <Compile Include="Models\CustomModels\MembershipService.cs" />
+    <Compile Include="Models\PartialEntities\AlbumPhoto.cs" />
+    <Compile Include="Models\PartialEntities\Post.cs" />
+    <Compile Include="Models\PartialEntities\PostPhoto.cs" />
+    <Compile Include="Models\Repository\AdvRepository.cs" />
+    <Compile Include="Models\Repository\CommentsRepository.cs" />
+    <Compile Include="Helpers\UtilityFunctions\ConnectionsRepository.cs" />
+    <Compile Include="Models\Repository\PagesRepository.cs" />
+    <Compile Include="Models\Repository\MembersRepository.cs" />
+    <Compile Include="Models\Repository\AlbumsRepository.cs" />
+    <Compile Include="Models\Repository\MessagesRepository.cs" />
+    <Compile Include="Models\Repository\NotificationRepository.cs" />
+    <Compile Include="Models\Repository\PostsRepository.cs" />
+    <Compile Include="Models\Repository\SharedObjectsRepository.cs" />
+    <Compile Include="Models\Repository\SuggestionsRepository.cs" />
+    <Compile Include="Models\CustomModels\SearchMemberInfo.cs" />
+    <Compile Include="Models\PartialEntities\SharedObject.cs" />
+    <Compile Include="Models\PartialEntities\Sharing.cs" />
+    <Compile Include="Helpers\SignalR\SignalConnectionPool.cs" />
+    <Compile Include="Models\PartialEntities\Skill.cs" />
+    <Compile Include="Models\PartialEntities\SocialNetDbEntities.cs" />
+    <Compile Include="Models\Repository\VideoRepository.cs" />
+    <Compile Include="Models\SocialDbModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SocialDbModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomModels\ValidationErrorList.cs" />
+    <Compile Include="Service References\CoreServices.LongRunningProcesses\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CoreServices.Tasks\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\LongRunningProcesses\IVideoProcessorService.cs" />
+    <Compile Include="Services\LongRunningProcesses\VideoProcessorService.svc.cs">
+      <DependentUpon>VideoProcessorService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Tasks\BackgroundTasksService.svc.cs">
+      <DependentUpon>BackgroundTasksService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Tasks\IBackgroundTasksService.cs" />
+    <Compile Include="Views\Models\Account\ActivationViewModel.cs" />
+    <Compile Include="Views\Models\Account\AlternativeEmailActivationViewModel.cs" />
+    <Compile Include="Views\Models\Account\ConnectToFacebookViewModel.cs" />
+    <Compile Include="Views\Models\Account\LoginViewModel.cs" />
+    <Compile Include="Views\Models\Account\RecoverPasswordViewModel.cs" />
+    <Compile Include="Views\Models\Account\RegisterViewModel.cs" />
+    <Compile Include="Views\Models\HomePage\IndexViewModel.cs" />
+    <Compile Include="Views\Models\Home\IndexViewModel.cs" />
+    <Compile Include="Views\Models\Home\InternalServerErrorViewModel.cs" />
+    <Compile Include="Views\Models\Home\PageNotFoundErrorViewModel.cs" />
+    <Compile Include="Views\Models\Layouts\SiteViewModel.cs" />
+    <Compile Include="Views\Models\Members\IndexViewModel.cs" />
+    <Compile Include="Views\Models\Members\ProfilePageViewModel.cs" />
+    <Compile Include="Views\Models\Members\SearchViewModel.cs" />
+    <Compile Include="Views\Models\Modules\AccessDeniedModel.cs" />
+    <Compile Include="Views\Models\Modules\AccountSettingsModel.cs" />
+    <Compile Include="Views\Models\Modules\ActivityDetailsSectionModel.cs" />
+    <Compile Include="Views\Models\Modules\ActivitySettingsModel.cs" />
+    <Compile Include="Views\Models\Modules\AlbumEditorModel.cs" />
+    <Compile Include="Views\Models\Modules\AlbumPhotosModel.cs" />
+    <Compile Include="Views\Models\Modules\AlbumPresenterModel.cs" />
+    <Compile Include="Views\Models\Modules\AltEmailActivationModel.cs" />
+    <Compile Include="Views\Models\Modules\BasicInfoModel.cs" />
+    <Compile Include="Views\Models\Modules\ChangeCoverActivityModel.cs" />
+    <Compile Include="Views\Models\Modules\ChangeInfoActivityModel.cs" />
+    <Compile Include="Views\Models\Modules\ChangePPActivityModel.cs" />
+    <Compile Include="Views\Models\Modules\ChatMessageModel.cs" />
+    <Compile Include="Views\Models\Modules\CommentActivityModel.cs" />
+    <Compile Include="Views\Models\Modules\CommentModel.cs" />
+    <Compile Include="Views\Models\Modules\ConsiderationsPPSectionModel.cs" />
+    <Compile Include="Views\Models\Modules\DeleteAccountModel.cs" />
+    <Compile Include="Views\Models\Modules\DeleteCommentDialogModel.cs" />
+    <Compile Include="Views\Models\Modules\DeleteConversationDialogModel.cs" />
+    <Compile Include="Views\Models\Modules\EditCommentDialogModel.cs" />
+    <Compile Include="Views\Models\Modules\EducationActivityModel.cs" />
+    <Compile Include="Views\Models\Modules\EducationsAndSkillsModel.cs" />
+    <Compile Include="Views\Models\Modules\EmptyListModel.cs" />
+    <Compile Include="Views\Models\Modules\ErrorDialogModel.cs" />
+    <Compile Include="Views\Models\Modules\FacebookConnectModel.cs" />
+    <Compile Include="Views\Models\Modules\FacebookShareDialogModel.cs" />
+    <Compile Include="Views\Models\Modules\FavoritesModel.cs" />
+    <Compile Include="Views\Models\Modules\FriendshipActivityModel.cs" />
+    <Compile Include="Views\Models\Modules\FriendsModel.cs" />
+    <Compile Include="Views\Models\Modules\FriendsPPSectionModel.cs" />
+    <Compile Include="Views\Models\Modules\HmiMessagesModel.cs" />
+    <Compile Include="Views\Models\Modules\HmiNotificationsModel.cs" />
+    <Compile Include="Views\Models\Modules\HmiRequestsModel.cs" />
+    <Compile Include="Views\Models\Modules\HmiSettingsModel.cs" />
+    <Compile Include="Views\Models\Modules\HomeMemberCollectionModel.cs" />
+    <Compile Include="Views\Models\Modules\HomePageModel.cs" />
+    <Compile Include="Views\Models\Modules\HomePagePixelAdvModel.cs" />
+    <Compile Include="Views\Models\Modules\HomePageSuggestionsModel.cs" />
+    <Compile Include="Views\Models\Modules\HomePixelAdvModel.cs" />
+    <Compile Include="Views\Models\Modules\InfoPPSectionModel.cs" />
+    <Compile Include="Views\Models\Modules\LikeActivityModel.cs" />
+    <Compile Include="Views\Models\Modules\LikesDialogModel.cs" />
+    <Compile Include="Views\Models\Modules\MailInformsModel.cs" />
+    <Compile Include="Views\Models\Modules\ManagerSettingDialogModel.cs" />
+    <Compile Include="Views\Models\Modules\MemberConsiderationsDialogModel.cs" />
+    <Compile Include="Views\Models\Modules\MessageModel.cs" />
+    <Compile Include="Views\Models\Modules\MessagesModel.cs" />
+    <Compile Include="Views\Models\Modules\NewsFeedSettingsModel.cs" />
+    <Compile Include="Views\Models\Modules\NotificationModel.cs" />
+    <Compile Include="Views\Models\Modules\NotificationsModel.cs" />
+    <Compile Include="Views\Models\Modules\ObjectCheckerModel.cs" />
+    <Compile Include="Views\Models\Modules\PagesModel.cs" />
+    <Compile Include="Views\Models\Modules\PeopleModel.cs" />
+    <Compile Include="Views\Models\Modules\PhotoActivityModel.cs" />
+    <Compile Include="Views\Models\Modules\PhotoEditorModel.cs" />
+    <Compile Include="Views\Models\Modules\PhotosModel.cs" />
+    <Compile Include="Views\Models\Modules\PixelAdvManagerModel.cs" />
+    <Compile Include="Views\Models\Modules\PostActivityModel.cs" />
+    <Compile Include="Views\Models\Modules\PostOnWallActivityModel.cs" />
+    <Compile Include="Views\Models\Modules\PrivacyModel.cs" />
+    <Compile Include="Views\Models\Modules\ProfileCoverModel.cs" />
+    <Compile Include="Views\Models\Modules\ProfilePageActivitiesModel.cs" />
+    <Compile Include="Views\Models\Modules\ProfilePageAdminActionsModel.cs" />
+    <Compile Include="Views\Models\Modules\ProfilePageFriendsModel.cs" />
+    <Compile Include="Views\Models\Modules\ProfilePageInfoModel.cs" />
+    <Compile Include="Views\Models\Modules\ProfilePagePhotosModel.cs" />
+    <Compile Include="Views\Models\Modules\ProfilePagePixelAdvModel.cs" />
+    <Compile Include="Views\Models\Modules\ProfilePageTimeLineModel.cs" />
+    <Compile Include="Views\Models\Modules\PublicSharesModel.cs" />
+    <Compile Include="Views\Models\Modules\RemoveFriendDialogModel.cs" />
+    <Compile Include="Views\Models\Modules\SearchMembersModel.cs" />
+    <Compile Include="Views\Models\Modules\SearchResultModel.cs" />
+    <Compile Include="Views\Models\Modules\SharedObjectActionsModel.cs" />
+    <Compile Include="Views\Models\Modules\SharingActivityModel.cs" />
+    <Compile Include="Views\Models\Modules\SimpleUploaderModel.cs" />
+    <Compile Include="Views\Models\Modules\SkillActivityModel.cs" />
+    <Compile Include="Views\Models\Modules\SpecialPostModel.cs" />
+    <Compile Include="Views\Models\Modules\SpecialPostSettingsModel.cs" />
+    <Compile Include="Views\Models\Modules\SpecialPostsModel.cs" />
+    <Compile Include="Views\Models\Modules\VideoPlayerModel.cs" />
+    <Compile Include="Views\Models\Objects\ObjectDetailsViewModel.cs" />
+    <Compile Include="Views\Models\Pages\PageViewModel.cs" />
+    <Compile Include="Views\Models\Modules\AccountActivationModel.cs" />
+    <Compile Include="Views\Models\Modules\ActivityInfoModel.cs" />
+    <Compile Include="Views\Models\Modules\ActivityModel.cs" />
+    <Compile Include="Views\Models\Modules\AlbumDetailsModel.cs" />
+    <Compile Include="Views\Models\Modules\AlbumViewModel.cs" />
+    <Compile Include="Views\Models\Modules\ChatDialogModel.cs" />
+    <Compile Include="Views\Models\Modules\ChatSessionsModel.cs" />
+    <Compile Include="Views\Models\Modules\CustomErrorModel.cs" />
+    <Compile Include="Views\Models\Modules\FooterModel.cs" />
+    <Compile Include="Views\Models\Modules\HeaderModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Models\Modules\LoginModel.cs" />
+    <Compile Include="Views\Models\Modules\MemberBoxModel.cs" />
+    <Compile Include="Views\Models\Modules\MemberBriefModel.cs" />
+    <Compile Include="Views\Models\Modules\MessageSenderModel.cs" />
+    <Compile Include="Views\Models\Modules\NewMessageDialogModel.cs" />
+    <Compile Include="Views\Models\Modules\PanelBarModel.cs" />
+    <Compile Include="Views\Models\Modules\PasswordRecoveryModel.cs" />
+    <Compile Include="Views\Models\Modules\PhotoCollectionModel.cs" />
+    <Compile Include="Views\Models\Modules\PhotoDetailsModel.cs" />
+    <Compile Include="Views\Models\Modules\PostDetailsModel.cs" />
+    <Compile Include="Views\Models\Modules\PostEditorModel.cs" />
+    <Compile Include="Views\Models\Modules\ProfileModel.cs" />
+    <Compile Include="Views\Models\Modules\RegisterModel.cs" />
+    <Compile Include="Views\Models\Modules\ShareDialogModel.cs" />
+    <Compile Include="Views\Models\Modules\SharedObjectDetailsModel.cs" />
+    <Compile Include="Views\Models\Modules\SharingDetailsModel.cs" />
+    <Compile Include="Views\Models\Modules\UserIdentityModel.cs" />
+    <Compile Include="Views\Models\Modules\ViewMoreModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Themes\black\kur\access_denied_icon.png" />
+    <Content Include="App_Themes\black\kur\act_settings.png" />
+    <Content Include="App_Themes\black\kur\add.png" />
+    <Content Include="App_Themes\black\kur\add_photo.png" />
+    <Content Include="App_Themes\black\kur\admin_icon.png" />
+    <Content Include="App_Themes\black\kur\album_tool_delete.png" />
+    <Content Include="App_Themes\black\kur\album_tool_edit.png" />
+    <Content Include="App_Themes\black\kur\album_tool_photos.png" />
+    <Content Include="App_Themes\black\kur\colors.png" />
+    <Content Include="App_Themes\black\kur\cover_actions_bg.png" />
+    <Content Include="App_Themes\black\kur\Dialog.min.css" />
+    <Content Include="App_Themes\black\kur\dialog_close.png" />
+    <Content Include="App_Themes\black\kur\dialog_error_icon.png" />
+    <Content Include="App_Themes\black\kur\dialog_warning_icon.png" />
+    <Content Include="App_Themes\black\kur\done.png" />
+    <Content Include="App_Themes\black\kur\fail.png" />
+    <Content Include="App_Themes\black\kur\fb.png" />
+    <Content Include="App_Themes\black\kur\fb_login_hdr.png" />
+    <Content Include="App_Themes\black\kur\fb_reg_icon.png" />
+    <Content Include="App_Themes\black\kur\footer_logo.png" />
+    <Content Include="App_Themes\black\kur\Global.min.css" />
+    <Content Include="App_Themes\black\kur\Header\header_bg.png" />
+    <Content Include="App_Themes\black\kur\Header\header_bg_thick.png" />
+    <Content Include="App_Themes\black\kur\Header\header_logo.png" />
+    <Content Include="App_Themes\black\kur\Header\header_logo_thick.png" />
+    <Content Include="App_Themes\black\kur\hmenu_bubble.png" />
+    <Content Include="App_Themes\black\kur\hmi_home.png" />
+    <Content Include="App_Themes\black\kur\hmi_messages.png" />
+    <Content Include="App_Themes\black\kur\hmi_messages_sel.png" />
+    <Content Include="App_Themes\black\kur\hmi_notifications.png" />
+    <Content Include="App_Themes\black\kur\hmi_notifications_sel.png" />
+    <Content Include="App_Themes\black\kur\hmi_public_shares.png" />
+    <Content Include="App_Themes\black\kur\hmi_requests.png" />
+    <Content Include="App_Themes\black\kur\hmi_requests_sel.png" />
+    <Content Include="App_Themes\black\kur\hmi_settings.png" />
+    <Content Include="App_Themes\black\kur\hmi_settings_sel.png" />
+    <Content Include="App_Themes\black\kur\HomePage_IndexPage.min.css" />
+    <Content Include="App_Themes\black\kur\hsubmenu_pointer.png" />
+    <Content Include="App_Themes\black\kur\htooltip_pointer.png" />
+    <Content Include="App_Themes\black\kur\img_link_charge.png" />
+    <Content Include="App_Themes\black\kur\img_link_help.png" />
+    <Content Include="App_Themes\black\kur\img_link_people.png" />
+    <Content Include="App_Themes\black\kur\img_link_publicwall.png" />
+    <Content Include="App_Themes\black\kur\img_link_rules.png" />
+    <Content Include="App_Themes\black\kur\img_link_shop.png" />
+    <Content Include="App_Themes\black\kur\IndexPage.min.css" />
+    <Content Include="App_Themes\black\kur\Jcrop.gif" />
+    <Content Include="App_Themes\black\kur\jquery.autocomplete.min.css" />
+    <Content Include="App_Themes\black\kur\jquery.Jcrop.min.css" />
+    <Content Include="App_Themes\black\kur\like_heart.png" />
+    <Content Include="App_Themes\black\kur\like_thumb.png" />
+    <Content Include="App_Themes\black\kur\loading_dialog.GIF" />
+    <Content Include="App_Themes\black\kur\loading_large_circle.GIF" />
+    <Content Include="App_Themes\black\kur\loading_medium.GIF" />
+    <Content Include="App_Themes\black\kur\loading_medium_circle.GIF" />
+    <Content Include="App_Themes\black\kur\loading_photo.GIF" />
+    <Content Include="App_Themes\black\kur\loading_photo_back.png" />
+    <Content Include="App_Themes\black\kur\loading_small.GIF" />
+    <Content Include="App_Themes\black\kur\loading_small_circle.GIF" />
+    <Content Include="App_Themes\black\kur\loading_small_onheader.GIF" />
+    <Content Include="App_Themes\black\kur\msgbox_info_icon.png" />
+    <Content Include="App_Themes\black\kur\msg_bubble.png" />
+    <Content Include="App_Themes\black\kur\next.png" />
+    <Content Include="App_Themes\black\kur\next_dis.png" />
+    <Content Include="App_Themes\black\kur\next_photo.png" />
+    <Content Include="App_Themes\black\kur\nocover.png" />
+    <Content Include="App_Themes\black\kur\noise1.png" />
+    <Content Include="App_Themes\black\kur\offline.png" />
+    <Content Include="App_Themes\black\kur\online.png" />
+    <Content Include="App_Themes\black\kur\online_icon.png" />
+    <Content Include="App_Themes\black\kur\online_small_ico.png" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\Dialog.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\Global.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\HomePage_IndexPage.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\IndexPage.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\jquery.autocomplete.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_AccountActivation.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_AccountSettings.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_Activity.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_ActivitySettings.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_AjaxUploader.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_AlbumEditor.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_AlbumPhotos.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_AlbumPresenter.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_AlbumView.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_BasicInfo.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_ChatDialog.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_ChatMessage.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_ChatSessions.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_Comment.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_ConsiderationsPPSection.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_DeleteAccount.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_DeleteCommentDialog.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_DeleteConversationDialog.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_EditCommentDialog.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_EducationsAndSkills.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_Favorites.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_Footer.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_Friends.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_FriendsPPSection.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_Header.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_HmiMessages.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_HmiNotifications.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_HmiRequests.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_HmiSettings.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_HomeMemberCollection.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_HomePage.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_HomePageSuggestions.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_InfoPPSection.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_LikesDialog.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_Login.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_MailInforms.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_MemberBox.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_MemberBrief.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_MemberConsiderationsDialog.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_Message.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_Messages.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_MessageSender.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_NewMessageDialog.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_NewsFeedSettings.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_Notification.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_Notifications.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_ObjectChecker.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_Pages.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_PanelBar.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_PasswordRecovery.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_People.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_PhotoCollection.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_PhotoEditor.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_Photos.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_PixelAdv.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_PixelAdvManager.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_PostEditor.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_PPSection.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_Privacy.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_Profile.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_ProfileCover.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_ProfilePageActivities.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_ProfilePageFriends.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_ProfilePageTimeLine.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_PublicShares.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_Register.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_RemoveFriendDialog.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_SearchMembers.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_ShareDialog.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_SharedObjectActions.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_SharedObjectDetails.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_SimpleUploader.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_SpecialPost.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_SpecialPosts.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_SpecialPostSettings.css" />
+    <Content Include="App_Themes\black\kur\OriginalsCssFiles\_ViewMore.css" />
+    <Content Include="App_Themes\black\kur\panelbar_section_account_settings.png" />
+    <Content Include="App_Themes\black\kur\panelbar_section_administration.png" />
+    <Content Include="App_Themes\black\kur\panelbar_section_communications.png" />
+    <Content Include="App_Themes\black\kur\panelbar_section_security.png" />
+    <Content Include="App_Themes\black\kur\panel_link_account_settings.png" />
+    <Content Include="App_Themes\black\kur\panel_link_basicinfo.png" />
+    <Content Include="App_Themes\black\kur\panel_link_delete_account.png" />
+    <Content Include="App_Themes\black\kur\panel_link_educations.png" />
+    <Content Include="App_Themes\black\kur\panel_link_favorites.png" />
+    <Content Include="App_Themes\black\kur\panel_link_friends.png" />
+    <Content Include="App_Themes\black\kur\panel_link_mail_informs.png" />
+    <Content Include="App_Themes\black\kur\panel_link_messages.png" />
+    <Content Include="App_Themes\black\kur\panel_link_newsfeed.png" />
+    <Content Include="App_Themes\black\kur\panel_link_object_checker.png" />
+    <Content Include="App_Themes\black\kur\panel_link_pages.png" />
+    <Content Include="App_Themes\black\kur\panel_link_photos.png" />
+    <Content Include="App_Themes\black\kur\panel_link_pixel_adv.png" />
+    <Content Include="App_Themes\black\kur\panel_link_privacy.png" />
+    <Content Include="App_Themes\black\kur\panel_link_profile_cover.png" />
+    <Content Include="App_Themes\black\kur\panel_link_requests.png" />
+    <Content Include="App_Themes\black\kur\panel_link_special_posts.png" />
+    <Content Include="App_Themes\black\kur\pixel_adv_bg.png" />
+    <Content Include="App_Themes\black\kur\play.png" />
+    <Content Include="App_Themes\black\kur\post_editor_add_photo.png" />
+    <Content Include="App_Themes\black\kur\post_editor_add_video.png" />
+    <Content Include="App_Themes\black\kur\ppbtn_send_follow.png" />
+    <Content Include="App_Themes\black\kur\ppbtn_send_message.png" />
+    <Content Include="App_Themes\black\kur\prev.png" />
+    <Content Include="App_Themes\black\kur\prev_dis.png" />
+    <Content Include="App_Themes\black\kur\prev_photo.png" />
+    <Content Include="App_Themes\black\kur\prof_link_sel_back.png" />
+    <Content Include="App_Themes\black\kur\prof_visits_counter_ico.png" />
+    <Content Include="App_Themes\black\kur\progress_bar_bg.png" />
+    <Content Include="App_Themes\black\kur\quote.png" />
+    <Content Include="App_Themes\black\kur\remove_item.png" />
+    <Content Include="App_Themes\black\kur\return.png" />
+    <Content Include="App_Themes\black\kur\seen.png" />
+    <Content Include="App_Themes\black\kur\shared_friends.png" />
+    <Content Include="App_Themes\black\kur\shared_members.png" />
+    <Content Include="App_Themes\black\kur\shared_onlyme.png" />
+    <Content Include="App_Themes\black\kur\shared_public.png" />
+    <Content Include="App_Themes\black\kur\small_heart.png" />
+    <Content Include="App_Themes\black\kur\tag.png" />
+    <Content Include="App_Themes\black\kur\tag_people.png" />
+    <Content Include="App_Themes\black\kur\tooltip_bg.png" />
+    <Content Include="App_Themes\black\kur\trans_bg.png" />
+    <Content Include="App_Themes\black\kur\uploader_browse.png" />
+    <Content Include="App_Themes\black\kur\vid_splash_bg.png" />
+    <Content Include="App_Themes\black\kur\visits_counter_ico.png" />
+    <Content Include="App_Themes\black\kur\_AccountActivation.min.css" />
+    <Content Include="App_Themes\black\kur\_AccountSettings.min.css" />
+    <Content Include="App_Themes\black\kur\_Activity.min.css" />
+    <Content Include="App_Themes\black\kur\_ActivityDetailsSection.min.css" />
+    <Content Include="App_Themes\black\kur\_ActivitySettings.min.css" />
+    <Content Include="App_Themes\black\kur\_AjaxUploader.min.css" />
+    <Content Include="App_Themes\black\kur\_AlbumEditor.min.css" />
+    <Content Include="App_Themes\black\kur\_AlbumPhotos.min.css" />
+    <Content Include="App_Themes\black\kur\_AlbumPresenter.min.css" />
+    <Content Include="App_Themes\black\kur\_AlbumView.min.css" />
+    <Content Include="App_Themes\black\kur\_AltEmailActivation.min.css" />
+    <Content Include="App_Themes\black\kur\_BasicInfo.min.css" />
+    <Content Include="App_Themes\black\kur\_ChatDialog.min.css" />
+    <Content Include="App_Themes\black\kur\_ChatMessage.min.css" />
+    <Content Include="App_Themes\black\kur\_ChatSessions.min.css" />
+    <Content Include="App_Themes\black\kur\_Comment.min.css" />
+    <Content Include="App_Themes\black\kur\_ConsiderationsPPSection.min.css" />
+    <Content Include="App_Themes\black\kur\_DeleteAccount.min.css" />
+    <Content Include="App_Themes\black\kur\_DeleteCommentDialog.min.css" />
+    <Content Include="App_Themes\black\kur\_DeleteConversationDialog.min.css" />
+    <Content Include="App_Themes\black\kur\_EditCommentDialog.min.css" />
+    <Content Include="App_Themes\black\kur\_EducationsAndSkills.min.css" />
+    <Content Include="App_Themes\black\kur\_FacebookConnect.min.css" />
+    <Content Include="App_Themes\black\kur\_FacebookShareDialog.min.css" />
+    <Content Include="App_Themes\black\kur\_Favorites.min.css" />
+    <Content Include="App_Themes\black\kur\_Footer.min.css" />
+    <Content Include="App_Themes\black\kur\_Friends.min.css" />
+    <Content Include="App_Themes\black\kur\_FriendsPPSection.min.css" />
+    <Content Include="App_Themes\black\kur\_Header.min.css" />
+    <Content Include="App_Themes\black\kur\_HmiMessages.min.css" />
+    <Content Include="App_Themes\black\kur\_HmiNotifications.min.css" />
+    <Content Include="App_Themes\black\kur\_HmiRequests.min.css" />
+    <Content Include="App_Themes\black\kur\_HmiSettings.min.css" />
+    <Content Include="App_Themes\black\kur\_HomeMemberCollection.min.css" />
+    <Content Include="App_Themes\black\kur\_HomePage.min.css" />
+    <Content Include="App_Themes\black\kur\_HomePageSuggestions.min.css" />
+    <Content Include="App_Themes\black\kur\_InfoPPSection.min.css" />
+    <Content Include="App_Themes\black\kur\_LikesDialog.min.css" />
+    <Content Include="App_Themes\black\kur\_Login.min.css" />
+    <Content Include="App_Themes\black\kur\_MailInforms.min.css" />
+    <Content Include="App_Themes\black\kur\_ManagerSettingDialog.min.css" />
+    <Content Include="App_Themes\black\kur\_MemberBox.min.css" />
+    <Content Include="App_Themes\black\kur\_MemberBrief.min.css" />
+    <Content Include="App_Themes\black\kur\_MemberConsiderationsDialog.min.css" />
+    <Content Include="App_Themes\black\kur\_Message.min.css" />
+    <Content Include="App_Themes\black\kur\_Messages.min.css" />
+    <Content Include="App_Themes\black\kur\_MessageSender.min.css" />
+    <Content Include="App_Themes\black\kur\_NewMessageDialog.min.css" />
+    <Content Include="App_Themes\black\kur\_NewsFeedSettings.min.css" />
+    <Content Include="App_Themes\black\kur\_Notification.min.css" />
+    <Content Include="App_Themes\black\kur\_Notifications.min.css" />
+    <Content Include="App_Themes\black\kur\_ObjectChecker.min.css" />
+    <Content Include="App_Themes\black\kur\_Pages.min.css" />
+    <Content Include="App_Themes\black\kur\_PanelBar.min.css" />
+    <Content Include="App_Themes\black\kur\_PasswordRecovery.min.css" />
+    <Content Include="App_Themes\black\kur\_People.min.css" />
+    <Content Include="App_Themes\black\kur\_PhotoCollection.min.css" />
+    <Content Include="App_Themes\black\kur\_PhotoEditor.min.css" />
+    <Content Include="App_Themes\black\kur\_Photos.min.css" />
+    <Content Include="App_Themes\black\kur\_PixelAdv.min.css" />
+    <Content Include="App_Themes\black\kur\_PixelAdvManager.min.css" />
+    <Content Include="App_Themes\black\kur\_PostEditor.min.css" />
+    <Content Include="App_Themes\black\kur\_PPSection.min.css" />
+    <Content Include="App_Themes\black\kur\_Privacy.min.css" />
+    <Content Include="App_Themes\black\kur\_Profile.min.css" />
+    <Content Include="App_Themes\black\kur\_ProfileCover.min.css" />
+    <Content Include="App_Themes\black\kur\_ProfilePageActivities.min.css" />
+    <Content Include="App_Themes\black\kur\_ProfilePageAdminActions.min.css" />
+    <Content Include="App_Themes\black\kur\_ProfilePageFriends.min.css" />
+    <Content Include="App_Themes\black\kur\_ProfilePageTimeLine.min.css" />
+    <Content Include="App_Themes\black\kur\_PublicShares.min.css" />
+    <Content Include="App_Themes\black\kur\_Register.min.css" />
+    <Content Include="App_Themes\black\kur\_RemoveFriendDialog.min.css" />
+    <Content Include="App_Themes\black\kur\_SearchMembers.min.css" />
+    <Content Include="App_Themes\black\kur\_ShareDialog.min.css" />
+    <Content Include="App_Themes\black\kur\_SharedObjectActions.min.css" />
+    <Content Include="App_Themes\black\kur\_SharedObjectDetails.min.css" />
+    <Content Include="App_Themes\black\kur\_SimpleUploader.min.css" />
+    <Content Include="App_Themes\black\kur\_SpecialPost.min.css" />
+    <Content Include="App_Themes\black\kur\_SpecialPosts.min.css" />
+    <Content Include="App_Themes\black\kur\_SpecialPostSettings.min.css" />
+    <Content Include="App_Themes\black\kur\_VideoPlayer.min.css" />
+    <Content Include="App_Themes\black\kur\_ViewMore.min.css" />
+    <Content Include="App_Themes\black\sor\access_denied_icon.png" />
+    <Content Include="App_Themes\black\sor\act_settings.png" />
+    <Content Include="App_Themes\black\sor\add.png" />
+    <Content Include="App_Themes\black\sor\add_photo.png" />
+    <Content Include="App_Themes\black\sor\admin_icon.png" />
+    <Content Include="App_Themes\black\sor\album_tool_delete.png" />
+    <Content Include="App_Themes\black\sor\album_tool_edit.png" />
+    <Content Include="App_Themes\black\sor\album_tool_photos.png" />
+    <Content Include="App_Themes\black\sor\colors.png" />
+    <Content Include="App_Themes\black\sor\cover_actions_bg.png" />
+    <Content Include="App_Themes\black\sor\Dialog.min.css" />
+    <Content Include="App_Themes\black\sor\dialog_close.png" />
+    <Content Include="App_Themes\black\sor\dialog_error_icon.png" />
+    <Content Include="App_Themes\black\sor\dialog_warning_icon.png" />
+    <Content Include="App_Themes\black\sor\done.png" />
+    <Content Include="App_Themes\black\sor\fail.png" />
+    <Content Include="App_Themes\black\sor\fb.png" />
+    <Content Include="App_Themes\black\sor\fb_login_hdr.png" />
+    <Content Include="App_Themes\black\sor\fb_reg_icon.png" />
+    <Content Include="App_Themes\black\sor\Header\header_bg.png" />
+    <Content Include="App_Themes\black\sor\Header\header_bg_thick.png" />
+    <Content Include="App_Themes\black\sor\Header\header_logo.png" />
+    <Content Include="App_Themes\black\sor\Header\header_logo_thick.png" />
+    <Content Include="Content\Images\Site\album_cover_default.png" />
+    <Content Include="Content\Images\Site\deleted_account_thumb.png" />
+    <Content Include="Content\Images\Site\favicon.ico" />
+    <Content Include="Content\Images\Site\favicon.png" />
+    <Content Include="Content\Images\Site\favicon2.ico" />
+    <Content Include="Content\Images\Site\female_default.png" />
+    <Content Include="Content\Images\Site\female_default_thumb.png" />
+    <Content Include="Content\Images\Site\logo_name.png" />
+    <Content Include="App_Themes\black\sor\play.png" />
+    <Content Include="App_Themes\black\sor\post_editor_add_photo.png" />
+    <Content Include="App_Themes\black\sor\post_editor_add_video.png" />
+    <Content Include="App_Themes\black\sor\ppbtn_send_follow.png" />
+    <Content Include="App_Themes\black\sor\footer_logo.png" />
+    <Content Include="App_Themes\black\sor\Global.min.css" />
+    <Content Include="App_Themes\black\sor\hmenu_bubble.png" />
+    <Content Include="App_Themes\black\sor\hmi_home.png" />
+    <Content Include="App_Themes\black\sor\hmi_messages.png" />
+    <Content Include="App_Themes\black\sor\hmi_messages_sel.png" />
+    <Content Include="App_Themes\black\sor\hmi_notifications.png" />
+    <Content Include="App_Themes\black\sor\hmi_notifications_sel.png" />
+    <Content Include="App_Themes\black\sor\hmi_public_shares.png" />
+    <Content Include="App_Themes\black\sor\hmi_requests.png" />
+    <Content Include="App_Themes\black\sor\hmi_requests_sel.png" />
+    <Content Include="App_Themes\black\sor\hmi_settings.png" />
+    <Content Include="App_Themes\black\sor\hmi_settings_sel.png" />
+    <Content Include="App_Themes\black\sor\HomePage_IndexPage.min.css" />
+    <Content Include="App_Themes\black\sor\hsubmenu_pointer.png" />
+    <Content Include="App_Themes\black\sor\htooltip_pointer.png" />
+    <Content Include="App_Themes\black\sor\img_link_charge.png" />
+    <Content Include="App_Themes\black\sor\img_link_help.png" />
+    <Content Include="App_Themes\black\sor\img_link_people.png" />
+    <Content Include="App_Themes\black\sor\img_link_publicwall.png" />
+    <Content Include="App_Themes\black\sor\img_link_rules.png" />
+    <Content Include="App_Themes\black\sor\img_link_shop.png" />
+    <Content Include="App_Themes\black\sor\IndexPage.min.css" />
+    <Content Include="App_Themes\black\sor\Jcrop.gif" />
+    <Content Include="App_Themes\black\sor\jquery.autocomplete.min.css" />
+    <Content Include="App_Themes\black\sor\jquery.Jcrop.min.css" />
+    <Content Include="App_Themes\black\sor\like_heart.png" />
+    <Content Include="App_Themes\black\sor\like_thumb.png" />
+    <Content Include="App_Themes\black\sor\loading_dialog.GIF" />
+    <Content Include="App_Themes\black\sor\loading_large_circle.GIF" />
+    <Content Include="App_Themes\black\sor\loading_medium.GIF" />
+    <Content Include="App_Themes\black\sor\loading_medium_circle.GIF" />
+    <Content Include="App_Themes\black\sor\loading_photo.GIF" />
+    <Content Include="App_Themes\black\sor\loading_photo_back.png" />
+    <Content Include="App_Themes\black\sor\loading_small.GIF" />
+    <Content Include="App_Themes\black\sor\loading_small_circle.GIF" />
+    <Content Include="App_Themes\black\sor\loading_small_onheader.GIF" />
+    <Content Include="App_Themes\black\sor\msgbox_info_icon.png" />
+    <Content Include="App_Themes\black\sor\msg_bubble.png" />
+    <Content Include="App_Themes\black\sor\next.png" />
+    <Content Include="App_Themes\black\sor\next_dis.png" />
+    <Content Include="App_Themes\black\sor\next_photo.png" />
+    <Content Include="App_Themes\black\sor\nocover.png" />
+    <Content Include="App_Themes\black\sor\noise1.png" />
+    <Content Include="App_Themes\black\sor\offline.png" />
+    <Content Include="App_Themes\black\sor\online.png" />
+    <Content Include="App_Themes\black\sor\online_icon.png" />
+    <Content Include="App_Themes\black\sor\online_small_ico.png" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\Dialog.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\Global.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\HomePage_IndexPage.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\IndexPage.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\jquery.autocomplete.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_AccountActivation.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_AccountSettings.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_Activity.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_ActivitySettings.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_AjaxUploader.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_AlbumEditor.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_AlbumPhotos.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_AlbumPresenter.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_AlbumView.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_BasicInfo.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_ChatDialog.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_ChatMessage.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_ChatSessions.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_Comment.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_ConsiderationsPPSection.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_DeleteAccount.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_DeleteCommentDialog.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_DeleteConversationDialog.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_EditCommentDialog.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_EducationsAndSkills.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_Favorites.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_Footer.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_Friends.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_FriendsPPSection.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_Header.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_HmiMessages.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_HmiNotifications.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_HmiRequests.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_HmiSettings.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_HomeMemberCollection.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_HomePage.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_HomePageSuggestions.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_InfoPPSection.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_LikesDialog.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_Login.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_MailInforms.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_MemberBox.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_MemberBrief.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_MemberConsiderationsDialog.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_Message.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_Messages.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_MessageSender.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_NewMessageDialog.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_NewsFeedSettings.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_Notification.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_Notifications.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_ObjectChecker.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_Pages.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_PanelBar.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_PasswordRecovery.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_People.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_PhotoCollection.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_PhotoEditor.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_Photos.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_PixelAdv.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_PixelAdvManager.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_PostEditor.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_PPSection.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_Privacy.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_Profile.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_ProfileCover.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_ProfilePageActivities.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_ProfilePageFriends.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_ProfilePageTimeLine.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_PublicShares.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_Register.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_RemoveFriendDialog.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_SearchMembers.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_ShareDialog.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_SharedObjectActions.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_SharedObjectDetails.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_SimpleUploader.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_SpecialPost.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_SpecialPosts.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_SpecialPostSettings.css" />
+    <Content Include="App_Themes\black\sor\OriginalsCssFiles\_ViewMore.css" />
+    <Content Include="App_Themes\black\sor\panelbar_section_account_settings.png" />
+    <Content Include="App_Themes\black\sor\panelbar_section_administration.png" />
+    <Content Include="App_Themes\black\sor\panelbar_section_communications.png" />
+    <Content Include="App_Themes\black\sor\panelbar_section_security.png" />
+    <Content Include="App_Themes\black\sor\panel_link_account_settings.png" />
+    <Content Include="App_Themes\black\sor\panel_link_basicinfo.png" />
+    <Content Include="App_Themes\black\sor\panel_link_delete_account.png" />
+    <Content Include="App_Themes\black\sor\panel_link_educations.png" />
+    <Content Include="App_Themes\black\sor\panel_link_favorites.png" />
+    <Content Include="App_Themes\black\sor\panel_link_friends.png" />
+    <Content Include="App_Themes\black\sor\panel_link_mail_informs.png" />
+    <Content Include="App_Themes\black\sor\panel_link_messages.png" />
+    <Content Include="App_Themes\black\sor\panel_link_newsfeed.png" />
+    <Content Include="App_Themes\black\sor\panel_link_object_checker.png" />
+    <Content Include="App_Themes\black\sor\panel_link_pages.png" />
+    <Content Include="App_Themes\black\sor\panel_link_photos.png" />
+    <Content Include="App_Themes\black\sor\panel_link_pixel_adv.png" />
+    <Content Include="App_Themes\black\sor\panel_link_privacy.png" />
+    <Content Include="App_Themes\black\sor\panel_link_profile_cover.png" />
+    <Content Include="App_Themes\black\sor\panel_link_requests.png" />
+    <Content Include="App_Themes\black\sor\panel_link_special_posts.png" />
+    <Content Include="App_Themes\black\sor\pixel_adv_bg.png" />
+    <Content Include="App_Themes\black\sor\ppbtn_send_message.png" />
+    <Content Include="App_Themes\black\sor\prev.png" />
+    <Content Include="App_Themes\black\sor\prev_dis.png" />
+    <Content Include="App_Themes\black\sor\prev_photo.png" />
+    <Content Include="App_Themes\black\sor\prof_link_sel_back.png" />
+    <Content Include="App_Themes\black\sor\prof_visits_counter_ico.png" />
+    <Content Include="App_Themes\black\sor\progress_bar_bg.png" />
+    <Content Include="App_Themes\black\sor\quote.png" />
+    <Content Include="App_Themes\black\sor\remove_item.png" />
+    <Content Include="App_Themes\black\sor\return.png" />
+    <Content Include="App_Themes\black\sor\seen.png" />
+    <Content Include="App_Themes\black\sor\shared_friends.png" />
+    <Content Include="App_Themes\black\sor\shared_members.png" />
+    <Content Include="App_Themes\black\sor\shared_onlyme.png" />
+    <Content Include="App_Themes\black\sor\shared_public.png" />
+    <Content Include="App_Themes\black\sor\small_heart.png" />
+    <Content Include="App_Themes\black\sor\tag.png" />
+    <Content Include="App_Themes\black\sor\tag_people.png" />
+    <Content Include="App_Themes\black\sor\tooltip_bg.png" />
+    <Content Include="App_Themes\black\sor\trans_bg.png" />
+    <Content Include="App_Themes\black\sor\uploader_browse.png" />
+    <Content Include="App_Themes\black\sor\vid_splash_bg.png" />
+    <Content Include="App_Themes\black\sor\visits_counter_ico.png" />
+    <Content Include="App_Themes\black\sor\_AccountActivation.min.css" />
+    <Content Include="App_Themes\black\sor\_AccountSettings.min.css" />
+    <Content Include="App_Themes\black\sor\_Activity.min.css" />
+    <Content Include="App_Themes\black\sor\_ActivityDetailsSection.min.css" />
+    <Content Include="App_Themes\black\sor\_ActivitySettings.min.css" />
+    <Content Include="App_Themes\black\sor\_AjaxUploader.min.css" />
+    <Content Include="App_Themes\black\sor\_AlbumEditor.min.css" />
+    <Content Include="App_Themes\black\sor\_AlbumPhotos.min.css" />
+    <Content Include="App_Themes\black\sor\_AlbumPresenter.min.css" />
+    <Content Include="App_Themes\black\sor\_AlbumView.min.css" />
+    <Content Include="App_Themes\black\sor\_AltEmailActivation.min.css" />
+    <Content Include="App_Themes\black\sor\_BasicInfo.min.css" />
+    <Content Include="App_Themes\black\sor\_ChatDialog.min.css" />
+    <Content Include="App_Themes\black\sor\_ChatMessage.min.css" />
+    <Content Include="App_Themes\black\sor\_ChatSessions.min.css" />
+    <Content Include="App_Themes\black\sor\_Comment.min.css" />
+    <Content Include="App_Themes\black\sor\_ConsiderationsPPSection.min.css" />
+    <Content Include="App_Themes\black\sor\_DeleteAccount.min.css" />
+    <Content Include="App_Themes\black\sor\_DeleteCommentDialog.min.css" />
+    <Content Include="App_Themes\black\sor\_DeleteConversationDialog.min.css" />
+    <Content Include="App_Themes\black\sor\_EditCommentDialog.min.css" />
+    <Content Include="App_Themes\black\sor\_EducationsAndSkills.min.css" />
+    <Content Include="App_Themes\black\sor\_FacebookConnect.min.css" />
+    <Content Include="App_Themes\black\sor\_FacebookShareDialog.min.css" />
+    <Content Include="App_Themes\black\sor\_Favorites.min.css" />
+    <Content Include="App_Themes\black\sor\_Footer.min.css" />
+    <Content Include="App_Themes\black\sor\_Friends.min.css" />
+    <Content Include="App_Themes\black\sor\_FriendsPPSection.min.css" />
+    <Content Include="App_Themes\black\sor\_Header.min.css" />
+    <Content Include="App_Themes\black\sor\_HmiMessages.min.css" />
+    <Content Include="App_Themes\black\sor\_HmiNotifications.min.css" />
+    <Content Include="App_Themes\black\sor\_HmiRequests.min.css" />
+    <Content Include="App_Themes\black\sor\_HmiSettings.min.css" />
+    <Content Include="App_Themes\black\sor\_HomeMemberCollection.min.css" />
+    <Content Include="App_Themes\black\sor\_HomePage.min.css" />
+    <Content Include="App_Themes\black\sor\_HomePageSuggestions.min.css" />
+    <Content Include="App_Themes\black\sor\_InfoPPSection.min.css" />
+    <Content Include="App_Themes\black\sor\_LikesDialog.min.css" />
+    <Content Include="App_Themes\black\sor\_Login.min.css" />
+    <Content Include="App_Themes\black\sor\_MailInforms.min.css" />
+    <Content Include="App_Themes\black\sor\_ManagerSettingDialog.min.css" />
+    <Content Include="App_Themes\black\sor\_MemberBox.min.css" />
+    <Content Include="App_Themes\black\sor\_MemberBrief.min.css" />
+    <Content Include="App_Themes\black\sor\_MemberConsiderationsDialog.min.css" />
+    <Content Include="App_Themes\black\sor\_Message.min.css" />
+    <Content Include="App_Themes\black\sor\_Messages.min.css" />
+    <Content Include="App_Themes\black\sor\_MessageSender.min.css" />
+    <Content Include="App_Themes\black\sor\_NewMessageDialog.min.css" />
+    <Content Include="App_Themes\black\sor\_NewsFeedSettings.min.css" />
+    <Content Include="App_Themes\black\sor\_Notification.min.css" />
+    <Content Include="App_Themes\black\sor\_Notifications.min.css" />
+    <Content Include="App_Themes\black\sor\_ObjectChecker.min.css" />
+    <Content Include="App_Themes\black\sor\_Pages.min.css" />
+    <Content Include="App_Themes\black\sor\_PanelBar.min.css" />
+    <Content Include="App_Themes\black\sor\_PasswordRecovery.min.css" />
+    <Content Include="App_Themes\black\sor\_People.min.css" />
+    <Content Include="App_Themes\black\sor\_PhotoCollection.min.css" />
+    <Content Include="App_Themes\black\sor\_PhotoEditor.min.css" />
+    <Content Include="App_Themes\black\sor\_Photos.min.css" />
+    <Content Include="App_Themes\black\sor\_PixelAdv.min.css" />
+    <Content Include="App_Themes\black\sor\_PixelAdvManager.min.css" />
+    <Content Include="App_Themes\black\sor\_PostEditor.min.css" />
+    <Content Include="App_Themes\black\sor\_PPSection.min.css" />
+    <Content Include="App_Themes\black\sor\_Privacy.min.css" />
+    <Content Include="App_Themes\black\sor\_Profile.min.css" />
+    <Content Include="App_Themes\black\sor\_ProfileCover.min.css" />
+    <Content Include="App_Themes\black\sor\_ProfilePageActivities.min.css" />
+    <Content Include="App_Themes\black\sor\_ProfilePageAdminActions.min.css" />
+    <Content Include="App_Themes\black\sor\_ProfilePageFriends.min.css" />
+    <Content Include="App_Themes\black\sor\_ProfilePageTimeLine.min.css" />
+    <Content Include="App_Themes\black\sor\_PublicShares.min.css" />
+    <Content Include="App_Themes\black\sor\_Register.min.css" />
+    <Content Include="App_Themes\black\sor\_RemoveFriendDialog.min.css" />
+    <Content Include="App_Themes\black\sor\_SearchMembers.min.css" />
+    <Content Include="App_Themes\black\sor\_ShareDialog.min.css" />
+    <Content Include="App_Themes\black\sor\_SharedObjectActions.min.css" />
+    <Content Include="App_Themes\black\sor\_SharedObjectDetails.min.css" />
+    <Content Include="App_Themes\black\sor\_SimpleUploader.min.css" />
+    <Content Include="App_Themes\black\sor\_SpecialPost.min.css" />
+    <Content Include="App_Themes\black\sor\_SpecialPosts.min.css" />
+    <Content Include="App_Themes\black\sor\_SpecialPostSettings.min.css" />
+    <Content Include="App_Themes\black\sor\_VideoPlayer.min.css" />
+    <Content Include="App_Themes\black\sor\_ViewMore.min.css" />
+    <Content Include="App_Themes\blue\fa\Dialog.min.css" />
+    <Content Include="App_Themes\blue\fa\Global.min.css" />
+    <Content Include="App_Themes\blue\fa\HomePage_IndexPage.min.css" />
+    <Content Include="App_Themes\blue\fa\IndexPage.min.css" />
+    <Content Include="App_Themes\blue\fa\jquery.autocomplete.min.css" />
+    <Content Include="App_Themes\blue\fa\online_small_ico.png" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_NewsFeedSettings.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_PixelAdvManager.css" />
+    <Content Include="App_Themes\blue\fa\prev.png" />
+    <Content Include="App_Themes\blue\fa\loading_large_circle.GIF" />
+    <Content Include="App_Themes\blue\fa\admin_icon.png" />
+    <Content Include="App_Themes\blue\fa\online.png" />
+    <Content Include="App_Themes\blue\fa\loading_photo.GIF" />
+    <Content Include="App_Themes\blue\fa\access_denied_icon.png" />
+    <Content Include="App_Themes\blue\fa\loading_photo_back.png" />
+    <Content Include="App_Themes\blue\fa\next_photo.png" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\jquery.autocomplete.css" />
+    <Content Include="App_Themes\blue\fa\online_icon.png" />
+    <Content Include="App_Themes\blue\fa\panel_link_educations.png" />
+    <Content Include="App_Themes\blue\fa\hmi_public_shares.png" />
+    <Content Include="App_Themes\blue\fa\loading_small_circle.GIF" />
+    <Content Include="App_Themes\blue\fa\msg_bubble.png" />
+    <Content Include="App_Themes\blue\fa\act_settings.png" />
+    <Content Include="App_Themes\blue\fa\add.png" />
+    <Content Include="App_Themes\blue\fa\add_photo.png" />
+    <Content Include="App_Themes\blue\fa\album_tool_delete.png" />
+    <Content Include="App_Themes\blue\fa\album_tool_edit.png" />
+    <Content Include="App_Themes\blue\fa\album_tool_photos.png" />
+    <Content Include="App_Themes\blue\fa\colors.png" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\Dialog.css" />
+    <Content Include="App_Themes\blue\fa\dialog_close.png" />
+    <Content Include="App_Themes\blue\fa\done.png" />
+    <Content Include="App_Themes\blue\fa\fail.png" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\Global.css" />
+    <Content Include="App_Themes\blue\fa\Header\header_bg.png" />
+    <Content Include="App_Themes\blue\fa\Header\header_bg_thick.png" />
+    <Content Include="App_Themes\blue\fa\Header\header_logo.png" />
+    <Content Include="App_Themes\blue\fa\Header\header_logo_thick.png" />
+    <Content Include="App_Themes\blue\fa\hmi_home.png" />
+    <Content Include="App_Themes\blue\fa\hmi_messages.png" />
+    <Content Include="App_Themes\blue\fa\hmi_messages_sel.png" />
+    <Content Include="App_Themes\blue\fa\hmi_notifications.png" />
+    <Content Include="App_Themes\blue\fa\hmi_notifications_sel.png" />
+    <Content Include="App_Themes\blue\fa\hmi_requests.png" />
+    <Content Include="App_Themes\blue\fa\hmi_requests_sel.png" />
+    <Content Include="App_Themes\blue\fa\hmi_settings.png" />
+    <Content Include="App_Themes\blue\fa\hmi_settings_sel.png" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\HomePage_IndexPage.css" />
+    <Content Include="App_Themes\blue\fa\hsubmenu_pointer.png" />
+    <Content Include="App_Themes\blue\fa\img_link_charge.png" />
+    <Content Include="App_Themes\blue\fa\img_link_shop.png" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\IndexPage.css" />
+    <Content Include="App_Themes\blue\fa\Jcrop.gif" />
+    <Content Include="App_Themes\blue\fa\jquery.Jcrop.min.css" />
+    <Content Include="App_Themes\blue\fa\like_heart.png" />
+    <Content Include="App_Themes\blue\fa\like_thumb.png" />
+    <Content Include="App_Themes\blue\fa\loading_dialog.GIF" />
+    <Content Include="App_Themes\blue\fa\loading_medium.GIF" />
+    <Content Include="App_Themes\blue\fa\loading_medium_circle.GIF" />
+    <Content Include="App_Themes\blue\fa\loading_small.GIF" />
+    <Content Include="App_Themes\blue\fa\loading_small_onheader.GIF" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_AlbumView.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_ChatMessage.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_ChatSessions.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_ChatDialog.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_ConsiderationsPPSection.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_DeleteConversationDialog.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_EducationsAndSkills.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_FriendsPPSection.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_HmiMessages.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_HmiNotifications.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_HmiRequests.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_HomeMemberCollection.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_HomePageSuggestions.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_InfoPPSection.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_MemberBrief.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_MemberConsiderationsDialog.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_Message.css" />
+    <Content Include="App_Themes\blue\fa\noise1.png" />
+    <Content Include="App_Themes\blue\fa\panelbar_section_account_settings.png" />
+    <Content Include="App_Themes\blue\fa\panelbar_section_communications.png" />
+    <Content Include="App_Themes\blue\fa\panelbar_section_security.png" />
+    <Content Include="App_Themes\blue\fa\panel_link_account_settings.png" />
+    <Content Include="App_Themes\blue\fa\panel_link_basicinfo.png" />
+    <Content Include="App_Themes\blue\fa\panel_link_delete_account.png" />
+    <Content Include="App_Themes\blue\fa\panel_link_favorites.png" />
+    <Content Include="App_Themes\blue\fa\panel_link_friends.png" />
+    <Content Include="App_Themes\blue\fa\panel_link_mail_informs.png" />
+    <Content Include="App_Themes\blue\fa\panel_link_messages.png" />
+    <Content Include="App_Themes\blue\fa\panel_link_photos.png" />
+    <Content Include="App_Themes\blue\fa\panel_link_privacy.png" />
+    <Content Include="App_Themes\blue\fa\panel_link_profile_cover.png" />
+    <Content Include="App_Themes\blue\fa\panel_link_requests.png" />
+    <Content Include="App_Themes\blue\fa\quote.png" />
+    <Content Include="App_Themes\blue\fa\remove_item.png" />
+    <Content Include="App_Themes\blue\fa\return.png" />
+    <Content Include="App_Themes\blue\fa\small_heart.png" />
+    <Content Include="App_Themes\blue\fa\tag_people.png" />
+    <Content Include="App_Themes\blue\fa\trans_bg.png" />
+    <Content Include="App_Themes\blue\fa\uploader_browse.png" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_AccountActivation.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_AccountSettings.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_Activity.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_ActivitySettings.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_AjaxUploader.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_AlbumEditor.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_AlbumPhotos.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_AlbumPresenter.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_BasicInfo.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_Comment.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_DeleteAccount.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_DeleteCommentDialog.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_EditCommentDialog.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_Favorites.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_Footer.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_Friends.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_Header.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_HmiSettings.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_HomePage.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_LikesDialog.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_Login.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_MailInforms.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_MemberBox.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_Messages.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_MessageSender.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_NewMessageDialog.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_Notification.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_Notifications.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_ObjectChecker.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_Pages.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_PanelBar.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_PasswordRecovery.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_People.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_PhotoCollection.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_PhotoEditor.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_Photos.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_PixelAdv.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_PostEditor.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_PPSection.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_Privacy.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_Profile.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_ProfileCover.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_ProfilePageActivities.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_ProfilePageFriends.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_ProfilePageTimeLine.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_Register.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_RemoveFriendDialog.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_SearchMembers.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_ShareDialog.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_SharedObjectActions.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_SimpleUploader.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_PublicShares.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_SharedObjectDetails.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_SpecialPost.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_SpecialPosts.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_SpecialPostSettings.css" />
+    <Content Include="App_Themes\blue\fa\OriginalsCssFiles\_ViewMore.css" />
+    <Content Include="App_Themes\blue\fa\visits_counter_ico.png" />
+    <Content Include="App_Themes\blue\fa\_AccountActivation.min.css" />
+    <Content Include="App_Themes\blue\fa\_AccountSettings.min.css" />
+    <Content Include="App_Themes\blue\fa\_Activity.min.css" />
+    <Content Include="App_Themes\blue\fa\_ActivitySettings.min.css" />
+    <Content Include="App_Themes\blue\fa\_AjaxUploader.min.css" />
+    <Content Include="App_Themes\blue\fa\_AlbumEditor.min.css" />
+    <Content Include="App_Themes\blue\fa\_AlbumPhotos.min.css" />
+    <Content Include="App_Themes\blue\fa\_AlbumPresenter.min.css" />
+    <Content Include="App_Themes\blue\fa\_AlbumView.min.css" />
+    <Content Include="App_Themes\blue\fa\_BasicInfo.min.css" />
+    <Content Include="App_Themes\blue\fa\_ChatDialog.min.css" />
+    <Content Include="App_Themes\blue\fa\_ChatMessage.min.css" />
+    <Content Include="App_Themes\blue\fa\_ChatSessions.min.css" />
+    <Content Include="App_Themes\blue\fa\_Comment.min.css" />
+    <Content Include="App_Themes\blue\fa\_ConsiderationsPPSection.min.css" />
+    <Content Include="App_Themes\blue\fa\_DeleteAccount.min.css" />
+    <Content Include="App_Themes\blue\fa\_DeleteCommentDialog.min.css" />
+    <Content Include="App_Themes\blue\fa\_DeleteConversationDialog.min.css" />
+    <Content Include="App_Themes\blue\fa\_EditCommentDialog.min.css" />
+    <Content Include="App_Themes\blue\fa\_EducationsAndSkills.min.css" />
+    <Content Include="App_Themes\blue\fa\_Favorites.min.css" />
+    <Content Include="App_Themes\blue\fa\_Footer.min.css" />
+    <Content Include="App_Themes\blue\fa\_Friends.min.css" />
+    <Content Include="App_Themes\blue\fa\_FriendsPPSection.min.css" />
+    <Content Include="App_Themes\blue\fa\_Header.min.css" />
+    <Content Include="App_Themes\blue\fa\_HmiMessages.min.css" />
+    <Content Include="App_Themes\blue\fa\_HmiNotifications.min.css" />
+    <Content Include="App_Themes\blue\fa\_HmiRequests.min.css" />
+    <Content Include="App_Themes\blue\fa\_HmiSettings.min.css" />
+    <Content Include="App_Themes\blue\fa\_HomeMemberCollection.min.css" />
+    <Content Include="App_Themes\blue\fa\_HomePage.min.css" />
+    <Content Include="App_Themes\blue\fa\_HomePageSuggestions.min.css" />
+    <Content Include="App_Themes\blue\fa\_InfoPPSection.min.css" />
+    <Content Include="App_Themes\blue\fa\_LikesDialog.min.css" />
+    <Content Include="App_Themes\blue\fa\_Login.min.css" />
+    <Content Include="App_Themes\blue\fa\_MailInforms.min.css" />
+    <Content Include="App_Themes\blue\fa\_MemberBox.min.css" />
+    <Content Include="App_Themes\blue\fa\_MemberBrief.min.css" />
+    <Content Include="App_Themes\blue\fa\_MemberConsiderationsDialog.min.css" />
+    <Content Include="App_Themes\blue\fa\_Message.min.css" />
+    <Content Include="App_Themes\blue\fa\_Messages.min.css" />
+    <Content Include="App_Themes\blue\fa\_MessageSender.min.css" />
+    <Content Include="App_Themes\blue\fa\_NewMessageDialog.min.css" />
+    <Content Include="App_Themes\blue\fa\_NewsFeedSettings.min.css" />
+    <Content Include="App_Themes\blue\fa\_Notification.min.css" />
+    <Content Include="App_Themes\blue\fa\_Notifications.min.css" />
+    <Content Include="App_Themes\blue\fa\_ObjectChecker.min.css" />
+    <Content Include="App_Themes\blue\fa\_Pages.min.css" />
+    <Content Include="App_Themes\blue\fa\_PanelBar.min.css" />
+    <Content Include="App_Themes\blue\fa\_PasswordRecovery.min.css" />
+    <Content Include="App_Themes\blue\fa\_People.min.css" />
+    <Content Include="App_Themes\blue\fa\_PhotoCollection.min.css" />
+    <Content Include="App_Themes\blue\fa\_PhotoEditor.min.css" />
+    <Content Include="App_Themes\blue\fa\_Photos.min.css" />
+    <Content Include="App_Themes\blue\fa\_PixelAdv.min.css" />
+    <Content Include="App_Themes\blue\fa\_PixelAdvManager.min.css" />
+    <Content Include="App_Themes\blue\fa\_PostEditor.min.css" />
+    <Content Include="App_Themes\blue\fa\_PPSection.min.css" />
+    <Content Include="App_Themes\blue\fa\_Privacy.min.css" />
+    <Content Include="App_Themes\blue\fa\_Profile.min.css" />
+    <Content Include="App_Themes\blue\fa\_ProfileCover.min.css" />
+    <Content Include="App_Themes\blue\fa\_ProfilePageActivities.min.css" />
+    <Content Include="App_Themes\blue\fa\_ProfilePageFriends.min.css" />
+    <Content Include="App_Themes\blue\fa\_ProfilePageTimeLine.min.css" />
+    <Content Include="App_Themes\blue\fa\_PublicShares.min.css" />
+    <Content Include="App_Themes\blue\fa\_Register.min.css" />
+    <Content Include="App_Themes\blue\fa\_RemoveFriendDialog.min.css" />
+    <Content Include="App_Themes\blue\fa\_SearchMembers.min.css" />
+    <Content Include="App_Themes\blue\fa\_ShareDialog.min.css" />
+    <Content Include="App_Themes\blue\fa\_SharedObjectActions.min.css" />
+    <Content Include="App_Themes\blue\fa\_SharedObjectDetails.min.css" />
+    <Content Include="App_Themes\blue\fa\_SimpleUploader.min.css" />
+    <Content Include="App_Themes\blue\fa\_SpecialPost.min.css" />
+    <Content Include="App_Themes\blue\fa\_SpecialPosts.min.css" />
+    <Content Include="App_Themes\blue\fa\_SpecialPostSettings.min.css" />
+    <Content Include="App_Themes\blue\fa\_ViewMore.min.css" />
+    <Content Include="App_Themes\blue\sor\access_denied_icon.png" />
+    <Content Include="App_Themes\blue\sor\act_settings.png" />
+    <Content Include="App_Themes\blue\sor\add.png" />
+    <Content Include="App_Themes\blue\sor\add_photo.png" />
+    <Content Include="App_Themes\blue\sor\admin_icon.png" />
+    <Content Include="App_Themes\blue\sor\album_tool_delete.png" />
+    <Content Include="App_Themes\blue\sor\album_tool_edit.png" />
+    <Content Include="App_Themes\blue\sor\album_tool_photos.png" />
+    <Content Include="App_Themes\blue\sor\colors.png" />
+    <Content Include="App_Themes\blue\sor\cover_actions_bg.png" />
+    <Content Include="App_Themes\blue\sor\Dialog.min.css" />
+    <Content Include="App_Themes\blue\sor\dialog_close.png" />
+    <Content Include="App_Themes\blue\sor\done.png" />
+    <Content Include="App_Themes\blue\sor\fail.png" />
+    <Content Include="App_Themes\blue\sor\footer_logo.png" />
+    <Content Include="App_Themes\blue\sor\Global.min.css" />
+    <Content Include="App_Themes\blue\sor\hmenu_bubble.png" />
+    <Content Include="App_Themes\blue\sor\hmi_home.png" />
+    <Content Include="App_Themes\blue\sor\hmi_messages.png" />
+    <Content Include="App_Themes\blue\sor\hmi_messages_sel.png" />
+    <Content Include="App_Themes\blue\sor\hmi_notifications.png" />
+    <Content Include="App_Themes\blue\sor\hmi_notifications_sel.png" />
+    <Content Include="App_Themes\blue\sor\hmi_public_shares.png" />
+    <Content Include="App_Themes\blue\sor\hmi_requests.png" />
+    <Content Include="App_Themes\blue\sor\hmi_requests_sel.png" />
+    <Content Include="App_Themes\blue\sor\hmi_settings.png" />
+    <Content Include="App_Themes\blue\sor\hmi_settings_sel.png" />
+    <Content Include="App_Themes\blue\sor\HomePage_IndexPage.min.css" />
+    <Content Include="App_Themes\blue\sor\hsubmenu_pointer.png" />
+    <Content Include="App_Themes\blue\sor\htooltip_pointer.png" />
+    <Content Include="App_Themes\blue\sor\img_link_charge.png" />
+    <Content Include="App_Themes\blue\sor\img_link_help.png" />
+    <Content Include="App_Themes\blue\sor\img_link_people.png" />
+    <Content Include="App_Themes\blue\sor\img_link_publicwall.png" />
+    <Content Include="App_Themes\blue\sor\img_link_rules.png" />
+    <Content Include="App_Themes\blue\sor\img_link_shop.png" />
+    <Content Include="App_Themes\blue\sor\IndexPage.min.css" />
+    <Content Include="App_Themes\blue\sor\Jcrop.gif" />
+    <Content Include="App_Themes\blue\sor\jquery.autocomplete.min.css" />
+    <Content Include="App_Themes\blue\sor\jquery.Jcrop.min.css" />
+    <Content Include="App_Themes\blue\sor\like_heart.png" />
+    <Content Include="App_Themes\blue\sor\like_thumb.png" />
+    <Content Include="App_Themes\blue\sor\loading_dialog.GIF" />
+    <Content Include="App_Themes\blue\sor\loading_large_circle.GIF" />
+    <Content Include="App_Themes\blue\sor\loading_medium.GIF" />
+    <Content Include="App_Themes\blue\sor\loading_medium_circle.GIF" />
+    <Content Include="App_Themes\blue\sor\loading_photo.GIF" />
+    <Content Include="App_Themes\blue\sor\loading_photo_back.png" />
+    <Content Include="App_Themes\blue\sor\loading_small.GIF" />
+    <Content Include="App_Themes\blue\sor\loading_small_circle.GIF" />
+    <Content Include="App_Themes\blue\sor\loading_small_onheader.GIF" />
+    <Content Include="App_Themes\blue\sor\msgbox_info_icon.png" />
+    <Content Include="App_Themes\blue\sor\msg_bubble.png" />
+    <Content Include="App_Themes\blue\sor\next.png" />
+    <Content Include="App_Themes\blue\sor\next_dis.png" />
+    <Content Include="App_Themes\blue\sor\next_photo.png" />
+    <Content Include="App_Themes\blue\sor\nocover.png" />
+    <Content Include="App_Themes\blue\sor\noise1.png" />
+    <Content Include="App_Themes\blue\sor\offline.png" />
+    <Content Include="App_Themes\blue\sor\online.png" />
+    <Content Include="App_Themes\blue\sor\online_icon.png" />
+    <Content Include="App_Themes\blue\sor\online_small_ico.png" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\Dialog.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\Global.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\HomePage_IndexPage.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\IndexPage.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\jquery.autocomplete.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_AccountActivation.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_AccountSettings.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_Activity.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_ActivitySettings.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_AjaxUploader.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_AlbumEditor.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_AlbumPhotos.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_AlbumPresenter.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_AlbumView.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_BasicInfo.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_ChatDialog.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_ChatMessage.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_ChatSessions.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_Comment.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_ConsiderationsPPSection.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_DeleteAccount.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_DeleteCommentDialog.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_DeleteConversationDialog.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_EditCommentDialog.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_EducationsAndSkills.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_Favorites.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_Footer.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_Friends.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_FriendsPPSection.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_Header.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_HmiMessages.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_HmiNotifications.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_HmiRequests.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_HmiSettings.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_HomeMemberCollection.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_HomePage.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_HomePageSuggestions.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_InfoPPSection.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_LikesDialog.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_Login.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_MailInforms.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_MemberBox.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_MemberBrief.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_MemberConsiderationsDialog.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_Message.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_Messages.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_MessageSender.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_NewMessageDialog.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_NewsFeedSettings.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_Notification.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_Notifications.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_ObjectChecker.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_Pages.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_PanelBar.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_PasswordRecovery.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_People.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_PhotoCollection.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_PhotoEditor.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_Photos.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_PixelAdv.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_PixelAdvManager.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_PostEditor.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_PPSection.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_Privacy.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_Profile.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_ProfileCover.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_ProfilePageActivities.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_ProfilePageFriends.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_ProfilePageTimeLine.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_PublicShares.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_Register.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_RemoveFriendDialog.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_SearchMembers.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_ShareDialog.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_SharedObjectActions.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_SharedObjectDetails.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_SimpleUploader.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_SpecialPost.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_SpecialPosts.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_SpecialPostSettings.css" />
+    <Content Include="App_Themes\blue\sor\OriginalsCssFiles\_ViewMore.css" />
+    <Content Include="App_Themes\blue\sor\panelbar_section_account_settings.png" />
+    <Content Include="App_Themes\blue\sor\panelbar_section_administration.png" />
+    <Content Include="App_Themes\blue\sor\panelbar_section_communications.png" />
+    <Content Include="App_Themes\blue\sor\panelbar_section_security.png" />
+    <Content Include="App_Themes\blue\sor\panel_link_account_settings.png" />
+    <Content Include="App_Themes\blue\sor\panel_link_basicinfo.png" />
+    <Content Include="App_Themes\blue\sor\panel_link_delete_account.png" />
+    <Content Include="App_Themes\blue\sor\panel_link_educations.png" />
+    <Content Include="App_Themes\blue\sor\panel_link_favorites.png" />
+    <Content Include="App_Themes\blue\sor\panel_link_friends.png" />
+    <Content Include="App_Themes\blue\sor\panel_link_mail_informs.png" />
+    <Content Include="App_Themes\blue\sor\panel_link_messages.png" />
+    <Content Include="App_Themes\blue\sor\panel_link_newsfeed.png" />
+    <Content Include="App_Themes\blue\sor\panel_link_object_checker.png" />
+    <Content Include="App_Themes\blue\sor\panel_link_pages.png" />
+    <Content Include="App_Themes\blue\sor\panel_link_photos.png" />
+    <Content Include="App_Themes\blue\sor\panel_link_pixel_adv.png" />
+    <Content Include="App_Themes\blue\sor\panel_link_privacy.png" />
+    <Content Include="App_Themes\blue\sor\panel_link_profile_cover.png" />
+    <Content Include="App_Themes\blue\sor\panel_link_requests.png" />
+    <Content Include="App_Themes\blue\sor\panel_link_special_posts.png" />
+    <Content Include="App_Themes\blue\sor\pixel_adv_bg.png" />
+    <Content Include="App_Themes\blue\sor\prev.png" />
+    <Content Include="App_Themes\blue\sor\prev_dis.png" />
+    <Content Include="App_Themes\blue\sor\prev_photo.png" />
+    <Content Include="App_Themes\blue\sor\prof_link_sel_back.png" />
+    <Content Include="App_Themes\blue\sor\quote.png" />
+    <Content Include="App_Themes\blue\sor\remove_item.png" />
+    <Content Include="App_Themes\blue\sor\return.png" />
+    <Content Include="App_Themes\blue\sor\seen.png" />
+    <Content Include="App_Themes\blue\sor\shared_friends.png" />
+    <Content Include="App_Themes\blue\sor\shared_members.png" />
+    <Content Include="App_Themes\blue\sor\shared_onlyme.png" />
+    <Content Include="App_Themes\blue\sor\shared_public.png" />
+    <Content Include="App_Themes\blue\sor\small_heart.png" />
+    <Content Include="App_Themes\blue\sor\tag_people.png" />
+    <Content Include="App_Themes\blue\sor\tooltip_bg.png" />
+    <Content Include="App_Themes\blue\sor\trans_bg.png" />
+    <Content Include="App_Themes\blue\sor\uploader_browse.png" />
+    <Content Include="App_Themes\blue\sor\visits_counter_ico.png" />
+    <Content Include="App_Themes\blue\sor\_AccountActivation.min.css" />
+    <Content Include="App_Themes\blue\sor\_AccountSettings.min.css" />
+    <Content Include="App_Themes\blue\sor\_Activity.min.css" />
+    <Content Include="App_Themes\blue\sor\_ActivitySettings.min.css" />
+    <Content Include="App_Themes\blue\sor\_AjaxUploader.min.css" />
+    <Content Include="App_Themes\blue\sor\_AlbumEditor.min.css" />
+    <Content Include="App_Themes\blue\sor\_AlbumPhotos.min.css" />
+    <Content Include="App_Themes\blue\sor\_AlbumPresenter.min.css" />
+    <Content Include="App_Themes\blue\sor\_AlbumView.min.css" />
+    <Content Include="App_Themes\blue\sor\_BasicInfo.min.css" />
+    <Content Include="App_Themes\blue\sor\_ChatDialog.min.css" />
+    <Content Include="App_Themes\blue\sor\_ChatMessage.min.css" />
+    <Content Include="App_Themes\blue\sor\_ChatSessions.min.css" />
+    <Content Include="App_Themes\blue\sor\_Comment.min.css" />
+    <Content Include="App_Themes\blue\sor\_ConsiderationsPPSection.min.css" />
+    <Content Include="App_Themes\blue\sor\_DeleteAccount.min.css" />
+    <Content Include="App_Themes\blue\sor\_DeleteCommentDialog.min.css" />
+    <Content Include="App_Themes\blue\sor\_DeleteConversationDialog.min.css" />
+    <Content Include="App_Themes\blue\sor\_EditCommentDialog.min.css" />
+    <Content Include="App_Themes\blue\sor\_EducationsAndSkills.min.css" />
+    <Content Include="App_Themes\blue\sor\_Favorites.min.css" />
+    <Content Include="App_Themes\blue\sor\_Footer.min.css" />
+    <Content Include="App_Themes\blue\sor\_Friends.min.css" />
+    <Content Include="App_Themes\blue\sor\_FriendsPPSection.min.css" />
+    <Content Include="App_Themes\blue\sor\_Header.min.css" />
+    <Content Include="App_Themes\blue\sor\_HmiMessages.min.css" />
+    <Content Include="App_Themes\blue\sor\_HmiNotifications.min.css" />
+    <Content Include="App_Themes\blue\sor\_HmiRequests.min.css" />
+    <Content Include="App_Themes\blue\sor\_HmiSettings.min.css" />
+    <Content Include="App_Themes\blue\sor\_HomeMemberCollection.min.css" />
+    <Content Include="App_Themes\blue\sor\_HomePage.min.css" />
+    <Content Include="App_Themes\blue\sor\_HomePageSuggestions.min.css" />
+    <Content Include="App_Themes\blue\sor\_InfoPPSection.min.css" />
+    <Content Include="App_Themes\blue\sor\_LikesDialog.min.css" />
+    <Content Include="App_Themes\blue\sor\_Login.min.css" />
+    <Content Include="App_Themes\blue\sor\_MailInforms.min.css" />
+    <Content Include="App_Themes\blue\sor\_MemberBox.min.css" />
+    <Content Include="App_Themes\blue\sor\_MemberBrief.min.css" />
+    <Content Include="App_Themes\blue\sor\_MemberConsiderationsDialog.min.css" />
+    <Content Include="App_Themes\blue\sor\_Message.min.css" />
+    <Content Include="App_Themes\blue\sor\_Messages.min.css" />
+    <Content Include="App_Themes\blue\sor\_MessageSender.min.css" />
+    <Content Include="App_Themes\blue\sor\_NewMessageDialog.min.css" />
+    <Content Include="App_Themes\blue\sor\_NewsFeedSettings.min.css" />
+    <Content Include="App_Themes\blue\sor\_Notification.min.css" />
+    <Content Include="App_Themes\blue\sor\_Notifications.min.css" />
+    <Content Include="App_Themes\blue\sor\_ObjectChecker.min.css" />
+    <Content Include="App_Themes\blue\sor\_Pages.min.css" />
+    <Content Include="App_Themes\blue\sor\_PanelBar.min.css" />
+    <Content Include="App_Themes\blue\sor\_PasswordRecovery.min.css" />
+    <Content Include="App_Themes\blue\sor\_People.min.css" />
+    <Content Include="App_Themes\blue\sor\_PhotoCollection.min.css" />
+    <Content Include="App_Themes\blue\sor\_PhotoEditor.min.css" />
+    <Content Include="App_Themes\blue\sor\_Photos.min.css" />
+    <Content Include="App_Themes\blue\sor\_PixelAdv.min.css" />
+    <Content Include="App_Themes\blue\sor\_PixelAdvManager.min.css" />
+    <Content Include="App_Themes\blue\sor\_PostEditor.min.css" />
+    <Content Include="App_Themes\blue\sor\_PPSection.min.css" />
+    <Content Include="App_Themes\blue\sor\_Privacy.min.css" />
+    <Content Include="App_Themes\blue\sor\_Profile.min.css" />
+    <Content Include="App_Themes\blue\sor\_ProfileCover.min.css" />
+    <Content Include="App_Themes\blue\sor\_ProfilePageActivities.min.css" />
+    <Content Include="App_Themes\blue\sor\_ProfilePageFriends.min.css" />
+    <Content Include="App_Themes\blue\sor\_ProfilePageTimeLine.min.css" />
+    <Content Include="App_Themes\blue\sor\_PublicShares.min.css" />
+    <Content Include="App_Themes\blue\sor\_Register.min.css" />
+    <Content Include="App_Themes\blue\sor\_RemoveFriendDialog.min.css" />
+    <Content Include="App_Themes\blue\sor\_SearchMembers.min.css" />
+    <Content Include="App_Themes\blue\sor\_ShareDialog.min.css" />
+    <Content Include="App_Themes\blue\sor\_SharedObjectActions.min.css" />
+    <Content Include="App_Themes\blue\sor\_SharedObjectDetails.min.css" />
+    <Content Include="App_Themes\blue\sor\_SimpleUploader.min.css" />
+    <Content Include="App_Themes\blue\sor\_SpecialPost.min.css" />
+    <Content Include="App_Themes\blue\sor\_SpecialPosts.min.css" />
+    <Content Include="App_Themes\blue\sor\_SpecialPostSettings.min.css" />
+    <Content Include="App_Themes\blue\sor\_ViewMore.min.css" />
+    <Content Include="Content\ConfigFiles\configs.xml" />
+    <Content Include="Content\ConfigFiles\statics.xml" />
+    <Content Include="Content\Images\Site\male_default.png" />
+    <Content Include="Content\Images\Site\male_default_thumb.png" />
+    <Content Include="Content\Images\Site\no_img_home_col.png" />
+    <Content Include="Content\Logs\TasksLog.txt" />
+    <Content Include="Content\Sounds\new_chat_msg.mp3" />
+    <Content Include="Content\Sounds\notify.mp3" />
+    <Content Include="Global.asax" />
+    <Content Include="Processes\ffmpeg.exe" />
+    <Content Include="Scripts\Dialog.min.js" />
+    <Content Include="Scripts\Facebook.min.js" />
+    <Content Include="Scripts\flowplayer\flowplayer-3.2.13.min.js" />
+    <Content Include="Scripts\flowplayer\flowplayer-3.2.18.swf" />
+    <Content Include="Scripts\flowplayer\flowplayer.controls-3.2.16.swf" />
+    <Content Include="Scripts\_Activity.min.js" />
+    <Content Include="Scripts\_ActivityDetailsSection.min.js" />
+    <Content Include="Scripts\_ActivityDetailsSectionHeadTags.min.js" />
+    <Content Include="Scripts\_FacebookShareDialog.min.js" />
+    <Content Include="Scripts\_FacebookShareDialogHeadTags.min.js" />
+    <Content Include="Scripts\Global.min.js" />
+    <Content Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.autocomplete.min.js" />
+    <Content Include="Scripts\jquery.form.min.js" />
+    <Content Include="Scripts\jquery.signalR-1.1.4.js" />
+    <Content Include="Scripts\jquery.signalR-1.1.4.min.js" />
+    <Content Include="Scripts\OriginalJSFiles\jquery.autocomplete.js" />
+    <Content Include="Scripts\jquery.autosize.min.js" />
+    <Content Include="Scripts\OriginalJSFiles\jquery.form.js" />
+    <Content Include="Scripts\jquery.Jcrop.min.js" />
+    <Content Include="Scripts\jquery.maskedinput.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.watermark.min.js" />
+    <Content Include="Scripts\jsHelper.min.js" />
+    <Content Include="Scripts\jsTimer.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\OriginalJSFiles\Dialog.js" />
+    <Content Include="Scripts\OriginalJSFiles\Global.js" />
+    <Content Include="Scripts\OriginalJSFiles\jsHelper.js" />
+    <Content Include="Scripts\OriginalJSFiles\jsTimer.js" />
+    <Content Include="Scripts\OriginalJSFiles\PluginsInterface.js" />
+    <Content Include="Scripts\OriginalJSFiles\readmore.js" />
+    <Content Include="Scripts\OriginalJSFiles\SignalR.js" />
+    <Content Include="Scripts\OriginalJSFiles\_AccountActivation.js" />
+    <Content Include="Scripts\OriginalJSFiles\_AccountActivationHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_AccountSettings.js" />
+    <Content Include="Scripts\OriginalJSFiles\_AccountSettingsHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ActivityHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ActivitySettings.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ActivitySettingsHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_AlbumEditor.js" />
+    <Content Include="Scripts\OriginalJSFiles\_AlbumEditorHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_AlbumPhotosHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_AlbumPresenter.js" />
+    <Content Include="Scripts\OriginalJSFiles\_AlbumPresenterHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_AlbumViewHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_BasicInfo.js" />
+    <Content Include="Scripts\OriginalJSFiles\_BasicInfoHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ChatDialog.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ChatDialogHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ChatMessageHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ChatSessions.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ChatSessionsHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_Comment.js" />
+    <Content Include="Scripts\OriginalJSFiles\_CommentHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ConsiderationsPPSection.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ConsiderationsPPSectionHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_DeleteAccount.js" />
+    <Content Include="Scripts\OriginalJSFiles\_DeleteAccountHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_DeleteCommentDialog.js" />
+    <Content Include="Scripts\OriginalJSFiles\_DeleteCommentDialogHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_DeleteConversationDialog.js" />
+    <Content Include="Scripts\OriginalJSFiles\_DeleteConversationDialogHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_EditCommentDialog.js" />
+    <Content Include="Scripts\OriginalJSFiles\_EditCommentDialogHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_EducationsAndSkills.js" />
+    <Content Include="Scripts\OriginalJSFiles\_EducationsAndSkillsHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_Favorites.js" />
+    <Content Include="Scripts\OriginalJSFiles\_FavoritesHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_FooterHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_Friends.js" />
+    <Content Include="Scripts\OriginalJSFiles\_FriendsHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_FriendsPPSectionHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_Header.js" />
+    <Content Include="Scripts\OriginalJSFiles\_HeaderHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_HmiMessages.js" />
+    <Content Include="Scripts\OriginalJSFiles\_HmiMessagesHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_HmiNotificationsHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_HmiRequests.js" />
+    <Content Include="Scripts\OriginalJSFiles\_HmiRequestsHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_HmiSettingsHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_HomeMemberCollectionHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_HomePage.js" />
+    <Content Include="Scripts\OriginalJSFiles\_HomePageHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_HomePageSuggestionsHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_InfoPPSectionHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_LikesDialogHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_Login.js" />
+    <Content Include="Scripts\OriginalJSFiles\_LoginHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_MailInforms.js" />
+    <Content Include="Scripts\OriginalJSFiles\_MailInformsHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_MemberBox.js" />
+    <Content Include="Scripts\OriginalJSFiles\_MemberBoxHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_MemberConsiderationsDialog.js" />
+    <Content Include="Scripts\OriginalJSFiles\_MemberConsiderationsDialogHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_MessageHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_Messages.js" />
+    <Content Include="Scripts\OriginalJSFiles\_MessageSender.js" />
+    <Content Include="Scripts\OriginalJSFiles\_MessageSenderHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_MessagesHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_NewMessageDialog.js" />
+    <Content Include="Scripts\OriginalJSFiles\_NewMessageDialogHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_NewsFeedSettings.js" />
+    <Content Include="Scripts\OriginalJSFiles\_NewsFeedSettingsHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_NotificationHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_NotificationsHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ObjectChecker.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ObjectCheckerHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_Pages.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PagesHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PanelBar.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PanelBarHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PasswordRecovery.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PasswordRecoveryHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PeopleHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PhotoCollection.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PhotoCollectionHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PhotoEditor.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PhotoEditorHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_Photos.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PhotosHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PixelAdvHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PixelAdvManager.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PixelAdvManagerHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PostEditor.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PostEditorHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_Privacy.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PrivacyHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_Profile.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ProfileCover.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ProfileCoverHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ProfileHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ProfilePageActivities.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ProfilePageActivitiesHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ProfilePageFriendsHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ProfilePageTimeLine.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ProfilePageTimeLineHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PublicShares.js" />
+    <Content Include="Scripts\OriginalJSFiles\_PublicSharesHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_Register.js" />
+    <Content Include="Scripts\OriginalJSFiles\_RegisterHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_RemoveFriendDialog.js" />
+    <Content Include="Scripts\OriginalJSFiles\_RemoveFriendDialogHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_SearchMembers.js" />
+    <Content Include="Scripts\OriginalJSFiles\_SearchMembersHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ShareDialog.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ShareDialogHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_SharedObjectActions.js" />
+    <Content Include="Scripts\OriginalJSFiles\_SharedObjectActionsHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_SharedObjectDetailsHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_SimpleUploader.js" />
+    <Content Include="Scripts\OriginalJSFiles\_SimpleUploaderHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_SpecialPostHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_SpecialPosts.js" />
+    <Content Include="Scripts\OriginalJSFiles\_SpecialPostSettings.js" />
+    <Content Include="Scripts\OriginalJSFiles\_SpecialPostSettingsHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_SpecialPostsHeadTags.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ViewMore.js" />
+    <Content Include="Scripts\OriginalJSFiles\_ViewMoreHeadTags.js" />
+    <Content Include="Scripts\PluginsInterface.min.js" />
+    <Content Include="Scripts\readmore.min.js" />
+    <Content Include="Scripts\SignalR.min.js" />
+    <Content Include="Scripts\tinymce\license.txt" />
+    <Content Include="Scripts\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="Scripts\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\example\dialog.html" />
+    <Content Include="Scripts\tinymce\plugins\example\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\example_dependency\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\layer\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="Scripts\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Scripts\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="Scripts\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="Scripts\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="Scripts\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.dev.svg" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.dev.svg" />
+    <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="Scripts\tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="Scripts\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="Scripts\tinymce\themes\modern\theme.min.js" />
+    <Content Include="Scripts\tinymce\tinymce.min.js" />
+    <Content Include="Scripts\_AccountActivation.min.js" />
+    <Content Include="Scripts\_AccountActivationHeadTags.min.js" />
+    <Content Include="Scripts\_AccountSettings.min.js" />
+    <Content Include="Scripts\_AccountSettingsHeadTags.min.js" />
+    <Content Include="Scripts\_ActivityHeadTags.min.js" />
+    <Content Include="Scripts\_ActivitySettings.min.js" />
+    <Content Include="Scripts\_ActivitySettingsHeadTags.min.js" />
+    <Content Include="Scripts\_AlbumEditor.min.js" />
+    <Content Include="Scripts\_AlbumEditorHeadTags.min.js" />
+    <Content Include="Scripts\_AlbumPhotosHeadTags.min.js" />
+    <Content Include="Scripts\_AlbumPresenter.min.js" />
+    <Content Include="Scripts\_AlbumPresenterHeadTags.min.js" />
+    <Content Include="Scripts\_AlbumViewHeadTags.min.js" />
+    <Content Include="Scripts\_AltEmailActivation.min.js" />
+    <Content Include="Scripts\_AltEmailActivationHeadTags.min.js" />
+    <Content Include="Scripts\_BasicInfo.min.js" />
+    <Content Include="Scripts\_BasicInfoHeadTags.min.js" />
+    <Content Include="Scripts\_ChatDialog.min.js" />
+    <Content Include="Scripts\_ChatDialogHeadTags.min.js" />
+    <Content Include="Scripts\_ChatMessageHeadTags.min.js" />
+    <Content Include="Scripts\_ChatSessions.min.js" />
+    <Content Include="Scripts\_ChatSessionsHeadTags.min.js" />
+    <Content Include="Scripts\_Comment.min.js" />
+    <Content Include="Scripts\_CommentHeadTags.min.js" />
+    <Content Include="Scripts\_ConsiderationsPPSection.min.js" />
+    <Content Include="Scripts\_ConsiderationsPPSectionHeadTags.min.js" />
+    <Content Include="Scripts\_DeleteAccount.min.js" />
+    <Content Include="Scripts\_DeleteAccountHeadTags.min.js" />
+    <Content Include="Scripts\_DeleteCommentDialog.min.js" />
+    <Content Include="Scripts\_DeleteCommentDialogHeadTags.min.js" />
+    <Content Include="Scripts\_DeleteConversationDialog.min.js" />
+    <Content Include="Scripts\_DeleteConversationDialogHeadTags.min.js" />
+    <Content Include="Scripts\_EditCommentDialog.min.js" />
+    <Content Include="Scripts\_EditCommentDialogHeadTags.min.js" />
+    <Content Include="Scripts\_EducationsAndSkills.min.js" />
+    <Content Include="Scripts\_EducationsAndSkillsHeadTags.min.js" />
+    <Content Include="Scripts\_FacebookConnect.min.js" />
+    <Content Include="Scripts\_FacebookConnectHeadTags.min.js" />
+    <Content Include="Scripts\_Favorites.min.js" />
+    <Content Include="Scripts\_FavoritesHeadTags.min.js" />
+    <Content Include="Scripts\_FooterHeadTags.min.js" />
+    <Content Include="Scripts\_Friends.min.js" />
+    <Content Include="Scripts\_FriendsHeadTags.min.js" />
+    <Content Include="Scripts\_FriendsPPSectionHeadTags.min.js" />
+    <Content Include="Scripts\_Header.min.js" />
+    <Content Include="Scripts\_HeaderHeadTags.min.js" />
+    <Content Include="Scripts\_HmiMessages.min.js" />
+    <Content Include="Scripts\_HmiMessagesHeadTags.min.js" />
+    <Content Include="Scripts\_HmiNotifications.min.js" />
+    <Content Include="Scripts\_HmiNotificationsHeadTags.min.js" />
+    <Content Include="Scripts\_HmiRequests.min.js" />
+    <Content Include="Scripts\_HmiRequestsHeadTags.min.js" />
+    <Content Include="Scripts\_HmiSettingsHeadTags.min.js" />
+    <Content Include="Scripts\_HomeMemberCollectionHeadTags.min.js" />
+    <Content Include="Scripts\_HomePage.min.js" />
+    <Content Include="Scripts\_HomePageHeadTags.min.js" />
+    <Content Include="Scripts\_HomePageSuggestionsHeadTags.min.js" />
+    <Content Include="Scripts\_InfoPPSectionHeadTags.min.js" />
+    <Content Include="Scripts\_LikesDialogHeadTags.min.js" />
+    <Content Include="Scripts\_Login.min.js" />
+    <Content Include="Scripts\_LoginHeadTags.min.js" />
+    <Content Include="Scripts\_MailInforms.min.js" />
+    <Content Include="Scripts\_MailInformsHeadTags.min.js" />
+    <Content Include="Scripts\_ManagerSettingDialog.min.js" />
+    <Content Include="Scripts\_ManagerSettingDialogHeadTags.min.js" />
+    <Content Include="Scripts\_MemberBox.min.js" />
+    <Content Include="Scripts\_MemberBoxHeadTags.min.js" />
+    <Content Include="Scripts\_MemberConsiderationsDialog.min.js" />
+    <Content Include="Scripts\_MemberConsiderationsDialogHeadTags.min.js" />
+    <Content Include="Scripts\_MessageHeadTags.min.js" />
+    <Content Include="Scripts\_Messages.min.js" />
+    <Content Include="Scripts\_MessageSender.min.js" />
+    <Content Include="Scripts\_MessageSenderHeadTags.min.js" />
+    <Content Include="Scripts\_MessagesHeadTags.min.js" />
+    <Content Include="Scripts\_NewMessageDialog.min.js" />
+    <Content Include="Scripts\_NewMessageDialogHeadTags.min.js" />
+    <Content Include="Scripts\_NewsFeedSettings.min.js" />
+    <Content Include="Scripts\_NewsFeedSettingsHeadTags.min.js" />
+    <Content Include="Scripts\_NotificationHeadTags.min.js" />
+    <Content Include="Scripts\_NotificationsHeadTags.min.js" />
+    <Content Include="Scripts\_ObjectChecker.min.js" />
+    <Content Include="Scripts\_ObjectCheckerHeadTags.min.js" />
+    <Content Include="Scripts\_Pages.min.js" />
+    <Content Include="Scripts\_PagesHeadTags.min.js" />
+    <Content Include="Scripts\_PanelBar.min.js" />
+    <Content Include="Scripts\_PanelBarHeadTags.min.js" />
+    <Content Include="Scripts\_PasswordRecovery.min.js" />
+    <Content Include="Scripts\_PasswordRecoveryHeadTags.min.js" />
+    <Content Include="Scripts\_PeopleHeadTags.min.js" />
+    <Content Include="Scripts\_PhotoCollection.min.js" />
+    <Content Include="Scripts\_PhotoCollectionHeadTags.min.js" />
+    <Content Include="Scripts\_PhotoEditor.min.js" />
+    <Content Include="Scripts\_PhotoEditorHeadTags.min.js" />
+    <Content Include="Scripts\_Photos.min.js" />
+    <Content Include="Scripts\_PhotosHeadTags.min.js" />
+    <Content Include="Scripts\_PixelAdvHeadTags.min.js" />
+    <Content Include="Scripts\_PixelAdvManager.min.js" />
+    <Content Include="Scripts\_PixelAdvManagerHeadTags.min.js" />
+    <Content Include="Scripts\_PostEditor.min.js" />
+    <Content Include="Scripts\_PostEditorHeadTags.min.js" />
+    <Content Include="Scripts\_Privacy.min.js" />
+    <Content Include="Scripts\_PrivacyHeadTags.min.js" />
+    <Content Include="Scripts\_Profile.min.js" />
+    <Content Include="Scripts\_ProfileCover.min.js" />
+    <Content Include="Scripts\_ProfileCoverHeadTags.min.js" />
+    <Content Include="Scripts\_ProfileHeadTags.min.js" />
+    <Content Include="Scripts\_ProfilePageActivities.min.js" />
+    <Content Include="Scripts\_ProfilePageActivitiesHeadTags.min.js" />
+    <Content Include="Scripts\_ProfilePageAdminActions.min.js" />
+    <Content Include="Scripts\_ProfilePageAdminActionsHeadTags.min.js" />
+    <Content Include="Scripts\_ProfilePageFriendsHeadTags.min.js" />
+    <Content Include="Scripts\_ProfilePageTimeLine.min.js" />
+    <Content Include="Scripts\_ProfilePageTimeLineHeadTags.min.js" />
+    <Content Include="Scripts\_PublicShares.min.js" />
+    <Content Include="Scripts\_PublicSharesHeadTags.min.js" />
+    <Content Include="Scripts\_Register.min.js" />
+    <Content Include="Scripts\_RegisterHeadTags.min.js" />
+    <Content Include="Scripts\_RemoveFriendDialog.min.js" />
+    <Content Include="Scripts\_RemoveFriendDialogHeadTags.min.js" />
+    <Content Include="Scripts\_SearchMembers.min.js" />
+    <Content Include="Scripts\_SearchMembersHeadTags.min.js" />
+    <Content Include="Scripts\_ShareDialog.min.js" />
+    <Content Include="Scripts\_ShareDialogHeadTags.min.js" />
+    <Content Include="Scripts\_SharedObjectActions.min.js" />
+    <Content Include="Scripts\_SharedObjectActionsHeadTags.min.js" />
+    <Content Include="Scripts\_SharedObjectDetailsHeadTags.min.js" />
+    <Content Include="Scripts\_SimpleUploader.min.js" />
+    <Content Include="Scripts\_SimpleUploaderHeadTags.min.js" />
+    <Content Include="Scripts\_SpecialPostHeadTags.min.js" />
+    <Content Include="Scripts\_SpecialPosts.min.js" />
+    <Content Include="Scripts\_SpecialPostSettings.min.js" />
+    <Content Include="Scripts\_SpecialPostSettingsHeadTags.min.js" />
+    <Content Include="Scripts\_SpecialPostsHeadTags.min.js" />
+    <Content Include="Scripts\_VideoPlayer.min.js" />
+    <Content Include="Scripts\_VideoPlayerHeadTags.min.js" />
+    <Content Include="Scripts\_ViewMore.min.js" />
+    <Content Include="Scripts\_ViewMoreHeadTags.min.js" />
+    <Content Include="Content\translated.xlsx" />
+    <Content Include="App_Themes\black\kur\PSDs\colors.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\cover_actions_bg.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\header_bg.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\header_bg_thick.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\header_logo.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\header_logo_thick.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\hmi_home.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\home_members_bg.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\img_link_charge.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\img_link_help.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\img_link_people.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\img_link_publicwall.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\img_link_rules.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\img_link_shop.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\logo_name.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\nocover.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\online.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\panelbar_section_account_settings.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\panelbar_section_administration.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\panelbar_section_communications.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\panelbar_section_security.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\pixel_adv_back.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\play.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\tag_head.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\tutorial_frame.psd" />
+    <Content Include="App_Themes\black\kur\PSDs\uploader_browse.psd" />
+    <Content Include="App_Themes\black\kur\Fonts\DroidNaskh-Regular.eot" />
+    <Content Include="App_Themes\black\kur\Fonts\DroidNaskh-Regular.ttf" />
+    <Content Include="App_Themes\black\kur\Fonts\DroidNaskh-Regular.woff" />
+    <Content Include="App_Themes\black\sor\PSDs\colors.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\cover_actions_bg.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\header_bg.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\header_bg_thick.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\header_logo.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\header_logo_thick.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\hmi_home.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\home_members_bg.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\img_link_charge.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\img_link_help.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\img_link_people.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\img_link_publicwall.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\img_link_rules.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\img_link_shop.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\logo_name.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\nocover.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\online.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\panelbar_section_account_settings.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\panelbar_section_administration.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\panelbar_section_communications.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\panelbar_section_security.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\pixel_adv_back.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\play.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\tag_head.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\tutorial_frame.psd" />
+    <Content Include="App_Themes\black\sor\PSDs\uploader_browse.psd" />
+    <Content Include="App_Themes\black\sor\Fonts\DroidNaskh-Regular.eot" />
+    <Content Include="App_Themes\black\sor\Fonts\DroidNaskh-Regular.ttf" />
+    <Content Include="App_Themes\black\sor\Fonts\DroidNaskh-Regular.woff" />
+    <None Include="Service References\CoreServices.LongRunningProcesses\configuration91.svcinfo" />
+    <None Include="Service References\CoreServices.LongRunningProcesses\configuration.svcinfo" />
+    <None Include="Service References\CoreServices.LongRunningProcesses\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CoreServices.LongRunningProcesses\VideoProcessorService1.wsdl" />
+    <None Include="Service References\CoreServices.LongRunningProcesses\VideoProcessorService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CoreServices.LongRunningProcesses\VideoProcessorService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CoreServices.Tasks\BackgroundTasksService1.wsdl" />
+    <None Include="Service References\CoreServices.Tasks\BackgroundTasksService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CoreServices.Tasks\BackgroundTasksService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CoreServices.Tasks\configuration91.svcinfo" />
+    <None Include="Service References\CoreServices.Tasks\configuration.svcinfo" />
+    <None Include="Service References\CoreServices.Tasks\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CoreServices.LongRunningProcesses\VideoProcessorService1.disco" />
+    <None Include="Service References\CoreServices.Tasks\BackgroundTasksService1.disco" />
+    <Content Include="Services\LongRunningProcesses\VideoProcessorService.svc" />
+    <Content Include="Services\Tasks\BackgroundTasksService.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Modules\_VideoPlayer.cshtml" />
+    <Content Include="Views\Modules\_ManagerSettingDialog.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Messages.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>SocialNetApp.Resources</CustomToolNamespace>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Words.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Words.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>SocialNetApp.Resources</CustomToolNamespace>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Modules\_Header.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Layouts\_Site.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Modules\_Footer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Modules\_Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Modules\_Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Login.cshtml" />
+    <EntityDeploy Include="Models\SocialDbModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SocialDbModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Views\Account\Activation.cshtml" />
+    <Content Include="Views\Modules\_AccountActivation.cshtml" />
+    <Content Include="Views\Account\RecoverPassword.cshtml" />
+    <Content Include="Views\Layouts\_Frame.cshtml" />
+    <Content Include="Views\Modules\_PasswordRecovery.cshtml" />
+    <Content Include="Views\HomePage\Index.cshtml" />
+    <Content Include="Views\Modules\_HomePixelAdv.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Modules\_PanelBar.cshtml" />
+    <Content Include="Views\Modules\_BasicInfo.cshtml" />
+    <Content Include="Views\Modules\_Photos.cshtml" />
+    <Content Include="Views\Modules\_Friends.cshtml" />
+    <Content Include="Views\Modules\_Messages.cshtml" />
+    <Content Include="Views\Modules\_Privacy.cshtml" />
+    <Content Include="Views\Modules\_MailInforms.cshtml" />
+    <Content Include="Views\Modules\_HomePage.cshtml" />
+    <Content Include="Views\Modules\_Favorites.cshtml" />
+    <Content Include="Views\Modules\_DeleteAccount.cshtml" />
+    <Content Include="Views\Modules\_AccountSettings.cshtml" />
+    <Content Include="Views\Modules\_AlbumPresenter.cshtml" />
+    <Content Include="Views\Modules\_AlbumEditor.cshtml" />
+    <Content Include="Views\Modules\_AlbumPhotos.cshtml" />
+    <Content Include="Views\Modules\_PhotoEditor.cshtml" />
+    <Content Include="Views\Modules\_SimpleUploader.cshtml" />
+    <Content Include="Views\Modules\_ProfileCover.cshtml" />
+    <Content Include="Views\Modules\_HmiSettings.cshtml" />
+    <Content Include="Views\Modules\_HmiRequests.cshtml" />
+    <Content Include="Views\Modules\_HmiMessages.cshtml" />
+    <Content Include="Views\Modules\_HmiNotifications.cshtml" />
+    <Content Include="Views\Modules\_PostEditor.cshtml" />
+    <Content Include="Views\Modules\_PostActivity.cshtml" />
+    <Content Include="Views\Modules\_ActivitySettings.cshtml" />
+    <Content Include="Views\Modules\_SharedObjectActions.cshtml" />
+    <Content Include="Views\Modules\_Comment.cshtml" />
+    <Content Include="Views\Modules\_DeleteCommentDialog.cshtml" />
+    <Content Include="Views\Modules\_EditCommentDialog.cshtml" />
+    <Content Include="Views\Modules\_LikesDialog.cshtml" />
+    <Content Include="Views\Modules\_UserIdentity.cshtml" />
+    <Content Include="Views\Modules\_ShareDialog.cshtml" />
+    <Content Include="Views\Modules\_ErrorDialog.cshtml" />
+    <Content Include="Views\Modules\_PhotoActivity.cshtml" />
+    <Content Include="Views\Modules\_SharingActivity.cshtml" />
+    <Content Include="Views\Modules\_CommentActivity.cshtml" />
+    <Content Include="Views\Modules\_LikeActivity.cshtml" />
+    <Content Include="Views\Modules\_ChangeInfoActivity.cshtml" />
+    <Content Include="Views\Modules\_ChangeCoverActivity.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Emails.resx">
+      <SubType>Designer</SubType>
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Emails.designer.cs</LastGenOutput>
+      <CustomToolNamespace>SocialNetApp.Resources</CustomToolNamespace>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Texts.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Texts.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>SocialNetApp.Resources</CustomToolNamespace>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AppGlobal\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\Members\Albums\Photos\" />
+    <Folder Include="Content\Images\Members\Albums\Thumbnails\Large\" />
+    <Folder Include="Content\Images\Members\Albums\Thumbnails\Small\" />
+    <Folder Include="Content\Images\Members\ProfileCovers\" />
+    <Folder Include="Content\Images\Members\ProfilePhotos\" />
+    <Folder Include="Content\Images\Tutorials\" />
+    <Folder Include="Content\Temp\" />
+    <Folder Include="Content\Videos\PostedVideos\Thumbnails\ActualSize\" />
+    <Folder Include="Content\Videos\PostedVideos\Thumbnails\Small\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Modules\_MemberBox.cshtml" />
+    <Content Include="Views\Members\ProfilePage.cshtml" />
+    <Content Include="Views\Modules\_RemoveFriendDialog.cshtml" />
+    <Content Include="Views\Modules\_Message.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\to_be_translated.xlsx" />
+    <None Include="App_Themes\blue\fa\Fonts\DroidNaskh-Regular.eot" />
+    <None Include="App_Themes\blue\fa\Fonts\DroidNaskh-Regular.ttf" />
+    <None Include="App_Themes\blue\fa\Fonts\DroidNaskh-Regular.woff" />
+    <None Include="App_Themes\blue\fa\PSDs\header_bg.psd" />
+    <None Include="App_Themes\blue\fa\PSDs\header_bg_thick.psd" />
+    <None Include="App_Themes\blue\fa\PSDs\header_logo.psd" />
+    <None Include="App_Themes\blue\fa\PSDs\header_logo_thick.psd" />
+    <None Include="App_Themes\blue\fa\PSDs\img_link_charge.psd" />
+    <None Include="App_Themes\blue\fa\PSDs\img_link_chatrooms.psd" />
+    <None Include="App_Themes\blue\fa\PSDs\img_link_shop.psd" />
+    <None Include="App_Themes\blue\fa\PSDs\panelbar_section_account_settings.psd" />
+    <None Include="App_Themes\blue\fa\PSDs\panelbar_section_communications.psd" />
+    <None Include="App_Themes\blue\fa\PSDs\panelbar_section_security.psd" />
+    <None Include="App_Themes\blue\fa\PSDs\pixel_adv_back.psd" />
+    <None Include="App_Themes\blue\fa\PSDs\uploader_browse.psd" />
+    <Content Include="Views\Modules\_MessageSender.cshtml" />
+    <Content Include="Views\Modules\_DeleteConversationDialog.cshtml" />
+    <Content Include="Views\Modules\_NewMessageDialog.cshtml" />
+    <Content Include="Views\Modules\_PublicShares.cshtml" />
+    <Content Include="Views\Modules\_EducationsAndSkills.cshtml" />
+    <Content Include="Views\Modules\_SkillActivity.cshtml" />
+    <Content Include="Views\Modules\_EducationActivity.cshtml" />
+    <Content Include="Views\Objects\ObjectDetails.cshtml" />
+    <Content Include="Views\Layouts\_TitleLessFrame.cshtml" />
+    <Content Include="Views\Modules\_SharedObjectDetails.cshtml" />
+    <Content Include="Views\Modules\_AlbumDetails.cshtml" />
+    <Content Include="Views\Modules\_SharingDetails.cshtml" />
+    <Content Include="Views\Modules\_PostDetails.cshtml" />
+    <Content Include="Views\Modules\_PhotoCollection.cshtml" />
+    <Content Include="Views\Modules\_AccessDenied.cshtml" />
+    <Content Include="Views\Modules\_Profile.cshtml" />
+    <Content Include="Views\Modules\_FriendsPPSection.cshtml" />
+    <Content Include="Views\Modules\_InfoPPSection.cshtml" />
+    <Content Include="Views\Modules\_ProfilePageTimeLine.cshtml" />
+    <Content Include="Views\Modules\_ProfilePageFriends.cshtml" />
+    <Content Include="Views\Modules\_ProfilePageInfo.cshtml" />
+    <Content Include="Views\Modules\_ProfilePagePhotos.cshtml" />
+    <Content Include="Views\Modules\_ProfilePageActivities.cshtml" />
+    <Content Include="Views\Modules\_PostOnWallActivity.cshtml" />
+    <Content Include="Views\Modules\_ViewMore.cshtml" />
+    <Content Include="Views\Modules\_FriendshipActivity.cshtml" />
+    <Content Include="Views\Modules\_ProfilePagePixelAdv.cshtml" />
+    <Content Include="Views\Modules\_AlbumView.cshtml" />
+    <Content Include="Views\Modules\_HomePagePixelAdv.cshtml" />
+    <Content Include="Views\Modules\_HomePageSuggestions.cshtml" />
+    <Content Include="Views\Modules\_CustomErrorPage.cshtml" />
+    <Content Include="Views\Modules\_ChatSessions.cshtml" />
+    <Content Include="Views\Modules\_ChatDialog.cshtml" />
+    <Content Include="Views\Modules\_ChatMessage.cshtml" />
+    <Content Include="Views\Modules\_HomeMemberCollection.cshtml" />
+    <Content Include="Views\Modules\_Notification.cshtml" />
+    <Content Include="Views\Modules\_Notifications.cshtml" />
+    <Content Include="Views\Modules\_SpecialPosts.cshtml" />
+    <Content Include="Views\Modules\_ObjectChecker.cshtml" />
+    <Content Include="Views\Modules\_SpecialPost.cshtml" />
+    <Content Include="Views\Modules\_SpecialPostSettings.cshtml" />
+    <Content Include="Views\Modules\_Pages.cshtml" />
+    <Content Include="Views\Pages\Page.cshtml" />
+    <Content Include="Views\Modules\_ConsiderationsPPSection.cshtml" />
+    <Content Include="Views\Modules\_MemberConsiderationsDialog.cshtml" />
+    <Content Include="Views\Modules\_ChangePPActivity.cshtml" />
+    <Content Include="Views\Members\Search.cshtml" />
+    <Content Include="Views\Modules\_SearchMembers.cshtml" />
+    <Content Include="Views\Modules\_SearchResult.cshtml" />
+    <Content Include="Views\Modules\_EmptyList.cshtml" />
+    <Content Include="Views\Modules\_MemberBrief.cshtml" />
+    <Content Include="Views\Members\Index.cshtml" />
+    <Content Include="Views\Modules\_People.cshtml" />
+    <Content Include="Content\ConfigFiles\web.config" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <None Include="Scripts\tinymce\langs\readme.md" />
+    <None Include="Scripts\tinymce\skins\lightgray\fonts\readme.md" />
+    <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <None Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="Views\Modules\_ActivityInfo.cshtml" />
+    <Content Include="Views\Modules\_PixelAdvManager.cshtml" />
+    <Content Include="Views\Modules\_NewsFeedSettings.cshtml" />
+    <Content Include="Views\Modules\_PhotoDetails.cshtml" />
+    <Content Include="Views\Modules\_ActivityDetailsSection.cshtml" />
+    <Content Include="Scripts\_Notifications.min.js" />
+    <Content Include="Views\Home\PageNotFoundError.cshtml" />
+    <Content Include="Views\Home\InternalServerError.cshtml" />
+    <Content Include="Views\Account\AlternativeEmailActivation.cshtml" />
+    <Content Include="Views\Modules\_AltEmailActivation.cshtml" />
+    <Content Include="Views\Modules\_ProfilePageAdminActions.cshtml" />
+    <Content Include="Views\Account\ConnectToFacebook.cshtml" />
+    <Content Include="Views\Modules\_FacebookConnect.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Home\TestSuccess.cshtml" />
+    <Content Include="Views\Modules\_FacebookShareDialog.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Titles.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Titles.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>SocialNetApp.Resources</CustomToolNamespace>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Emails.sor.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Emails.sor.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Messages.sor.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Messages.sor.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Texts.sor.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Texts.sor.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Titles.sor.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Titles.sor.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Words.sor.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Words.sor.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreHelpersLibrary\CoreHelpersLibrary\CoreHelpersLibrary.csproj">
+      <Project>{74ec555d-b66d-4c48-a90a-dd0131e8fb34}</Project>
+      <Name>CoreHelpersLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CoreServices.LongRunningProcesses\" />
+    <WCFMetadataStorage Include="Service References\CoreServices.Tasks\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Emails.kur.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Emails.kur.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Messages.kur.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Messages.kur.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Texts.kur.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Texts.kur.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Titles.kur.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Titles.kur.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Words.kur.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Words.kur.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63892</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

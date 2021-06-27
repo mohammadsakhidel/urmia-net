@@ -1,0 +1,19 @@
+﻿@using CoreHelpers
+@model SocialNetApp.Views.Models.Members.SearchViewModel
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Layouts/_Frame.cshtml";
+}
+@section head{
+    <title>
+        @Resources.Words.SearchPeople
+        @Strings.TitleSeparator
+        @Resources.Titles.StaticPageTitle
+    </title>
+}
+@section title{
+    @Resources.Words.SearchPeople
+}
+@section content{
+    @{Html.RenderPartial(Urls.ModuleViews + "_SearchMembers.cshtml", Model.SearchMembersModel);}
+}

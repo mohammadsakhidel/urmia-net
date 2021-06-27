@@ -1,0 +1,48 @@
+﻿div#fb_connect div.change_step {
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: solid 1px #dcdcdc;
+}
+
+    div#fb_connect div.change_step a {
+        margin-right: 10px;
+    }
+
+div#fb_connect .authMemberUserIdentity {
+    border-top: solid 1px #dcdcdc;
+    border-bottom: solid 1px #dcdcdc;
+    padding: 10px 0 10px 0;
+}
+
+div#fb_connect .authMemberFullName {
+    font-size: 10pt;
+    margin: 20px 0 0 7px;
+}
+
+div#fb_connect #btnConnect {
+    background-image: url(fb.png);
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-color: #3b5998;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    color: #ffffff;
+    padding: 4px 10px 4px 38px;
+    display: block;
+    float: left;
+    margin: 10px 0 0 0;
+}
+
+    div#fb_connect #btnConnect:hover {
+        text-decoration: none;
+        background-color: #283e6f;
+    }
+
+div#fb_connect div#prgFbConnect {
+    float: left;
+    margin: 17px 0 0 7px;
+}
+
+div#fb_connect div#msgFbConnect {
+    margin: 15px 0 0 0;
+}

@@ -1,0 +1,120 @@
+﻿.actdet_post_text
+{
+    margin: 0 0 0 10px;
+    font-size: 10pt;
+    line-height: 20px;
+}
+
+.actdet_post_photo
+{
+    margin: 10px 0 0 10px;
+}
+
+.actdet_post_photos
+{
+    clear: both;
+    margin: 10px 0 0 10px;
+}
+
+.actdet_post_img_large_a
+{
+    float: left;
+    border: 0;
+}
+
+.actdet_post_img_large
+{
+    border: solid 1px #dcdcdc;
+    width: 430px;
+}
+
+.actdet_post_img_small_a
+{
+    float: left;
+    border: 0;
+    margin-right: 10px;
+}
+
+.actdet_post_img_small
+{
+    border: solid 1px #dcdcdc;
+    width: 100px;
+}
+
+.actdet_photo_desc
+{
+    margin: 10px 0 0 10px;
+    font-size: 10pt;
+    line-height: 20px;
+}
+
+.actdet_img_parent
+{
+    display: block;
+    margin: 10px 0 0 10px;
+}
+
+.actdet_vert_img
+{
+    border: solid 1px #dcdcdc;
+    height: 400px;
+}
+
+.actdet_img
+{
+    border: solid 1px #dcdcdc;
+    width: 430px;
+}
+
+/************************ abbreviated details classes ************************/
+.actdet_post_text_abbr
+{
+    margin: 0 0 0 10px;
+    font-size: 9pt;
+    line-height: 20px;
+    color: #808080;
+    padding: 0 15px;
+}
+
+.actdet_post_img_large_abbr
+{
+    border: solid 1px #dcdcdc;
+    width: 180px;
+}
+
+.actdet_post_img_small_abbr
+{
+    border: solid 1px #dcdcdc;
+    width: 70px;
+}
+
+.actdet_photo_desc_abbr
+{
+    margin: 10px 0 0 10px;
+    font-size: 9pt;
+    line-height: 20px;
+    color: #808080;
+    padding: 0 15px;
+}
+
+.actdet_vert_img_abbr
+{
+    border: solid 1px #dcdcdc;
+    height: 150px;
+}
+
+.actdet_img_abbr
+{
+    border: solid 1px #dcdcdc;
+    width: 180px;
+}
+
+div.actdet_post_tags {
+    margin: 5px 0 0 10px;
+}
+
+div.actdet_post_tags .tag {
+    float: left;
+    margin: 5px 5px 0 0;
+}
+/************************ --------------------------- ************************/

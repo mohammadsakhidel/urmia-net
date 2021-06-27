@@ -1,0 +1,73 @@
+﻿div#pages #page_set
+{
+    margin-top: 5px;
+}
+
+div#pages #page_set .page_set_sub
+{
+    float: left;
+}
+
+div#pages #page_set .page_set_sub input[type="submit"]
+{
+    float: left;
+    width: 50px;
+}
+
+div#pages #page_set .page_set_sub div.loading_small_circle
+{
+    float: left;
+    margin: 5px 0 0 5px;
+}
+
+div#pages div.page_row
+{
+    margin-bottom: 10px;
+}
+
+div#pages div.page_row input[name="Title"]
+{
+    width: 300px;
+}
+
+div#pages div.page_row input[name="PageName"]
+{
+    width: 300px;
+}
+
+div#pages div.page_list
+{
+    margin-top: 10px;
+}
+
+div#pages div.page_list_li
+{
+    padding: 10px 0;
+    border-bottom: solid 1px #ebebec;
+    color: #414042;
+    font-weight: bold;
+}
+
+div#pages div.page_list_li_actions
+{
+    float: left;
+    font-weight: normal;
+}
+
+div#pages div.page_list_li_actions a
+{
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+div#pages div.page_list_li div.loading_small_circle
+{
+    float: left;
+    margin: 0 0 0 10px;
+}
+
+div#pages .error_message, div#pages .success_message
+{
+    margin-top: 10px;
+    padding: 5px;
+}

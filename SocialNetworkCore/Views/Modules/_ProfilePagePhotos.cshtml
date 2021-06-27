@@ -1,0 +1,21 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@using CoreHelpers
+@model ProfilePagePhotosModel
+<div id="pp_photos">
+    @if (Model.AlbumModels.Any())
+    {
+        <div class="pp_in_title">
+            <h2>@Resources.Words.ProfilePageLink_Photos</h2>
+        </div>
+        <div>
+            @foreach (var albumModel in Model.AlbumModels)
+            {
+                Html.RenderPartial(Urls.ModuleViews + "_AlbumView.cshtml", albumModel);
+            }
+        </div>
+    }
+    else
+    {
+        Html.RenderPartial(Urls.ModuleViews + "_EmptyList.cshtml", Model.EmptyListModel);
+    }
+</div>

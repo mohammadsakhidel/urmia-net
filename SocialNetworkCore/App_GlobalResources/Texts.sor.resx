@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActivateAccountText" xml:space="preserve">
+    <value>بەکارهێنەری بەڕێز بۆ چالاککردنی هەژمارەکەتان، کۆدی نێردراو بۆ ئیمەیلەکەتان لە ڕێگای فۆرمی خوارەوە بنێرن:
+&lt;br /&gt;
+( تێبینی: لەوانەیە ئیمەیلە نێردراوەکە لە بوخچەی spam دا بێت)</value>
+  </data>
+  <data name="AlbumPhotosText" xml:space="preserve">
+    <value>ئێوە ئەتوانن وێنەگەلێک بە قەبارەی لانی زۆر 4MB بۆ هەر وێنەیەک بخەنە سەر ئەلبومەکەتان.
+&lt;br /&gt;
+وێنە ڕێپێدراوەکان بریتین لە پاشگرەکانی jpg, png وgif.
+&lt;br /&gt;
+بڕگەکانی ژێر ڕێپێنەدراوە و لە لایەن بەڕێوەبەران ئەسڕێنەوە و لە ئەگەری دووبارەکردنەوە، هەژمارەکەتان ئە</value>
+  </data>
+  <data name="AlternativeEmailExplan" xml:space="preserve">
+    <value>لە ئەگەری دیاریکردنی ئیمەیلی جێگر، ئاگاکەرەوەکان و ئیمەیلەکانی ئەم تۆڕە بۆ ئەم ئیمەیلە دەنێردرێت.</value>
+  </data>
+  <data name="BlockUsersText" xml:space="preserve">
+    <value>ئەندامە بەربەست کراوەکان توانایی ناردنی داواکاری هاوڕێیەتی، ناردنی پەیام، دەستپێکردنی هەڤپەیڤین (چەت)، نووسین لەسەر دیواری ئێوە و نووسینی بۆچوون لە سەر بابەتەکانی ئێوەیان نیە.</value>
+  </data>
+  <data name="ChangePasswordText" xml:space="preserve">
+    <value>ئەندامی بەڕێز تەنیا کاتێک گۆڕینی نهێنوشە جێبەجێ ئەکرێت وا هەر سێ خانووە پێویستەکە پڕ ببنەوە، ئەنیا نهێنوشە ناگۆڕدرێت.</value>
+  </data>
+  <data name="ConnectToFacebookAnonymousTextPart1" xml:space="preserve">
+    <value>بەکارهێنەری بەڕێز لە ئەم هەنگاوە سەرەڕای ئەوەی وا ئێوە لە تۆڕی کۆمەڵایەتی vKurdistan خاوەنی هەژمار نین، بۆ ئێوە هەژمارێک بە پێی زانیاریەکانی فەیسبووکتان دروست کراوە و بە هەژماری فەیسبووکتانەوە دەبەسترێت.
+
+&lt;br /&gt;
+
+بۆ چوونەنێو ماڵپەڕ دەتوانن هەم لە هەژماری فەیسبووک و هەم لە هەژماری ساز کراو لە vKurdistan کەڵک وەربگرن.
+
+&lt;br /&gt;
+
+تێبینی: نهێنوشەی هەژماری سازکراو بۆ ناونیشانی ئیمەیلی وەرگیراو لە فەیسبووکەکەتان دەنێردرێت.</value>
+  </data>
+  <data name="ConnectToFacebookAuthenticatedMemberTextPart1" xml:space="preserve">
+    <value>ئێوە خەریکی سازکردنی پەیوەندی نێوان هەژماری ژێر و فەیسبووکن.</value>
+  </data>
+  <data name="ConnectToFacebookAuthenticatedMemberTextPart2" xml:space="preserve">
+    <value>تۆڕی کۆمەڵایەتی vkurdistan دڵنیاتان دەکاتەوە هیچ زانیارییەک بێ ئیجازەی ئێوە لە فەیسبووکەکەتان بڵاو نابێتەوە هەروەها ئەم تۆڕە هیچ کاتێک ناتوانێت پەیوەندی بە زانیاریە کەسیەکانی ئێوە لە فەیسبووکەوە بکات.</value>
+  </data>
+  <data name="ConnectToFacebookExplanation" xml:space="preserve">
+    <value>بەکارهێنەری بەڕێز، ئێوە بێ ئەوەی لە تۆڕی کۆمەڵایەتی vKurdistan خۆتان تۆمار کەن و تەنیا بە پەیوەندی لەگەڵ فەیسبووکەکەتان ئەتوانن لە ئەم تۆڕی کۆمەڵایەتیە کەڵک وەربگرن. تکایە سەرنج بدەنە تێبینیەکانی ژێر:
+&lt;ul&gt;
+&lt;li&gt;
+تۆڕی کۆمەڵایەتی vKurdistan قەت نهێنوشەی فەیسبووکی ئێوە پاشەکەوت ناکات.
+&lt;/li&gt;
+
+&lt;li&gt;
+تەنیا زانیاریە سەرەتاییەکان بۆ تۆمارکردنی ئێوە (ناو، نازناو، ئیمەیل، ڕۆژی لەدایک بوون و ڕەگەز) لە فەیسبووک دەگیرێت.
+&lt;/li&gt;
+
+&lt;li&gt;
+ئەگەر لە تۆڕی کۆمەڵایەتی vkurdistan خاوەنی هەژمارەن ئەتوانن هەژمارەکەتان بە هەژماری فەیسبووکەکەتانەوە ببەستن.
+&lt;/li&gt;
+
+&lt;li&gt;
+دوای سازکردنی پەیوەندی لەگەڵ فەیسبووک ئەتوانن هەم بە ناوی ئەندامیەتی و نهێنوشە و هەم وە نهێنوشەی ساز کراو لە لایەن تۆڕی کۆمەڵایەتی vKurdistan لە ماڵپەڕەکە کەڵک وەربگرن.
+&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="ConnectToFacebookLoginExplanation" xml:space="preserve">
+    <value>بەکارهێنەری بەڕێز، ئەگەر لە vKurdistan هەژمارتان هەیە تکایە بۆ پەیوەندی نێوان ئەم هەژمارە و هەژماری فەیسبووک لە ڕیگای فۆرمی ژێرەوە بچنە نێو هەژمارەکەتان، ئەنیا هەژمارێکی نوێ لە تۆڕی کۆمەڵایەتی vKurdistan بۆ ئێوە دروست ئەکرێت.
+&lt;br /&gt;
+ئەگەر خاوەنی هەژمار لە تۆڕی کۆمەڵایەتی vkurdistan نیەن، لە ئەم قۆناغە تێپەڕن.</value>
+  </data>
+  <data name="DeleteAccountText_Part1" xml:space="preserve">
+    <value>ئەندامی بەڕێز ئەگەر بە بۆنەی ژمارەی پەیامەکان یا داواکاریەکان یا هەر هۆکارێک وا حەز ناکەن بیڵێن بڕیارتان داوە وا هەژمارەکەتان بسڕنەوە، ئەتوانن لە بەشی  &lt;a href="/HomePage/Privacy"&gt;ڕێکخستنی سنووری تایبەتی&lt;/a&gt; ڕێکخستنەکان سەبارەت بە (نیشان نەدانی ئێوە لە ئەنجامی گەڕانەکان) یا (وەرنەگرتنی پەیام) یا (وەرنەگرتنی داواکاری هاوڕێیەتی) بگۆڕن، هەروەها بۆ هەموو بابەتە بڵاوکراوەکان توانایی ڕێکخستنی ئاستی دەستپێگەیشتنتان هەیە.</value>
+  </data>
+  <data name="DeleteAccountText_Part2" xml:space="preserve">
+    <value>بە هەڵبژاردنی "سڕینەوەی هەژمار"  ئامادەکاری بۆ سڕینەوەی هەمیشەیی هەژمارەکەتان ئەکرێت، لەم ماوەیەدا زانیاریەکانی ئێوە بۆ ئەندامانی تۆڕی کۆمەڵایەتی نیشان نادرێت، تا ماوەی 30 ڕۆژی تر دەرفەتتان هەیە وا لە سڕینەوەی هەمیشەیی هەژمارەکەتان ڕێگری بکەن، بۆ ئەم مەبەستەش ئەوەندە بەسە وا بچنە نێو هەژمارەکەتان.</value>
+  </data>
+  <data name="DeleteCommentText" xml:space="preserve">
+    <value>ئیوە خەریکی سڕینەوەی بۆچوونی خوارەوەن، ئایا دڵنیان؟</value>
+  </data>
+  <data name="DeleteConversationText_Part1" xml:space="preserve">
+    <value>ئێوە خەریکی سڕینەوەی وتووێژەکەتان لەگەڵ</value>
+  </data>
+  <data name="DeleteConversationText_Part2" xml:space="preserve">
+    <value>ن، ئایا دڵنیان؟</value>
+  </data>
+  <data name="EditCommentText" xml:space="preserve">
+    <value>ئێوە خەریکی دەستکاریکردنی بۆچوونی خوارەوەن، گۆڕانکاریەکان جێبەجێ و پاشەکەوت بکەن:</value>
+  </data>
+  <data name="EducationsText" xml:space="preserve">
+    <value>ئەندامی بەڕێز ئێمە لە زانیاریەکانی ژێر بۆ دۆزینەوەی هاوڕێیانی سەردەمی خوێندنگە یا زانکۆ و یا ناساندنی کەسانێک وە توانایی وەک خۆتان کەڵک وەرئەگرین، تکایە وە سەرنج دان بە پڕکردنەوەی ئەم زانیاریانە یارمەتی ئیمە بدەن.</value>
+  </data>
+  <data name="FacebookShareDialogText" xml:space="preserve">
+    <value>ئێوە خەریکی پارڤە کردنی بڕگەی ژێر لە فەیسبووکەکەتانن، شێوازی پارڤەکردن هەڵبژێرن و پشتڕاستی کەنەوە.
+&lt;br /&gt;
+تێبینی: لەوانەیە پەنجەرەیەک لە لایەن فەیسبووکەوە بکرێتەوە و لە ئێوە داوای چوونەنێو فەیسبووک و ناردنی مۆڵەت بکات، کەواتە، پارڤە کردنی ئەو بڵاوکراوە لە دوای چوونەنێو فەیسبووک بە شێوازی خۆکارانە جێبەجێ ئەکرێت.</value>
+  </data>
+  <data name="MobNumberText" xml:space="preserve">
+    <value>ژمارەی موبایلەکەتان نهێنییە و نیشان نادرێت، تەنیا لە چەند بڕگە وەک هێنانەوەی نهێنوشە، زانیاری گەیاندن و ... کەڵکی لێوەردەگیرێت.</value>
+  </data>
+  <data name="NewFeedUnwantedUsers" xml:space="preserve">
+    <value>ئێوە بەندە هەڵبژێردراوەکانی سەرەوە لە ئەندامانی لیستی ڕەش لە پەڕەی هەواڵە نوێکانی خۆتان نابینن.</value>
+  </data>
+  <data name="NewsFeedViewChangeCover" xml:space="preserve">
+    <value>گۆڕانکارییەکانی وێنەی کەڤەری لاپەڕەی هاوڕێکانتان لە پەڕەی هەواڵە نوێکانی خۆتان ئەبینن.</value>
+  </data>
+  <data name="NewsFeedViewChangeInfo" xml:space="preserve">
+    <value>گۆڕانکارییەکانی زانیاری لاپەڕەی هاوڕێکانتان لە پەڕەی هەواڵە نوێکانی خۆتان ئەبینن.</value>
+  </data>
+  <data name="NewsFeedViewChangePP" xml:space="preserve">
+    <value>گۆڕانکارییەکانی وێنەی ڕوونوێنی لاپەڕەی هاوڕێکانتان لە پەڕەی هەواڵە نوێکانی خۆتان ئەبینن.</value>
+  </data>
+  <data name="NewsFeedViewComments" xml:space="preserve">
+    <value>بۆچوونە نێردراوەکان لە لایەن هاوڕێکانتان لە پەڕەی هەواڵە نوێکانی خۆتان ئەبینن.</value>
+  </data>
+  <data name="NewsFeedViewEducations" xml:space="preserve">
+    <value>زێدە کردنی سەردەمی خوێندن لە لایەن هاوڕێکانتان لە پەڕەی هەواڵە نوێکانی خۆتان ئەبینن.</value>
+  </data>
+  <data name="NewsFeedViewLikes" xml:space="preserve">
+    <value>بابەتە پەسەندکراوەکان لە لایەن هاوڕێکانتان لە پەڕەی هەواڵە نوێکانی خۆتان ئەبینن.</value>
+  </data>
+  <data name="NewsFeedViewPhotos" xml:space="preserve">
+    <value>وێنە پارڤە کراوەکان لە لایەن هاوڕێکانتان لە پەڕەی هەواڵە نوێکانی خۆتان ئەبینن.</value>
+  </data>
+  <data name="NewsFeedViewPosts" xml:space="preserve">
+    <value>نێردراوەکانی هاوڕێکانتان لە پەڕەی هەواڵە نوێکانی خۆتان ئەبینن.</value>
+  </data>
+  <data name="NewsFeedViewShares" xml:space="preserve">
+    <value>پارڤە کراوەکانی هاوڕێکانتان لە پەڕەی هەواڵە نوێکانی خۆتان ئەبینن.</value>
+  </data>
+  <data name="NewsFeedViewSkills" xml:space="preserve">
+    <value>زێدە کردنی توانایی نوێ لە لایەن هاوڕێکانتان لە پەڕەی هەواڵە نوێکانی خۆتان ئەبینن.</value>
+  </data>
+  <data name="OnCommentText" xml:space="preserve">
+    <value>بۆچوونە نووسراوەکان لەسەر بابەت یا وێنەکانتان لە ڕێگای ئیمەیل پێتان ڕادەگەیەنرێت.</value>
+  </data>
+  <data name="OnFriendshipRequestText" xml:space="preserve">
+    <value>کاتی هاتنی داواکاری هاوڕێیەتی نوێ، لە ڕێگای ئیمەیل ئاگادار ئەکرێنەوە.</value>
+  </data>
+  <data name="OnLikeText" xml:space="preserve">
+    <value>پەسەندی بابەتەکان یا وێنەکانتان لە ڕێگای ئیمەیل پێتان ڕادەگەیەنرێت.</value>
+  </data>
+  <data name="OnNewMessageText" xml:space="preserve">
+    <value>کاتی هاتنی پەیامی نوێ، لە ڕێگای ئیمەیل ئاگادار ئەکرێنەوە.</value>
+  </data>
+  <data name="OnShareText" xml:space="preserve">
+    <value>پارڤە کردنی بابەتەکان یا وێنەکانی ئێوە لە ڕێگای ئیمەیل پێتان ڕادەگەیەنرێت.</value>
+  </data>
+  <data name="OnWallPostText" xml:space="preserve">
+    <value>بڵاوکراوە نێردراوەکان بۆ سەر دیواری ئێوە لە ڕێگای ئیمەیل پێتان ڕادەگەیەنرێت.</value>
+  </data>
+  <data name="PasswordRecoveryText" xml:space="preserve">
+    <value>بەکارهێنەری بەڕێز ئەگەر نهێنوشەکەتان لە بیر نەماوە، ئەتوانن لە ڕێگای فۆرمی خوارەوە سەرلەنوێ نهێنوشەکەتان بۆ ئیمەیلەکەتان بنێرن.
+&lt;br /&gt;
+(تێبینی: لەوانەیە ئیمەیلە نێردراوەکە لە بوخچەی spam دا بێت)</value>
+  </data>
+  <data name="PostEditorWarningForFileTypes" xml:space="preserve">
+    <value>ئەندامی بەڕێز، ئێوە لە یەک بڵاوکراوەدا توانایی ناردنی هاوکاتی وێنە، ویدئۆ و دەنگتان نیە، لە هەر بڵاوکراوەیەک دا تەنیا ئەتوانن ژمارەیەک وێنە، یەک پەرگەی ویدئۆ و یا یەک پەرگەی دەنگی لەگەڵ دەق بنێرن.
+&lt;br /&gt;
+تێبینی: لە ئەگەری پشتڕاستکردنەوە، پەڕگە نێردراوە پێشووەکان دەسڕێتەوە و پەڕگە نێردراوە نوێکان دەخرێتە جێی.</value>
+  </data>
+  <data name="ProfileCoverText" xml:space="preserve">
+    <value>بەکارهێنەری بەڕێز، ئێوە ئەتوانن لێرە وێنەیەک وەک کەڤەری لاپەڕەکەتان ڕێک بخەن.
+وێنەی کەڤەر وێنەیەکە وا لە بەشی سەرووی لاپەڕەکەتان بەشێوازی ئاسۆیی پیشان ئەدرێت.</value>
+  </data>
+  <data name="RemoveFriendText" xml:space="preserve">
+    <value>ئێوە خەریکی بڕینی پەیوەندی هاوڕێیەتی خوارەوەن، ئایا دڵنیان؟</value>
+  </data>
+  <data name="SendRegistrationCodeText" xml:space="preserve">
+    <value>هەروەها ئەتوانن لەسەر بەستەری چالاککردنی هەژمار لە ئیمەیلەکەتان کرتە بکەن.
+&lt;br /&gt;
+ئەگەر ئیمەیلی هەڵگری کۆدی چالاککردن بۆ ئێوە نەنێردراوە، ئەتوانن لە ڕێگای فۆرمی خوارەوە سەرلەنوێ بینێرن.</value>
+  </data>
+  <data name="ShareDialogText" xml:space="preserve">
+    <value>ئێوە خەریکی پارڤە کردنی بڕگەی ژێرن، ڕێکخستنەکان جێبەجێ بکەن و پاشەکەوتی کەن:</value>
+  </data>
+  <data name="SkillsText" xml:space="preserve">
+    <value>لە خشتەی ژێر سەردێڕی تواناکانی خۆت بەشێوازی جیا بنووسە و Enter لێدە ، لە ئەگەری دەرکەوتنیان هەڵیانبژێرە.</value>
+  </data>
+</root>

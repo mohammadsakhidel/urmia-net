@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActivateAccountText" xml:space="preserve">
+    <value>کاربر گرامی جهت فعال سازی حساب کاربری خود، کد فعال سازی ارسال شده به ایمیل خود را از طریق فرم زیر وارد نمایید:
+            &lt;br /&gt;
+            (توجه: ممکن است ایمیل ارسال شده در پوشه spam ایمیل شما قرار گرفته باشد)</value>
+  </data>
+  <data name="AlbumPhotosText" xml:space="preserve">
+    <value>شما می توانید تصاویری با حجم حداکثر 4 مگابایت برای هر تصویر را به آلبوم خود اضافه نمایید.
+&lt;br /&gt;
+تصاویر مجاز شامل پسوند های jpg, png و gif می باشد.
+&lt;br /&gt;
+&lt;br /&gt;
+موارد ذیل مجاز نمی باشد و توسط مدیران حذف خواهند شد و درصورت تکرار، حساب کاربری شما حذف خواهد شد:
+&lt;ul&gt;
+&lt;li&gt;تصاویر حاوی صحنه های مبتذل&lt;/li&gt;
+&lt;li&gt;تصاویر حاوی مطالب نژادپرستانه یا توهین آمیز به گروه یا تفکر خاص&lt;/li&gt;
+&lt;li&gt;تصاویر حاوی مطالب سیاسی&lt;/li&gt;
+&lt;li&gt;تصاویر حاوی صحنه های خشونت آمیز&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="AlternativeEmailExplan" xml:space="preserve">
+    <value>در صورت تعیین ایمیل جایگزین، آگاه سازها و ایمیل های شبکه به این ایمیل ارسال خواهد شد.</value>
+  </data>
+  <data name="BlockUsersText" xml:space="preserve">
+    <value>کاربران مسدود شده اجازه ارسال درخواست دوستی، ارسال پیام، آغاز چت، نوشتن روی دیوار شما و نوشتن کامنت روی مطالب شما را ندارند.</value>
+  </data>
+  <data name="ChangePasswordText" xml:space="preserve">
+    <value>کاربر گرامی تنها در صورتی تغییر گذرواژه اعمال خواهد شد که هر سه فیلد لازم پر شده باشند، در غیر این صورت گذرواژه تغییری نخواهد کرد.</value>
+  </data>
+  <data name="ConnectToFacebookAnonymousTextPart1" xml:space="preserve">
+    <value>کاربر گرامی در این مرحله با توجه به اینکه شما دارای حساب کاربری در شبکه اجتماعی vKurdistan نیستید، برای شما یک حساب کاربری بر اساس اطلاعات فیسبوک شما ایجاد شده و با حساب کاربری فیسبوکتان مرتبط خواهد شد.
+&lt;br /&gt;
+برای ورود به سایت می توانید هم از حساب کاربری فیسبوک و هم از حساب کاربری ایجاد شده در vKurdistan استفاده نمایید.
+&lt;br /&gt;
+توجه: گذرواژه حساب کاربری ایجاد شده به آدرس ایمیل اعلام شده از فیسبوک شما ارسال می شود.</value>
+  </data>
+  <data name="ConnectToFacebookAuthenticatedMemberTextPart1" xml:space="preserve">
+    <value>شما در حال ارتباط حساب کاربری زیر با فیسبوک هستید.</value>
+  </data>
+  <data name="ConnectToFacebookAuthenticatedMemberTextPart2" xml:space="preserve">
+    <value>شبکه اجتماعی vKurdistan به شما این اطمینان را می دهد که هیچگونه اطلاعاتی بدون اجازه شما در فیسبوکتان به اشتراک گذاشته نخواهد شد همچنین این شبکه به هیچ عنوان به اطلاعات شخصی شما در فیسبوک دسترسی نخواهد داشت.</value>
+  </data>
+  <data name="ConnectToFacebookExplanation" xml:space="preserve">
+    <value>کاربر گرامی، شما بدون نیاز به ثبت نام در شبکه اجتماعی vKurdistan و با برقراری ارتباط با فیسبوک خود میتوانید از این شبکه اجتماعی استفاده نمایید. لطفاً به نکات زیر توجه بفرمایید:
+&lt;ul&gt;
+&lt;li&gt;شبکه اجتماعی vKurdistan به هیچ وجه پسورد فیسبوک شما را ذخیره نمی کند.&lt;/li&gt;
+&lt;li&gt;تنها اطلاعات مورد نیاز برای ثبت نام شما (نام، نام خانوادگی، ایمیل، جنسیت، تاریخ تولد و جنسیت) از فیسبوک گرفته می شود. &lt;/li&gt;
+&lt;li&gt;در صورتی که دارای حساب کاربری در شبکه اجتماعی vKurdistan هستید نیز می توانید حساب کاربری موجود خود را به حساب کاربری فیسبوک خود متصل کنید.&lt;/li&gt;
+&lt;li&gt;پس از برقراری ارتباط با فیسبوک می توانید هم با نام کاربری و گذرواژه فیسبوک خود و هم با گذرواژه ایجاد شده توسط شبکه اجتماعی vKurdistan می توانید وارد سایت شوید. &lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="ConnectToFacebookLoginExplanation" xml:space="preserve">
+    <value>کاربر گرامی چنانچه دارای حساب کاربری در vKurdistan هستید لطفاً جهت ارتباط این حساب کاربری با حساب کاربری فیسبوک خود از طریق فرم زیر وارد حساب خود شوید، در غیر این صورت یک حساب کاربری جدید در شبکه اجتماعی vKurdistan برای شما ایجاد خواهد شد.
+&lt;br /&gt;
+اگر دارای حساب کاربری در شبکه اجتماعی vKurdistan نیستید از این مرحله عبور کنید.</value>
+  </data>
+  <data name="DeleteAccountText_Part1" xml:space="preserve">
+    <value>کاربر گرامی چنانچه بدلیل حجم پیام ها یا درخواست ها و یا عدم تمایل به اشتراک پاره ای اطلاعات تصمیم به حذف حساب کاربریتان دارید، می توانید از قسمت &lt;a href="/HomePage/Privacy"&gt;تنظیمات حریم خصوصی&lt;/a&gt; نسبت به عدم نمایش شما در نتایج جستجو و یا عدم پذیرش پیام یا درخواست دوستی اقدام نمایید، همچنین برای تمامی مطالب به اشتراک گذاشته شده قادر به تنظیم سطح دسترسی هستید.</value>
+  </data>
+  <data name="DeleteAccountText_Part2" xml:space="preserve">
+    <value>با فشردن دکمه 'حذف حساب کاربری'، حساب کاربری شما برای حذف دائم برنامه ریزی خواهد شد، در این مدت اطلاعات شما به کاربران شبکه اجتماعی نمایش داده نخواهد شد، تا مدت 30 روز فرصت دارید که از حذف دائم حساب کاربریتان جلوگیری کنید، برای اینکار کافیست وارد حساب کاربریتان شوید.</value>
+  </data>
+  <data name="DeleteCommentText" xml:space="preserve">
+    <value>شما در حال حذف نظـر زیر هستید، آیا مطمئن هستید؟</value>
+  </data>
+  <data name="DeleteConversationText_Part1" xml:space="preserve">
+    <value>شما در حال حذف مکالمه خود با</value>
+  </data>
+  <data name="DeleteConversationText_Part2" xml:space="preserve">
+    <value>هستید، آیا اطمینان دارید؟</value>
+  </data>
+  <data name="EditCommentText" xml:space="preserve">
+    <value>شما در حال ویرایش نظر ارسالی زیر هستید، تغییرات را اعمال و ذخیره کنید:</value>
+  </data>
+  <data name="EducationsText" xml:space="preserve">
+    <value>کاربر گرامی ما از اطلاعات زیر جهت یافتن دوستان زمان مدرسه یا دانشگاهتان و یا معرفی افراد با مهارت های مشابه شما استفاده خواهیم کرد، لطفاً با دقت در تکمیل این داده ها ما را یاری نمایید.</value>
+  </data>
+  <data name="FacebookShareDialogText" xml:space="preserve">
+    <value>شما در حال به اشتراک گذاری مورد زیر در فیسبوک خود هستید، نحوه اشتراک گذاری را انتخاب نموده و تأیید نمایید.
+&lt;br /&gt;
+توجه: ممکن است پنجره ای از طرف فیسبوک باز شده و از شما درخواست ورود به فیسبوک و صدور مجوز نماید، در اینصورت، به اشتراک گذاری مورد فوق پس از ورود به فیسبوک به صورت خودکار ادامه خواهد یافت.</value>
+  </data>
+  <data name="MobNumberText" xml:space="preserve">
+    <value>شماره همراه شما خصوصی بوده و نمایش داده نخواهد شد، تنها در مواردی چون بازیابی رمز عبور، اطلاعرسانی ها و... استفاده خواهد شد.</value>
+  </data>
+  <data name="NewFeedUnwantedUsers" xml:space="preserve">
+    <value>شما موارد انتخابی فوق از کاربران لیست سیاه را در صفحه پوشش خبری خود مشاهده نخواهید کرد.</value>
+  </data>
+  <data name="NewsFeedViewChangeCover" xml:space="preserve">
+    <value>تغییرات تصویر کاور پروفایل توسط دوستان خود را در صفحه پوشش خبری خود مشاهده خواهید کرد.</value>
+  </data>
+  <data name="NewsFeedViewChangeInfo" xml:space="preserve">
+    <value>تغییرات اطلاعات پروفایل توسط دوستان خود را در صفحه پوشش خبری خود مشاهده خواهید کرد.</value>
+  </data>
+  <data name="NewsFeedViewChangePP" xml:space="preserve">
+    <value>تغییرات تصویر نمایه پروفایل توسط دوستان خود را در صفحه پوشش خبری خود مشاهده خواهید کرد.</value>
+  </data>
+  <data name="NewsFeedViewComments" xml:space="preserve">
+    <value>نظرات ارسال شده توسط دوستان خود را در صفحه پوشش خبری خود مشاهده خواهید کرد.</value>
+  </data>
+  <data name="NewsFeedViewEducations" xml:space="preserve">
+    <value>افزوده شدن دوران تحصیلی جدید توسط دوستان خود را در صفحه پوشش خبری خود مشاهده خواهید کرد.</value>
+  </data>
+  <data name="NewsFeedViewLikes" xml:space="preserve">
+    <value>مطالب پسندیده شده توسط دوستان خود را در صفحه پوشش خبری خود مشاهده خواهید کرد.</value>
+  </data>
+  <data name="NewsFeedViewPhotos" xml:space="preserve">
+    <value>تصاویر به اشتراک گذاشته شده دوستان خود را در صفحه پوشش خبری خود مشاهده خواهید کرد.</value>
+  </data>
+  <data name="NewsFeedViewPosts" xml:space="preserve">
+    <value>ارسال های دوستان خود را در صفحه پوشش خبری خود مشاهده خواهید کرد.</value>
+  </data>
+  <data name="NewsFeedViewShares" xml:space="preserve">
+    <value>اشتراک گذاری (بازنشر) های دوستان خود را در صفحه پوشش خبری خود مشاهده خواهید کرد.</value>
+  </data>
+  <data name="NewsFeedViewSkills" xml:space="preserve">
+    <value>افزوده شدن مهارت جدید توسط دوستان خود را در صفحه پوشش خبری خود مشاهده خواهید کرد.</value>
+  </data>
+  <data name="OnCommentText" xml:space="preserve">
+    <value>نظرهای ارسالی روی مطالب یا تصاویر شما از طریق ایمیل به اطلاع شما خواهد رسید.</value>
+  </data>
+  <data name="OnFriendshipRequestText" xml:space="preserve">
+    <value>هنگام دریافت درخواست دوستی جدید، از طریق ایمیل به شما اطلاع داده خواهد شد.</value>
+  </data>
+  <data name="OnLikeText" xml:space="preserve">
+    <value>پسندهای مطالب یا تصاویر شما از طریق ایمیل به اطلاع شما خواهد رسید.</value>
+  </data>
+  <data name="OnNewMessageText" xml:space="preserve">
+    <value>هنگام دریافت پیام جدید، از طریق ایمیل به شما اطلاع داده خواهد شد.</value>
+  </data>
+  <data name="OnShareText" xml:space="preserve">
+    <value>اشتراک گذاری مطالب یا تصاویر شما از طریق ایمیل به اطلاع شما خواهد رسید.</value>
+  </data>
+  <data name="OnWallPostText" xml:space="preserve">
+    <value>پست های ارسالی روی دیوار شما از طریق ایمیل به اطلاع شما خواهد رسید.</value>
+  </data>
+  <data name="PasswordRecoveryText" xml:space="preserve">
+    <value>کاربر گرامی در صورتی که گذرواژه خود را فراموش کرده اید، می توانید از طریق فرم زیر نسبت به ارسال گذرواژه به ایمیل خود اقدام نمایید.
+&lt;br /&gt;
+(توجه: ممکن است ایمیل ارسال شده در پوشه spam ایمیل شما قرار بگیرد)</value>
+  </data>
+  <data name="PostEditorWarningForFileTypes" xml:space="preserve">
+    <value>کاربر گرامی، شما در یک پست قادر به ارسال همزمان تصویر، ویدئو و صوت نمی باشید، در هر پست تنها می توانید تعدادی تصویر، یک فایل ویدوئویی و یا یک فایل صوتی را همراه با متن ارسال نمایید.
+&lt;br /&gt;
+توجه: در صورت تأیید، فایل های ارسال شده قبلی حذف و با فایل ارسالی جدید جایگزین خواهند شد.</value>
+  </data>
+  <data name="ProfileCoverText" xml:space="preserve">
+    <value>کاربر گرامی، شما اینجا می توانید تصویری را بعنوان تصویر کاور پروفایل خود ارسال و تنظیم نمایید.
+تصویر کاور تصویری است که در قسمت بالای صفحه پروفایل شما بصورت افقی نمایش داده می شود.</value>
+  </data>
+  <data name="RemoveFriendText" xml:space="preserve">
+    <value>شما در حال قطع رابطه دوستی زیر هستید، آیا مطمئن هستید؟</value>
+  </data>
+  <data name="SendRegistrationCodeText" xml:space="preserve">
+    <value>همچنین می توانید بر روی لینک فعال سازی حساب کاربری در ایمیل خود کلیک کنید.
+            &lt;br /&gt;
+            چنانچه ایمیل حاوی کد فعالسازی برای شما ارسال نشده است می توانید از طریق فرم زیر نسبت به ارسال دوباره اقدام نمایید:</value>
+  </data>
+  <data name="ShareDialogText" xml:space="preserve">
+    <value>شما در حال به اشتراک گذاری مورد زیر هستید، تنظیمات لازم را انجام داده و ذخیره نمایید:</value>
+  </data>
+  <data name="SkillsText" xml:space="preserve">
+    <value>در کادر زیر عنوان هر یک از مهارتهای خود را بصورت جداگانه تایپ نموده و کلید Enter را بفشارید، در صورت وجود در لیست ظاهر شده آن را انتخاب نمایید.</value>
+  </data>
+</root>

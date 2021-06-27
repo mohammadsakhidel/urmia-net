@@ -1,0 +1,37 @@
+﻿div#del_account .text
+{
+    line-height: 18px;
+    text-align: justify;
+}
+
+div#del_account .text a
+{
+    text-decoration: underline;
+}
+
+div#del_account textarea[name="Reason"]
+{
+    width: 450px;
+    height: 70px;
+    margin-top: 5px;
+    resize: none;
+}
+
+div#del_account .form_submit_sec input[type="submit"]
+{
+    float: right;
+}
+
+div#del_account .form_submit_sec .loading_small
+{
+    float: right;
+    margin: 5px 5px 0 0;
+}
+
+div#del_account #msg_save
+{
+    float: right;
+    margin: 0 50px 0 0;
+    min-width: 300px;
+    max-width: 500px;
+}

@@ -1,0 +1,38 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model ChangeInfoActivityModel
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/_ActivityHeadTags.min.js")"></script>
+@if (Model.IsActivityVisibleToUser)
+{
+    var actor = Model.ActivityActor;
+    var actor_status = (MemberStatus)Model.ActivityActor.StatusCode;
+    <div class="activity" id="@("activity_" + Model.Activity.Id)">
+        @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.ActorThumbIdentityModel);}
+        <div class="act_tools">
+            <div class="act_settings">
+                @{Html.RenderPartial(Urls.ModuleViews + "_ActivitySettings.cshtml", Model.ActivitySettingsModel);}
+            </div>
+            <div class="act_info">
+                @{Html.RenderPartial(Urls.ModuleViews + "_ActivityInfo.cshtml", Model.ActivityInfoModel);}
+            </div>
+        </div>
+        <div class="act_content">
+            @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.ActorNameIdentityModel);}
+            <div class="act_title">
+                @Resources.Words.ChangeInfoActivityTitle_Part1
+                @if (actor_status != MemberStatus.ScheduledForDelete)
+                {
+                    <a href="@Url.Content(actor.UrlOfProfilePage)">@Resources.Words.HisProfileInfo</a>
+                }
+                else
+                {
+                    @Resources.Words.HisProfileInfo
+                }
+                @Resources.Words.ChangeInfoActivityTitle_Part2
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+}

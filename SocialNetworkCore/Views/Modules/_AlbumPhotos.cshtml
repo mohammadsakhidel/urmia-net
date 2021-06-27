@@ -1,0 +1,36 @@
+﻿@using CoreHelpers;
+@model SocialNetApp.Views.Models.Modules.AlbumPhotosModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_AlbumPhotosHeadTags.min.js")"></script>
+<div id="album_photos">
+    <div class="viewpart_title">
+        <h2>@Resources.Words.EditAlbumPhotos</h2>
+    </div>
+    <div class="viewpart_content">
+        <div class="border">
+            @Html.ActionLink(Resources.Words.ReturnTo + " " + Resources.Words.AlbumsList, "Photos", "HomePage", null, new { @class = "ic_link return" })
+        </div>
+        <div class="text">
+            @Html.Raw(Resources.Texts.AlbumPhotosText)
+        </div>
+        @using (Html.BeginForm("UploadAlbumPhoto", "Photos", FormMethod.Post, new { enctype = "multipart/form-data", @id = "form_upload" }))
+        {
+            <input type="hidden" name="AlbumId" value="@Model.Album.Id" />
+            Html.RenderPartial(Urls.ModuleViews + "_SimpleUploader.cshtml", Model.SimpleUploaderModel);
+        }
+        @if (Model.IsPostBack)
+        {
+            <div id="upload_message" class="@(Model.PostBackDone ? "success_message" : "error_message")">
+                @Model.PostBackMessage
+            </div>
+        }
+        <!-- photos list: -->
+        <input type="hidden" id="cover_height" value="@Digits.CoverHeight" />
+        <input type="hidden" id="thumb_sides" value="@Digits.LargeThumbSides" />
+        <div id="list_of_photos">
+            @foreach (var photoRecord in Model.AlbumPhotoRecords)
+            {
+                Html.RenderPartial(Urls.ModuleViews + "_PhotoEditor.cshtml", photoRecord.Item2);
+            }
+        </div>
+    </div>
+</div>

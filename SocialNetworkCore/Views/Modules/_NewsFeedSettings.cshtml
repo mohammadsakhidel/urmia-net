@@ -1,0 +1,110 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model NewsFeedSettingsModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_NewsFeedSettingsHeadTags.min.js")"></script>
+<div id="newsfeed_settings">
+    @using (Ajax.BeginForm("NewsFeedSettings", "HomePage", new AjaxOptions { HttpMethod = "Post", OnBegin = "SaveNewsFeedSettingsBegin", OnSuccess = "SaveNewsFeedSettingsSuccess", OnFailure = "SaveNewsFeedSettingsFailure", LoadingElementId = "SaveFormLoading" }))
+    {
+        <input type="hidden" name="MemberId" value="@User.Identity.Name" />
+        <div class="viewpart">
+            <div class="viewpart_title">
+                <h2>@Resources.Words.NewsFeedDegreeOfInforming</h2>
+            </div>
+            <div class="viewpart_content">
+                <div class="setting_item">
+                    <input type="checkbox" id="ViewPosts" name="ViewPosts" @(Model.NewsFeedSettings.ViewPosts ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                    <label for="ViewPosts">@Resources.Words.NewsFeedViewPosts</label>
+                    <span>@Resources.Texts.NewsFeedViewPosts</span>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="setting_item">
+                    <input type="checkbox" id="ViewPhotos" name="ViewPhotos" @(Model.NewsFeedSettings.ViewPhotos ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                    <label for="ViewPhotos">@Resources.Words.NewsFeedViewPhotos</label>
+                    <span>@Resources.Texts.NewsFeedViewPhotos</span>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="setting_item">
+                    <input type="checkbox" id="ViewShares" name="ViewShares" @(Model.NewsFeedSettings.ViewShares ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                    <label for="ViewShares">@Resources.Words.NewsFeedViewShares</label>
+                    <span>@Resources.Texts.NewsFeedViewShares</span>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="setting_item">
+                    <input type="checkbox" id="ViewLikes" name="ViewLikes" @(Model.NewsFeedSettings.ViewLikes ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                    <label for="ViewLikes">@Resources.Words.NewsFeedViewLikes</label>
+                    <span>@Resources.Texts.NewsFeedViewLikes</span>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="setting_item">
+                    <input type="checkbox" id="ViewComments" name="ViewComments" @(Model.NewsFeedSettings.ViewComments ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                    <label for="ViewComments">@Resources.Words.NewsFeedViewComments</label>
+                    <span>@Resources.Texts.NewsFeedViewComments</span>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="setting_item">
+                    <input type="checkbox" id="ViewChangePP" name="ViewChangePP" @(Model.NewsFeedSettings.ViewChangePP ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                    <label for="ViewChangePP">@Resources.Words.NewsFeedViewChangePP</label>
+                    <span>@Resources.Texts.NewsFeedViewChangePP</span>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="setting_item">
+                    <input type="checkbox" id="ViewChangeCover" name="ViewChangeCover" @(Model.NewsFeedSettings.ViewChangeCover ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                    <label for="ViewChangeCover">@Resources.Words.NewsFeedViewChangeCover</label>
+                    <span>@Resources.Texts.NewsFeedViewChangeCover</span>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="setting_item">
+                    <input type="checkbox" id="ViewChangeInfo" name="ViewChangeInfo" @(Model.NewsFeedSettings.ViewChangeInfo ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                    <label for="ViewChangeInfo">@Resources.Words.NewsFeedViewChangeInfo</label>
+                    <span>@Resources.Texts.NewsFeedViewChangeInfo</span>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="setting_item">
+                    <input type="checkbox" id="ViewEducations" name="ViewEducations" @(Model.NewsFeedSettings.ViewEducations ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                    <label for="ViewEducations">@Resources.Words.NewsFeedViewEducations</label>
+                    <span>@Resources.Texts.NewsFeedViewEducations</span>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="setting_item">
+                    <input type="checkbox" id="ViewSkills" name="ViewSkills" @(Model.NewsFeedSettings.ViewSkills ? Html.Raw("checked=\"checked\"") : Html.Raw("")) />
+                    <label for="ViewSkills">@Resources.Words.NewsFeedViewSkills</label>
+                    <span>@Resources.Texts.NewsFeedViewSkills</span>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="viewpart">
+            <div class="viewpart_title">
+                <h2>@Resources.Words.NewFeedUnwantedUsers</h2>
+            </div>
+            <div class="viewpart_content">
+                <div class="text">
+                    @Resources.Texts.NewFeedUnwantedUsers
+                </div>
+                <div>
+                    @{Html.RenderPartial(Urls.ModuleViews + "_MemberBox.cshtml", Model.MemberBoxModel);}
+                </div>
+            </div>
+        </div>
+        <div class="form_submit_sec">
+            <input type="submit" value="@Resources.Words.Save" />
+            <div id="SaveFormLoading" class="loading_small hide">
+            </div>
+            <div class="hide" id="msg_save">
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+    }
+    <input id="w_ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />
+</div>

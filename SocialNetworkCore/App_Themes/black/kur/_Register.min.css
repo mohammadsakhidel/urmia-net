@@ -1,0 +1,98 @@
+﻿.register_on_homepage
+{
+    margin: 20px 0 20px 0;
+    float: left;
+    width: 320px;
+}
+
+#register #fbConnect {
+    background-image: url(fb_reg_icon.png);
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-color: #eeeeee;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    color: #526da5;
+    padding: 8px 5px 8px 33px;
+    display: block;
+    margin: 0 0 8px 0;
+    border: solid 1px #d1d1d1;
+    font-weight: bold;
+}
+
+    #register #fbConnect:hover {
+        text-decoration: none;
+        background-color: #e8e8e8;
+    }
+
+#register select
+{
+    padding: 5px;
+    font-size: 9pt;
+}
+
+#register #register_Name, #register #register_LastName
+{
+    width: 120px;
+}
+
+#register input[name="Email"], #register input[name="EmailConfirm"]
+{
+    direction: ltr;
+}
+
+#register input[type="text"], #register input[type="password"]
+{
+    
+    width: 262px;
+}
+
+#register .tdpadd
+{
+    padding-left: 10px;
+}
+
+#register td
+{
+    padding: 3px 0 0 0;
+}
+
+#register input[type="radio"]
+{
+    float: left;
+}
+
+#register .label_for_radio
+{
+    float: left;
+    margin: 3px 10px 0 0;
+}
+
+#register input[type="submit"]
+{
+    width: 200px;
+    margin-top: 7px;
+    float: left;
+    padding: 10px;
+}
+
+#register select[name="Day"]
+{
+    width: 60px;
+}
+
+#register select[name="Month"]
+{
+    width: 110px;
+}
+
+#register select[name="Year"]
+{
+    width: 80px;
+}
+
+#register .loading_medium
+{
+    float: left;
+    margin: 10px 0 0 15px;
+}

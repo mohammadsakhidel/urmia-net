@@ -1,0 +1,20 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model FooterModel
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/_FooterHeadTags.min.js")"></script>
+<div id="footer">
+    @Html.ActionLink(@Resources.Words.Advertising, "Adv", "Pages")
+    @Html.ActionLink(@Resources.Words.People, "Index", "Members")
+    @Html.ActionLink(@Resources.Words.Rules, "Rules", "Pages")
+    @Html.ActionLink(@Resources.Words.Help, "Help", "Pages")
+    @Html.ActionLink(@Resources.Words.Links, "Links", "Pages")
+    @Html.ActionLink(@Resources.Words.Emoticons, "Emoticons", "Pages")
+    @Html.ActionLink(@Resources.Words.ContactUs, "ContactUs", "Pages")
+    @Html.ActionLink(@Resources.Words.AboutUs, "AboutUs", "Pages", null, new { @class = "footer_lnk_lst" })
+    <div>
+        &copy;
+        @MyHelper.Now.Year 
+        @Resources.Words.FooterText
+    </div>
+</div>

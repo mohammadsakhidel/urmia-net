@@ -1,0 +1,93 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@using CoreHelpers
+@model AccountActivationModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_AccountActivationHeadTags.min.js")"></script>
+<div id="acc_activation">
+    @if (!Model.IsValidEmailAddress || !Model.IsValidRegisterationCode)
+    {
+        <div class="text">
+            @Html.Raw(@Resources.Texts.ActivateAccountText)
+        </div>
+        <div>
+            @using (Ajax.BeginForm("ActivateAccount", "Account", new AjaxOptions { HttpMethod = "Post", LoadingElementId = "Activate_LoadingElement", OnFailure = "ActivateFailure", OnSuccess = "ActivateSuccess", OnBegin = "ActivateBegin", OnComplete = "ActivateComplete" }))
+            {
+                <table border="0">
+                    <tr>
+                        <td class="tdlbl">
+                            <label for="Activate_Email">@Resources.Words.Email:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="Email" id="Activate_Email" value="@Model.Email" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdlbl">
+                            <label for="Activate_RegistrationCode">@Resources.Words.ActivationCode:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="RegistrationCode" id="Activate_RegistrationCode" value="@Model.ActivationCode" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input id="activate_submit" type="submit" value="@Resources.Words.ActiveAccount" />
+                            <div class="loading_small hide" id="Activate_LoadingElement">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            }
+            <div class="hide" id="msg_activate">
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="text">
+            @Html.Raw(@Resources.Texts.SendRegistrationCodeText)
+        </div>
+        <div>
+            @using (Ajax.BeginForm("SendRegisterationCode", "Account", new AjaxOptions { HttpMethod = "Post", LoadingElementId = "SendCode_LoadingElement", OnBegin = "SendCodeBegin", OnFailure = "SendCodeFailure", OnSuccess = "SendCodeSuccess", OnComplete = "SendCodeComplete" }))
+            {
+                <table border="0">
+                    <tr>
+                        <td>
+                            <label for="sedncode_Email">@Resources.Words.Email:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="Email" id="sedncode_Email" value="@Model.Email" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input id="sendcode_submit" type="submit" value="@Resources.Words.Send" />
+                            <div class="loading_small hide" id="SendCode_LoadingElement">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            }
+            <div class="hide" id="msg_sendcode">
+            </div>
+            <div class="clear">
+            </div>
+            <input id="ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />
+        </div>
+    }
+    else
+    {
+        if (Model.ActivationSucceed)
+        {
+        <div class="success_message">
+            @Html.Raw(Resources.Messages.ActivationSuccess)
+        </div>
+        }
+        else
+        {
+        <div class="error_message">
+            @Model.ActivationErrorMessage
+        </div>
+        }
+    }
+</div>

@@ -1,0 +1,51 @@
+﻿@using CoreHelpers
+@model SocialNetApp.Views.Models.Modules.FacebookShareDialogModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_FacebookShareDialogHeadTags.min.js")"></script>
+<div id="fb_share_dialog">
+    <div class="dialog_title">
+        <a class="dialog_close" onclick="HideDialog();"></a>
+        <h2>@Resources.Words.FacebookShareDialogTitle</h2>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="dialog_view_in">
+        @using (Ajax.BeginForm("ShareObjectOnFacebook", "Objects", null, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "dialog_prg", OnBegin = "ShareObjectOnFacebookBegin", OnFailure = "ShareObjectOnFacebookFailure", OnSuccess = "ShareObjectOnFacebookSuccess" }, new { @id = "frm_fb_share_dialog" }))
+        {
+            <input type="hidden" value="@Model.SharedObject.Id" name="SharedObjectId" />
+            <input type="hidden" value="" name="FacebookUserId" />
+            <input type="hidden" value="" name="FacebookAccessToken" />
+            <div class="text">
+                @Html.Raw(Resources.Texts.FacebookShareDialogText)
+            </div>
+            <div class="sharing_object">
+                @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.OwnerIdentityModel);}
+                <div class="shared_object_details">
+                    @{Html.RenderPartial(Urls.ModuleViews + "_ActivityDetailsSection.cshtml", Model.ActivityDetailsSectionModel);}
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="sharing_settings">
+                <label for="sharedialog_vt">@Resources.Words.VisibleTo:</label>
+                <select name="VisibleTo" id="sharedialog_vt">
+                    <option value="@((byte)FacebookVisibleTo.OnlyMe)">@Resources.Words.VisibleToOnlyMe</option>
+                    <option value="@((byte)FacebookVisibleTo.Friends)">@Resources.Words.VisibleToFriends</option>
+                    <option value="@((byte)FacebookVisibleTo.FriendsOfFriends)">@Resources.Words.VisibleToFacebookFriendsOfFriends</option>
+                    <option value="@((byte)FacebookVisibleTo.EveryOne)" selected="selected">@Resources.Words.VisibleToEveryOne</option>
+                </select>
+            </div>
+            <div class="dialog_actions">
+                <a class="cancel" onclick="HideDialog();">@Resources.Words.Cancle</a>
+                <a class="okey" onclick="fbShare();">@Resources.Words.ShareIt</a>
+                <div id="dialog_prg" class="loading_small_circle hide">
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div id="dialog_msg" class="hide"></div>
+        }
+    </div>
+    <!-- ******************* HIDDEN FIELDS: ******************** -->
+    <input type="hidden" id="w_ajax_fail" value="@Resources.Messages.AjaxFail" />
+</div>

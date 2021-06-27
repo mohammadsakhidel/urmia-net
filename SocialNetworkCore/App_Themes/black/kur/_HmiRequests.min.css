@@ -1,0 +1,76 @@
+﻿div#hmi_requests
+{
+    min-width: 300px;
+}
+
+div#hmi_requests div.hmi_req
+{
+    padding: 7px;
+    background-color: White;
+    border-bottom: solid 1px #ededee;
+}
+
+div#hmi_requests div.hmi_req_in
+{
+    width: 350px;
+    max-height: 450px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+div#hmi_requests div.hmi_req:hover
+{
+    background-color: #fbfbfb;
+}
+
+div#hmi_requests .hmi_req_empty
+{
+    padding: 15px 0;
+    text-align: center;
+    font-size: 8pt;
+    color: #d1d3d4;
+}
+
+div#hmi_requests .hmi_req_footer
+{
+    background-color: #f7f7f7;
+    border-top: solid 1px #c5c5c5;
+    padding: 8px;
+    text-align:center;
+}
+
+div#hmi_requests .hmi_req_footer a
+{
+    color: #ef4523;
+    font-family: 'RegNaskh';
+}
+
+div#hmi_requests .hmi_req_thumb
+{
+    float: left;
+}
+
+div#hmi_requests .hmi_req_details
+{
+    float: left;
+    margin: 0 0 0 5px;
+}
+
+div#hmi_requests .hmi_req_sdr_fullname
+{
+    float: left;
+    margin: 12px 0 0 0;
+}
+
+div#hmi_requests .hmi_req_actions
+{
+    float: right;
+    margin: 15px 5px 0 0;
+}
+
+div#hmi_requests .loading_small_circle
+{
+    position: absolute;
+    right: 45px;
+    top: 10px;
+}

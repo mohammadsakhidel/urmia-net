@@ -1,0 +1,33 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model CommentModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_CommentHeadTags.min.js")"></script>
+<div class="comment" id="@("comment_" + Model.Comment.Id)">
+    @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.CommenterThumbUserIdentityModel);}
+    <div class="comment_in">
+        @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.CommenterNameUserIdentityModel);}
+        <div class="comment_text">
+            @Html.Raw(TextsProcessor.RenderText(Model.Comment.Text))
+        </div>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="comment_actions">
+                @Ajax.ActionLink((!Model.HasUserLikedComment ? Resources.Words.Like : Resources.Words.Unlike), "LikeComment", "Comments", new { id = Model.Comment.Id }, new AjaxOptions { HttpMethod = "Post" }, new { @id = "btn_like_comment_" + Model.Comment.Id })
+                @if (Model.CanUserDeleteComment)
+                {
+                    @Ajax.ActionLink(Resources.Words.Delete, "ShowDeleteCommentDialog", "Comments", new { id = Model.Comment.Id }, new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "dialog_view", OnFailure = "ShowDialogFailure" }, new { @id = "btn_delete_comment_" + Model.Comment.Id })
+                }
+                @if (User.Identity.Name == Model.Comment.MemberId)
+                {
+                    @Ajax.ActionLink(Resources.Words.Edit, "ShowEditCommentDialog", "Comments", new { id = Model.Comment.Id }, new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "dialog_view", OnFailure = "ShowDialogFailure" }, new { @id = "btn_edit_comment_" + Model.Comment.Id })
+                }
+                @Ajax.ActionLink(Model.LikesCount.ToString(), "ShowCommentLikesDialog", "Comments", new { id = Model.Comment.Id }, new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "dialog_view", OnFailure = "ShowDialogFailure" }, new { @id = "btn_comment_likes_" + Model.Comment.Id, @class = "comment_likes" })
+            </div>
+        }
+    </div>
+    <div class="comment_date">
+        @MyHelper.DateToText(Model.Comment.DateOfComment)
+    </div>
+    <div class="clear">
+    </div>
+</div>

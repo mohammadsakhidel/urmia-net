@@ -1,0 +1,13 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@model CustomErrorModel
+
+<div class="frame_parent">
+    <div class="frame">
+        <div class="frame_title">
+            <h2>@Resources.Words.ErrorAccoured</h2>
+        </div>
+        <div class="frame_content">
+            @Html.Raw(Model.Message)
+        </div>
+    </div>
+</div>

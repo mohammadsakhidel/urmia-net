@@ -1,0 +1,35 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model SkillActivityModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_ActivityHeadTags.min.js")"></script>
+@if (Model.IsActivityVisibleToUser)
+{
+    <div class="activity" id="@("activity_" + Model.Activity.Id)">
+        @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.ActorThumbIdentityModel);}
+        <div class="act_tools">
+            <div class="act_settings">
+                @{Html.RenderPartial(Urls.ModuleViews + "_ActivitySettings.cshtml", Model.ActivitySettingsModel);}
+            </div>
+            <div class="act_info">
+                @{Html.RenderPartial(Urls.ModuleViews + "_ActivityInfo.cshtml", Model.ActivityInfoModel);}
+            </div>
+        </div>
+        <div class="act_content">
+            @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.ActorNameIdentityModel);}
+            <div class="act_title">
+                @Resources.Words.SkillActivityTitle_Part1
+                @if (Model.ActivityActor.Status != MemberStatus.ScheduledForDelete)
+                {
+                    <a href="@Url.Content(Model.ActivityActor.UrlOfProfilePage)">@Model.Skill.SkillTitle</a>
+                }
+                else
+                {
+                    @Model.Skill.SkillTitle
+                }
+                @Resources.Words.SkillActivityTitle_Part2
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+}

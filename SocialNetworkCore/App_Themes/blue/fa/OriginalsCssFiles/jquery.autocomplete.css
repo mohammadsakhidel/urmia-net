@@ -1,0 +1,22 @@
+﻿div.autocomplete-suggestions
+{
+    border-right: solid 1px #aaaaaa;
+    border-left: solid 1px #aaaaaa;
+    border-bottom: solid 1px #aaaaaa;
+    padding: 0;
+    background-color: White;
+}
+
+div.autocomplete-suggestion
+{
+    background-color: White;
+    padding: 10px;
+    font-size: 8pt;
+    border-bottom: solid 1px #efefef;
+    color: #000000;
+}
+
+div.autocomplete-selected
+{
+    background-color: #9fd8f8;
+}

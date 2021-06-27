@@ -1,0 +1,13 @@
+﻿@using CoreHelpers
+@model SocialNetApp.Views.Models.Modules.HomePixelAdvModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_PixelAdvHeadTags.min.js")"></script>
+<fieldset>
+    <legend>@Resources.Words.PixelAdv</legend>
+    <div id="home_pixeladv" style="@("height: " + Digits.PixelOfHomeHeight + "px;")">
+        @foreach (var adv in Model.Ads)
+        {
+            @Html.Raw(adv.GetImageLink("home"))
+        }
+    </div>
+    @Html.ActionLink(Resources.Words.HomePixelAdvText, "Adv", "Pages")
+</fieldset>

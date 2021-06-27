@@ -1,0 +1,20 @@
+﻿div#delete_conv_dialog div#deleting_conv
+{
+    margin-top: 10px;
+    border-top: dashed 1px #dfdfdf;
+    border-bottom: dashed 1px #dfdfdf;
+    padding: 10px 0;
+}
+
+div#delete_conv_dialog div.dialog_actions div.loading_small_circle
+{
+    float: left;
+    margin: 5px 0 0 0;
+}
+
+div#delete_conv_dialog div#dialog_msg
+{
+    margin: 10px 0 0 0;
+    padding: 5px;
+    min-width: 250px;
+}

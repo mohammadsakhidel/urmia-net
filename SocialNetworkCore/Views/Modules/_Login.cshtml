@@ -1,0 +1,150 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model LoginModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_LoginHeadTags.min.js")"></script>
+@if (@Model.Type == CoreHelpers.LoginType.OnHeader)
+{
+    using (Ajax.BeginForm("Login", "Account", new AjaxOptions { HttpMethod = "Post", LoadingElementId = "LoginLoading_onheader", OnFailure = "FailureLogin", OnSuccess = "SuccessLogin" }))
+    {
+    <div id="login" class="login_on_header">
+        <table border="0">
+            <tr>
+                <td></td>
+                <td>
+                    <label for="login_Email">@Resources.Words.Email:</label>
+                </td>
+                <td colspan="2">
+                    <label for="login_Password">@Resources.Words.Password:</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @if (Model.ShowFacebookLoginButton)
+                    {
+                        <a class="fb_login" onclick="fbLogin();" title="@Resources.Words.LoginWithFacebookAccount"></a>
+                    }
+                </td>
+                <td>
+                    <input type="text" name="Email" id="login_Email" />
+                </td>
+                <td>
+                    <input type="password" name="Password" id="login_Password" />
+                </td>
+                <td>
+                    <input type="submit" value="@Resources.Words.Login" />
+                </td>
+                <td class="loading_small_parent">
+                    <div id="LoginLoading_onheader" class="loading_small hide">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox" name="RememberMe" id="login_RememberMe" />
+                    <label for="login_RememberMe" id="labelForRememberMe">
+                        @Resources.Words.RememberMe
+                    </label>
+                </td>
+                <td colspan="2">
+                    @Html.ActionLink(@Resources.Words.ForgotPassword, "RecoverPassword", "Account", null, new { @class = "login_a" })
+                </td>
+            </tr>
+        </table>
+        <input id="ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />
+    </div>
+    }
+}
+else
+{
+    using (Ajax.BeginForm("Login", "Account", new AjaxOptions { HttpMethod = "Post", LoadingElementId = "LoginLoading", OnBegin = "BeginLogin2", OnFailure = "FailureLogin2", OnSuccess = "SuccessLogin2" }))
+    {
+        <div id="login" class="login_on_content">
+            <table border="0" cellpadding="3">
+                <tr>
+                    <td class="tdlbl">
+                        <label for="login_Email">@Resources.Words.Email:</label>
+                    </td>
+                    <td colspan="2">
+                        <input type="text" name="Email" id="login_Email" value="@Model.UserName"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdlbl">
+                        <label for="login_Password">@Resources.Words.Password:</label>
+                    </td>
+                    <td colspan="2">
+                        <input type="password" name="Password" id="login_Password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td colspan="2">
+                        <input type="checkbox" name="RememberMe" id="login_RememberMe" />
+                        <label for="login_RememberMe" id="labelForRememberMe">
+                            @Resources.Words.RememberMe
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td colspan="2">
+                        <input type="submit" value="@Resources.Words.Login" />
+                        <div id="LoginLoading" class="loading_small hide">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td colspan="2">
+                        @Html.ActionLink(@Resources.Words.ForgotPassword, "RecoverPassword", "Account")
+                    </td>
+                </tr>
+                @if (Model.ShowFacebookLoginButton)
+                {
+                    <tr>
+                        <td>
+                        </td>
+                        <td colspan="2">
+                            <a class="fb_login" onclick="fbLogin();">@Resources.Words.LoginWithFacebookAccount</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+            @if (Model.LoginStatus.HasValue)
+            {
+                <div id="status_message" class="error_message">
+                    @try
+                    {
+                        @Html.Raw(HttpContext.GetGlobalResourceObject("Messages", "Login" + Model.LoginStatus.Value.ToString()))
+                    }
+                    catch
+                    {
+                        <div id="status_message" class="error_message hide">
+                        </div>
+                    }
+                </div>
+            }
+            else if (Model.ShowAccessDeniedMessage)
+            {
+                <div id="status_message" class="error_message">
+                    @Html.Raw(Resources.Messages.AccessDenied)
+                </div>
+            }
+            else
+            {
+                <div id="status_message" class="error_message hide">
+                </div>
+            }
+            <div class="clear">
+            </div>
+            <input id="ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />
+            <input id="redirect_path" type="hidden" value="@Model.RedirectPath" />
+        </div>
+    }
+}
+<!-- common things: -->
+<input type="hidden" id="hid_fb_connect_err_msg" value="@Resources.Messages.FacebookConnectErrorMessage" />

@@ -1,0 +1,40 @@
+﻿div#privacy table#tbl_privacy td
+{
+    padding: 3px 0 3px 0;
+}
+
+div#privacy table
+{
+    margin: 0 0 0 30px;
+}
+
+div#privacy div.div_blocked_users
+{
+    clear: both;
+    margin: 10px 0 0 0;
+}
+
+div#privacy select
+{
+    padding: 4px;
+    width: 100px;
+}
+
+div#privacy .form_submit_sec input[type="submit"]
+{
+    float: left;
+}
+
+div#privacy .form_submit_sec .loading_small
+{
+    float: left;
+    margin: 5px 0 0 5px;
+}
+
+div#privacy #msg_save
+{
+    float: left;
+    margin: 0 0 0 50px;
+    min-width: 300px;
+    max-width: 500px;
+}

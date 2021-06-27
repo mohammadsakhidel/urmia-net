@@ -1,0 +1,28 @@
+﻿#pp_sec_friends .pp_sec_friends_in
+{
+    padding: 4px 3px 4px 4px;
+}
+
+#pp_sec_friends .friend_thumb_link
+{
+    float: left;
+    display: block;
+    border: 0;
+    margin: 0 2px 2px 0;
+}
+
+#pp_sec_friends .friend_thumb_img
+{
+    width: 74px;
+    height: 74px;
+    border: solid 1px #4a4747;
+    float: left;
+}
+
+#pp_sec_friends .pp_friends_sec_title_lbl
+{
+    font-size: 9pt;
+    font-weight: normal;
+    margin: 0 0 0 5px;
+    color: #6a7480;
+}

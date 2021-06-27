@@ -1,0 +1,21 @@
+﻿@using CoreHelpers
+@model SocialNetApp.Views.Models.Modules.VideoPlayerModel
+@{
+    var vid = Model.AssociatedVideo;
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/_VideoPlayerHeadTags.min.js")"></script>
+<a id="@("video_player_" + Model.PlayerId)" 
+    href="@(Model.AssociatedVideo.ProcessResult == (byte)VideoProcessResult.Successfull ? Url.Content(Urls.PostVideos + vid.FileName) : "#")"
+    class="video_player"
+    onclick="video_player_clicked(this);"
+    style="display:block; 
+        width:@(string.Format("{0}px", Model.DisplayWidth)); 
+        height:@(string.Format("{0}px", Model.DisplayHeight));">
+    <div class="video_player_splash">
+        <div class="video_player_splash_bg"></div>
+        <div class="video_player_splash_play" style="left: @(string.Format("{0}px;", (Model.DisplayWidth / 2) - 32))top: @(string.Format("{0}px;", (Model.DisplayHeight / 2) - 32 - 16))"></div>
+        <img width="@(string.Format("{0}px", Model.DisplayWidth))"
+            src="@Url.Content(Urls.PostVideosActualSizeThumbs + string.Format("{0}.jpg", vid.FileName.Substring(0, vid.FileName.IndexOf('.'))))" />
+    </div>
+    <input type="hidden" name="not_processed_message" value="@Resources.Messages.VideoNotProcessedYet" disabled="disabled" />
+</a>

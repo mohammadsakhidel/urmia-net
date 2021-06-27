@@ -1,0 +1,17 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@using CoreHelpers
+@model ActivityInfoModel
+
+<div class="act_time">
+    <label>@Model.TimeOfActivityText</label>
+</div>
+@if (Model.VisibleTo.HasValue)
+{
+    var vt = (VisibleTo)Model.VisibleTo.Value;
+    <a href="@(!String.IsNullOrEmpty(Model.DetailsPageUrl) ? Url.Content(Model.DetailsPageUrl) : "#")" title="@(vt == VisibleTo.EveryOne ? Resources.Words.SharedToPublic :
+        (vt == VisibleTo.Friends ? Resources.Words.SharedToFriends :
+        (vt == VisibleTo.Members ? Resources.Words.SharedToMembers : Resources.Words.SharedToOnlyMe)))"
+    class="@("share_type " + (vt == VisibleTo.EveryOne ? "shared_public" :
+        (vt == VisibleTo.Friends ? "shared_friends" :
+        (vt == VisibleTo.Members ? "shared_members" : "shared_onlyme"))))"></a>
+}

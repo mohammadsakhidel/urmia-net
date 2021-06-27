@@ -1,0 +1,83 @@
+﻿@using SocialNetApp.Views.Models.Modules
+@using CoreHelpers
+@model PostEditorModel
+@if (User.Identity.IsAuthenticated)
+{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/_PostEditorHeadTags.min.js")"></script>
+    <div id="post_editor">
+        <div class="post_editor_head">
+            <a class="add_photo">@Resources.Words.AddPhoto</a>
+            <a class="add_video">@Resources.Words.AddVideo</a>
+            <div class="clear"></div>
+        </div>
+        <div class="post_editor_in">
+            @using (Ajax.BeginForm("UploadPostAttachment", "Posts", null, new AjaxOptions { HttpMethod = "Post" }, new { @enctype = "multipart/form-data", @id = "frm_add_attachment" }))
+            {
+                <input type="hidden" name="TempFileNames" value="" />
+                <input type="hidden" name="AttachmentsType" value="" />
+                <input id="posted_file" type="file" name="posted_file" class="hide" />
+            }
+            @using (Ajax.BeginForm("SendPost", "Posts", null, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "post_prg", OnBegin = "AddPostBegin", OnSuccess = "AddPostSuccess", OnFailure = "AddPostFailure" }, new { @id = "frm_add_post" }))
+            {
+                <textarea id="post_txt" name="Text" rows="" cols=""></textarea>
+                <input type="hidden" name="PostType" value="@(String.IsNullOrEmpty(Model.WallOwner) ? ((byte)PostType.NormalPost).ToString() : ((byte)PostType.WallPost).ToString())" />
+                <input type="hidden" name="Considerations" value="@Model.WallOwner" />
+                <input type="hidden" name="TempFileNames" value="" />
+                <input type="hidden" name="AttachmentsType" value="" />
+                <div id="post_files">
+                    <div id="upload_progress">
+                        <div class="progress">
+                            <div class="bar"></div>
+                        </div>
+                        <div class="percent">0%</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div id="uploaded_files"></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="post_editor_tags">
+                    <div class="post_tags_container">
+                        <input id="post_tags" type="text" onkeydown="return post_tags_key_down(event);" />
+                        <input type="hidden" value="@Url.Action("FindTags", "Suggestions")" />
+                        <div id="post_added_tags"></div>
+                        <input type="hidden" name="AddedTags" value="" />
+                        <div class="clear"></div>
+                    </div>
+                    <div class="tag_icon"></div>
+                    <div class="clear"></div>
+                </div>
+                <div id="post_message" class="error_message hide"></div>
+                <div id="post_tools">
+                    <div class="loading_small_circle_parent">
+                        <div id="post_prg" class="loading_small_circle hide">
+                        </div>
+                    </div>
+                    <input type="submit" id="post_btn" value="@Resources.Words.Send" />
+                    <select name="VisibleTo" id="VisibleTo">
+                        <option value="1">@Resources.Words.VisibleToOnlyMe</option>
+                        <option value="2">@Resources.Words.VisibleToFriends</option>
+                        <option value="3">@Resources.Words.VisibleToMembers</option>
+                        <option value="4" selected="selected">@Resources.Words.VisibleToEveryOne</option>
+                    </select>
+                    <label for="VisibleTo">@Resources.Words.VisibleTo:</label>
+                    <select name="AllowCommentTo" id="AllowCommentTo">
+                        <option value="3">@Resources.Words.VisibleToOnlyMe</option>
+                        <option value="1">@Resources.Words.VisibleToFriends</option>
+                        <option value="2" selected="selected">@Resources.Words.VisibleToMembers</option>
+                    </select>
+                    <label for="AllowCommentTo">@Resources.Words.AllowCommentTo:</label>
+                    <div class="clear"></div>
+                </div>
+            }
+        </div>
+    </div>
+    <!-- hiddens: -->
+    <input id="hid_pe_update_panel_id" type="hidden" value="@Model.UpdatePanelId" />
+    <input id="hid_sup_vid_formats" type="hidden" value="@Model.SupportedVideoFormats" />
+    <input id="hid_sup_ph_formats" type="hidden" value="@Model.SupportedPhotoFormats" />
+    <input id="w_what_in_mind" type="hidden" value="@Model.WaterMark" />
+    <input id="w_ajax_fail" type="hidden" value="@Resources.Messages.AjaxFail" />
+    <input id="w_post_editor_warning_for_filetypes" type="hidden" value="@Resources.Texts.PostEditorWarningForFileTypes" />
+    <input id="w_notice" type="hidden" value="@Resources.Words.Notice" />
+    <input id="w_tags" type="hidden" value="@Resources.Words.Tags" />
+}

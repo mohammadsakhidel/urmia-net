@@ -1,0 +1,32 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model RemoveFriendDialogModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_RemoveFriendDialogHeadTags.min.js")"></script>
+<div id="remove_friend_dialog">
+    <div class="dialog_title">
+        <a class="dialog_close" onclick="HideDialog();"></a>
+        <h2>@Resources.Words.RemoveFriendDialogTitle</h2>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="dialog_view_in">
+        @Resources.Texts.RemoveFriendText
+        <div id="removing_friend">
+            @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.ToBeRemovedUserIdentityModel);}
+            <div class="clear">
+            </div>
+        </div>
+        <div class="dialog_actions">
+            <a class="cancel" onclick="HideDialog();">@Resources.Words.Cancle</a>
+            @Ajax.ActionLink(Resources.Words.Delete, "RemoveFriend", "HomePage", new { id = Model.ToBeRemovedFriend.Alias }, new AjaxOptions { HttpMethod = "Post", LoadingElementId = "dialog_prg", OnBegin = "RemoveFriendBegin", OnFailure = "RemoveFriendFailure", OnSuccess = "RemoveFriendSuccess" }, new { @class = "okey" })
+            <div id="dialog_prg" class="loading_small_circle hide">
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        <div id="dialog_msg" class="hide">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+﻿#index_page_content
+{
+    margin: 20px 0 20px 20px;
+    width: 610px;
+    float: left;
+}
+
+.index_pg_imglinks
+{
+    margin-top: 10px;
+}
+
+.img_link
+{
+    width: 145px;
+    height: 50px;
+    float: left;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.img_link_people
+{
+    background-image: url(img_link_people.png);
+    margin-right: 10px;
+}
+
+.img_link_publicwall
+{
+    margin-right: 10px;
+    background-image: url(img_link_publicwall.png);
+}
+
+.img_link_rules
+{
+    background-image: url(img_link_rules.png);
+    margin-right: 10px;
+}
+
+.img_link_help
+{
+    background-image: url(img_link_help.png);
+}

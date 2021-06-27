@@ -1,0 +1,66 @@
+﻿.obj_det_fullname
+{
+    margin: 10px 10px 0 0;
+}
+
+.obj_det_info
+{
+    padding: 0 0 5px 0;
+    border-bottom: solid 1px #e6e7e8;
+}
+
+.obj_det_info h2
+{
+    float: left;
+    font-family: 'Naskh';
+    color: #f7941d;
+    font-weight: bold;
+    display: inline;
+    margin: 10px 0 0 0;
+}
+
+div.obj_det_in
+{
+    padding: 15px 0;
+}
+
+.obj_det_actions
+{
+    border-top: solid 1px #e6e7e8;
+    padding: 10px 0 0 0;
+}
+
+div.obj_det_text
+{
+    font-size: 9pt;
+    line-height: 20px;
+    color: #333333;
+}
+
+div.obj_det_photos
+{
+    margin-top: 15px;
+}
+
+div.obj_det_video
+{
+    margin: 10px 0 15px 0;
+    text-align: center;
+}
+
+div.obj_time
+{
+    float: left;
+    font-size: 7.5pt;
+    color: #bcbec0;
+    white-space: nowrap;
+}
+
+div.obj_det_tags {
+    margin: 5px 0 0 0;
+}
+
+    div.obj_det_tags .tag {
+        float: right;
+        margin: 5px 0 0 5px;
+    }

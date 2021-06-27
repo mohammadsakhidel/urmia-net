@@ -1,0 +1,61 @@
+﻿@using SocialNetApp.Models
+@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model LikeActivityModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_ActivityHeadTags.min.js")"></script>
+@if (Model.IsActivityVisibleToUser)
+{
+    <div class="activity" id="@("activity_" + Model.Activity.Id)">
+        @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.ActorThumbIdentityModel);}
+        <div class="act_tools">
+            <div class="act_settings">
+                @{Html.RenderPartial(Urls.ModuleViews + "_ActivitySettings.cshtml", Model.ActivitySettingsModel);}
+            </div>
+            <div class="act_info">
+                @{Html.RenderPartial(Urls.ModuleViews + "_ActivityInfo.cshtml", Model.ActivityInfoModel);}
+            </div>
+        </div>
+        <div class="act_content">
+            @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.ActorNameIdentityModel);}
+            <div class="act_title">
+                @if (Model.LikedItem is SharedObject)
+                {
+                    @Resources.Words.LikeSharedObjectActivityTitle_Part1
+                    if (Model.LikedItemOwner.Status != MemberStatus.ScheduledForDelete)
+                    {
+                        <a href="@Url.Content(Model.LikedItemOwner.UrlOfProfilePage)">@Member.YouOrHimOrFullName(Model.LikedItemOwner, Model.ActivityActor)</a>
+                    }
+                    else
+                    {
+                        @(" " + Member.YouOrHimOrFullName(Model.LikedItemOwner, Model.ActivityActor) + " ")
+                    }
+                    @Resources.Words.LikeSharedObjectActivityTitle_Part2
+                }
+                else if (Model.LikedItem is Comment)
+                {
+                    @Resources.Words.LikeCommentActivityTitle_Part1
+                    if (Model.LikedItemOwner.Status != MemberStatus.ScheduledForDelete)
+                    {
+                        <a href="@Url.Content(Model.LikedItemOwner.UrlOfProfilePage)">@Member.YouOrHimOrFullName(Model.LikedItemOwner, Model.ActivityActor)</a>
+                    }
+                    else
+                    {
+                        @(" " + Member.YouOrHimOrFullName(Model.LikedItemOwner, Model.ActivityActor) + " ")
+                    }
+                    @Resources.Words.LikeCommentActivityTitle_Part2
+                    <div class="quote liked_comment_quote">
+                        @Html.Raw(TextsProcessor.RenderText(((Comment)Model.LikedItem).Text))
+                    </div>
+                }
+            </div>
+            <div class="act_details">
+                @{Html.RenderPartial(Urls.ModuleViews + "_ActivityDetailsSection.cshtml", Model.ActivityDetailsSectionModel);}
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        <div class="actions">
+            @{Html.RenderPartial(Urls.ModuleViews + "_SharedObjectActions.cshtml", Model.SharedObjectActionsModel);}
+        </div>
+    </div>
+}

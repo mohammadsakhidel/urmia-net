@@ -1,0 +1,24 @@
+﻿@using SocialNetApp.Models
+@using CoreHelpers
+@model SocialNetApp.Views.Models.Modules.HomeMemberCollectionModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_HomeMemberCollectionHeadTags.min.js")"></script>
+<div class="home_member_collection_parent">
+    <div id="home_member_collection">
+        @for (var i = 0; i < Model.Members.Count; i++)
+        {
+            var member = Model.Members[i];
+            <a class="a_userthumb" href="@Url.Content(member.UrlOfProfilePage)">
+                <img class="userthumb" src="@Url.Content((i != Model.LargeThumbIndex ? member.UrlOfThumb : member.UrlOfLargeThumb))" alt="@member.FullName" title="@member.FullName" />
+            </a>
+        }
+        @if (Model.Members.Count < Digits.HomeMemberCollectionSize)
+        {
+            for (var i = Model.Members.Count; i < Digits.HomeMemberCollectionSize; i++)
+            {
+                <a class="a_userthumb a_userthumb_dis">
+                    <img class="userthumb" src="@Url.Content(Urls.SiteImages + "no_img_home_col.png")" alt="" />
+                </a>
+            }
+        }
+    </div>
+</div>

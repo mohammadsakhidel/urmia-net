@@ -1,0 +1,27 @@
+﻿@using CoreHelpers
+@{
+    Layout = "~/Views/Layouts/_Frame.cshtml";
+}
+
+@section head
+{
+
+}
+
+@section title
+{
+    Test Facebook
+}
+
+@section content
+{
+    @{
+        var adminUser = System.Web.Security.Membership.GetUser("admin@vkurdistan.com");
+        System.Web.Security.Roles.AddUserToRole(adminUser.UserName, MyRoles.Administrator);
+        System.Web.Security.Roles.AddUserToRole(adminUser.UserName, MyRoles.SocialNetwork);
+        System.Web.Security.Membership.UpdateUser(adminUser);
+        <h1>Done!</h1>
+        <h2>@System.Web.Security.Roles.IsUserInRole("admin@vkurdistan.com", MyRoles.Administrator)</h2>
+        <h2>@System.Web.Security.Roles.IsUserInRole("admin@vkurdistan.com", MyRoles.SocialNetwork)</h2>
+    }
+}

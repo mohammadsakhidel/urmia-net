@@ -1,0 +1,44 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model ChangePPActivityModel
+
+@if (Model.IsActivityVisibleToUser)
+{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/_ActivityHeadTags.min.js")"></script>
+    <div class="activity" id="@("activity_" + Model.Activity.Id)">
+        @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.ActorThumbIdentityModel);}
+        <div class="act_tools">
+            <div class="act_settings">
+                @{Html.RenderPartial(Urls.ModuleViews + "_ActivitySettings.cshtml", Model.ActivitySettingsModel);}
+            </div>
+            <div class="act_info">
+                @{Html.RenderPartial(Urls.ModuleViews + "_ActivityInfo.cshtml", Model.ActivityInfoModel);}
+            </div>
+        </div>
+        <div class="act_content">
+            @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.ActorNameIdentityModel);}
+            <div class="act_title">
+                @{
+                    @Resources.Words.ChangeProfilePhotoActivityTitle_Part1
+                    if (Model.ActivityActor.Status != MemberStatus.ScheduledForDelete)
+                    {
+                        <a href="@Url.Content(Model.ActivityActor.UrlOfProfilePage)">@Resources.Words.HisProfilePhoto</a>
+                    }
+                    else
+                    {
+                        @Resources.Words.HisProfilePhoto
+                    }
+                    @Resources.Words.ChangeProfilePhotoActivityTitle_Part2
+                }
+                @if (Model.IsPPAvailable)
+                {
+                    <a class="thumb_parent act_img_parent" href="@Url.Content(Model.PP.UrlOfAlbumDetails)">
+                        <img src="@Url.Content(Model.PP.LargeThumbUrl)" alt="@Model.ActivityActor.FullName" class="act_img_pp" />
+                    </a>
+                }
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+}

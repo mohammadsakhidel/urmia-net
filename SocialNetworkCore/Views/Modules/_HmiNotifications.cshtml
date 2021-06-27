@@ -1,0 +1,42 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model HmiNotificationsModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_HmiNotificationsHeadTags.min.js")"></script>
+<div id="hmi_notifications">
+    <div class="hmi_not_header">
+        @Ajax.ActionLink(@Resources.Words.MarkAllAsRead, "MarkAllNotificationsAsRead", "HomePage", 
+        new AjaxOptions { 
+            HttpMethod = "Post", 
+            LoadingElementId = "prg_mark_all_read",
+            OnSuccess = "MarkAllNotificationsAsReadSuccess",
+            OnFailure = "MarkAllNotificationsAsReadFailure"
+        })
+        <div id="prg_mark_all_read" class="loading_small_circle hide">
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="notifications_in">
+        <div>
+        @if (Model.NotificationModels.Any())
+        {
+            foreach (var notModel in Model.NotificationModels)
+            {
+            <div class="hmi_not">
+                @{Html.RenderPartial(Urls.ModuleViews + "_Notification.cshtml", notModel);}
+            </div>
+            }
+        }
+        else
+        {
+            <div class="hmi_not_empty">
+                @Resources.Messages.NoNotification
+            </div>
+        }
+        </div>
+    </div>
+    <div class="hmi_not_footer">
+        @Html.ActionLink(Resources.Words.SeeAllNotifications, "Notifications", "HomePage")
+    </div>
+    <input type="hidden" id="hid_ajax_fail" value="@Resources.Messages.AjaxFail" />
+</div>

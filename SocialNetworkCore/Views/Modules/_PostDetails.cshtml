@@ -1,0 +1,49 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model PostDetailsModel
+@if (Model.IsPostVisibleForUser)
+{
+    <div id="post_details">
+        <div class="obj_det_info">
+            <div class="obj_time">@Model.Post.DateOfAddText</div>
+            @{Html.RenderPartial(Urls.ModuleViews + "_UserIdentity.cshtml", Model.PostOwnerIdentityModel);}
+        </div>
+        <div class="obj_det_in">
+            <div class="obj_det_text">
+                @Html.Raw(Model.OutputText)
+            </div>
+            @if (Model.PostPhotos.Any())
+            {
+                <div class="obj_det_photos">
+                    @{Html.RenderPartial(Urls.ModuleViews + "_PhotoCollection.cshtml", Model.PhotoCollectionModel);}
+                </div>
+            }
+            else if (Model.HasVideo)
+            {
+                <div class="obj_det_video">
+                    @{Html.RenderPartial(Urls.ModuleViews + "_VideoPlayer.cshtml", Model.VideoPlayerModel);}
+                </div>
+            }
+
+            @if (Model.PostTags.Any())
+            {
+                <div class="obj_det_tags">
+                    @foreach (var tag in Model.PostTags)
+                    {
+                        <a href="@Url.Action("Public", "HomePage", new { @tag = tag.Tag })" class="tag">
+                            <span>@tag.Tag</span>
+                        </a>
+                    }
+                    <div class="clear"></div>
+                </div>
+            }
+        </div>
+        <div class="obj_det_actions">
+            @{Html.RenderPartial(Urls.ModuleViews + "_SharedObjectActions.cshtml", Model.SharedObjectActionsModel);}
+        </div>
+    </div>
+}
+else
+{
+    Html.RenderPartial(Urls.ModuleViews + "_AccessDenied.cshtml", Model.AccessDeniedModel);
+}

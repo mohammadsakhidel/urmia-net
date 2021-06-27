@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="22cdfbd6-8ace-4795-a407-3ecde8902a99" name="memberStatuses" linkedPackageId="6531412f-edc1-4737-9fb2-07502e06d4ad" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="e65adec1-3fc9-40d6-bdad-12572d717bfe">
+      <elementDefinition Id="b20ea7c7-333e-4933-8a04-1a42b634ac3e" />
+      <body>A member canbe blocked by an admin in each of these states, and will return to that state again after unblocking.</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="a6547e49-e218-4a17-977a-bb926093e794" name="memberStatuses" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="31b284a4-54d0-4269-bef5-cefcb3df2d7c" />
+        <nodes>
+          <initialNode Id="80be9c19-4ad0-43ae-8625-3ee0e9f14baa" name="Initial1" isLeaf="false">
+            <elementDefinition Id="94e9a014-498c-485a-8345-3be774857de4" />
+            <flowNodeTargets>
+              <controlFlow Id="6489b900-045a-4718-808c-f0662413e5a4" isLeaf="false">
+                <opaqueActionMoniker Id="55e5e862-9da2-43dd-b552-50b3936861e1" LastKnownName="NotActivated" />
+                <elementDefinition Id="929a4000-738d-4b11-b93b-e687917621d7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <objectNode Id="7f6d448a-0e0b-423b-97d8-789e5029ebc5" name="register" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="cfd3f3f2-9640-4b8b-8535-dbf0d12a60ec" />
+            <upperBound>
+              <literalInteger Id="19af0af0-9395-4736-a777-f1ed0b2a84ff" name="2147483647" value="2147483647">
+                <elementDefinition Id="d5ee3a46-4f63-49a2-b20d-19060b9752c3" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <opaqueAction Id="55e5e862-9da2-43dd-b552-50b3936861e1" name="NotActivated" isLeaf="false">
+            <elementDefinition Id="f9b082a9-c400-4144-a616-0ca24f718143" />
+            <flowNodeTargets>
+              <controlFlow Id="a1dd78ef-36db-4cad-b804-1b04f58c6248" isLeaf="false">
+                <opaqueActionMoniker Id="f8a8dbd9-ece5-4b38-8389-f18cbcd4267c" LastKnownName="Active" />
+                <elementDefinition Id="59d66bac-eb98-4d6e-a1b4-6b93ed9b6966" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f8a8dbd9-ece5-4b38-8389-f18cbcd4267c" name="Active" isLeaf="false">
+            <elementDefinition Id="9e326ced-94cf-4f9e-b9a1-c21e4499be84" />
+            <flowNodeTargets>
+              <controlFlow Id="405f6849-84a7-4205-a8cc-16a1a99aa5af" isLeaf="false">
+                <opaqueActionMoniker Id="03f5d7c5-e96e-4605-8870-dd1caa985d1a" LastKnownName="ScheduledForDelete" />
+                <elementDefinition Id="fa4a3d2b-2154-43d4-b737-346e1bdb46e3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <objectNode Id="b80ec16b-1dfc-49ac-a389-c0483fb27295" name="activate account" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="b3309cc3-a3f0-4146-bd0d-3313e0b67f3f" />
+            <upperBound>
+              <literalInteger Id="a790123f-90db-4828-ac89-5c4788b95877" name="2147483647" value="2147483647">
+                <elementDefinition Id="5a9a2c19-1c64-4f83-addd-c0492d9c612f" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <opaqueAction Id="03f5d7c5-e96e-4605-8870-dd1caa985d1a" name="ScheduledForDelete" isLeaf="false">
+            <elementDefinition Id="7cb5e6a9-03b1-4bab-a599-de1817fce300" />
+            <flowNodeTargets>
+              <controlFlow Id="8a3a68aa-aca4-445e-b095-b72ad027a47a" isLeaf="false">
+                <opaqueActionMoniker Id="f8a8dbd9-ece5-4b38-8389-f18cbcd4267c" LastKnownName="Active" />
+                <elementDefinition Id="06fb278e-004b-4dde-b315-80b575edf73c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="0b2ed527-26a3-46a9-b6cc-78bd95ea90b5" name="Blocked" isLeaf="false">
+            <elementDefinition Id="1c19c94b-1e0d-4664-93bd-38f70ecea535" />
+          </opaqueAction>
+          <objectNode Id="9a9e3930-05fa-4a2a-a3d5-00c666bc9c24" name="delete account" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="41aea419-ef2b-411c-ac5f-cec3c7aebe39" />
+            <upperBound>
+              <literalInteger Id="d4896145-99b3-4e70-a7e7-481fe0e7ced4" name="2147483647" value="2147483647">
+                <elementDefinition Id="29b54ba3-6a3a-4e91-83bc-d161bf0195a1" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <opaqueAction Id="bd3ebe03-1af9-4c88-b745-966c01b8e36d" name="Locked" isLeaf="false">
+            <elementDefinition Id="a415394f-bfe7-4461-be9e-bae8120bc2a9" />
+          </opaqueAction>
+          <objectNode Id="b50cec3c-44ef-428f-aefa-75340c0df8b9" name="login in 30 days" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="0d26acc8-b550-4f9b-89e0-4a3e484b026d" />
+            <upperBound>
+              <literalInteger Id="d54399f5-f96c-4f10-87b3-bb50f71ec450" name="2147483647" value="2147483647">
+                <elementDefinition Id="82e875ec-cb5b-4d26-b592-5fe83955679b" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="6531412f-edc1-4737-9fb2-07502e06d4ad" name="Diagrams">
+    <elementDefinition Id="f58304df-862c-4422-b467-8519ac64a7fa" />
+    <profileInstances>
+      <packageHasProfileInstances Id="3ffcc28a-ebfa-4a71-9109-13b439f29516">
+        <profileInstance Id="247e47b7-937c-403f-9f98-edfb55259756" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="9896fb63-9ea2-4216-9826-8c1736bdbd21">
+        <profileInstance Id="16b77567-4a90-4f99-a675-6df0d904704f" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

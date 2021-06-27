@@ -1,0 +1,19 @@
+﻿@model SocialNetApp.Views.Models.Modules.ErrorDialogModel
+<div id="error_dialog">
+    <div class="dialog_title">
+        <a class="dialog_close" onclick="HideDialog();"></a>
+        <h2>@Resources.Words.ErrorDialogTitle</h2>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="dialog_view_in">
+        <div class="error_message">
+            @Model.Message
+        </div>
+        <div class="dialog_actions">
+            <a class="cancel" onclick="HideDialog();">@Resources.Words.CloseDialog</a>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+﻿@using SocialNetApp.Models
+@using SocialNetApp.Views.Models.Modules
+@using CoreHelpers
+@model PhotoCollectionModel
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/_PhotoCollectionHeadTags.min.js")"></script>
+@if (Model.Photos.Any())
+{
+    <div id="photo_collection">
+        <div class="def_photo_parent">
+            <div id="prg_photo_collection" class="prg_photo_collection hide">
+                <div class="loading_photo">
+                </div>
+            </div>
+            @if (Model.IsDefaultPhotoVisibleForUser)
+            {
+                <img class="def_photo" src="@Url.Content(Model.DefaultPhoto.Url)" width="@((Model.DefaultPhoto.Width < Model.MaxPhotoWidth ? Model.DefaultPhoto.Width : Model.MaxPhotoWidth) + "px")" alt="" />
+            }
+            else
+            {
+                <div class="def_photo_access_denied" style="max-width: 500px; margin: 0 auto 0 auto;">
+                    @{Html.RenderPartial(Urls.ModuleViews + "_AccessDenied.cshtml", Model.AccessDeniedModel);}
+                </div>
+            }
+            @if (Model.DefaultPhotoIndex < Model.Photos.Count - 1)
+            {
+                @Ajax.ActionLink(" ", Model.ActionName, Model.ControllerName, new { id = Model.SharedObjectId, def = Model.Photos[Model.DefaultPhotoIndex + 1].Id }, new AjaxOptions { HttpMethod = "Get", OnBegin = "LoadDetailsBegin", UpdateTargetId = Model.UpdateTargetId, LoadingElementId = "prg_photo_collection" }, new { @class = "next hide", @title = Resources.Words.Next });
+                <input type="hidden" value="@Url.Content("~/ObjectDetails/" + Model.SharedObjectId + "?def=" + Model.Photos[Model.DefaultPhotoIndex + 1].Id)" />
+            }
+            @if (Model.DefaultPhotoIndex > 0)
+            {
+                @Ajax.ActionLink(" ", Model.ActionName, Model.ControllerName, new { id = Model.SharedObjectId, def = Model.Photos[Model.DefaultPhotoIndex - 1].Id }, new AjaxOptions { HttpMethod = "Get", OnBegin = "LoadDetailsBegin", UpdateTargetId = Model.UpdateTargetId, LoadingElementId = "prg_photo_collection" }, new { @class = "prev hide", @title = Resources.Words.Previous });
+                <input type="hidden" value="@Url.Content("~/ObjectDetails/" + Model.SharedObjectId + "?def=" + Model.Photos[Model.DefaultPhotoIndex - 1].Id)" />
+            }
+        </div>
+    </div>
+}

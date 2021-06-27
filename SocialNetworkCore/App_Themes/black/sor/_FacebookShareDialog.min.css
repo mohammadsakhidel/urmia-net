@@ -1,0 +1,60 @@
+﻿div#fb_share_dialog div.dialog_actions a {
+    float: left;
+}
+
+div#fb_share_dialog div.dialog_actions div.loading_small_circle
+{
+    float: left;
+    margin: 4px 0 0 7px;
+}
+
+div#fb_share_dialog div#dialog_msg
+{
+    margin: 10px 0 0 0;
+    padding: 5px;
+}
+
+div#fb_share_dialog div.sharing_object
+{
+    margin-top: 10px;
+    border-top: solid 1px #cacaca;
+    border-bottom: solid 1px #cacaca;
+    padding: 15px 0;
+}
+
+div#fb_share_dialog .shared_object_details
+{
+    float: right; 
+    max-height: 250px; 
+    width: 610px; 
+    margin: 0 10px 0 0;
+    overflow-y: auto;
+}
+
+div#fb_share_dialog .object_sender
+{
+    float: right;
+}
+
+div#fb_share_dialog .dialog_view_in .text {
+    padding: 5px 15px 5px 15px;
+}
+
+div#fb_share_dialog .sharing_settings
+{
+    float: right;
+    margin: 10px 0 0 0;
+}
+
+div#fb_share_dialog div.sharing_settings select
+{
+    float: right;
+    width: 130px;
+}
+
+div#fb_share_dialog div.sharing_settings label
+{
+    float: right;
+    font-size: 8pt;
+    margin: 3px 0 0 3px;
+}

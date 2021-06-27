@@ -1,0 +1,33 @@
+﻿@using CoreHelpers
+@using SocialNetApp.Views.Models.Modules
+@model ObjectCheckerModel
+<script type="text/javascript" src="@Url.Content("~/Scripts/_ObjectCheckerHeadTags.min.js")"></script>
+<div id="object_checker" class="viewpart">
+    <div class="viewpart_title">
+        <h2>@Resources.Words.ObjectChecker</h2>
+    </div>
+    <div class="viewpart_content">
+        <div class="border">
+            <input type="text" id="tb_date_of_check" value="@Model.DateToCheckString" />
+            <a class="submit" onclick="show_objects('@Request.Url.GetLeftPart(UriPartial.Path)');">@Resources.Words.Show</a>
+        </div>
+        <div id="oc_activities">
+            @foreach (var actRec in Model.ActivityRecords)
+            {
+                Html.RenderPartial(actRec.Item1.PartialViewUrl, actRec.Item2);
+            }
+        </div>
+        @{Html.RenderPartial(Urls.ModuleViews + "_ViewMore.cshtml", Model.ViewMoreModel);}
+    </div>
+</div>
+<!-- words and settings: -->
+<input type="hidden" id="w_read_more" value="@Resources.Words.ReadMore" />
+<input type="hidden" id="w_read_less" value="@Resources.Words.ReadLess" />
+<input type="hidden" id="config_show_more_length" value="@Digits.ShowMoreLength" />
+<input type="hidden" id="w_write_your_comment" value="@Resources.Words.WriteYourComment" />
+<input type="hidden" id="w_comment" value="@Resources.Words.Comment" />
+<input type="hidden" id="w_share" value="@Resources.Words.Share" />
+<input type="hidden" id="w_like" value="@Resources.Words.Like" />
+<input type="hidden" id="w_unlike" value="@Resources.Words.Unlike" />
+<input type="hidden" id="w_people_like_this" value="@Resources.Words.PeopleLikeThis" />
+<input type="hidden" id="w_ajax_fail" value="@Resources.Messages.AjaxFail" />
